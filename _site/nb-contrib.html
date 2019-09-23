@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54984338-2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-54984338-2');
+      </script>
+
+      <meta charset="utf-8">
+      <title>Contributing a Jupyter Notebook &ndash; QuantEcon</title>
+      <meta name="description" content="QuantEcon is an organization run by economists for economists with the aim of coordinating distributed development of high quality open source code for all forms of quantitative economic modeling">
+      <meta name="author" content="QuantEcon">
+      <meta name="keywords" content="QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@quantecon">
+      <meta name="twitter:title" content="Contributing a Jupyter Notebook &ndash; QuantEcon">
+      <meta name="twitter:description" content="QuantEcon is an organization run by economists for economists with the aim of coordinating distributed development of high quality open source code for all forms of quantitative economic modeling">
+      <meta name="twitter:creator" content="@quantecon">
+      <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+      <meta property="og:title" content="Contributing a Jupyter Notebook &ndash; QuantEcon" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://localhost:4000/nb-contrib" />
+      <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+      <meta property="og:description" content="QuantEcon is an organization run by economists for economists with the aim of coordinating distributed development of high quality open source code for all forms of quantitative economic modeling" />
+      <meta property="og:site_name" content="QuantEcon" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/assets/main.css">
+      <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
+      <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+      <link href="https://fonts.googleapis.com/css?family=Exo:200,400|Roboto:400,700" rel="stylesheet">
+    </head>
+
+    <body class="language-python">
+
+  <div class="qemb"> <!-- QuantEcon menubar -->
+
+    <p class="qemb-logo"><a href="https://quantecon.org/" title="quantecon.org"><span class="show-for-sr">QuantEcon</span></a></p>
+
+    <ul class="qemb-nav">
+      <li class="qemb-dropdown"><a>Lectures</a>
+        <ul>
+          <li><a href="https://lectures.quantecon.org/" title="Lectures"><span>Lectures in Quantitative Economics</span></a></li>
+          <li><a href="https://datascience.quantecon.org/" title="DataScience"><span>QuantEcon DataScience</span></a></li>
+          <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets"><span>Cheatsheets</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Code</a>
+        <ul>
+          <li><a href="https://quantecon.org/quantecon-py" title="QuantEcon.py"><span>QuantEcon.py</span></a></li>
+          <li><a href="https://quantecon.org/quantecon-jl" title="QuantEcon.jl"><span>QuantEcon.jl</span></a></li>
+          <li><a href="https://jupinx.quantecon.org/">Jupinx</a></li>
+      </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Notebooks</a>
+        <ul>
+          <li><a href="https://quantecon.org/notebooks" title="QuantEcon Notebook Library"><span>NB Library</span></a></li>
+          <li><a href="http://notes.quantecon.org/" title="QE Notes"><span>QE Notes</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Community</a>
+        <ul>
+          <li><a href="http://blog.quantecon.org/" title="Blog"><span>Blog</span></a></li>
+          <li><a href="http://discourse.quantecon.org/" title="Forum"><span>Forum</span></a></li>
+        </ul>
+      </li>
+      <li><a href="http://store.quantecon.org/" title="Store"><span class="show-for-sr">Store</span></a></li>
+      <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="show-for-sr">Repository</span></a></li>
+      <li><a href="https://twitter.com/quantecon" title="Twitter"><span class="show-for-sr">Twitter</span></a></li>
+    </ul>
+
+  </div>
+
+        <span href="#" class="navbar-toggle collapsed"><span class="icon icon-list"></span></span>
+
+
+        <header class="site-banner">
+
+            
+            <div class="container">
+                
+                <div class="branding">
+
+                    <p class="site-logo"><a href="/" title="Home"><img src="/assets/img/qe-logo-large.png" alt="QuantEcon logo"></a></p>
+                    
+                    <div class="site-name">
+                    
+                        <p class="site-title"><a href="/" title="Home">Quant<span>Econ</span></a></p>
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="site-nav">
+                    
+                    <nav class="main">
+                      <ul>
+                      <li><a href="/">Home</a></li>
+                       
+                       
+                          <li><a href="/about">About</a></li>
+                       
+                          <li><a href="/news">News</a></li>
+                       
+                          <li><a href="/contribute">Contribute</a></li>
+                       
+                          <li><a href="/projects">Projects</a></li>
+                       
+                          <li><a href="/team">Team</a></li>
+                       
+                      </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="tile">
+
+            <div id="skip"></div>
+
+
+<h1 id="contributing-a-jupyter-notebook">Contributing a Jupyter Notebook</h1>
+
+<h2 id="submissions">Submissions</h2>
+
+<p>To submit your <a href="http://jupyter.org/">notebook</a> as a candidate for inclusion in the <a href="/notebooks">notebook gallery</a>, please add it to <a href="http://nbviewer.jupyter.org/">nbviewer</a> and send us a link via <a href="mailto:contact%40quantecon.org">contact@quantecon.org</a>. Below is a simple style guide to document how the repository is organised and what is the best way to construct your submission.</p>
+
+<p>Once your Jupyter notebook has been reviewed and approved for inclusion (via nbviewer) - we will ask you to put together a <strong>pull request</strong> to the QuantEcon.notebooks <a href="https://github.com/QuantEcon/QuantEcon.notebooks">repo</a>. If you are unfamiliar with <strong>git</strong> then feel free to let us know at <a href="mailto:contact%40quantecon.org">contact@quantecon.org</a>.</p>
+
+<h2 id="style-guide">Style Guide</h2>
+
+<p>The organization of the repository is simple by design.</p>
+
+<p>QuantEcon.notebooks:</p>
+
+<pre>./ipynb files
+./dependencies/
+        Support files required for notebooks and data files (i.e. *.py, *.csv etc.)
+</pre>
+
+<p>While we don’t want to impose any restrictions on your creativity when constructing your notebook, we have built some basic infrastructure to make working with dependencies a little easier.</p>
+
+<p>Submission of single document (self contained notebooks) is straight forward. All that is required is that you submit a PR with the <code class="highlighter-rouge">ipynb</code> file to the root level of the repo.</p>
+
+<h3 id="notebooks-with-dependencies">Notebooks with Dependencies</h3>
+
+<p>There are two primary circumstances that typically render Jupyter notebooks dependent on support files:</p>
+
+<blockquote>
+  <ol>
+    <li>Support code that is contained in a separate <code class="highlighter-rouge">.py</code> file</li>
+    <li>Data files</li>
+  </ol>
+</blockquote>
+
+<p>The most convenient method is to have these support files in the same directory as the Jupyter notebook to allow for the direct import of code or data that is contained in these files. However when submitting your notebook we ask that you follow this convention to keep the repo organized and tidy.</p>
+
+<p>Once you are happy with the notebook</p>
+
+<p><strong>Step #1:</strong> Place any dependency files in the <code class="highlighter-rouge">dependencies/</code> folder.</p>
+
+<p><strong>Step #2:</strong> Add the following import statement to the top of your Jupyter notebook to fetch these documents from GitHub. This ensures the notebook will run anywhere that the notebook is placed.</p>
+
+<pre>from quantecon import fetch_nb_dependencies
+fetch_nb_dependencies(["filenames"])
+</pre>
+
+<p>If you place your dependencies in a folder within <code class="highlighter-rouge">dependencies/</code> then you can pass a Dictionary to <code class="highlighter-rouge">fetch_nb_dependencies({"dir" : ["filenames"]})</code></p>
+
+<pre>from quantecon import fetch_nb_dependencies
+fetch_nb_dependencies({"dir" : ["filenames"]})
+</pre>
+
+<p>Note</p>
+
+<p>This requires QuantEcon.py version 0.3+</p>
+
+<p>This simple method from the QuantEcon package fetches the request file from the <code class="highlighter-rouge">QuantEcon.notebooks</code>master branch and writes a copy into the same folder as the Jupyter notebook.</p>
+
+<p>The documentation for this method can be found <a href="https://quanteconpy.readthedocs.org/en/latest/util/notebooks.html">here</a></p>
+
+<h2 id="resources">Resources</h2>
+
+<ol>
+  <li><a href="https://help.github.com/articles/using-pull-requests/">GitHub Pull Requests Article</a></li>
+</ol>
+
+
+        </div>
+
+        <footer class="site-footer">
+
+            <div class="footer-copy">
+                <p><a href="https://sloan.org/"><img alt="" src="/assets/img/sloan-logo.png" style="float: left; width: 85px; height: 90px; margin-right: 15px;"></a></p>
+                <p>A <a href="http://www.numfocus.org/">NumFocus</a> Fiscally Sponsored Project.<br>
+Hosted with <a href="https://aws.amazon.com/">Amazon Web Services</a>.</p>
+                <p><a href="http://www.numfocus.org/"><img alt="" src="/assets/img/numfocus-logo.png" style="height: 37px; width: 110px;"></a></p>
+            </div>
+
+            <nav class="main">
+              <ul>
+                <li><a href="/">Home</a></li>
+
+
+                <li><a href="/about">About</a></li>
+
+                <li><a href="/news">News</a></li>
+
+                <li><a href="/contribute">Contribute</a></li>
+
+                <li><a href="/projects">Projects</a></li>
+
+                <li><a href="/team">Team</a></li>
+
+              </ul>
+            </nav>
+
+        </footer>
+
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/prism.js"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            // enable automatic line breaks (might look ugly)
+            CommonHTML: { linebreaks: { automatic: true } },
+            "HTML-CSS": { linebreaks: { automatic: true } },
+            SVG: { linebreaks: { automatic: true } },
+            // enable $ for inline math -> use \$ for ordinary dollar-sign
+            tex2jax: {
+              inlineMath: [['$','$'], ['\\(','\\)']],
+              processEscapes: true
+            },
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h1>{{ page.title | escape }}</h1>
+
+<p class="news-date">{{ page.date | date: "%-d %b %Y" }}</p>
+
+{{ page.content }}
+
+<p><a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-url="{{site.url}}{{ page.url }}" data-via="quantecon">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><small>Published by: {{ page.author }}</small></p>
+
+<hr>
+
+<p class="news-readmore"><a href="{{ '/news' | relative_url }}">Read more news</a></p>

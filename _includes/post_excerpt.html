@@ -1,0 +1,8 @@
+<h1 class="post-excerpt-title">
+  <a class="post-excerpt-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+</h1>
+<span class="post-excerpt-meta">posted on {{ post.date | date: "%b %-d, %Y" }}</span>
+<div class="post-excerpt-content">
+    {{ post.excerpt }}
+    <a href="{{ post.url }}">{{ site.post_excerpt.more_caption | default: "Read More..."}} </a>
+</div>

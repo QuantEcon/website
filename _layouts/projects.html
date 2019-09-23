@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<ul class="projects-listing">
+  {% for project in site.projects %}
+    <li>
+		<div class="thumb"><a href="{{ project.link }}"><img src="{{ site.baseurl }}assets/projects/{{ project.image }}" style="width:75px;"></a></div>
+		<h2><a href="{{ project.link }}">{{ project.name }}</a></h2>
+		<p class="desc">{{ project.description | markdownify }}</p>
+    </li>
+  {% endfor %}
+</ul>

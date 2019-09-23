@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54984338-2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-54984338-2');
+      </script>
+
+      <meta charset="utf-8">
+      <title>QuantEcon Notebook Library &ndash; QuantEcon</title>
+      <meta name="description" content="QuantEcon is an organization run by economists for economists with the aim of coordinating distributed development of high quality open source code for all forms of quantitative economic modeling">
+      <meta name="author" content="QuantEcon">
+      <meta name="keywords" content="QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@quantecon">
+      <meta name="twitter:title" content="QuantEcon Notebook Library &ndash; QuantEcon">
+      <meta name="twitter:description" content="QuantEcon is an organization run by economists for economists with the aim of coordinating distributed development of high quality open source code for all forms of quantitative economic modeling">
+      <meta name="twitter:creator" content="@quantecon">
+      <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+      <meta property="og:title" content="QuantEcon Notebook Library &ndash; QuantEcon" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://localhost:4000/notebooks" />
+      <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+      <meta property="og:description" content="QuantEcon is an organization run by economists for economists with the aim of coordinating distributed development of high quality open source code for all forms of quantitative economic modeling" />
+      <meta property="og:site_name" content="QuantEcon" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/assets/main.css">
+      <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
+      <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+      <link href="https://fonts.googleapis.com/css?family=Exo:200,400|Roboto:400,700" rel="stylesheet">
+    </head>
+
+    <body class="language-python">
+
+  <div class="qemb"> <!-- QuantEcon menubar -->
+
+    <p class="qemb-logo"><a href="https://quantecon.org/" title="quantecon.org"><span class="show-for-sr">QuantEcon</span></a></p>
+
+    <ul class="qemb-nav">
+      <li class="qemb-dropdown"><a>Lectures</a>
+        <ul>
+          <li><a href="https://lectures.quantecon.org/" title="Lectures"><span>Lectures in Quantitative Economics</span></a></li>
+          <li><a href="https://datascience.quantecon.org/" title="DataScience"><span>QuantEcon DataScience</span></a></li>
+          <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets"><span>Cheatsheets</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Code</a>
+        <ul>
+          <li><a href="https://quantecon.org/quantecon-py" title="QuantEcon.py"><span>QuantEcon.py</span></a></li>
+          <li><a href="https://quantecon.org/quantecon-jl" title="QuantEcon.jl"><span>QuantEcon.jl</span></a></li>
+          <li><a href="https://jupinx.quantecon.org/">Jupinx</a></li>
+      </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Notebooks</a>
+        <ul>
+          <li><a href="https://quantecon.org/notebooks" title="QuantEcon Notebook Library"><span>NB Library</span></a></li>
+          <li><a href="http://notes.quantecon.org/" title="QE Notes"><span>QE Notes</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Community</a>
+        <ul>
+          <li><a href="http://blog.quantecon.org/" title="Blog"><span>Blog</span></a></li>
+          <li><a href="http://discourse.quantecon.org/" title="Forum"><span>Forum</span></a></li>
+        </ul>
+      </li>
+      <li><a href="http://store.quantecon.org/" title="Store"><span class="show-for-sr">Store</span></a></li>
+      <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="show-for-sr">Repository</span></a></li>
+      <li><a href="https://twitter.com/quantecon" title="Twitter"><span class="show-for-sr">Twitter</span></a></li>
+    </ul>
+
+  </div>
+
+        <span href="#" class="navbar-toggle collapsed"><span class="icon icon-list"></span></span>
+
+
+        <header class="site-banner">
+
+            
+            <div class="container">
+                
+                <div class="branding">
+
+                    <p class="site-logo"><a href="/" title="Home"><img src="/assets/img/qe-logo-large.png" alt="QuantEcon logo"></a></p>
+                    
+                    <div class="site-name">
+                    
+                        <p class="site-title"><a href="/" title="Home">Quant<span>Econ</span></a></p>
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="site-nav">
+                    
+                    <nav class="main">
+                      <ul>
+                      <li><a href="/">Home</a></li>
+                       
+                       
+                          <li><a href="/about">About</a></li>
+                       
+                          <li><a href="/news">News</a></li>
+                       
+                          <li><a href="/contribute">Contribute</a></li>
+                       
+                          <li><a href="/projects">Projects</a></li>
+                       
+                          <li><a href="/team">Team</a></li>
+                       
+                      </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="tile">
+
+            <div id="skip"></div>
+
+
+<h1 id="quantecon-notebook-library">QuantEcon Notebook Library</h1>
+
+<p><strong>Note: </strong>QuantEcon also supports the open notebook library – <a href="http://notes.quantecon.org/">QuantEcon Notes</a>.</p>
+
+<h2 id="control">Control</h2>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/PacoSalas/Python-for-finance/blob/master/Cash.ipynb">Multiobjective control of cash management systems</a> - Paco Salas <img src="/assets/nb-python-logo.png" alt="" /></li>
+</ul>
+
+<h2 id="econometrics-and-financial-economics">Econometrics and Financial Economics</h2>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/VHRanger/MLE-tutorial/blob/master/Implementing%20and%20vectorizing%20a%20Maximum%20Likelihood%20model%20with%20scipy--1.ipynb">Implementing and vectorizing a maximum likelihood model with SciPy</a> - Matt Ranger <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/regression_models.ipynb">Estimating simple regression models in Julia</a> - Tyler Ransom <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/IntroToStan_basics_workflow.ipynb">A Quick Start Introduction to Stan for Economists</a> - Jim Savage <img src="/assets/nb-rlogo.png" alt="" /></p>
+  </li>
+  <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ar1_pymc.ipynb">Bayesian Estimation of a Univariate First Order Autoregression</a> - David Evans, Chase Coleman, and Thomas Sargent <img src="/assets/nb-python-logo.png" alt="" /></li>
+  <li>
+    <p><a href="https://nbviewer.jupyter.org/github/QBatista/Notebooks/blob/master/Exploring%20Relative%20Valuation%20Using%20Machine%20Learning.ipynb">Introduction to Relative Valuation using Market Comparables</a> - Quentin Batista <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/dviviano/StochVol_HMM/blob/master/code/seqMC_notebook.ipynb">Continuous Sequential Importance Resampling for Stochastic Volatility Models</a> - Hans-Peter Hollwirth, Robert T. Lange and Davide Viviano <img src="/assets/nb-rlogo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/spurious-regression.ipynb">Spurious Correlation</a> - Samuel (Siyang) Li, Thomas Sargent, and Natasha Watkins <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/samuelson.ipynb">Samuelson Model</a> - Thomas Sargent and Natasha Watkins <img src="/assets/nb-python-logo.png" alt="" /></li>
+</ul>
+
+<h2 id="optimization">Optimization</h2>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/jump_optimization.ipynb">Nonlinear optimization using JuMP (Julia for Mathematical Programming)</a> - Tyler Ransom <img src="/assets/nb-julia-logo.png" alt="" /></li>
+</ul>
+
+<h2 id="game-theory">Game Theory</h2>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/game_theory_py.ipynb">Tools for Game Theory</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/game_theory_jl.ipynb">Tools for Game Theory</a> - Daisuke Oyama <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="https://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/recursive_repeated_games.ipynb">Recursive Repeated Games</a> - Chase Coleman with Thomas Sargent <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+</ul>
+
+<h2 id="working-with-data">Working with Data</h2>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/dataframes_examples.ipynb">Introduction to DataFrames in Julia</a> - Tyler Ransom <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/pandas_and_matplotlib.ipynb">Visualizing Data with Pandas and Matplotlib</a> - David Backus <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/UN_demography.ipynb">Demography (Data Bootcamp)</a> - David Backus, Chase Coleman, and Spencer Lyon <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+</ul>
+
+<h2 id="dynamic-programming-in-continuous-time">Dynamic Programming in Continuous Time</h2>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/aiyagari_continuous_time.ipynb">Aiyagari (1994) in Continuous Time</a> - SeHyoun Ahn and Benjamin Moll <img src="/assets/nb-python-logo.png" alt="" /></li>
+</ul>
+
+<h2 id="dynamic-programming">Dynamic Programming</h2>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/TaxSmoothing/blob/master/Tax_Smoothing_1.ipynb">How to pay for a war, part 1</a> - Sebastian Graves and Thomas J. Sargent <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/TaxSmoothing/blob/master/Tax_Smoothing_2.ipynb">How to pay for a war, part 2</a> - Sebastian Graves and Thomas J. Sargent <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/TaxSmoothing/blob/master/Tax_Smoothing_3.ipynb">How to pay for a war, part 3</a> - Sebastian Graves and Thomas J. Sargent <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/Wald_Friedman.ipynb">A Problem that Stumped Milton Friedman (Python)</a> - Chase Coleman and Thomas J. Sargent <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/Wald_Friedman_jl.ipynb">A Problem that Stumped Milton Friedman (Julia)</a> - Chase Coleman and Thomas J. Sargent, edited by Alberto Polo <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_intro_py.ipynb">DiscreteDP: Getting Started</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_theory_py.ipynb">DiscreteDP: Implementation Details (Python)</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_theory_jl.ipynb">DiscreteDP: Implementation Details (Julia)</a> - Daisuke Oyama <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_rust96_py.ipynb">DiscreteDP: Automobile Replacement</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_career_py.ipynb">DiscreteDP: Modeling Career Choice</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_job_search_py.ipynb">DiscreteDP: Job Search</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_job_search_jl.ipynb">DiscreteDP: Job Search</a> - Daisuke Oyama <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_optgrowth_py.ipynb">DiscreteDP: Discrete Optimal Growth Model</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Examples from <a href="https://mitpress.mit.edu/books/applied-computational-economics-and-finance">Miranda and Fackler</a></p>
+
+    <ul>
+      <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_MF_7_6_1_py.ipynb"><span id="cke_bm_86S" style="display: none;"> </span>Section 7.6.1: Mine Managment</a>  - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></li>
+      <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_MF_7_6_2_py.ipynb">Section 7.6.2: Asset Replacement</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></li>
+      <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_MF_7_6_3_py.ipynb">Section 7.6.3: Asset Replacement with Maintenance</a>  - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></li>
+      <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_MF_7_6_4_py.ipynb">Section 7.6.4: Option Pricing</a> - Daisuke Oyama  <img src="/assets/nb-python-logo.png" alt="" /></li>
+      <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_MF_7_6_5_py.ipynb">Section 7.6.5: Water Management</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /> </li>
+      <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_MF_7_6_5_jl.ipynb">Section 7.6.5: Water Management</a> - Shosei Yu <img src="/assets/nb-julia-logo.png" alt="" /></li>
+      <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ddp_ex_MF_7_6_6_py.ipynb">Section 7.6.6: Bioeconomics</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/insurance_incentives.ipynb">Insurance and Incentives</a> - Sebastian Graces and Thomas Sargent <img src="/assets/nb-python-logo.png" alt="" /><span id="cke_bm_86E" style="display: none;"> </span></p>
+  </li>
+</ul>
+
+<h2 id="general">General</h2>
+
+<ul>
+  <li><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/sci_python_quickstart.ipynb">Scientific Python Quickstart: Using NumPy and SciPy</a> - John Stachurski <img src="/assets/nb-python-logo.png" alt="" /></li>
+</ul>
+
+<h2 id="approximation">Approximation</h2>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/lucas_asset_pricing_model.ipynb">Approximation Methods for the Lucas Asset Pricing Model</a> - Joao Brogueira and Fabian Schuetze <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/quadrature.ipynb">Quadrature routines in QuantEcon</a> - Chase Coleman and Spencer Lyon <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+</ul>
+
+<h2 id="algorithms">Algorithms</h2>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/solving_initial_value_problems.ipynb">Solving Initial Value Problems in QuantEcon.py</a> - David R. Pugh <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/chase_nelder_mead.ipynb">The Nelder-Mead Algorithm</a> - Chase Coleman <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/ASGP.ipynb">Gaussian Process Regression and Active Subspaces</a> - Spencer Lyon <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+</ul>
+
+<h2 id="dynamic-models">Dynamic Models</h2>
+
+<ul>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/markov_chain_ex01_py.ipynb">MarkovChain: Examples</a> - Daisuke Oyama <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/permanent_income.ipynb">The Permanent Income Model</a> - Chase Coleman and Thomas Sargent <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/rmt3_ch11.ipynb">Perfect Foresight Experiments with Dolo</a> - Spencer Lyon and Pablo Winant <img src="/assets/nb-python-logo.png" alt="" /></p>
+  </li>
+  <li>
+    <p><a href="http://nbviewer.jupyter.org/github/QuantEcon/QuantEcon.notebooks/blob/master/KrusellSmith.ipynb">Solving the Krusell-Smith aggregate shocks model using Julia</a> - Shunsuke Hori <img src="/assets/nb-julia-logo.png" alt="" /></p>
+  </li>
+</ul>
+
+
+        </div>
+
+        <footer class="site-footer">
+
+            <div class="footer-copy">
+                <p><a href="https://sloan.org/"><img alt="" src="/assets/img/sloan-logo.png" style="float: left; width: 85px; height: 90px; margin-right: 15px;"></a></p>
+                <p>A <a href="http://www.numfocus.org/">NumFocus</a> Fiscally Sponsored Project.<br>
+Hosted with <a href="https://aws.amazon.com/">Amazon Web Services</a>.</p>
+                <p><a href="http://www.numfocus.org/"><img alt="" src="/assets/img/numfocus-logo.png" style="height: 37px; width: 110px;"></a></p>
+            </div>
+
+            <nav class="main">
+              <ul>
+                <li><a href="/">Home</a></li>
+
+
+                <li><a href="/about">About</a></li>
+
+                <li><a href="/news">News</a></li>
+
+                <li><a href="/contribute">Contribute</a></li>
+
+                <li><a href="/projects">Projects</a></li>
+
+                <li><a href="/team">Team</a></li>
+
+              </ul>
+            </nav>
+
+        </footer>
+
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/prism.js"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            // enable automatic line breaks (might look ugly)
+            CommonHTML: { linebreaks: { automatic: true } },
+            "HTML-CSS": { linebreaks: { automatic: true } },
+            SVG: { linebreaks: { automatic: true } },
+            // enable $ for inline math -> use \$ for ordinary dollar-sign
+            tex2jax: {
+              inlineMath: [['$','$'], ['\\(','\\)']],
+              processEscapes: true
+            },
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

@@ -1,0 +1,140 @@
+{% if page.title %}
+{% assign page_title = page.title | append: " &ndash; " | append: site.title %}
+{% else %}
+{% assign page_title = site.title %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+
+      <meta charset="utf-8">
+      <title>{{ page_title }}</title>
+      <meta name="description" content="{{ site.description }}">
+      <meta name="author" content="QuantEcon">
+      <meta name="keywords" content="{{ site.keywords }}">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@quantecon">
+      <meta name="twitter:title" content="{{ page_title }}">
+      <meta name="twitter:description" content="{{ site.description }}">
+      <meta name="twitter:creator" content="@quantecon">
+      <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+      <meta property="og:title" content="{{ page_title }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="{{site.url}}{{page.url}}" />
+      <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+      <meta property="og:description" content="{{ site.description }}" />
+      <meta property="og:site_name" content="QuantEcon" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+      <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
+      <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon" />
+      <link href="https://fonts.googleapis.com/css?family=Exo:200,400|Roboto:400,700" rel="stylesheet">
+    </head>
+
+    <body class="language-python">
+
+{% include quantecon-menubar.html %}
+
+        <span href="#" class="navbar-toggle collapsed"><span class="icon icon-list"></span></span>
+
+{% if page.layout == "home" %}
+        <header class="home-banner">
+{% else %}
+        <header class="site-banner">
+{% endif %}
+            
+            <div class="container">
+                
+                <div class="branding">
+
+                    <p class="site-logo"><a href="{{ '/' | relative_url }}" title="Home"><img src="{{ '/assets/img/qe-logo-large.png' | relative_url }}" alt="QuantEcon logo"></a></p>
+                    
+                    <div class="site-name">
+                    
+                        <p class="site-title"><a href="{{ '/' | relative_url }}" title="Home">Quant<span>Econ</span></a></p>
+
+{% if page.layout == "home" %}
+                        <p class="site-tagline">Open source code for economic modeling</p>
+{% endif %}
+
+                    </div>
+
+                </div>
+
+                <div class="site-nav">
+                    
+                    <nav class="main">
+                      <ul>
+                      <li{% if page.layout == 'home' %} class="active"{% endif %}><a href="{{ '/' | relative_url }}">Home</a></li>
+                       {% assign pages = site.pages | where: "menu_item", "true" %}
+                       {% for node in pages %}
+                          <li{% if page.url == node.url %} class="active"{% endif %}><a href="{{ node.url | relative_url }}">{{ node.title }}</a></li>
+                       {% endfor %}
+                      </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="tile">
+
+            <div id="skip"></div>
+
+{% assign post_limit = site.post_limit | default: 3 %}
+{{ content }}
+
+        </div>
+
+        <footer class="site-footer">
+
+            <div class="footer-copy">
+                <p><a href="https://sloan.org/"><img alt="" src="{{ '/assets/img/sloan-logo.png' | relative_url }}" style="float: left; width: 85px; height: 90px; margin-right: 15px;"></a></p>
+                <p>A <a href="http://www.numfocus.org/">NumFocus</a> Fiscally Sponsored Project.<br>
+Hosted with <a href="https://aws.amazon.com/">Amazon Web Services</a>.</p>
+                <p><a href="http://www.numfocus.org/"><img alt="" src="{{ '/assets/img/numfocus-logo.png' | relative_url }}" style="height: 37px; width: 110px;"></a></p>
+            </div>
+
+            <nav class="main">
+              <ul>
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+{% assign pages = site.pages | where: "menu_item", "true" %}
+{% for node in pages %}
+                <li><a href="{{ node.url | relative_url }}">{{ node.title }}</a></li>
+{% endfor %}
+              </ul>
+            </nav>
+
+        </footer>
+
+        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/prism.js' | relative_url }}"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            // enable automatic line breaks (might look ugly)
+            CommonHTML: { linebreaks: { automatic: true } },
+            "HTML-CSS": { linebreaks: { automatic: true } },
+            SVG: { linebreaks: { automatic: true } },
+            // enable $ for inline math -> use \$ for ordinary dollar-sign
+            tex2jax: {
+              inlineMath: [['$','$'], ['\\(','\\)']],
+              processEscapes: true
+            },
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

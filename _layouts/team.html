@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<h2>Founding Members and Co-Chairs</h2>
+
+{% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' %}
+
+<ul class="team-members">
+{% for team-member in team-members reversed %}
+	<li><img alt="" src="{{ site.baseurl }}assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+{% endfor %}
+</ul>
+
+<h2>Committee Members</h2>
+
+{% assign team-members = site.team-members | where: 'role', 'Committee Members' %}
+
+<ul class="team-members">
+{% for team-member in team-members %}
+	<li><img alt="" src="{{ site.baseurl }}assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+{% endfor %}
+</ul>
+
+<h2>Lead Developers</h2>
+
+{% assign team-members = site.team-members | where: 'role', 'Lead Developers' %}
+
+<ul class="team-members">
+{% for team-member in team-members reversed %}
+	<li><img alt="" src="{{ site.baseurl }}assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+{% endfor %}
+</ul>
+
+<h2>QuantEcon Early Career Researchers</h2>
+
+{% assign team-members = site.team-members | where: 'role', 'QuantEcon Early Career Researchers' %}
+
+<ul class="team-members">
+{% for team-member in team-members %}
+	<li><img alt="" src="{{ site.baseurl }}assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+{% endfor %}
+</ul>
+
+<h2>Previous Steering Committee Members</h2>
+
+{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' %}
+
+<ul class="team-members">
+{% for team-member in team-members %}
+	<li><img alt="" src="{{ site.baseurl }}assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+{% endfor %}
+</ul>
+
+

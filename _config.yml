@@ -1,0 +1,32 @@
+title: QuantEcon
+description: QuantEcon is an organization run by economists for economists with the aim of coordinating distributed development of high quality open source code for all forms of quantitative economic modeling
+keywords: QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski
+
+timezone: Australia/Sydney
+google_analytics: UA-54984338-2
+
+# baseurl: /quantecon-jekyll-theme/
+baseurl: 
+
+sass:
+   sass_dir: _sass
+   style: :compressed
+
+repository: 
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle
+
+collections:
+  projects:
+  team-members:
+    people: true
+
+defaults:
+  -
+    scope:
+      type: "projects"
+    values:
+      order: 99
