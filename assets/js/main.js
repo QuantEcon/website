@@ -51,7 +51,7 @@ $(function(){
 	});
 
 	// Show special approval message on visitor application form
-	$('#visitor-application_length, input[name="visitor-application[phd]"], input[name="visitor-application[airfare-type]"], input[name="visitor-application[accommodation-type]"]').change(function() {
+	$('#visitor-application_length, input[name="Visitor has PHD"], input[name="Airfare required"], input[name="Accommodation required"]').change(function() {
 		console.log('change');
     	if ( ( $('#visitor-application_phd_1:checked, #visitor-application_airfare-type_1:checked, #visitor-application_accommodation-type_1:checked').length > 0 ) || ( $(this).val() > 14) ) {
         	$('.qeform .approval-message').slideDown();
@@ -66,7 +66,7 @@ $(function(){
 	$('.visitor-application_publication-hint').insertAfter('#visitor-application_publication');
 
 	// Show form hint on condition
-	$('input[name="visitor-application[publication]"]').change(function() {
+	$('input[name="Joint publication expected"]').change(function() {
 		if ( $('#visitor-application_publication_0:checked').length > 0 ) {
 	    	$('.qeform .visitor-application_publication-hint').slideDown();
 		} else if ( $('#visitor-application_publication_0:checked').length < 1 ) {
