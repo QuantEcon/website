@@ -275,6 +275,13 @@ pre {padding: 16px;overflow: auto;background-color: #f7f7f7;border-radius: 3px;}
 .news-listing li .summary {
     margin:0;
 }
+.blurb {
+    line-height: 2rem;
+    font-size: 1.1rem;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+}
 .projects {
     margin:2rem 0 1rem 0;
 }
@@ -305,12 +312,12 @@ pre {padding: 16px;overflow: auto;background-color: #f7f7f7;border-radius: 3px;}
     align-items: center;
 }
 .projects ul li h3 {
-    font-size:1rem;
+    font-size:1.2rem;
     margin: 1rem 0;
 }
 .projects ul li h3 a {
-    text-decoration: none;
-    font-weight: bold;
+    //text-decoration: none;
+    //font-weight: bold;
 }
 .projects-listing {
     list-style:none;
@@ -451,8 +458,9 @@ div.pagination {margin:0;padding:2rem 0;border-top: 1px solid $hr-color;display:
     right: 2rem;
 }
 .team-members ul li>a {
-    font-weight: bold;
-    text-decoration: none;
+    font-size:1.2rem;
+    //font-weight: bold;
+    //text-decoration: none;
 }
 
 .store-items {
