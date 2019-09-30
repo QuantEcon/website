@@ -9,7 +9,7 @@ google_analytics: UA-54984338-2
 baseurl: 
 
 sass:
-   sass_dir: _sass
+   sass_dir: /assets/sass
    style: :compressed
 
 repository: 
@@ -20,6 +20,7 @@ exclude:
   - vendor/bundle
 
 collections:
+  news:
   projects:
   team-members:
     people: true

@@ -9,6 +9,6 @@ Over 30 Honours students from around Australia attended the QuantEcon Honours wo
 
 Details of the workshop and materials can be found [here](https://quantecon.org/honours-workshop-2018).
 
-![](/assets/honours-workshop.jpg)
+![](/assets/img/honours-workshop.jpg)
 
 ###### _Tom Sargent presenting at the 2018  QuantEcon Honours Workshop._

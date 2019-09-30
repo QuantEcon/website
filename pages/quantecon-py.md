@@ -13,19 +13,19 @@ A high performance, open source Python code library for economics
 
 <ul class="library-links">
 	<li>
-		<p><a href="https://github.com/QuantEcon/QuantEcon.py"><img alt=" " src="/assets/library-button-code.png"></a></p>
+		<p><a href="https://github.com/QuantEcon/QuantEcon.py"><img alt=" " src="/assets/img/library-button-code.png"></a></p>
 		<p><a href="https://github.com/QuantEcon/QuantEcon.py">Code</a></p>
 	</li>
 	<li>
-		<p><a href="http://quanteconpy.readthedocs.org/en/latest/"><img alt=" " src="/assets/library-button-documentation.png"></a></p>
+		<p><a href="http://quanteconpy.readthedocs.org/en/latest/"><img alt=" " src="/assets/img/library-button-documentation.png"></a></p>
 		<p><a href="http://quanteconpy.readthedocs.org/en/latest/">Documentation</a></p>
 	</li>
 	<li>
-		<p><a href="/python_developers"><img alt=" " src="/assets/library-button-contribute.png"></a></p>
+		<p><a href="/python_developers"><img alt=" " src="/assets/img/library-button-contribute.png"></a></p>
 		<p><a href="/python_developers">Contribute</a></p>
 	</li>
 	<li>
-		<p><a href="https://github.com/QuantEcon/QuantEcon.py/issues" target="_blank"><img alt=" " src="/assets/library-button-issue.png"></a></p>
+		<p><a href="https://github.com/QuantEcon/QuantEcon.py/issues" target="_blank"><img alt=" " src="/assets/img/library-button-issue.png"></a></p>
 		<p><a href="https://github.com/QuantEcon/QuantEcon.py/issues" target="_blank">Report an Issue</a></p>
 	</li>
 </ul>

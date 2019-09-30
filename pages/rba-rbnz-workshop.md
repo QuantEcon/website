@@ -11,6 +11,6 @@ menu_item: false
 
 Lectures were presented by [John Stachurski](http://johnstachurski.net/) (QuantEcon and ANU), [Pablo Winant](http://www.mosphere.fr/) (Bank of England), [Erica Moszkowski](https://github.com/emoszkowski) (FRBNY) and [Pearl Li](https://github.com/pearlzli) (FRBNY). The workshops introduced central bank employees to the Julia programming language and its uses in macroeconomic modeling. Slides from the workshop can be found in the [QuantEcon GitHub repository](https://github.com/QuantEcon/RBA_RBNZ_Workshops).
 
-![](/assets/rbaworkshop.jpg)
+![](/assets/img/rbaworkshop.jpg)
 
 _[John Stachurski](http://johnstachurski.net/), [Pearl Li](https://github.com/pearlzli), [Erica Moszkowski](https://github.com/emoszkowski), [Pablo Winant](http://www.mosphere.fr/) outside the RBA._

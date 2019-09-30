@@ -9,4 +9,4 @@ You can now open a lecture as a Jupyter notebook in [Google Colab](https://colab
 
 Colab is a free service provided by Google that runs in your browser -- requiring no local installation. The majority of libraries used in our lectures come pre-installed in Colab -- the remaining libraries are installed with a pip command at the start of the lecture.
 
-![Screenshot of lecture notebook](/assets/screenshot_1.png)
+![Screenshot of lecture notebook](/assets/img/screenshot_1.png)

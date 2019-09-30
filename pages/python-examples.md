@@ -18,4 +18,4 @@ The following code imports the `quantecon` library and creates a discrete appr
 
 In the below figure we are running this code interactively in an Jupyter notebook (See [here](https://lectures.quantecon.org/py/getting_started.html#jupyter) for more details on setting up [Jupyter](http://jupyter.org/)) and printing the results
 
-![](/assets/test-qe.png)
+![](/assets/img/test-qe.png)

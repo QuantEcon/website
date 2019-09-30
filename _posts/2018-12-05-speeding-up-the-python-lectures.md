@@ -13,4 +13,4 @@ The majority of jitted lectures use fixed point iteration to find the model's so
 
 Thanks to [Natasha Watkins](https://github.com/natashawatkins) for work on this improvement.
 
-![QuantEcon pre-doc Natasha Watkins](/assets/2017-06-14-13.39.40.jpg)
+![QuantEcon pre-doc Natasha Watkins](/assets/img/2017-06-14-13.39.40.jpg)

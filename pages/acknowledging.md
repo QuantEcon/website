@@ -13,7 +13,7 @@ We would like to share the project with as wider audience as possible and would 
 
 If you'd like to acknowledge QuantEcon in a Git repositrory, project page etc, please use the following image and link to quantecon.org.
 
-![](/assets/1558447589_powered-by-quantecon.png?f99bf56837)
+![](/assets/img/1558447589_powered-by-quantecon.png?f99bf56837)
 
 You can use the following line of HTML:
 
