@@ -32,7 +32,7 @@ QuantEcon runs workshops on computational modeling for economists using Python
 **August 2017, Australian National University, ****Australasian Macroeconomics Society (AMS)**
 
 *   Presenters: John Stachurski, Matthew McKay, Natasha Watkins
-*   [Website](/page/wams-2017)
+*   [Website](/wams-2017)
 
 **August 2017, University of New South Wales (UNSW)**
 
@@ -43,7 +43,7 @@ QuantEcon runs workshops on computational modeling for economists using Python
 
 *   In collaboration with the Open Source Macroeconomic Laboratory at the University of Chicago
 *   Presenters: John Stachurski
-*   [Website](https://bfi.uchicago.edu/osm)
+*   *Website*
 
 **March 2017, Reserve Bank of Australia & Reserve Bank of New Zealand**
 
