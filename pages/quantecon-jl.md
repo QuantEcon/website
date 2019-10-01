@@ -30,7 +30,7 @@ A high performance, open source Julia code library for economics
 	</li>
 </ul>
 
-# Installation
+## Installation
 
 To install the Julia QuantEcon package [QuantEcon.jl](https://github.com/QuantEcon/QuantEcon.jl/) open the Julia package manager (Pkg) and type
 
@@ -38,7 +38,7 @@ To install the Julia QuantEcon package [QuantEcon.jl](https://github.com/QuantE
 
 This installs the `QuantEcon` package through the Julia package manager (via git) to the default Julia library location `~/.julia/packages/QuantEcon`.
 
-# Usage
+## Usage
 
 Once installed the `QuantEcon` package can be used in Julia via the `using` keyword such as
 
@@ -46,7 +46,7 @@ Once installed the `QuantEcon` package can be used in Julia via the `using` 
 
 More detailed instructions on setting up a `Julia` environment can be found on [this page](https://lectures.quantecon.org/jl/getting_started.html).
 
-# Useful Links
+## Useful Links
 
 *   [Code library on GitHub](https://github.com/QuantEcon/QuantEcon.jl)
 *   [Documentation](http://quantecon.github.io/QuantEcon.jl/)

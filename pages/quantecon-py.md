@@ -21,8 +21,8 @@ A high performance, open source Python code library for economics
 		<p><a href="http://quanteconpy.readthedocs.org/en/latest/">Documentation</a></p>
 	</li>
 	<li>
-		<p><a href="/python_developers"><img alt=" " src="/assets/img/library-button-contribute.png"></a></p>
-		<p><a href="/python_developers">Contribute</a></p>
+		<p><a href="/python-developers"><img alt=" " src="/assets/img/library-button-contribute.png"></a></p>
+		<p><a href="/python-developers">Contribute</a></p>
 	</li>
 	<li>
 		<p><a href="https://github.com/QuantEcon/QuantEcon.py/issues" target="_blank"><img alt=" " src="/assets/img/library-button-issue.png"></a></p>
@@ -30,7 +30,7 @@ A high performance, open source Python code library for economics
 	</li>
 </ul>
 
-# Installation
+## Installation
 
 Before installing `quantecon` we recommend you install the [Anaconda](https://www.anaconda.com/download/) Python distribution, which includes a full suite of scientific python tools. **Note:** quantecon is now only supporting Python version 3.5+. This is mainly to allow code to be written taking full advantage of new features such as using the @ symbol for matrix multiplication. Therefore please install the latest Python 3 Anaconda distribution.
 
@@ -38,7 +38,7 @@ Next you can install quantecon by opening a terminal prompt and typing
 
     pip install quantecon
 
-# Usage
+## Usage
 
 Once `quantecon` has been installed you should be able to import it as follows:
 
@@ -52,7 +52,7 @@ If your version is below what’s available on [PyPI](https://pypi.python.org/p
 
     pip install --upgrade quantecon
 
-# Downloading the `quantecon` Repository
+## Downloading the `quantecon` Repository
 
 An alternative is to download the sourcecode of the `quantecon` package and install it manually from [the github repository](https://github.com/QuantEcon/QuantEcon.py/). For example, if you have git installed type
 
@@ -64,7 +64,7 @@ Once you have downloaded the source files then the package can be installed by r
 
 (To learn the basics about setting up Git see [this link](https://help.github.com/articles/set-up-git/).)
 
-# Examples and Sample Code
+## Examples and Sample Code
 
 Many examples of QuantEcon.py in action can be found at [Quantitative Economics](https://lectures.quantecon.org/). See also the
 
