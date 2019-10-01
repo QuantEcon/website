@@ -139,6 +139,9 @@ pre {padding: 16px;overflow: auto;background-color: #f7f7f7;border-radius: 3px;}
 .site-banner .site-title a span {
     font-weight: 400;
 }
+.hamburger {
+    display:none;
+}
 .site-nav {
 }
 .site-nav ul {
@@ -390,9 +393,6 @@ pre {padding: 16px;overflow: auto;background-color: #f7f7f7;border-radius: 3px;}
     margin:0 0 0.5rem 0;
     color: #888;    
 }
-.navbar-toggle {
-    display:none;
-}
 
 div.pagination {margin:0;padding:2rem 0;border-top: 1px solid $hr-color;display:flex;justify-content: center;}
 .pagination ul {margin:0;padding:0;}
@@ -503,19 +503,6 @@ div.pagination {margin:0;padding:2rem 0;border-top: 1px solid $hr-color;display:
     .container {
         width:auto;
     }
-    .navbar-toggle {
-        position:absolute;
-        top:40px;
-        right:2rem;
-        display:block;
-        overflow: hidden;
-        font-size:2.5em;
-        color: $link-color;
-        z-index:999;
-    }
-    .navbar-toggle.collapsed {
-        color: #444;
-    }
     .tile {
         width: auto;
         margin:0;
@@ -533,20 +520,26 @@ div.pagination {margin:0;padding:2rem 0;border-top: 1px solid $hr-color;display:
         flex-direction: column;
         padding:0.5rem 2rem;
     }
+    .site-banner .branding {
+        justify-content: center;
+    }
     .site-nav {
-        display:none;
         margin:1rem 0;
     }
-    .site-nav ul li {
-        display:block;
-        margin:0.5rem 0rem;
-    }
-    .site-nav ul li:first-child, .site-nav ul li:last-child {
-        margin:0.5rem 0rem;
-    }
-    .site-nav ul li a {
-        padding: 8px 15px;
-    }
+    // .site-nav {
+    //     display:none;
+    //     margin:1rem 0;
+    // }
+    // .site-nav ul li {
+    //     display:block;
+    //     margin:0.5rem 0rem;
+    // }
+    // .site-nav ul li:first-child, .site-nav ul li:last-child {
+    //     margin:0.5rem 0rem;
+    // }
+    // .site-nav ul li a {
+    //     padding: 8px 15px;
+    // }
     .qe-menubar {
         display: none !important;
     }
@@ -626,6 +619,45 @@ div.pagination {margin:0;padding:2rem 0;border-top: 1px solid $hr-color;display:
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .hamburger {
+        display:block;
+    }
+    .site-banner .branding {
+        justify-content: flex-start;
+    }
+    .site-nav {
+        display:none;
+        margin:1rem 0;
+    }
+    .site-nav ul li {
+        display:inline-block;
+        margin:0.5rem 0rem;
+    }
+    .site-nav ul li:first-child, .site-nav ul li:last-child {
+        margin:0.5rem 0rem;
+    }
+    .site-nav ul li a {
+        padding: 8px 15px;
+    }
+    .site-banner .site-logo img {
+        width:100px;
+    }
+    .team-members ul li {
+        padding:0 2rem;
+    }
+    .team-members ul li:nth-child(even) {
+        padding:0 2rem;
+        text-align: left;
+    }
+    .team-members ul li img {
+        position: static;
+        margin:0 0 1rem 0;
+    }
+    .team-members ul li>a {
+        display:block;
+    }
+}
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+python&plugins=line-numbers */
 /**

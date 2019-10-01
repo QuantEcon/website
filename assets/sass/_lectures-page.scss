@@ -63,11 +63,17 @@
     width:32px;
 }
 .home-series li a h3 {
-	line-height: 1;
+	line-height: 1.2;
 	margin:0;
 	font-size: 1.2rem;
 }
 .home-series li a p {
 	margin:10px 0 0 0;
 	color: #444;
+}
+
+@media only screen and (max-width: 768px) {
+	.home-blurb {
+		display: block;
+	}
 }
