@@ -10,7 +10,7 @@ If you’d like to contribute to [QuantEcon.py](quantecon-py.md), a good place t
 
 ## Set up a Conda development environment
 
-One of the advantages of the [Anaconda Python environment](https://www.continuum.io/downloads) is that it is cheap to set up (and discard) Python environments for development versions of packages and populate them with your favorite scientific tools. For example, if you’re working on QuantEcon.py you might find it useful to set up an environment (containing NumPy, SciPy, etc.) that uses your development version rather than the default ones. This facilitates contributing to QuantEcon.py without worrying about corrupting the Python environment on which your other work depends.
+One of the advantages of the [Anaconda Python environment](https://www.anaconda.com/distribution/) is that it is cheap to set up (and discard) Python environments for development versions of packages and populate them with your favorite scientific tools. For example, if you’re working on QuantEcon.py you might find it useful to set up an environment (containing NumPy, SciPy, etc.) that uses your development version rather than the default ones. This facilitates contributing to QuantEcon.py without worrying about corrupting the Python environment on which your other work depends.
 
 See [creating a Conda development environment](wiki-py-conda-dev-env.md)
 

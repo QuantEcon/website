@@ -38,7 +38,7 @@ Chicago Fed employees will find that software has been preinstalled by local IT 
 
 *   Google Chrome or Firefox
 
-*   Anaconda Python 3.5 for your OS from [here](https://www.continuum.io/downloads)
+*   Anaconda Python 3.5 for your OS from [here](https://www.anaconda.com/distribution/)
 
 *   [Git](https://git-scm.com/downloads)
 

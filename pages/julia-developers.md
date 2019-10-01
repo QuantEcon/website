@@ -9,7 +9,7 @@ If you’d like to contribute to [QuantEcon.jl](quantecon-jl.md), a good place t
 
 ## General Information
 
-As a programming language, Julia is still new and thus some aspects of the language are still evolving. As a result there may be some changes from time to time in styles and conventions. The upside is that it is fast and quickly being adopted by the broader scientific computing community. The [Julia style guide](http://julia.readthedocs.org/en/latest/manual/style-guide/) is a good starting point for Julia programming conventions.
+As a programming language, Julia is still new and thus some aspects of the language are still evolving. As a result there may be some changes from time to time in styles and conventions. The upside is that it is fast and quickly being adopted by the broader scientific computing community. The [Julia style guide](https://docs.julialang.org/en/v1/manual/style-guide/index.html) is a good starting point for Julia programming conventions.
 
 ## Writing Documentation
 

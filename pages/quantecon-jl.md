@@ -44,7 +44,7 @@ Once installed the `QuantEcon` package can be used in Julia via the `using` 
 
     using QuantEcon
 
-More detailed instructions on setting up a `Julia` environment can be found on [this page](https://lectures.quantecon.org/jl/getting_started.html).
+More detailed instructions on setting up a `Julia` environment can be found on [this page](https://lectures.quantecon.org/jl/getting_started_julia/getting_started.html).
 
 ## Useful Links
 

@@ -27,12 +27,12 @@ Our target audience is current PhD students who are curious about Python and Ju
 
 Be sure to bring your laptop to the workshop.  If possible, before coming, please
 
-*   Install [Anaconda Python](https://www.continuum.io/downloads) 
+*   Install [Anaconda Python](https://www.anaconda.com/distribution/) 
 
     *   Instructions, further details and next steps can be found in[ this lecture](http://lectures.quantecon.org/py/getting_started.html)
 *   Install [Julia](http://julialang.org/downloads)
 
-    *   Instructions, further details and next steps can be found in [this lecture](http://lectures.quantecon.org/jl/getting_started.html)
+    *   Instructions, further details and next steps can be found in [this lecture](https://lectures.quantecon.org/jl/getting_started_julia/getting_started.html)
 
 All languages and computing platforms we use are free and open source.  Troubleshooting of installations and other software issues will be available in the first session.
 

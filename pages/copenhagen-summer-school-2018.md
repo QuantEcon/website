@@ -26,7 +26,7 @@ Department of Economics, University of Copenhagen
 
 Please be sure to bring your laptop to the workshop.  If possible,
 
-*   Install [Anaconda Python](https://www.continuum.io/downloads) following the instructions on [this page](https://lectures.quantecon.org/py/getting_started.html)
+*   Install [Anaconda Python](https://www.anaconda.com/distribution/) following the instructions on [this page](https://lectures.quantecon.org/py/getting_started.html)
 
 All languages and computing platforms we use are free and open source.  
 

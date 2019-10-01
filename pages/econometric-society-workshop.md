@@ -20,11 +20,11 @@ Although it’s not essential, we request that attendees at least attempt to ins
 
 ### Installing Python
 
-To install Python we recommend installing the **Python 3.5** version of the [Anaconda](https://www.continuum.io/downloads) Python distribution. Anaconda will be discussed during the workshop and, in essence, is an easy way to install a full scientific software stack and a good way to manage various Python packages.
+To install Python we recommend installing the **Python 3.5** version of the [Anaconda](https://www.anaconda.com/distribution/) Python distribution. Anaconda will be discussed during the workshop and, in essence, is an easy way to install a full scientific software stack and a good way to manage various Python packages.
 
 To install Anaconda,
 
-1.  Go to [https://www.continuum.io/downloads](https://www.continuum.io/downloads).
+1.  Go to [https://www.anaconda.com/distribution/](https://www.anaconda.com/distribution/).
 2.  Choose the **Python 3.5** download that matches your operating system (Windows / OSX / Linux).
 3.  Follow the instructions below the download link.
 4.  If the installer asks you to add **anaconda** to your **path**, please ensure that the checkbox is ticked.

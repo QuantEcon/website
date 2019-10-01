@@ -79,7 +79,7 @@ Please be sure to bring your laptop to the workshop.  If possible,
     *   Please follow the instructions on [this page](https://lectures.quantecon.org/py/getting_started.html)
 *   For session 2 install [Julia](http://julialang.org/downloads)
 
-    *   Please follow the instructions on [this page](https://lectures.quantecon.org/jl/getting_started.html)
+    *   Please follow the instructions on [this page](https://lectures.quantecon.org/jl/getting_started_julia/getting_started.html)
 
 All languages and computing platforms we use are free and open source.  
 
