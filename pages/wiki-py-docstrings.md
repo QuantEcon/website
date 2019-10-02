@@ -1,6 +1,6 @@
 ---
 title: Docstrings and Documentations
-permalink: wiki-py-docstrings
+permalink: /wiki-py-docstrings/
 menu_item: false
 ---
 # Docstrings and Documentations

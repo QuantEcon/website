@@ -1,6 +1,6 @@
 ---
 title: Scientific Computing in Economics with Python and Julia
-permalink: chicago-fed-workshop
+permalink: /chicago-fed-workshop/
 menu_item: false
 ---
 # Scientific Computing in Economics with Python and Julia

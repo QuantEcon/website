@@ -1,6 +1,6 @@
 ---
 title: Workshop on Bayesian Modeling with Jim Savage
-permalink: bayesian-workshop-2017
+permalink: /bayesian-workshop-2017/
 menu_item: false
 ---
 # Workshop on Bayesian Modeling with Jim Savage

@@ -1,6 +1,6 @@
 ---
 title: Get Involved
-permalink: get-involved
+permalink: /get-involved/
 menu_item: false
 ---
 # Get Involved

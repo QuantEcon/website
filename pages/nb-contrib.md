@@ -1,6 +1,6 @@
 ---
 title: Contributing a Jupyter Notebook
-permalink: nb-contrib
+permalink: /nb-contrib/
 menu_item: false
 ---
 # Contributing a Jupyter Notebook

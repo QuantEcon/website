@@ -1,6 +1,6 @@
 ---
 title: UNSW Computational Economics Workshop
-permalink: unsw-workshop-2017
+permalink: /unsw-workshop-2017/
 menu_item: false
 ---
 # UNSW Computational Economics Workshop

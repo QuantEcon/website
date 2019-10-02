@@ -1,6 +1,6 @@
 ---
 title: RBA and RBNZ QuantEcon Workshops
-permalink: rba-rbnz-workshop
+permalink: /rba-rbnz-workshop/
 menu_item: false
 ---
 # RBA and RBNZ QuantEcon Workshops

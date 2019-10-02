@@ -1,6 +1,6 @@
 ---
 title: Additional Python Examples
-permalink: python-examples
+permalink: /python-examples/
 menu_item: false
 ---
 # Additional Python Examples

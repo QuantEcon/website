@@ -1,6 +1,6 @@
 ---
 title: "QuantEcon Lectures"
-permalink: lectures
+permalink: /lectures/
 menu_item: false
 ---
 # QuantEcon Lectures

@@ -1,6 +1,6 @@
 ---
 title: "Contribute to QuantEcon.jl"
-permalink: julia-developers
+permalink: /julia-developers/
 menu_item: false
 ---
 # Contribute to QuantEcon.jl

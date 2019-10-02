@@ -1,6 +1,6 @@
 ---
 title: Unit Testing in QuantEcon
-permalink: wiki-py-unit-testing
+permalink: /wiki-py-unit-testing/
 menu_item: false
 ---
 # Unit Testing in QuantEcon

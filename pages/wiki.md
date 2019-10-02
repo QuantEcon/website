@@ -1,6 +1,6 @@
 ---
 title: Wiki
-permalink: wiki
+permalink: /wiki/
 menu_item: false
 ---
 # Wiki

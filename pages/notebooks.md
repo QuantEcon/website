@@ -1,6 +1,6 @@
 ---
 title: QuantEcon Notebook Library
-permalink: notebooks
+permalink: /notebooks/
 menu_item: false
 ---
 # QuantEcon Notebook Library

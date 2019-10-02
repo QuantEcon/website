@@ -1,6 +1,6 @@
 ---
 title: QuantEcon RSE Joint Intitiative
-permalink: quantecon-rse-joint-intitiative
+permalink: /quantecon-rse-joint-intitiative/
 menu_item: false
 ---
 # QuantEcon RSE Joint Intitiative

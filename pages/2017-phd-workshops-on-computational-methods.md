@@ -1,6 +1,6 @@
 ---
 title: 2017 PhD Workshops on Computational Methods
-permalink: 2017-phd-workshops-on-computational-methods
+permalink: /2017-phd-workshops-on-computational-methods/
 menu_item: false
 ---
 # 2017 PhD Workshops on Computational Methods

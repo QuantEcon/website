@@ -1,6 +1,6 @@
 ---
 title: QuantEcon 2018 Honours Workshop with Thomas J. Sargent
-permalink: honours-workshop-2018
+permalink: /honours-workshop-2018/
 menu_item: false
 ---
 # QuantEcon 2018 Honours Workshop with Thomas J. Sargent

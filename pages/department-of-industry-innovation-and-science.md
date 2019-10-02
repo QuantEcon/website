@@ -1,6 +1,6 @@
 ---
 title: QuantEcon Workshop for the Department of Industry, Innovation and Science
-permalink: department-of-industry-innovation-and-science
+permalink: /department-of-industry-innovation-and-science/
 menu_item: false
 ---
 # QuantEcon Workshop for the Department of Industry, Innovation and Science

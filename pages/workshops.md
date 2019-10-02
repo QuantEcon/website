@@ -1,6 +1,6 @@
 ---
 title: Workshops and Seminars
-permalink: workshops
+permalink: /workshops/
 menu_item: false
 ---
 # Workshops and Seminars

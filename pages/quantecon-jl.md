@@ -1,6 +1,6 @@
 ---
 title: "QuantEcon.jl"
-permalink: quantecon-jl
+permalink: /quantecon-jl/
 menu_item: false
 ---
 # QuantEcon.jl

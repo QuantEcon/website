@@ -1,6 +1,6 @@
 ---
 title: Econometric Society Workshop on Python and Julia
-permalink: econometric-society-workshop
+permalink: /econometric-society-workshop/
 menu_item: false
 ---
 # Econometric Society Workshop on Python and Julia

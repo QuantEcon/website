@@ -1,6 +1,6 @@
 ---
 title: Creating a Conda development environment
-permalink: wiki-py-conda-dev-env
+permalink: /wiki-py-conda-dev-env/
 menu_item: false
 ---
 # Creating a Conda development environment

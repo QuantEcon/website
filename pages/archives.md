@@ -1,6 +1,6 @@
 ---
 layout: news
-permalink: news
+permalink: /news/
 menu_item: true
 ---
 

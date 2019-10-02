@@ -1,6 +1,6 @@
 ---
 title: About
-permalink: about
+permalink: /about/
 menu_item: true
 ---
 # About

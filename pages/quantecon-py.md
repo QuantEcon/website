@@ -1,6 +1,6 @@
 ---
 title: "QuantEcon.py"
-permalink: quantecon-py
+permalink: /quantecon-py/
 menu_item: false
 ---
 # QuantEcon.py

@@ -1,6 +1,6 @@
 ---
 title: 2018 Summer School on Structural Dynamic Models
-permalink: copenhagen-summer-school-2018
+permalink: /copenhagen-summer-school-2018/
 menu_item: false
 ---
 # 2018 Summer School on Structural Dynamic Models 

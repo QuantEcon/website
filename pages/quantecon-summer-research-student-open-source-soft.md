@@ -1,6 +1,6 @@
 ---
 title: "QuantEcon Summer Research Student (Open Source Software Development)"
-permalink: quantecon-summer-research-student-open-source-software-development
+permalink: /quantecon-summer-research-student-open-source-software-development/
 menu_item: false
 ---
 # QuantEcon Summer Research Student (Open Source Software Development)

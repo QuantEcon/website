@@ -1,6 +1,6 @@
 ---
 title: Contribute
-permalink: contribute
+permalink: /contribute/
 menu_item: true
 ---
 # Get Involved

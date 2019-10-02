@@ -1,6 +1,6 @@
 ---
 title: RSE Visitor Application
-permalink: form/visitor-application
+permalink: /form/visitor-application/
 menu_item: false
 ---
 # RSE Visitor Application

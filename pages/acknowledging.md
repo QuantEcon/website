@@ -1,6 +1,6 @@
 ---
 title: Acknowledging
-permalink: acknowledging
+permalink: /acknowledging/
 menu_item: false
 ---
 # Acknowledging

@@ -1,6 +1,6 @@
 ---
 title: Projects
-permalink: projects
+permalink: /projects/
 menu_item: true
 layout: projects
 ---

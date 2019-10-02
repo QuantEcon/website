@@ -1,6 +1,6 @@
 ---
 title: Resources for Developers
-permalink: developer-resources
+permalink: /developer-resources/
 menu_item: false
 ---
 # Resources for Developers
