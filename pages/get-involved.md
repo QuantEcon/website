@@ -57,8 +57,9 @@ If you are not familiar with Git and Github there are some resources available i
 Lectures are compiled using the [jupinx](https://jupinx.quantecon.org/) tools. 
 A jupinx tutorial is available.[here](https://jupinx.quantecon.org/tutorial).
 
-When making contributions please read the [writing style guide](writing-style-guide.md) 
-to make sure it conforms to QuantEcon writing conventions and standards.
+When making contributions please read the writing style guide for each project:
+
+1. *Python:* https://github.com/QuantEcon/lecture-source-py#style-guide---writing-conventions
 
 ## Resources
 
