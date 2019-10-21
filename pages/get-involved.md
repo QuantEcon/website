@@ -28,7 +28,7 @@ To support the QuantEcon project:
 
 ## Develop and contribute code
 
-Wewelcome submission of algorithms and high quality code to [QuantEcon.py](https://quantecon.org/quantecon-py) and [QuantEcon.jl](https://quantecon.org/quantecon-jl) on all topics in quantitative economics.
+We welcome submission of algorithms and high quality code to [QuantEcon.py](https://quantecon.org/quantecon-py) and [QuantEcon.jl](https://quantecon.org/quantecon-jl) on all topics in quantitative economics.
 
 *   Information on contributing to [QuantEcon.py](https://quantecon.org/quantecon-py) is found [here](https://quantecon.org/python-developers)
 
@@ -40,14 +40,45 @@ Less experienced developers who wish to get involved can help improve documentat
 
 If you’ve written code related to quantitative economics and want to share it with the community, we encourage you to submit it as a Jupyter notebook to [QuantEcon Notes](https://notes.quantecon.org/).
 
+## Contributing to the lectures
+
+QuantEcon develops and supports the following 
+[lecture series](https://quantecon.org/lectures/) for quantitative economics 
+and datascience. Bug fixes or small updates are welcome as pull requests (PR). Some PR
+requirements:
+
+1. If possible, a PR should address just one lecture
+2. Python lectures should execute with the *latest* Anaconda environment.
+   Please update and check prior to submitting your PR. 
+
+If you are not familiar with Git and Github there are some resources available in 
+[resources](#resources) below. 
+
+Lectures are compiled using the [jupinx](https://jupinx.quantecon.org/) tools. 
+A jupinx tutorial is available.[here](https://jupinx.quantecon.org/tutorial).
+
+When making contributions please read the writing style guide for each project:
+
+1. [Python](https://github.com/QuantEcon/lecture-source-py#style-guide---writing-conventions)
+
 ## Resources
 
 If you’re new to open source development, here is some information to help you get started.
 
-Contributions to the QuantEcon library should follow the standard open source pattern in regards to forking the code libraries and sending pull requests on GitHub. If you’re not familiar with this kind of development there are many useful tutorials lying around, including:
+Contributions to the QuantEcon library should follow the standard open source pattern in regards to forking the code libraries and sending pull requests on GitHub. 
 
-*   [The GitHub Guides](https://guides.github.com/)
+### Using GitHub
 
-*   [GitHub Help](https://help.github.com/)
+If you’re not familiar with GitHub workflows there are many useful tutorials available:
 
-*   [Pull request etiquette](http://readwrite.com/2014/07/02/github-pull-request-etiquette)
+* [The GitHub Guides](https://guides.github.com/)
+* [Pull request etiquette](http://readwrite.com/2014/07/02/github-pull-request-etiquette)
+
+The following tutorial is helpful for more advanced understanding of git branching and the git model of version control:
+
+* [Git Branching Tutorial](https://learngitbranching.js.org/)
+
+*Additional Git Resources:*
+
+* [GitHub Help](https://help.github.com/)
+
