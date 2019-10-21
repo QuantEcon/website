@@ -59,7 +59,7 @@ A jupinx tutorial is available.[here](https://jupinx.quantecon.org/tutorial).
 
 When making contributions please read the writing style guide for each project:
 
-1. *Python:* https://github.com/QuantEcon/lecture-source-py#style-guide---writing-conventions
+1. [Python](https://github.com/QuantEcon/lecture-source-py#style-guide---writing-conventions)
 
 ## Resources
 
