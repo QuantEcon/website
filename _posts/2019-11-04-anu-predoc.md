@@ -1,11 +1,9 @@
 ---
 layout: post
-title: "QuantEcon PreDoc (ANU)"
-author: Matthew McKay
+title: "QuantEcon (ANU) PreDoc Position for 2020"
+author: QuantEcon
 excerpt: QuantEcon PreDoc Position for 2020
 ---
-
-# QuantEcon PreDoc Position for 2020
 
 The QuantEcon Early Career Researcher in Computational Economics will support development of the [QuantEcon project](http://quantecon.org) and the Principal Investigator.  The project is a benchmark for high quality open source code for the economic sciences and supports quantitative economic analysis in all branches of the discipline. The QuantEcon project is coordinated by researchers at New York University and Australian National University. The position is located at The Australian National University, College of Business and Economics, Research School of Economics. Candidates should have a long-term interest in pursuing economics related research and are looking to undertake a PhD.
 
