@@ -29,3 +29,4 @@ Under the broad direction of Principal Investigator the Early Career Researcher 
 1. Excellent communication skills.
 1. A demonstrated understanding of equal opportunity principles and policies and a commitment to their application in a university context
 
+Please contact [John Stachurski](mailto:john.stachurski@gmail.com) for more information.
