@@ -27,6 +27,7 @@ Under the broad direction of Principal Investigator the Early Career Researcher 
 1. Knowledge of Python 
 1. Awareness of Open Source development tools.  
 1. Some knowledge of web development (CSS,HTML) LaTeX and/or Julia programs
-1. Ability to engage in collaborative project activities, including working as part of a team with excellent communication skills.
+1. Ability to engage in collaborative project activities, and working as part of a team 
+1. Excellent communication skills.
 1. A demonstrated understanding of equal opportunity principles and policies and a commitment to their application in a university context
 
