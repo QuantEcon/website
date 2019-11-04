@@ -17,13 +17,13 @@ Googling will locate plenty of tutorials on setting up Conda environments but he
 
 Create a `conda` environment called `quantecon-dev` (say) by opening a terminal and typing
 
-    conda create -n quantecon-dev anaconda
+    conda create -n quantecon-dev python=3.7
 
 ## Step 3:
 
 Activate the `quantecon-dev` environment:
 
-    source activate quantecon-dev
+    conda activate quantecon-dev
 
 ## Step 4:
 
@@ -45,11 +45,11 @@ Instead you may wish to install a developer copy which allows for changes to tak
 
 To switch into the `quantecon-dev` Conda environment:
 
-    source activate quantecon-dev
+    conda activate quantecon-dev
 
 To shift back to your default Python environment type
 
-    source deactivate
+    conda activate base
 
 To delete the environment type
 
