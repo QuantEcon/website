@@ -10,10 +10,6 @@ menu_item: false
         <p><a href="https://quantecon.org/">QuantEcon</a> hosts lecture series on economics, finance, econometrics and data science.  All lecture series are based on open source languages and open computing environments.</p>
         <p>These lectures have benefited extensively from the input of many contributors and the financial support of the <a href="https://sloan.org/">Alfred P. Sloan Foundation</a>.</p>
     </div>
-    <ul class="sponsor">
-        <li><a href="http://www.sloan.org/" title="Alfred P. Sloan Foundation"><img src="/assets/img/sloan_logo.png" alt="Sponsored by the Alfred P. Sloan Foundation"></a></li>
-        <li><a href="https://quantecon.org/"><img src="/assets/img/qe-logo.png" width="150"></a></li>
-    </ul>
 </div>
 <div class="home-series">
     <h2 class="visuallyhidden">Lecture Series</h2>
