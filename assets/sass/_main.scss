@@ -223,6 +223,22 @@ pre {padding: 16px;overflow: auto;background-color: #f7f7f7;border-radius: 3px;}
 .footer-copy {
     flex:1;
 }
+.sponsors {
+    margin:2rem 0 1rem 0;
+}
+.sponsors h2 {
+    font-size: 1.5em;
+    text-align: center;
+    margin:0 0 1rem 0;
+}
+.sponsors .sponsor-list {
+    list-style: none;
+    margin:2rem 0;
+    padding:0;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .news {
     margin:2rem 0 1rem 0;
 }
@@ -542,6 +558,14 @@ div.pagination {margin:0;padding:2rem 0;border-top: 1px solid $hr-color;display:
     // }
     .qe-menubar {
         display: none !important;
+    }
+    .sponsors .sponsor-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sponsors .sponsor-list li {
+        margin:2rem 0;
     }
     .news ul {
         display:block;
