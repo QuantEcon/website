@@ -27,6 +27,17 @@ Under the broad direction of Principal Investigator the Early Career Researcher 
 1. Some knowledge of web development (CSS,HTML) LaTeX and/or Julia programs
 1. Ability to engage in collaborative project activities, and working as part of a team 
 1. Excellent communication skills.
+1. Must have Australian work rights.
 1. A demonstrated understanding of equal opportunity principles and policies and a commitment to their application in a university context
+
+This position is a 1 Year fixed term contract.
+
+**Application Process:** 
+
+Applications can be submitted to ANU Recruit.
+This page will be updated with a submission link once applications are open.
+If you are interested in this position please email your CV to [QuantEcon](mailto:admin@quantecon.org) as an expression of interest.
+
+**Applications Close:** 12th January 2020
 
 Please contact [John Stachurski](mailto:john.stachurski@gmail.com) for more information.
