@@ -96,6 +96,11 @@ $(function(){
 			$('.qeform .visitor-application_publication-hint').slideUp();
 		}
 	});
+	
+	// Populate the CC field
+    	$("#visitor-application_email").keyup(function(){
+    		$("#ccemail").val(this.value);
+	});
 
 });
 
