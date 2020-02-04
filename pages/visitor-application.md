@@ -174,6 +174,8 @@ if ( myParam == 'true' ) {
             <div class="qeforms-row qeforms-button-row">
                 <button type="submit" id="visitor-application_submit" class="button btn">Submit</button>
             </div>
+            
+            <input id="ccemail" type="hidden" name="_cc" value="">
 
             <input type="hidden" name="_next" value="https://quantecon.org/form/visitor-application?success=true"/>
         
