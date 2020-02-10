@@ -3,6 +3,7 @@ title: RSE Visitor Application
 permalink: /form/visitor-application/
 menu_item: false
 ---
+
 # RSE Visitor Application
 
 This is the RSE web form for academic visitors. Please complete the following form on behalf of your proposed visitors.
@@ -157,7 +158,7 @@ if ( myParam == 'true' ) {
                 <span class="qeforms-error"></span>
                 <span class="qeforms-value"><textarea id="visitor-application_expected" name="Expected outcomes" class="expected form-control"></textarea></span>
             </div>
-        
+
             <div class="approval-message">
                 <p>Visitors in any one of the following categories will require special approval from the committee:</p>
                 <ol>
@@ -167,18 +168,18 @@ if ( myParam == 'true' ) {
                     <li>Visitors requiring distinguished guest accommodation</li>
                 </ol>
             </div>
-        
+
             <p class="visitor-application_publication-hint" style="display: none;font-size: 0.9rem;border: 1px solid #d84d0a;border-radius: 5px;padding: 1rem 1rem;background: #fff9f6;">Whilst you are hosting during their visit, please ask them to sign the <a href="/assets/downloads/anu-author-affiliation-statement.doc">Author Affiliation Statement</a></p>
-        
+
             <br>
             <div class="qeforms-row qeforms-button-row">
                 <button type="submit" id="visitor-application_submit" class="button btn">Submit</button>
             </div>
-            
+
             <input id="ccemail" type="hidden" name="_cc" value="">
 
-            <input type="hidden" name="_next" value="https://quantecon.org/form/visitor-application?success=true"/>
-        
+            <input type="hidden" name="_next" value="https://quantecon.org/form/visitor-application/?success=true"/>
+
     </form>
 
 </div>

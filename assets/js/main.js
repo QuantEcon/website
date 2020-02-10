@@ -73,6 +73,15 @@ $(function(){
     	}
 	});
 
+	// Show textarea for institution airfare sharing on visitor application form
+	$('input[name="Going to other institutions"]').change(function() {
+		if ( $('#visitor-other_institutions_0:checked').length > 0 ) {
+			$('.qeform .qeforms-institutions-airfare-row').slideDown();
+		} else if ( $('#visitor-application_publication_1:checked').length < 1 ) {
+			$('.qeform .qeforms-institutions-airfare-row').slideUp();
+		}
+	});
+
 	// Show special approval message on visitor application form
 	$('#visitor-application_length, input[name="Visitor has PHD"], input[name="Airfare required"], input[name="Accommodation required"]').change(function() {
 		console.log('change');
