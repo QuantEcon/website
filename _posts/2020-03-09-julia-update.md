@@ -1,9 +1,9 @@
 ---
- layout: post
- title: "Julia Lectures Updated to 1.3"
- author: Arnav Sood
- excerpt: Julia Lectures Updated to 1.3
- ---
+layout: post
+title: "Julia Lectures Updated to 1.3"
+author: Arnav Sood
+excerpt: Julia Lectures Updated to 1.3
+---
 
 # Julia Lectures Updated to 1.3
 
