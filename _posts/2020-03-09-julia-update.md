@@ -1,7 +1,7 @@
 ---
  layout: post
  title: "Julia Lectures Updated to 1.3"
- author: Matthew McKay
+ author: Arnav Sood
  excerpt: Julia Lectures Updated to 1.3
  ---
 
