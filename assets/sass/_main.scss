@@ -627,20 +627,17 @@ pre {
     justify-content: space-around;
     flex-wrap: wrap;
     li {
-      width: 30%;
+      width: 25%;
       text-align: center;
       margin: 1rem 0;
       a {
-        text-decoration: none;
+        display: block;
         color: #444;
+        text-decoration: none;
         h3 {
           font-size: 1.2rem;
-          margin: 1rem 1rem 0.5rem 1rem;
+          margin: 1rem 0 0 0;
           line-height: 1.5rem;
-          min-height: 3rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
         .thumb {
           width: 75px;
@@ -656,9 +653,7 @@ pre {
           }
         }
         &:hover {
-          h3 {
-            text-decoration: underline;
-          }
+          text-decoration: underline;
         }
       }
     }
@@ -1103,8 +1098,27 @@ div.pagination {
     display: block;
   }
   .lectures ul {
-    flex-direction: column;
+    display: block;
+  }
+  .lectures ul li {
+    margin: 2rem 0;
+    width: auto;
+  }
+  .lectures ul li a {
+    display: flex;
     align-items: center;
+    min-height: 75px;
+    text-align: left;
+    padding: 0 0 0 100px;
+    position: relative;
+  }
+  .lectures ul li a h3 {
+    margin: 0;
+  }
+  .lectures ul li .thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
