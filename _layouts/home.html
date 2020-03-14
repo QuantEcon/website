@@ -3,60 +3,101 @@ layout: default
 ---
 
 <div class="blurb">
-{{ content }}
+  {{ content }}
 </div>
 
-<div class="projects">
-
-  <h2>Projects</h2>
+<div class="lectures">
+  <h2>Lectures</h2>
 
   <ul>
-{% assign ordered_projects = site.projects | sort: "order" %}
-{% for project in ordered_projects %}
+    {% assign ordered_lectures = site.lectures | sort: "order" %} {% for lecture
+    in ordered_lectures %}
     <li>
-      <div class="thumb"><a href="{{ project.link | relative_url }}"><img src="{{ site.baseurl }}assets/img/projects/{{project.image}}" alt=" " style="width:75px;"></a></div>
-      <h3><a href="{{ project.link | relative_url }}">{{ project.name }}</a></h3>
-      <p class="desc">{{ project.description | markdownify }}</p>
+      <a href="{{ lecture.link | relative_url }}">
+        <div class="thumb">
+          <img
+            src="{{ site.baseurl }}assets/img/lectures/{{lecture.image}}"
+            alt=" "
+            style="width:75px;"
+          />
+        </div>
+        <h3>{{ lecture.name }}</h3>
+        <!--<div class="desc">{{ lecture.description | markdownify }}</div>-->
+      </a>
     </li>
-{% endfor %}
+    {% endfor %}
   </ul>
-
 </div>
 
-
-<hr>
+<hr />
 
 <div class="sponsors">
-
   <h2>Sponsors</h2>
 
   <ul class="sponsor-list">
-    <li><a href="http://www.sloan.org/" title="Alfred P. Sloan Foundation"><img src="/assets/img/alfred-p-sloan-logo.png" width="350" alt="Sponsored by the Alfred P. Sloan Foundation"></a></li>
-    <li><a href="https://www.anu.edu.au/"><img src="/assets/img/anu-logo.png" width="250" alt="Australian National University"></a></li>
+    <li>
+      <a href="http://www.sloan.org/" title="Alfred P. Sloan Foundation"
+        ><img
+          src="/assets/img/alfred-p-sloan-logo.png"
+          width="350"
+          alt="Sponsored by the Alfred P. Sloan Foundation"
+      /></a>
+    </li>
+    <li>
+      <a href="#">
+        <img
+          src="/assets/img/schmidtfutures-logo.png"
+          alt="Schmidt Futures logo"
+          width="400"
+        />
+      </a>
+    </li>
   </ul>
-
 </div>
 
-<hr>
+<hr />
+
+<div class="projects">
+  <h2>Other Projects</h2>
+
+  <ul>
+    {% assign ordered_projects = site.projects | sort: "order" %} {% for project
+    in ordered_projects %}
+    <li>
+      <a href="{{ project.link | relative_url }}">
+        <div class="thumb">
+          <img
+            src="{{ site.baseurl }}assets/img/projects/{{project.image}}"
+            alt=" "
+            style="width:75px;"
+          />
+        </div>
+        <h3>
+          {{ project.name }}
+        </h3>
+        <div class="desc">{{ project.description | markdownify }}</div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<hr />
 
 <div class="news">
-
   <h2>Latest news</h2>
 
   <ul>
-{% for post in site.posts limit: 3 %}
+    {% for post in site.posts limit: 3 %}
     <li>
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      <h3>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h3>
       <p class="date">{{ post.date | date: "%-d %b %Y" }}</p>
       <div class="summary">{{ post.excerpt }}</div>
     </li>
-{% endfor %}
+    {% endfor %}
   </ul>
 
   <p class="more"><a href="{{ '/news' | relative_url }}">Read more</a></p>
-
 </div>
-
-
-
-
