@@ -690,6 +690,8 @@ pre {
           width: 75px;
           height: 75px;
           margin: 0 auto;
+          display: flex;
+          align-items: center;
         }
         .desc {
           color: #888;
