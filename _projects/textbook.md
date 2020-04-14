@@ -1,6 +1,6 @@
 ---
-name: QuantEcon Textbook
-description: Thomas Sargent and John Stachurski are writing a hardcopy text, with support from Schmidt Futures.
+name: Hardcopy Text
+description: A hardcopy text on Quantitative Economics is currently in progress.
 link: /quantecon-textbook/
 image: project-textbook.png
 order: 1
