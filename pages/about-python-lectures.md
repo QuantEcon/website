@@ -11,7 +11,7 @@ menu_item: false
 This page collects three lecture series:
 
 1. [Python Programming for Economics and Finance](https://python-programming.quantecon.org/)
-2. [Quantitative Economics with Python](https://python-intro.quantecon.org/) and
+2. [Quantitative Economics with Python](https://python.quantecon.org/) and
 3. [Advanced Quantitative Economics with Python](https://python-advanced.quantecon.org/)
 
 Previously all three were combined in a single site but as the number of
@@ -106,10 +106,10 @@ We also recognize those who co-authored lectures and code:
 
 - Co-authored [Additive and Multiplicative Functionals](https://python-advanced.quantecon.org/additive_functionals.html)
 - Co-authored [Globalization and Cycles](https://python-advanced.quantecon.org/matsuyama.html)
-- Co-authored [Permanent Income II: LQ Techniques](https://python-intro.quantecon.org/perm_income_cons.html)
+- Co-authored [Permanent Income II: LQ Techniques](https://python.quantecon.org/perm_income_cons.html)
 - Co-authored [Reverse Engineering a la Muth](https://python-advanced.quantecon.org/muth_kalman.html)
-- Co-authored code for [Asset Pricing with Incomplete Markets](https://python-intro.quantecon.org/harrison_kreps.html)
-- Co-authored code for [Markov Perfect Equilibrium](https://python-intro.quantecon.org/markov_perf.html)
+- Co-authored code for [Asset Pricing with Incomplete Markets](https://python.quantecon.org/harrison_kreps.html)
+- Co-authored code for [Markov Perfect Equilibrium](https://python.quantecon.org/markov_perf.html)
 - Co-authored code for [Robust Markov Perfect Equilibrium](https://python-advanced.quantecon.org/rob_markov_perf.html)
 - Co-authored code for [Robustness](https://python-advanced.quantecon.org/robustness.html)
 
@@ -153,7 +153,7 @@ We also recognize those who co-authored lectures and code:
 
 - Co-authored [Information and Consumption Smoothing](https://python-advanced.quantecon.org/cons_news.html)
 - Co-authored [Markov Jump Linear Quadratic Dynamic Programming](https://python-advanced.quantecon.org/markov_jump_lq.html)
-- Co-authored [Production Smoothing via Inventories](https://python-intro.quantecon.org/lq_inventories.html)
+- Co-authored [Production Smoothing via Inventories](https://python.quantecon.org/lq_inventories.html)
 
 [Balint Szoke](https://www.balintszoke.com/)
 
@@ -165,10 +165,10 @@ We also recognize those who co-authored lectures and code:
 
 [Natasha Watkins](https://github.com/natashawatkins)
 
-- Co-authored [Application: The Samuelson Multiplier-Accelerator](https://python-intro.quantecon.org/samuelson.html)
-- Co-authored [Linear Regression in Python](https://python-intro.quantecon.org/ols.html)
-- Co-authored [Maximum Likelihood Estimation](https://python-intro.quantecon.org/mle.html)
-- Co-authored [Pandas for Panel Data](https://python-intro.quantecon.org/pandas_panel.html)
+- Co-authored [Application: The Samuelson Multiplier-Accelerator](https://python.quantecon.org/samuelson.html)
+- Co-authored [Linear Regression in Python](https://python.quantecon.org/ols.html)
+- Co-authored [Maximum Likelihood Estimation](https://python.quantecon.org/mle.html)
+- Co-authored [Pandas for Panel Data](https://python.quantecon.org/pandas_panel.html)
 
 Dongchen Zou
 
