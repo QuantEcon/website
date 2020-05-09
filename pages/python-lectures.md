@@ -27,7 +27,7 @@ menu_item: false
     </a>
   </li>
   <li>
-    <a href="https://python-intro.quantecon.org/">
+    <a href="https://python.quantecon.org/">
       <svg width="31px" height="38px" viewBox="0 0 31 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="Greek_Alphabet_clip_art" transform="translate(-97.000000, -285.000000)" fill="#000000" fill-rule="nonzero">
