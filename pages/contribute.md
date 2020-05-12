@@ -49,17 +49,9 @@ requirements:
 
 1. If possible, a PR should address just one lecture
 2. Python lectures should execute with the *latest* Anaconda environment.
-   Please update and check prior to submitting your PR. 
+   Please update and check prior to submitting your PR.
 
-If you are not familiar with Git and Github there are some resources available in 
-[resources](#resources) below. 
-
-Lectures are compiled using the [jupinx](https://jupinx.quantecon.org/) tools. 
-A jupinx tutorial is available.[here](https://jupinx.quantecon.org/tutorial).
-
-When making contributions please read the writing style guide for each project:
-
-1. [Python](https://github.com/QuantEcon/lecture-source-py#style-guide---writing-conventions)
+Information on contributing to the python lectures can be found [here](https://quantecon.org/contribute-lectures/)
 
 ## Resources
 
