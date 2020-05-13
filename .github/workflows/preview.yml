@@ -1,0 +1,38 @@
+# !!!
+# Netlify can be setup to build Jekyll Projects automatically
+# So this may not be needed
+# !!!
+# name: Build and Preview
+# on:
+#   pull_request:
+#     types: ['opened', 'edited', 'synchronize']
+# jobs:
+#   build-and-preview:
+#     runs-on: ubuntu-16.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Install Jekyll
+#         shell: bash -l {0}
+#         run: |
+#           sudo apt-get install ruby-full build-essential zlib1g-dev
+#           echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+#           echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+#           echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+#           source ~/.bashrc
+#           gem install jekyll bundler
+#       - name: Build Jekyll
+#         shell: bash -l {0}
+#         run: |
+#           jekyll build
+#           ls ./_site
+#       - name: Preview Deploy to Netlify
+#         uses: nwtgck/actions-netlify@v1.0
+#         with:
+#           publish-dir: './_site/'
+#           production-branch: master
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+#           deploy-message: "Preview Deploy from GitHub Actions"
+#         env:
+#           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+#           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
