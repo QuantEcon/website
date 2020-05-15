@@ -5,18 +5,17 @@ on:
       - master
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6
       - name: Install Jekyll
         shell: bash -l {0}
         run: |
-          sudo apt-get install ruby-full build-essential zlib1g-dev
-          echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-          source ~/.bashrc
           gem install jekyll bundler
       - name: Build Jekyll
         shell: bash -l {0}
