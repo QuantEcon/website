@@ -20,7 +20,7 @@ The main features are
 * a modern treatment of Markov process theory, and
 * coverage of both continuous and discrete time systems.
 
-A very preliminary table of contents is available [here]().
+A very preliminary table of contents is available [here](../assets/downloads/toc_may_2020.pdf).
 
 Feedback and suggestions are all greatly appreciated.  Please direct them to
 contact@quantecon.org or the [Discourse forum](https://discourse.quantecon.org/).
