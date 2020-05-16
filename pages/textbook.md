@@ -6,17 +6,22 @@ menu_item: false
 
 # Forthcoming Textbook
 
-A hardcopy text on Quantitative Economics is now in the works, hopefully to be
-completed before the end of 2020.  The textbook is coauthored Thomas Sargent
-and John Stachurski and focuses on theory and algorithms rather than
-implementation details.  The plan is for the book to be language agnostic, in
-the sense that algorithms are described in pseudo-code rather than any
-particular language.
+A hardcopy textbook on Quantitative Economics is currently under preparation.
+Our aim is to complete it before the end of 2020.  The textbook is coauthored
+by Thomas Sargent and John Stachurski.  Financial support from [Schmidt
+Futures](https://schmidtfutures.com/) is gratefully acknowledged.
 
-The theory of dynamic programming is treated in depth.  Some continuous time
-stochastic dynamics will also be included.
+The main features are
 
-A preliminary version will be posted on this page in the next few weeks.
-Feedback and suggestions are appreciated.  They can be directed to
-contact@quantecon.org.
+* a focus on theory and algorithms rather than implementation details, 
+* a language-agnostic presentation (algorithms are described in pseudo-code),
+* a modern, general, in-depth treatment of dynamic programming with economic
+  applications,
+* a modern treatment of Markov process theory, and
+* coverage of both continuous and discrete time systems.
+
+A very preliminary table of contents is available [here]().
+
+Feedback and suggestions are all greatly appreciated.  Please direct them to
+contact@quantecon.org or the [Discourse forum](https://discourse.quantecon.org/).
 
