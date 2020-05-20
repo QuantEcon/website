@@ -1,4 +1,8 @@
-
+---
+title: Contributing to QuantEcon Lectures
+permalink: /contribute-lectures/
+menu_item: false
+---
 # Contributing to QuantEcon Lectures
 
 The QuantEcon Lectures has three different lecture series each have their own repository
