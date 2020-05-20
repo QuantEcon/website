@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
-
-gem 'jekyll-seo-tag'
-gem 'github-pages', group: :jekyll_plugins
+source 'https://rubygems.org' do
+    gem 'jekyll-seo-tag'
+    gem 'github-pages', group: :jekyll_plugins
+end
