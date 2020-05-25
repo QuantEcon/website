@@ -32,3 +32,4 @@ jobs:
       - name: Copy files to S3 with the AWS CLI
         run: |
           aws s3 sync _site/ s3://preview.quantecon.org/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_ID }} --paths "/*"
