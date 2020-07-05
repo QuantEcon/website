@@ -180,4 +180,5 @@ or improvements. They include but are not limited to Anmol Bhandari,
 Long Bui, Jeong-Hun Choi, David Evans, Shunsuke Hori, Chenghan Hou,
 Doc-Jin Jang, Qingyin Ma, Akira Matsushita, Tomohito Okabe, Daisuke
 Oyama, David Pugh, Alex Olssen, Nathan Palmer, Bill Tubbs, Natasha
-Watkins, Pablo Winant and Yixiao Zhou.
+Watkins, Pablo Winant, Yixiao Zhou, Aakash G. Choudhury, Shu Hu,
+Harvey Thompson, Yuna Luzi and Saya Ikegawa.
