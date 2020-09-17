@@ -7,9 +7,9 @@ menu_item: false
 # Forthcoming Textbook
 
 A hardcopy textbook on Quantitative Economics is currently under preparation.
-Our aim is to complete it before the end of 2020.  The textbook is coauthored
-by Thomas Sargent and John Stachurski.  Financial support from [Schmidt
-Futures](https://schmidtfutures.com/) is gratefully acknowledged.
+The textbook is coauthored by Thomas Sargent and John Stachurski.
+Financial support from [Schmidt Futures](https://schmidtfutures.com/) is
+gratefully acknowledged.
 
 The main features are
 
