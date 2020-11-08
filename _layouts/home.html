@@ -6,23 +6,25 @@ layout: default
   {{ content }}
 </div>
 
-<div class="lectures">
-  <h2>Lectures</h2>
+<div class="projects">
+  <h2>Projects</h2>
 
   <ul>
-    {% assign ordered_lectures = site.lectures | sort: "order" %} {% for lecture
-    in ordered_lectures %}
+    {% assign ordered_projects = site.projects | sort: "order" %} {% for project
+    in ordered_projects %}
     <li>
-      <a href="{{ lecture.link | relative_url }}">
+      <a href="{{ project.link | relative_url }}">
         <div class="thumb">
           <img
-            src="{{ site.baseurl }}assets/img/lectures/{{lecture.image}}"
+            src="{{ site.baseurl }}assets/img/projects/{{project.image}}"
             alt=" "
             style="width:75px;"
           />
         </div>
-        <h3>{{ lecture.name }}</h3>
-        <!--<div class="desc">{{ lecture.description | markdownify }}</div>-->
+        <h3>
+          {{ project.name }}
+        </h3>
+        <div class="desc">{{ project.description | markdownify }}</div>
       </a>
     </li>
     {% endfor %}
@@ -53,51 +55,4 @@ layout: default
       </a>
     </li>
   </ul>
-</div>
-
-<hr />
-
-<div class="projects">
-  <h2>Other Projects</h2>
-
-  <ul>
-    {% assign ordered_projects = site.projects | sort: "order" %} {% for project
-    in ordered_projects %}
-    <li>
-      <a href="{{ project.link | relative_url }}">
-        <div class="thumb">
-          <img
-            src="{{ site.baseurl }}assets/img/projects/{{project.image}}"
-            alt=" "
-            style="width:75px;"
-          />
-        </div>
-        <h3>
-          {{ project.name }}
-        </h3>
-        <div class="desc">{{ project.description | markdownify }}</div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-
-<hr />
-
-<div class="news">
-  <h2>Latest news</h2>
-
-  <ul>
-    {% for post in site.posts limit: 3 %}
-    <li>
-      <h3>
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </h3>
-      <p class="date">{{ post.date | date: "%-d %b %Y" }}</p>
-      <div class="summary">{{ post.excerpt }}</div>
-    </li>
-    {% endfor %}
-  </ul>
-
-  <p class="more"><a href="{{ '/news' | relative_url }}">Read more</a></p>
 </div>
