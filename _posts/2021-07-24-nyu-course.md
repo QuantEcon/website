@@ -1,4 +1,9 @@
-# NYU Computational Social Science: Certificate Program
+---
+layout: post
+title: 'NYU Computational Social Science: Certificate Program'
+author: QuantEcon
+excerpt: NYU Computational Social Science: Certificate Program
+---
 
 Tom Sargent, Chase Coleman, and Spencer Lyon have put together The [NYU Computational Social
 Science: Certificate Program](http://www.tomsargent.com/nyu_css.html).
