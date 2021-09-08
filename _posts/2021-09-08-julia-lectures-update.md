@@ -17,3 +17,5 @@ Some of the key changes:
 - The [GitHub, Version Control, and Collaboration](https://quantecon.github.io/lecture-julia.myst/software_engineering/version_control.html) lecture shows workflows for collaboration within VS Code and GitHub.
 - All content in the [Packages, Testing, and Continuous Integration](https://quantecon.github.io/lecture-julia.myst/software_engineering/testing.html) now uses GitHub Actions as the continuous integration framework, and shows the VS Code workflows required for **reproducible research** and collaboration.
 - The lectures are now  using the [Jupyter Book](https://jupyterbook.org/).  Among other things, the move to the markdown format makes open-source contributions and bug fixes [even easier](https://github.com/QuantEcon/lecture-julia.myst#local-development).
+
+We are grateful for support from the [Center for Innovative Data in Economic Research (CIDER)](https://economics.ubc.ca/cider/research-activity/#:~:text=The%20Centre%20for%20Innovative%20Data,on%20economics%20and%20related%20fields.) at the [Vancouver School of Economics at University of British Columbia](https://economics.ubc.ca/).
