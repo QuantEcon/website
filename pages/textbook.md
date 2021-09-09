@@ -6,24 +6,32 @@ menu_item: false
 
 # Forthcoming Textbook
 
-A hardcopy textbook on Quantitative Economics is currently under preparation.
-The textbook is coauthored by Thomas Sargent and John Stachurski.
+Two hardcopy textbooks on Quantitative Economics, related to the online
+lectures, are now in preparation.  Both volumes are coauthored by Thomas
+Sargent and John Stachurski.
+
+The topics covered include
+
+* High-dimensional linear systems
+* Nonlinear dynamics
+* Distributions and distribution dynamics
+* Heavy tails and power laws
+* The distribution of income and wealth
+* Firms and the firm size distribution
+* Network theory and computational graphs
+* Production and financial networks
+* Machine learning and high-dimensional quantitative methods
+* Linear programming for machine learning optimal transport
+* Optimization for machine learning and dynamic programming
+* Advanced dynamic programming including recursive preferences
+* Markov processes in discrete and continuous time
+* Asset pricing
+
+Drafts will be posted by late 2021.
+
 Financial support from [Schmidt Futures](https://schmidtfutures.com/) is
 gratefully acknowledged.
 
-The main features are
-
-* a focus on theory and algorithms rather than implementation details,
-* a language-agnostic presentation (algorithms are described in pseudo-code),
-* a modern, general, in-depth treatment of dynamic programming with economic
-  applications,
-* a modern treatment of Markov process theory, and
-* coverage of both continuous and discrete time systems.
-
-A very preliminary table of contents is available [here](../assets/downloads/toc_may_2020.pdf).
-
-A preliminary draft of the book is available [here](../assets/downloads/main.pdf).
-
-Feedback and suggestions are all greatly appreciated.  Please direct them to
+Suggestions on topics are welcome.  Please direct them to
 contact@quantecon.org or the [Discourse forum](https://discourse.quantecon.org/).
 
