@@ -50,7 +50,7 @@ menu_item: false
             </a>
         </li>
         <li>
-            <a href=" https://jstac.github.io/continuous_time_mcs/">
+            <a href=" https://quantecon.github.io/continuous_time_mcs/">
                 <span class="icon"><img src="/assets/img/projects/project-lectures.png"></span>
                 <h3>Continuous Time Markov Chains</h3>
                 <p>This lecture series provides a short introduction to the fascinating field of continuous time Markov chains.</p>
