@@ -1,6 +1,6 @@
 ---
 name: Alfred Galichon
-image: alfred-galichon.png
+image: alfred.jpg
 link: http://alfredgalichon.com
 role: "Committee Members"
 ---
