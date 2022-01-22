@@ -1,6 +1,6 @@
 ---
 name: Eli Knaap
-image: eli.jpeg
+image: eli.jpg
 link: https://knaaptime.com
 role: "Lead Developers"
 ---
