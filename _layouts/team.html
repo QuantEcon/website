@@ -56,4 +56,14 @@ layout: default
 {% endfor %}
 </ul>
 
+<h2>Previous Lead Developers</h2>
+
+{% assign team-members = site.team-members | where: 'role', 'Previous Lead Developers' %}
+
+<ul>
+{% for team-member in team-members %}
+	<li><img alt="" src="/assets/img/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+{% endfor %}
+</ul>
+
 </div>
