@@ -36,3 +36,6 @@ defaults:
       type: "projects"
     values:
       order: 99
+  
+plugins:
+  - jekyll-redirect-from
