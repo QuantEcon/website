@@ -4,34 +4,21 @@ permalink: /quantecon-textbook/
 menu_item: false
 ---
 
-# Forthcoming Textbook
+# Forthcoming Textbooks
 
-Two hardcopy textbooks on Quantitative Economics, related to the online
-lectures, are now in preparation.  Both volumes are coauthored by Thomas
-Sargent and John Stachurski.
+QuantEcon members are preparing a series of high quality hardcopy textbooks on topics in computational economics and economic dynamics, partly supported by generous funding from [Schmidt Futures](https://schmidtfutures.com/).
 
-The topics covered include
+The textbooks will combine a free PDF with published hardcopy.
 
-* High-dimensional linear systems
-* Nonlinear dynamics
-* Distributions and distribution dynamics
-* Heavy tails and power laws
-* The distribution of income and wealth
-* Firms and the firm size distribution
-* Network theory and computational graphs
-* Production and financial networks
-* Machine learning and high-dimensional quantitative methods
-* Linear programming for machine learning optimal transport
-* Optimization for machine learning and dynamic programming
-* Advanced dynamic programming including recursive preferences
-* Markov processes in discrete and continuous time
-* Asset pricing
+The first text, on network economics, is available [here](https://networks.quantecon.org/).
 
-Drafts will be posted by late 2021.
+Forthcoming hardcopy textbooks include
 
-Financial support from [Schmidt Futures](https://schmidtfutures.com/) is
-gratefully acknowledged.
+* Dynamic Programming Volume I:  Foundations
+* Dynamic Programming Volume II: Advanced Theory
+* Macroeconomic Dynamics: Theory and Computation
+* Machine Learning and Econometrics
 
 Suggestions on topics are welcome.  Please direct them to
-contact@quantecon.org or the [Discourse forum](https://discourse.quantecon.org/).
+[contact@quantecon.org](mailto:contact@quantecon.org) or the [Discourse forum](https://discourse.quantecon.org/).
 
