@@ -2,57 +2,190 @@
 layout: default
 ---
 
-<div class="blurb">
-  {{ content }}
-</div>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
 
-<div class="projects">
-  <h2>Projects</h2>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-2 ms-3"
+        data-aos="fade-up" data-aos-delay="200">
+        <h1>Quant<span>Econ</span></h1>
+        <h2>Open source code for economic modeling</h2>
+      </div>
+      <div
+        class="col-lg-4 d-flex flex-m-column justify-content-center align-items-sm-center flex-sm-row order-1 order-lg-1 hero-img"
+        data-aos="zoom-in" data-aos-delay="200">
+        <img src="/assets/img/qehills.png" class="img-fluid" alt="">
+      </div>
+    </div>
+    <!-- <div class="d-flex justify-content-center pt-4" data-aos="fade-in" data-aos-delay="1000">
+      <a href="#about" class="btn-get-started scrollto">Read more</a>
+      <a href="/contribute/" class="btn-contribute"><i class="bi bi-bug"></i><span>Contribute</span></a>
+    </div> -->
+  </div>
 
-  <ul>
-    {% assign ordered_projects = site.projects | sort: "order" %} {% for project
-    in ordered_projects %}
-    <li>
-      <a href="{{ project.link | relative_url }}">
-        <div class="thumb">
-          <img
-            src="/assets/img/projects/{{project.image}}"
-            alt=" "
-            style="width:75px;"
-          />
+</section><!-- End Hero -->
+
+<main id="main">
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services  section-bg">
+
+    <div class="container" data-aos="fade-up">
+
+    <div class="section-title d-flex justify-content-around">
+      <div class="col-md-10">
+        <p>QuantEcon is a nonprofit organization dedicated
+          to development and documentation of open source computational tools for economics, econometrics,
+          and decision making. </p>
+      </div>
+    </div>
+
+      <div class="row justify-content-between">
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            <!-- <div class="icon"><i class="bx bx-layer"></i></div> -->
+            <h3><a href="">Projects</a></h3>
+
+            <ul class="project-list">
+
+              <li>
+                <a href="/lectures/">
+                  <div class="thumb"><img src="/assets/img/projects/project-lectures.png" alt=" " style="width:30px;" />
+                  </div>
+                  <h3>
+                    Lecture Series
+                  </h3>
+                  <div class="desc">
+                    <p>QuantEcon hosts lecture series on economics...</p>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="thumb"><img src="/assets/img/projects/jupyter-book-logo.svg" alt=" "
+                      style="width:30px;" /></div>
+                  <h3>Textbook</h3>
+                  <div class="desc">
+                    <p>Blanditiis animi velit delectus in fugiat</p>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="thumb"><img src="/assets/img/projects/project-notes.png" alt=" " style="width:30px;" />
+                  </div>
+                  <h3>QE Notes</h3>
+                  <div class="desc">
+                    <p>Repudiandae quidem enim repellat quo blanditiis</p>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="thumb"><img src="/assets/img/projects/project-lectures.png" alt=" " style="width:30px;" />
+                  </div>
+                  <h3>Videos</h3>
+                  <div class="desc">
+                    <p>Fugiat ipsum ex rerum odio est illum nemo consectetur</p>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="thumb"><img src="/assets/img/projects/project-python.png" alt=" " style="width:30px;" />
+                  </div>
+                  <h3>Code</h3>
+                  <div class="desc">
+                    <p>Blanditiis animi velit delectus in fugiat</p>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+
+            <p><a href="/projects/">All Projects</a></p>
+
+
+          </div>
         </div>
-        <h3>
-          {{ project.name }}
-        </h3>
-        <div class="desc">{{ project.description | markdownify }}</div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
 
-<hr />
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <!-- <div class="icon"><i class="bx bx-layer"></i></div> -->
+            <h3><a href="">Workshops</a></h3>
 
-<div class="sponsors">
-  <h2>Sponsors</h2>
+            <p><img style="display:block; width:100%;"
+                src="/assets/img/services_workshop_photo.jpg"></p>
 
-  <ul class="sponsor-list">
-    <li>
-      <a href="http://www.sloan.org/" title="Alfred P. Sloan Foundation"
-        ><img
-          src="/assets/img/alfred-p-sloan-logo.png"
-          width="350"
-          alt="Sponsored by the Alfred P. Sloan Foundation"
-      /></a>
-    </li>
-    <li>
-      <a href="https://schmidtfutures.com/">
-        <img
-          src="/assets/img/schmidtfutures-logo.png"
-          alt="Schmidt Futures logo"
-          width="400"
-        />
-      </a>
-    </li>
-  </ul>
-</div>
+            <br>
+
+            <p>QuantEcon can organize and run remote and in-person workshops and
+              short courses on quantitative economics and high-performance computing
+              using Python and Julia. Past locations include the Econometric
+              Society meetings, Columbia, Copenhagen, the Reserve Bank of Australia,
+              Stanford, Princeton, Harvard, MIT, Berkeley, and UCLA.</p>
+
+            <br>
+
+            <p><a href="#" class="btn-learn-more">Contact us</a></p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Working for QuantEcon</h2>
+      </div>
+
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>Natasha is a PhD candidate in Economics at the University of California, Los Angeles. She was previously a Pre-doctoral Fellow at QuantEcon, based at Australian National University. Natasha assisted in running workshops on data analysis and econometrics in Python, contributed material to QuantEcon lectures covering the Pandas and Statsmodels libraries, and maintained news and social media for the QuantEcon project.</p>
+              <img src="/assets/img/testimonials/natasha.jpg" class="testimonial-img" alt="">
+              <h3>Natasha</h3>
+              <h4>Research Assistant</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>I am starting my PhD in Economics at Stanford University in 2022. I am primarily interested in macro-finance and mathematical economics - working to understand the nature of default and debt as amplification mechanisms in the macroeconomy. I was a research assistant for Quantecon and I was Professor Stachurski's Honours student at the ANU.</p>
+              <img src="/assets/img/testimonials/flint.jpg" class="testimonial-img" alt="">
+              <h3>Flint O'Neil</h3>
+              <h4>Lead Developer</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>I am currently a PhD student at the University of Arizona, working on Macro labor economics to understand people's marital and labor supply decisions. I worked at QuantEcon as a research assistant and helped construct lecture notebooks and Python modules.</p>
+              <img src="/assets/img/testimonials/zejin_shi.jpg" class="testimonial-img" alt="">
+              <h3>Zejin Shi</h3>
+              <h4>Research Assistant</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section><!-- End Testimonials Section -->
+
+</main><!-- End #main -->

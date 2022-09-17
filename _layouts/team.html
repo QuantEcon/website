@@ -4,66 +4,116 @@ layout: default
 
 {{ content }}
 
-<div class="team-members">
+<section id="team" class="team">
+	<div class="container" data-aos="fade-up">
 
 <h2>Founding Members and Co-Chairs</h2>
 
 {% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' %}
-
-<ul>
-{% for team-member in team-members reversed %}
-	<li><img alt="" src="/assets/img/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+		<div class="row" data-isotope='{ "itemSelector": ".team-item", "layoutMode": "masonry" }'>
+{% for team-member in team-members reversed %}  
+			<div class="col-lg-6 team-item">
+			  <div class="member d-flex align-items-start">
+				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="member-info">
+				  <h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
+				  <!--<span>{{ team-member.role }}</span>-->
+				  <p>{{ team-member.content }}</p>
+				</div>
+			  </div>
+			</div>
 {% endfor %}
-</ul>
+		</div>	
 
 <h2>Committee Members</h2>
 
 {% assign team-members = site.team-members | where: 'role', 'Committee Members' %}
-
-<ul>
-{% for team-member in team-members %}
-	<li><img alt="" src="/assets/img/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+		<div class="row" data-isotope='{ "itemSelector": ".team-item", "layoutMode": "masonry" }'>
+{% for team-member in team-members reversed %}  
+			<div class="col-lg-6 team-item">
+			  <div class="member d-flex align-items-start">
+				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="member-info">
+				  <h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
+				  <!--<span>{{ team-member.role }}</span>-->
+				  <p>{{ team-member.content }}</p>
+				</div>
+			  </div>
+			</div>
 {% endfor %}
-</ul>
+		</div>	
 
 <h2>Lead Developers</h2>
 
 {% assign team-members = site.team-members | where: 'role', 'Lead Developers' %}
-
-<ul>
-{% for team-member in team-members reversed %}
-	<li><img alt="" src="/assets/img/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+		<div class="row" data-isotope='{ "itemSelector": ".team-item", "layoutMode": "masonry" }'>
+{% for team-member in team-members reversed %}  
+			<div class="col-lg-6 team-item">
+			  <div class="member d-flex align-items-start">
+				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="member-info">
+				  <h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
+				  <!--<span>{{ team-member.role }}</span>-->
+				  <p>{{ team-member.content }}</p>
+				</div>
+			  </div>
+			</div>
 {% endfor %}
-</ul>
+		</div>	
 
 <h2>QuantEcon Early Career Researchers</h2>
 
 {% assign team-members = site.team-members | where: 'role', 'QuantEcon Early Career Researchers' %}
-
-<ul>
-{% for team-member in team-members %}
-	<li><img alt="" src="/assets/img/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+		<div class="row" data-isotope='{ "itemSelector": ".team-item", "layoutMode": "masonry" }'>
+{% for team-member in team-members reversed %}  
+			<div class="col-lg-6 team-item">
+			  <div class="member d-flex align-items-start">
+				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="member-info">
+				  <h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
+				  <!--<span>{{ team-member.role }}</span>-->
+				  <p>{{ team-member.content }}</p>
+				</div>
+			  </div>
+			</div>
 {% endfor %}
-</ul>
+		</div>	
 
 <h2>Previous Steering Committee Members</h2>
 
 {% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' %}
-
-<ul>
-{% for team-member in team-members %}
-	<li><img alt="" src="/assets/img/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+		<div class="row" data-isotope='{ "itemSelector": ".team-item", "layoutMode": "masonry" }'>
+{% for team-member in team-members reversed %}  
+			<div class="col-lg-6 team-item">
+			  <div class="member d-flex align-items-start">
+				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="member-info">
+				  <h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
+				  <!--<span>{{ team-member.role }}</span>-->
+				  <p>{{ team-member.content }}</p>
+				</div>
+			  </div>
+			</div>
 {% endfor %}
-</ul>
+		</div>
 
 <h2>Previous Lead Developers</h2>
 
 {% assign team-members = site.team-members | where: 'role', 'Previous Lead Developers' %}
-
-<ul>
-{% for team-member in team-members %}
-	<li><img alt="" src="/assets/img/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {{ team-member.content }}</li>
+		<div class="row" data-isotope='{ "itemSelector": ".team-item", "layoutMode": "masonry" }'>
+{% for team-member in team-members reversed %}  
+			<div class="col-lg-6 team-item">
+			  <div class="member d-flex align-items-start">
+				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="member-info">
+				  <h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
+				  <!--<span>{{ team-member.role }}</span>-->
+				  <p>{{ team-member.content }}</p>
+				</div>
+			  </div>
+			</div>
 {% endfor %}
-</ul>
+		</div>	
 
-</div>
+	</div>
+	</section>

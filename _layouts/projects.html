@@ -4,12 +4,19 @@ layout: default
 
 {{ content }}
 
-<ul class="projects-listing">
+
+<ul class="projects row" data-isotope='{ "itemSelector": ".projects-item", "layoutMode": "masonry" }'>
   {% for project in site.projects %}
-    <li>
-		<div class="thumb"><a href="{{ project.link }}"><img src="/assets/img/projects/{{ project.image }}" style="width:75px;"></a></div>
-		<h2><a href="{{ project.link }}">{{ project.name }}</a></h2>
-		<p class="desc">{{ project.description | markdownify }}</p>
+    <li class="col-lg-4 projects-item">
+      <a href="{{ project.link }}">
+        <div class="project d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+          <div class="pic"><img src="/assets/img/projects/{{ project.image }}" style="width:75px;"></div>
+          <div class="item-info">
+            <h3>{{ project.name }}</h3>
+            <div class="desc">{{ project.description | markdownify }}</div>
+          </div>
+        </div>
+      </a>
     </li>
   {% endfor %}
 </ul>
