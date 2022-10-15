@@ -1,7 +1,8 @@
 ---
+title: News
 layout: news
 permalink: /news/
 menu_item: true
 ---
 
-# News
+# QuantEcon News

@@ -1,3 +1,41 @@
+// Code landing page styles
+.library-links {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.library-links li {
+  width: 22%;
+}
+.library-links li a {
+  display: block;
+  text-align: center;
+  color: #333;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+.library-links li a:hover {
+  color: #2370a0;
+}
+.library-links img {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  transition: all 0.15s linear;
+}
+.library-links a:hover img {
+  border-color: #08c;
+  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+.news-date {
+  margin: 0 0 0.5rem 0;
+  color: #888;
+}
+
+// Lectures langing page
 .home-blurb {
 	display: flex;
 	//align-items: center;

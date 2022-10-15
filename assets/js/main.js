@@ -1,9 +1,3 @@
-/**
-* Template Name: Arsha - v4.8.0
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
     "use strict";
   
@@ -164,96 +158,65 @@
       });
     }
   
-    /**
-     * Initiate  glightbox 
-     */
-    const glightbox = GLightbox({
-      selector: '.glightbox'
-    });
-  
-    /**
-     * Skills animation
-     */
-    let skilsContent = select('.skills-content');
-    if (skilsContent) {
-      new Waypoint({
-        element: skilsContent,
-        offset: '80%',
-        handler: function(direction) {
-          let progress = select('.progress .progress-bar', true);
-          progress.forEach((el) => {
-            el.style.width = el.getAttribute('aria-valuenow') + '%'
-          });
-        }
-      })
+
+    // Isotope URL hash filtering
+    function getHashFilter() {
+      // get filter=filterName
+      var matches = location.hash.match( /filter=([^&]+)/i );
+      var hashFilter = matches && matches[1];
+      return hashFilter && decodeURIComponent( hashFilter );
     }
 
     /**
-     *  Team isotope
-     */
-    //  window.addEventListener('load', () => {
-    //   let teamContainer = select('.team-container');
-    //   if (teamContainer) {
-    //     let teamIsotope = new Isotope(teamContainer, {
-    //       itemSelector: '.team-item'
-    //     });
-    //   }
-    // });
-      
-
-
-    /**
-     * Porfolio isotope and filter
+     * Projects isotope and filter
      */
     window.addEventListener('load', () => {
-      let portfolioContainer = select('.portfolio-container');
-      if (portfolioContainer) {
-        let portfolioIsotope = new Isotope(portfolioContainer, {
-          itemSelector: '.portfolio-item'
+      let projectsContainer = select('.projects-container');
+      if (projectsContainer) {
+        let projectsIsotope = new Isotope(projectsContainer, {
+          layoutMode: 'fitRows',
+          itemSelector: '.projects-item',
+          getSortData: {
+            name: '.name'
+          },
+          sortBy: 'name'
         });
   
-        let portfolioFilters = select('#portfolio-flters li', true);
+        let projectsFilters = select('#projects-flters li', true);
   
-        on('click', '#portfolio-flters li', function(e) {
+        on('click', '#projects-flters li', function(e) {
           e.preventDefault();
-          portfolioFilters.forEach(function(el) {
+          projectsFilters.forEach(function(el) {
             el.classList.remove('filter-active');
           });
           this.classList.add('filter-active');
   
-          portfolioIsotope.arrange({
+          projectsIsotope.arrange({
             filter: this.getAttribute('data-filter')
           });
-          portfolioIsotope.on('arrangeComplete', function() {
+
+          var filterString = encodeURIComponent( this.getAttribute('data-filter') );
+          if ( filterString.length > 1 ) {
+            filterString = filterString.substring(8);
+          }
+          location.hash = 'filter=' + filterString;
+          
+          projectsIsotope.on('arrangeComplete', function() {
             AOS.refresh()
           });
         }, true);
+
+        var filterHash = getHashFilter();
+        if (filterHash) {
+          projectsFilters.forEach(function(el) {
+            if ((el.dataset.filter) == ('.filter-' + filterHash)) {
+              console.log('we have a match');
+              el.click();
+            }
+          });
+        }
       }
   
-    });
-  
-    /**
-     * Initiate portfolio lightbox 
-     */
-    const portfolioLightbox = GLightbox({
-      selector: '.portfolio-lightbox'
-    });
-  
-    /**
-     * Portfolio details slider
-     */
-    new Swiper('.portfolio-details-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      }
     });
   
     /**

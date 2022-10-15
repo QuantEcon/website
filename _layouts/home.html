@@ -29,86 +29,88 @@ layout: default
 <main id="main">
 
   <!-- ======= Services Section ======= -->
-  <section id="services" class="services  section-bg">
+  <section id="services" class="services section-bg">
 
     <div class="container" data-aos="fade-up">
 
     <div class="section-title d-flex justify-content-around">
       <div class="col-md-10">
         <p>QuantEcon is a nonprofit organization dedicated
-          to development and documentation of open source computational tools for economics, econometrics,
+          to development and documentation of open source <a href="/projects/">computational tools</a> for economics, econometrics,
           and decision making. </p>
       </div>
     </div>
 
-      <div class="row justify-content-between">
+      <div class="row gx-5 justify-content-between">
         <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
             <!-- <div class="icon"><i class="bx bx-layer"></i></div> -->
-            <h3><a href="">Projects</a></h3>
+            <h2><a href="">Projects</a></h2>
 
             <ul class="project-list">
 
               <li>
-                <a href="/lectures/">
+                <a href="/projects/#filter=lecture">
                   <div class="thumb"><img src="/assets/img/projects/project-lectures.png" alt=" " style="width:30px;" />
                   </div>
                   <h3>
                     Lecture Series
                   </h3>
                   <div class="desc">
-                    <p>QuantEcon hosts lecture series on economics...</p>
+                    <p>QuantEcon hosts lecture series on economics, finance, econometrics and data science. All lecture series are based on open source languages and open computing environments.</p>
                   </div>
                 </a>
               </li>
 
               <li>
-                <a href="#">
+                <a href="/quantecon-textbook/">
                   <div class="thumb"><img src="/assets/img/projects/jupyter-book-logo.svg" alt=" "
                       style="width:30px;" /></div>
                   <h3>Textbook</h3>
                   <div class="desc">
-                    <p>Blanditiis animi velit delectus in fugiat</p>
+                    <p>A series of high quality hardcopy textbooks on topics in computational economics and economic dynamics.</p>
                   </div>
                 </a>
               </li>
 
               <li>
-                <a href="#">
+                <a href="https://notes.quantecon.org/">
                   <div class="thumb"><img src="/assets/img/projects/project-notes.png" alt=" " style="width:30px;" />
                   </div>
                   <h3>QE Notes</h3>
                   <div class="desc">
-                    <p>Repudiandae quidem enim repellat quo blanditiis</p>
+                    <p>QuantEcon Notes is a platform which hosts an open Jupyter notebook library with a focus on economics and finance.</p>
                   </div>
                 </a>
               </li>
 
-              <li>
-                <a href="#">
+              <li style="opacity: 0.6; pointer-events:none;">
+                <a>
                   <div class="thumb"><img src="/assets/img/projects/project-lectures.png" alt=" " style="width:30px;" />
                   </div>
                   <h3>Videos</h3>
                   <div class="desc">
-                    <p>Fugiat ipsum ex rerum odio est illum nemo consectetur</p>
+                    <p>Videos are coming soon.</p>
                   </div>
                 </a>
               </li>
 
               <li>
-                <a href="#">
+                <a href="/projects/#filter=code">
                   <div class="thumb"><img src="/assets/img/projects/project-python.png" alt=" " style="width:30px;" />
                   </div>
                   <h3>Code</h3>
                   <div class="desc">
-                    <p>Blanditiis animi velit delectus in fugiat</p>
+                    <p>QuantEcon has developed and maintains high-performance, open source, code libraries in Python and Julia.</p>
                   </div>
                 </a>
               </li>
 
             </ul>
 
-            <p><a href="/projects/">All Projects</a></p>
+            <br>
+
+            <p><a href="/projects/" class="btn-learn-more">View All Projects</a></p>
 
 
           </div>
@@ -117,7 +119,7 @@ layout: default
         <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
           <div class="icon-box">
             <!-- <div class="icon"><i class="bx bx-layer"></i></div> -->
-            <h3><a href="">Workshops</a></h3>
+            <h2><a href="">Workshops</a></h2>
 
             <p><img style="display:block; width:100%;"
                 src="/assets/img/services_workshop_photo.jpg"></p>
@@ -126,13 +128,15 @@ layout: default
 
             <p>QuantEcon can organize and run remote and in-person workshops and
               short courses on quantitative economics and high-performance computing
-              using Python and Julia. Past locations include the Econometric
+              using Python and Julia.</p>
+              
+              <p>Past locations include the Econometric
               Society meetings, Columbia, Copenhagen, the Reserve Bank of Australia,
-              Stanford, Princeton, Harvard, MIT, Berkeley, and UCLA.</p>
+              Stanford, Princeton, Harvard, MIT, Berkeley, UCLA, Paris and the Central Bank of Chile.</p>
 
             <br>
 
-            <p><a href="#" class="btn-learn-more">Contact us</a></p>
+            <p><a href="mailto:contact@quantecon.org" class="btn-learn-more">Contact us</a></p>
 
           </div>
         </div>
@@ -156,7 +160,7 @@ layout: default
 
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <p>Natasha is a PhD candidate in Economics at the University of California, Los Angeles. She was previously a Pre-doctoral Fellow at QuantEcon, based at Australian National University. Natasha assisted in running workshops on data analysis and econometrics in Python, contributed material to QuantEcon lectures covering the Pandas and Statsmodels libraries, and maintained news and social media for the QuantEcon project.</p>
+              <p>Natasha is a PhD candidate in Economics at the University of California. During her pre-doctoral fellowship at QuantEcon, Natasha assisted in running workshops on data analysis and econometrics in Python. She has contributed material to QuantEcon lectures, covering the Pandas and Statsmodels libraries, and maintains QuantEcon news and social media.</p>
               <img src="/assets/img/testimonials/natasha.jpg" class="testimonial-img" alt="">
               <h3>Natasha</h3>
               <h4>Research Assistant</h4>
@@ -165,7 +169,7 @@ layout: default
 
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <p>I am starting my PhD in Economics at Stanford University in 2022. I am primarily interested in macro-finance and mathematical economics - working to understand the nature of default and debt as amplification mechanisms in the macroeconomy. I was a research assistant for Quantecon and I was Professor Stachurski's Honours student at the ANU.</p>
+              <p>Flint is a PhD student in Economics at Stanford University in 2022. His primary interest is in macro-finance and mathematical economics. Flint is working to understand the nature of default and debt as amplification mechanisms in the macroeconomy. He is also a research assistant for QuantEcon and was Professor Stachurski's Honours student at the ANU.</p>
               <img src="/assets/img/testimonials/flint.jpg" class="testimonial-img" alt="">
               <h3>Flint O'Neil</h3>
               <h4>Lead Developer</h4>
@@ -174,7 +178,7 @@ layout: default
 
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <p>I am currently a PhD student at the University of Arizona, working on Macro labor economics to understand people's marital and labor supply decisions. I worked at QuantEcon as a research assistant and helped construct lecture notebooks and Python modules.</p>
+              <p>Zejin is a PhD student at the University of Arizona, working on Macro labor economics, understanding people's marital and labor supply decisions. He is a research assistant at QuantEcon and has helped construct lecture notebooks and Python modules.</p>
               <img src="/assets/img/testimonials/zejin_shi.jpg" class="testimonial-img" alt="">
               <h3>Zejin Shi</h3>
               <h4>Research Assistant</h4>
