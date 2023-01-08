@@ -9,6 +9,21 @@ QuantEcon runs workshops on computational modeling for economists using Python
 
 ## Recent Workshops
 
+**September 2022, Central Bank of Chile**
+
+*   Presenters: John Stachurski, Pablo Winant
+*   [Website](https://github.com/QuantEcon/cbc_workshops)
+
+**September 2022, Center for Research in Economics and Statistics (CREST), Paris**
+
+*   Presenters:  Edouard Challe, Beatrice Cherrier, Alfred Galichon, John Stachurski, Pablo Winant
+*   [Website](https://github.com/albop/CREST2022)
+
+**22 July 2022 , Research School of Economics**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/rse_comp_econ_2022)
+
 **10 April 2019, Department of Industry, Innovation and Science**
 
 *   Presenters: John Stachurski, Natasha Watkins
