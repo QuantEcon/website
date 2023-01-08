@@ -19,7 +19,7 @@ QuantEcon runs workshops on computational modeling for economists using Python
 *   Presenters:  Edouard Challe, Beatrice Cherrier, Alfred Galichon, John Stachurski, Pablo Winant
 *   [Website](https://github.com/albop/CREST2022)
 
-**22 July 2022 , Research School of Economics**
+**22 July 2022 , Research School of Economics, ANU, Canberra**
 
 *   Presenters: John Stachurski
 *   [Website](https://github.com/QuantEcon/rse_comp_econ_2022)
