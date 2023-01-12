@@ -176,10 +176,11 @@
         let projectsIsotope = new Isotope(projectsContainer, {
           layoutMode: 'fitRows',
           itemSelector: '.projects-item',
-          getSortData: {
-            name: '.name'
-          },
-          sortBy: 'name'
+          //getSortData: {
+          //  name: '.name'
+          //},
+          //sortBy: 'name'
+          sortBy: 'original-order'
         });
   
         let projectsFilters = select('#projects-flters li', true);

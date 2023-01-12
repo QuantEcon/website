@@ -15,7 +15,9 @@ layout: default
 
 <ul class="row projects projects-container" data-aos="fade-up" data-aos-delay="200">
 
-  {% for project in site.projects %}
+  {% assign sorted_projects = site.projects | sort:"order" %}
+
+  {% for project in sorted_projects %}
     <li class="col-lg-4 projects-item filter-{{ project.type }}">
       <a target="_blank" href="{{ project.link }}">
         <div class="project d-flex flex-column align-items-start">
