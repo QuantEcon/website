@@ -511,7 +511,7 @@ h2 {
 
 @media (max-width: 991px) {
   #hero {
-    height: 90vh;
+    //height: 90vh;
     text-align: center;
     background-position: 0 0;
     .hero-img {
@@ -525,6 +525,7 @@ h2 {
 
 @media (max-width: 768px) {
   #hero {
+    background-attachment:scroll;
     .container {
       h1 {
         font-size: 48px;
