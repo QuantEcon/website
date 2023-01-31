@@ -429,7 +429,7 @@ h2 {
   --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   //background-image: url(/assets/img/leadspace.jpg);
   background-image: url(/assets/img/mountains1.jpg);
   background-color: #283039;
@@ -511,12 +511,8 @@ h2 {
 
 @media (max-width: 991px) {
   #hero {
-    height: 100vh;
+    height: 80vh;
     text-align: center;
-    .animated {
-      -webkit-animation: none;
-      animation: none;
-    }
     .hero-img {
       text-align: center;
       img {
