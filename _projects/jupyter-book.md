@@ -4,4 +4,5 @@ description: QuantEcon a founding member of the Executable Books Project, which 
 link: https://jupyterbook.org/intro.html
 image: jupyter-book-logo.svg
 order: 6
+type: tool
 ---
