@@ -78,8 +78,14 @@
               {% for node in pages %}
               <li{% if page.url==node.url %} class="active" {% endif %}><a href="{{ node.url | relative_url }}">{{
                   node.title }}</a></li>
-                {% endfor %}
-                <li><a href="https://github.com/QuantEcon" target="_blank">GitHub</a></li>
+              {% endfor %}
+              <li><a href="https://github.com/QuantEcon" target="_blank">GitHub</a></li>
+              <li class="dropdown"><a href="#"><span>Support</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="/store/">Merchandise</a></li>
+                  <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Donate</a></li>
+                </ul>
+              </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
