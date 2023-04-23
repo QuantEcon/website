@@ -210,7 +210,7 @@ img {
     .active a,
     .active:focus,
     li:hover>a {
-      color: inherit;
+      color: $color-link;
       text-decoration: none;
     }   
   }
@@ -247,11 +247,12 @@ img {
       visibility: hidden;
       background: #fff;
       box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+      border: 1px solid $color-light;
       transition: 0.3s;
       li {
-        min-width: 200px;
+        min-width: 100px;
         a {
-          padding: 10px 20px;
+          padding: 0.1rem 1rem;
           font-size: 14px;
           color: #2c4964;
           i {
@@ -262,7 +263,7 @@ img {
       a:hover,
       .active:hover,
       li:hover>a {
-        color: #5846f9;
+        color: $color-link;
       }
     }
     &:hover>ul {
@@ -287,6 +288,8 @@ img {
 
   }
 }
+
+
 
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
@@ -374,7 +377,7 @@ img {
   .dropdown {
     ul {
       position: static;
-      display: none;
+      //display: none;
       margin: 10px 20px;
       padding: 10px 0;
       z-index: 99;
