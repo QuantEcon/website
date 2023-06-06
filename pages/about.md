@@ -2,6 +2,7 @@
 title: About
 permalink: /about/
 menu_item: true
+layout: about
 ---
 # About
 
