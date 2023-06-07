@@ -2,7 +2,6 @@
 title: About
 permalink: /about/
 menu_item: true
-layout: about
 ---
 # About
 
@@ -91,6 +90,3 @@ The following tutorial is helpful for more advanced understanding of git branchi
 *Additional Git Resources:*
 
 * [GitHub Help](https://help.github.com/)
-
-
-<br>
