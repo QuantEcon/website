@@ -4,11 +4,11 @@ layout: default
 
 {{ content }}
 
-<h2>Team</h2>
+<h1>Team</h1>
 
 <section id="team" class="team">
 
-	<h3>Founding Members and Co-Chairs</h3>
+	<h2>Founding Members and Co-Chairs</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' %}
 	<div class="row">
@@ -17,7 +17,7 @@ layout: default
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
-					<h4><a href="{{ team-member.link }}">{{ team-member.name }}</a></h4>
+					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
 				</div>
 			</div>
@@ -25,7 +25,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h3>Committee Members</h3>
+	<h2>Committee Members</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Committee Members' %}
 	<div class="row">
@@ -34,7 +34,7 @@ layout: default
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
-					<h4><a href="{{ team-member.link }}">{{ team-member.name }}</a></h4>
+					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
 				</div>
 			</div>
@@ -42,7 +42,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h3>Lead Developers</h3>
+	<h2>Lead Developers</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Lead Developers' %}
 	<div class="row">
@@ -51,7 +51,7 @@ layout: default
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
-					<h4><a href="{{ team-member.link }}">{{ team-member.name }}</a></h4>
+					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
 				</div>
 			</div>
@@ -59,7 +59,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h3>QuantEcon Early Career Researchers</h3>
+	<h2>QuantEcon Early Career Researchers</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'QuantEcon Early Career Researchers' %}
 	<div class="row">
@@ -68,7 +68,7 @@ layout: default
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
-					<h4><a href="{{ team-member.link }}">{{ team-member.name }}</a></h4>
+					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
 				</div>
 			</div>
@@ -76,7 +76,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h3>Previous Steering Committee Members</h3>
+	<h2>Previous Steering Committee Members</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' %}
 	<div class="row">
@@ -85,7 +85,7 @@ layout: default
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
-					<h4><a href="{{ team-member.link }}">{{ team-member.name }}</a></h4>
+					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
 				</div>
 			</div>
@@ -93,7 +93,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h3>Previous Lead Developers</h3>
+	<h2>Previous Lead Developers</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Previous Lead Developers' %}
 	<div class="row">
@@ -102,7 +102,7 @@ layout: default
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
-					<h4><a href="{{ team-member.link }}">{{ team-member.name }}</a></h4>
+					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
 				</div>
 			</div>
