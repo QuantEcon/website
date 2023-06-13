@@ -1,6 +1,6 @@
 ---
 name: Humphrey Yang
-image: humphrey.jpeg
+image: humphrey.jpg
 link: https://github.com/HumphreyYang
 role: "Lead Developers"
 ---
