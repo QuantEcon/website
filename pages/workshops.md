@@ -8,6 +8,20 @@ menu_item: false
 QuantEcon runs workshops on computational modeling for economists using Python and Julia. 
 
 ## Recent Workshops
+**April 2023, Kobe University**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/kobe_comp_econ_2023)
+
+**April 2023, Nagoya University**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/nagoya_comp_econ_2023)
+
+**April 2023, Keio University**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/keio_comp_econ_2023)
 
 **September 2022, Central Bank of Chile**
 
@@ -19,17 +33,17 @@ QuantEcon runs workshops on computational modeling for economists using Python
 *   Presenters:  Edouard Challe, Beatrice Cherrier, Alfred Galichon, John Stachurski, Pablo Winant
 *   [Website](https://github.com/albop/CREST2022)
 
-**22 July 2022 , Research School of Economics, ANU, Canberra**
+**July 2022 , Research School of Economics, ANU, Canberra**
 
 *   Presenters: John Stachurski
 *   [Website](https://github.com/QuantEcon/rse_comp_econ_2022)
 
-**10 April 2019, Department of Industry, Innovation and Science**
+**April 2019, Department of Industry, Innovation and Science**
 
 *   Presenters: John Stachurski, Natasha Watkins
 *   [Website](https://quantecon.org/department-of-industry-innovation-and-science)
 
-**28 May 2018, University of Copenhagen**
+**May 2018, University of Copenhagen**
 
 *   Presenters: John Stachurski, Natasha Watkins
 *   [Website](https://quantecon.org/copenhagen-summer-school-2018)
