@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Book of Economic Networks: Theory and Computation"
+title: "New Book on Economic Networks"
 author: Jingni Yang
 excerpt: The new book "Economic Networks, theory and computation" by John Stachurski and Tom Sargent.
 ---

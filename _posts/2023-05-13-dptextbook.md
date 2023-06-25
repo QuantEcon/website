@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Book of Dynamic Programming"
+title: "New book on dynamic programming"
 author: Jingni Yang
 excerpt: The new book "Dynamic Programming Volume 1" by Tom Sargent and John Stachurski is available.
 ---

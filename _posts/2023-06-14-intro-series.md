@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Launched an Introductory Lecture Series"
+title: "Introductory Lecture Series Launched"
 author: Jingni Yang
 excerpt: QuantEcon has launched A First Course in Quantitative Economics with Python.
 ---
