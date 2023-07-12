@@ -2,6 +2,7 @@
 title: "QuantEcon Lectures"
 permalink: /lectures/
 menu_item: false
+redirect_to: https://quantecon.org/projects/#filter=lecture
 ---
 # QuantEcon Lectures
 
