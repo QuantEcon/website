@@ -6,7 +6,25 @@ layout: default
 
 <h1>Lectures</h1>
 
-	<ul class="row projects projects-container" data-aos="fade-up" data-aos-delay="200">
+
+<div class="home-series">
+    <ul>
+        {% assign sorted_lectures = site.lectures | sort: 'order' | reverse %}
+        {% for lecture in sorted_lectures reversed %}
+        <li>
+            <a href="{{ lecture.link }}">
+                <span class="icon"><img src="/assets/img/projects/{{ lecture.image }}"></span>
+                <h3 color="#3070B6">{{ lecture.name }}</h3>
+				<p>{{ lecture.description }}</p>
+            </a>
+        </li>
+		{% endfor %}
+    </ul>
+</div>
+
+<!-- This is for block arranged style -->
+
+<!-- <ul class="row projects projects-container" data-aos="fade-up" data-aos-delay="200">
 	{% assign sorted_lectures = site.lectures | sort: 'order' | reverse %}
 	<div class="row">
 		{% for lecture in sorted_lectures reversed %}
@@ -17,7 +35,7 @@ layout: default
 				  <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div>
 				  <div class="item-title">
 					<h3 class="name">{{ lecture.name }}</h3>
-					<!-- <p class="type type-{{ lecture.type }}"><span>{{ lecture.type }}</span></p> -->
+					<p class="type type-{{ lecture.type }}"><span>{{ lecture.type }}</span></p>
 				  </div>
 				</div>
 				<div class="item-desc">
@@ -28,4 +46,4 @@ layout: default
 		  </li>
 		{% endfor %}
 	</div>
-	</ul>
+</ul> -->
