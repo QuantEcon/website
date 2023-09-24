@@ -5,28 +5,19 @@ menu_item: false
 layout: default
 ---
 
-# Packages
+# Code
 
-<ul class="row projects projects-container">
-	{% assign sorted_lectures = site.projects | where: 'type', 'code' %}
-	<div class="row">
-		{% for lecture in sorted_lectures reversed %}
-		<li class="col-lg-4 projects-item filter-{{ lecture.type }}">
-			<a target="_blank" href="{{ lecture.link }}">
-			  <div class="project d-flex flex-column align-items-start">
-				<div class="item-info d-flex">
-				  <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div>
-				  <div class="item-title">
-					<h3 class="name">{{ lecture.name }}</h3>
-					<p class="type type-{{ lecture.type }}"><span>{{ lecture.type }}</span></p>
-				  </div>
-				</div>
-				<div class="item-desc">
-				  {{ lecture.description | markdownify }}
-				</div>
-			  </div>
-			</a>
-		  </li>
+<div class="home-series">
+    <ul>
+        {% assign sorted_projects = site.projects | where: 'type', 'resource' %}
+        {% for project in sorted_projects reversed %}
+        <li>
+            <a href="{{ project.link }}">
+                <span class="icon"><img src="/assets/img/projects/{{ project.image }}"></span>
+                <h3 color="#3070B6">{{ project.name }}</h3>
+				<p>{{ project.description }}</p>
+            </a>
+        </li>
 		{% endfor %}
-	</div>
-</ul>
+    </ul>
+</div>
