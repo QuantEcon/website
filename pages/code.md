@@ -9,7 +9,7 @@ layout: default
 
 <div class="home-series">
     <ul>
-        {% assign sorted_projects = site.projects | where: 'type', 'resource' %}
+        {% assign sorted_projects = site.projects | where: 'type', 'code' %}
         {% for project in sorted_projects reversed %}
         <li>
             <a href="{{ project.link }}">

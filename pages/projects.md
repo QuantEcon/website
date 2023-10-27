@@ -1,5 +1,5 @@
 ---
-title: Other Projects
+title: other_projects
 permalink: projects
 menu_item: false
 layout: default
