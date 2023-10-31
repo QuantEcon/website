@@ -1,0 +1,40 @@
+<!-- ---
+layout: default
+---
+
+{{ content }}
+
+
+<ul id="projects-flters" class="projects-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
+  <li data-filter="*" class="filter-active">All</li>
+  <li data-filter=".filter-lecture">Lectures</li>
+  <li data-filter=".filter-code">Code</li>
+  <li data-filter=".filter-resource">Resources</li>
+</ul>
+
+
+<ul class="row projects projects-container" data-aos="fade-up" data-aos-delay="200">
+
+  {% assign sorted_projects = site.projects | sort:"order" %}
+
+  {% for project in sorted_projects %}
+    <li class="col-lg-4 projects-item filter-{{ project.type }}">
+      <a target="_blank" href="{{ project.link }}">
+        <div class="project d-flex flex-column align-items-start">
+          <div class="item-info d-flex">
+            <div class="item-pic"><img src="/assets/img/projects/{{ project.image }}"></div>
+            <div class="item-title">
+              <h3 class="name">{{ project.name }}</h3>
+              <p class="type type-{{ project.type }}"><span>{{ project.type }}</span></p>
+            </div>
+          </div>
+          <div class="item-desc">
+            {{ project.description | markdownify }}
+          </div>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+
+</ul>
+ -->

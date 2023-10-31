@@ -28,16 +28,10 @@ layout: default
 <main id="main">
 
   <section id="featured" class="featured">
-
+    <!-- Lectures and Code Libraries -->
     <div class="container">
 
-      <div class="row justisfy-content-center gx-5">
-
-        <!-- <div class="row justify-content-md-between col-md-8"> -->
-        <!-- 
-    <div class="col-md-8 d-flex justify-content-around"> -->
-
-        <!-- <div class="col-md-8 row" data-aos="zoom-in" data-aos-delay="400"> -->
+      <div class="row justisfy-content-center gx-5" data-aos="zoom-in" data-aos-delay="150">
 
         <div class="col-md-6">
 
@@ -52,42 +46,73 @@ layout: default
               <h2>Lectures</h2>
               <p>QuantEcon hosts lecture series on economics, finance, econometrics and data science. All lecture series
                 are based on open source languages and open computing environments.</p>
-              <p><a href="/projects/#filter=lecture" class="btn-learn-more">Browse lectures</a></p>
-
-              </p>
+              <p><a href="/lectures/" class="btn-learn-more">Browse lectures</a></p>
             </div>
           </div>
-
         </div>
+
         <div class="col-md-6 mt-5 mt-md-0">
 
           <div class="row">
-
 
             <div class="col-md-4 offset-md-0 d-none d-md-block">
               <p><img src="/assets/img/code-thumb.png" class="img-thumbnail" alt="Screenshot showing python code"></p>
             </div>
 
-
             <div class="col-md-8 offset-md-0">
               <h2>Code Libraries</h2>
               <p>QuantEcon has developed and maintains high-performance, open source, code libraries in Python and
-                Julia.
-              </p>
+                Julia.</p>
               <br>
-              <p><a href="/projects/#filter=code" class="btn-learn-more">View libraries</a></p>
-
+              <p><a href="/code/" class="btn-learn-more">View libraries</a></p>
             </div>
           </div>
-
         </div>
-
       </div>
+    
+      <br>
+      <!-- <div class="section-title">
+        <h1>Books</h1>
+      </div> -->
+      <br>
+      <!-- Books's image and descriptions -->
+      <div class="row justisfy-content-center gx-5" data-aos="zoom-in" data-aos-delay="150">
 
+        <div class="col-md-6">
 
+          <div class="row">
 
-    </div>
+            <div class="col-md-4 offset-md-0 d-none d-md-block">
+              <p><img src="/assets/img/books/dp-image.png" class="img-thumbnail" alt="Icon of Dynamic Programming book"></p>
+            </div>
 
+            <div class="col-md-8 offset-md-0">
+              <h3>Dynamic Programming</h3>
+              <p>This book is about dynamic programming and its applications in economics, finance, and adjacent
+                fields like operations research. It brings together recent innovations in the theory of dynamic
+                programming.</p>
+              <p><a href="https://dp.quantecon.org/" class="btn-learn-more">View online version</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5 mt-md-0">
+
+          <div class="row">
+
+            <div class="col-md-4 offset-md-0 d-none d-md-block">
+              <p><img src="/assets/img/books/networks-image.png" class="img-thumbnail" alt="Icon of Economic Networks book">
+              </p>
+            </div>
+
+            <div class="col-md-8 offset-md-0">
+              <h3>Economic Networks</h3>
+              <p>This book is an introduction to economic networks and it emphasizes quantitative modeling, with the
+                main underlying tools being graph theory, linear algebra, fixed point theory and programming.</p>
+              <p><a href="https://networks.quantecon.org/" class="btn-learn-more">View online version</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </section>
@@ -110,16 +135,17 @@ layout: default
             short courses on quantitative economics and high-performance computing
             using Python and Julia.</p>
 
-          <p>Past locations include the Econometric
+          <p><a href="/workshops">Past locations</a> include the Econometric
             Society meetings, Columbia University, Copenhagen, the Reserve Bank of Australia,
             Stanford, Princeton, Harvard, MIT, Berkeley, UCLA, Paris and the Central Bank of Chile.</p>
-
+          
           <br>
-
-          <p class="m-0"><a href="mailto:contact@quantecon.org" class="btn-learn-more">Contact us</a></p>
+            
+          <p class="m-0">
+            <a href="mailto:contact@quantecon.org" class="btn-learn-more">Contact us</a>
+          </p>
         </div>
       </div>
-
     </div>
 
   </section>
@@ -145,7 +171,7 @@ layout: default
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
 
       <div class="section-title">
-        <h2>Projects</h2>
+        <h2>Open Source</h2>
       </div>
 
       <div class="row justisfy-content-center gx-5">
@@ -156,8 +182,8 @@ layout: default
 
             <div class="row gy-3 gx-5">
 
-              <div class="col-md-6">
-                <a href="/projects/#filter=lecture">
+              <!-- <div class="col-md-6">
+                <a href="/lectures">
                   <div class="thumb"><img src="/assets/img/projects/project-lectures.png" alt=" " style="width:30px;" />
                   </div>
                   <h3>
@@ -170,7 +196,7 @@ layout: default
               </div>
 
               <div class="col-md-6">
-                <a href="/projects/#filter=code">
+                <a href="/code">
                   <div class="thumb"><img src="/assets/img/projects/project-python.png" alt=" " style="width:30px;" />
                   </div>
                   <h3>Code</h3>
@@ -179,9 +205,9 @@ layout: default
                       Julia.</p>
                   </div>
                 </a>
-              </div>
+              </div> -->
 
-              <div class="col-md-6">
+              <!-- <div class="col-md-6">
                 <a href="/quantecon-textbook/">
                   <div class="thumb"><img src="/assets/img/projects/project-textbook.png" alt=" " style="width:30px;" />
                   </div>
@@ -191,7 +217,7 @@ layout: default
                       dynamics.</p>
                   </div>
                 </a>
-              </div>
+              </div> -->
 
               <div class="col-md-6">
                 <a href="https://notes.quantecon.org/">
@@ -216,31 +242,17 @@ layout: default
                   </div>
                 </a>
               </div>
-
             </div>
-
-
-
           </div>
-
-
         </div>
 
         <br>
 
-        <p class="text-center m-0"><a href="/projects/" class="btn-learn-more">View All Projects</a></p>
-
+        <!-- <p class="text-center m-0"><a href="/projects/" class="btn-learn-more">View All Projects</a></p> -->
 
       </div>
-
-    </div>
     </div>
 
-
-
-    </div>
-
-    <!-- </div> -->
   </section><!-- End Services Section -->
 
   <section id="sponsors" class="sponsors section-bg">
@@ -259,19 +271,17 @@ layout: default
         <div class="col-md-5 mt-5 mt-md-0">
 
           <p class="m-0"><a href="https://schmidtfutures.com/">
-              <img src="/assets/img/schmidt-logo.svg" alt="Schmidt Futures logo" width="400">
-            </a></p>
+              <img src="/assets/img/schmidt-logo.svg" alt="Schmidt Futures logo" width="400"></a></p>
 
         </div>
-
       </div>
-
     </div>
 
   </section>
 
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials">
+
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
@@ -279,9 +289,11 @@ layout: default
       </div>
 
       <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+
         <div class="swiper-wrapper">
 
           <div class="swiper-slide">
+
             <div class="testimonial-item">
 
               <img src="/assets/img/testimonials/natasha.jpg" class="testimonial-img" alt="">
@@ -297,7 +309,9 @@ layout: default
           </div><!-- End testimonial item -->
 
           <div class="swiper-slide">
+
             <div class="testimonial-item">
+
               <img src="/assets/img/testimonials/flint.jpg" class="testimonial-img" alt="">
               <h3>Flint O'Neil</h3>
               <h4>Lead Developer</h4>

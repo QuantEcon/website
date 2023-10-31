@@ -1,8 +1,8 @@
 ---
-title: Projects
-permalink: /projects/
-menu_item: true
-layout: projects
+title: Other Projects
+permalink: projects
+menu_item: false
+layout: other
 ---
-# Projects
 
+# Other Projects
