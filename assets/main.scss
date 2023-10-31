@@ -831,7 +831,7 @@ section {
 
 
 /*--------------------------------------------------------------
-# Projects
+# Projects Style (Linear Listing)
 --------------------------------------------------------------*/
 
 .projects {
@@ -846,13 +846,13 @@ section {
     position: relative;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid #b7b7b7;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 5px;
     background: #fff;
     transition: 0.5s;
     margin: 0 0 1.5rem 0;
     @media (min-width: 768px) {
-      min-height: 220px;
+      min-height: 100px;
     }
     
 
@@ -930,106 +930,6 @@ section {
     }
   }
 }
-
-/*--------------------------------------------------------------
-# Lectures
---------------------------------------------------------------*/
-
-.lectures {
-  padding: 0;
-  list-style: none;
-  margin: 0;
-  h2 {
-    margin: 2rem 0 1rem 0;
-  }
-  .lecture {
-    list-style: none;
-    position: relative;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid #b7b7b7;
-    padding: 2rem;
-    border-radius: 5px;
-    background: #fff;
-    transition: 0.5s;
-    margin: 0 0 1.5rem 0;
-    @media (min-width: 768px) {
-      min-height: 110px;
-    }
-    
-
-    .item-info {
-      margin: 0 0 0rem 0;
-      //min-height: 72px;
-      .item-pic {
-        overflow: hidden;
-        flex-shrink: 0;
-        width: 50px;
-        margin-right: 1rem;
-        img {
-          width: 100%;
-        }
-      }
-      .item-title {
-        h3 {
-          color: $color-link;
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin:0;
-          //color: $color-dark;
-        }
-        .type {
-          margin:0;
-          text-transform: capitalize;
-          color: $color-dark;
-          border-radius: 4px;
-          border: 1px solid $color-med;
-          padding: 0.2rem 0.5rem 0.1rem 0.5rem;
-          margin: 0.5rem 0 0 0;
-          display: inline-block;
-          line-height: 1;
-          font-size: 0.8rem;
-          font-weight: bold;
-        }
-      }
-    }
-    .item-desc {
-      font-size: 1.1rem;
-      margin:0;
-      color: $color-dark;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3; /* number of lines to show */
-              line-clamp: 3; 
-      -webkit-box-orient: vertical;
-      * {
-        margin:0;
-      }
-    }
-
-    .type {
-      span {
-        // display: inline-block;
-        // background: $color-link;
-        // padding:0.25rem 1rem 0.3rem 1rem;
-        // color: #fff;
-        // border-radius: 2rem;
-        // text-transform: capitalize;
-        // font-weight: bold;
-        // color: $color-dark;
-        // font-size: 0.8rem;
-      }
-    }
-    .desc {
-      color: $color-dark;
-    
-      p {
-        margin: 0;
-      }
-    }
-  }
-}
-
 
 /*--------------------------------------------------------------
 # Testimonials

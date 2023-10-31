@@ -7,21 +7,21 @@ layout: default
 <!-- 
 	# Filters for language or difficulty
  -->
-<!-- <ul id="lectures-flters" class="lectures-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
+<!-- <ul id="projects-flters" class="projects-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
   <li data-filter="*" class="filter-active">All</li>
   <li data-filter=".filter-python">Python</li>
   <li data-filter=".filter-julia">Julia</li>
 </ul> -->
 
 
-<ul class="row lectures lectures-container">
+<ul class="row projects projects-container">
 
   {% assign sorted_lectures = site.lectures | sort: 'order' %}
 
   {% for lecture in sorted_lectures %}
-    <li class="lectures-item filter-{{ lecture.lang }}">
+    <li class="projects-item filter-{{ lecture.lang }}">
       <a target="_blank" href="{{ lecture.link }}">
-        <div class="lecture d-flex flex-column align-items-start">
+        <div class="project d-flex flex-column align-items-start">
           <div class="item-info d-flex">
             <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div>
             <div class="item-title">
