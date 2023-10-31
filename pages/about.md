@@ -31,7 +31,7 @@ QuantEcon is developed by the community for the community and contributions are 
 
 ## Join the Discourse forum
 
-You can reach out to the [QuantEcon team](team) via the [Discourse forum](http://discourse.quantecon.org/). 
+You can reach out to the [QuantEcon team](/team) via the [Discourse forum](http://discourse.quantecon.org/). 
 
 The forum is a good place to ask questions, get guidance on contributing to the project, or request new lectures or library features.
 
@@ -46,7 +46,7 @@ Through NumFOCUS, QuantEcon can receive tax-deductible donations to help support
 
 To support the QuantEcon project:
 
-*   [D](https://www.flipcause.com/secure/cause_pdetails/NjY5OA==)[onate directly](http://www.flipcause.com/secure/cause_pdetails/NjY5OA==) via Flipcause
+*   [Donate via NumFOCUS](https://numfocus.org/donate-to-quantecon)
 *   Shop in our [merchandise store](http://quantecon.org/store), featuring hoodies, t-shirts, and more
 
 ## Develop and contribute code
