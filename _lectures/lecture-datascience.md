@@ -5,4 +5,5 @@ link: https://datascience.quantecon.org/
 image: project-datascience.png
 order: 6
 type: lecture
+lang: python
 ---

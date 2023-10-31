@@ -5,4 +5,5 @@ link: https://julia.quantecon.org/
 image: project-julia.png
 order: 5
 type: lecture
+lang: julia
 ---

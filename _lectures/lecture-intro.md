@@ -5,4 +5,5 @@ link: https://intro.quantecon.org/
 image: project-python.png
 order: 2
 type: lecture
+lang: python
 ---

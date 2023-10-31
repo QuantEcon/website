@@ -4,46 +4,35 @@ layout: default
 
 {{ content }}
 
-<h1>Lectures</h1>
-
-
-<div class="home-series">
-    <ul>
-        {% assign sorted_lectures = site.lectures | sort: 'order' | reverse %}
-        {% for lecture in sorted_lectures reversed %}
-        <li>
-            <a href="{{ lecture.link }}">
-                <span class="icon"><img src="/assets/img/projects/{{ lecture.image }}"></span>
-                <h3 color="#3070B6">{{ lecture.name }}</h3>
-				<p>{{ lecture.description }}</p>
-            </a>
-        </li>
-		{% endfor %}
-    </ul>
-</div>
-
-<!-- This is for block arranged style -->
-
-<!-- <ul class="row projects projects-container" data-aos="fade-up" data-aos-delay="200">
-	{% assign sorted_lectures = site.lectures | sort: 'order' | reverse %}
-	<div class="row">
-		{% for lecture in sorted_lectures reversed %}
-		<li class="col-lg-4 projects-item filter-{{ lecture.type }}">
-			<a target="_blank" href="{{ lecture.link }}">
-			  <div class="project d-flex flex-column align-items-start">
-				<div class="item-info d-flex">
-				  <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div>
-				  <div class="item-title">
-					<h3 class="name">{{ lecture.name }}</h3>
-					<p class="type type-{{ lecture.type }}"><span>{{ lecture.type }}</span></p>
-				  </div>
-				</div>
-				<div class="item-desc">
-				  {{ lecture.description | markdownify }}
-				</div>
-			  </div>
-			</a>
-		  </li>
-		{% endfor %}
-	</div>
+<!-- 
+	# Filters for language or difficulty
+ -->
+<!-- <ul id="lectures-flters" class="lectures-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
+  <li data-filter="*" class="filter-active">All</li>
+  <li data-filter=".filter-python">Python</li>
+  <li data-filter=".filter-julia">Julia</li>
 </ul> -->
+
+
+<ul class="row lectures lectures-container">
+
+  {% assign sorted_lectures = site.lectures | sort: 'order' %}
+
+  {% for lecture in sorted_lectures %}
+    <li class="lectures-item filter-{{ lecture.lang }}">
+      <a target="_blank" href="{{ lecture.link }}">
+        <div class="lecture d-flex flex-column align-items-start">
+          <div class="item-info d-flex">
+            <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div>
+            <div class="item-title">
+              <h3 class="name">{{ lecture.name }}</h3>
+				<div class="item-desc">
+					{{ lecture.description | markdownify }}
+				</div>
+			</div>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+
+</ul>

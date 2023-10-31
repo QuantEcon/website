@@ -5,4 +5,5 @@ link: https://jax.quantecon.org/
 image: project-python.png
 order: 8
 type: lecture
+lang: python
 ---

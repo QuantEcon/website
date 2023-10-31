@@ -5,4 +5,5 @@ link: https://quantecon.github.io/continuous_time_mcs/
 image: project-lectures.png
 order: 7
 type: lecture
+lang: python
 ---

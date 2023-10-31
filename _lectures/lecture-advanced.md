@@ -5,4 +5,5 @@ link: https://python-advanced.quantecon.org/
 image: project-python.png
 order: 4
 type: lecture
+lang: python
 ---
