@@ -868,6 +868,16 @@ section {
           width: 100%;
         }
       }
+      // Item pic style for book page
+      .item-pic-books {
+        overflow: hidden;
+        flex-shrink: 0;
+        width: 150px;
+        margin-right: 1rem;
+        img {
+          width: 150%;
+        }
+      }
       .item-title {
         h3 {
           color: $color-link;
