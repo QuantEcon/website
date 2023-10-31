@@ -14,7 +14,11 @@ Development is centered on open source scientific computing environments such as
 
 QuantEcon is a [NumFocus](http://www.numfocus.org/) Fiscally Sponsored Project, currently funded primarily by the Alfred P. Sloan Foundation.
 
-To learn more about our activities visit the [projects page](projects.md).
+To learn more about our activities you can visit:
+1. [Lectures](/lectures)
+2. [Code Libraries](/code)
+3. [Books](/books)
+4. [Other Projects](/projects)
 
 ## Contact
 
@@ -23,11 +27,13 @@ Send feedback to [contact@quantecon.org](mailto:contact@quantecon.org)
 
 ## Get Involved
 
-QuantEcon is developed [by the community for the community](https://quantecon.org/about) and contributions are welcome. There are several ways you can get involved.
+QuantEcon is developed by the community for the community and contributions are welcome. There are several ways you can get involved.
 
 ## Join the Discourse forum
 
-You can reach out to the [QuantEcon team](https://quantecon.org/team) via the [Discourse forum](http://discourse.quantecon.org/). The forum is a good place to ask questions, get guidance on contributing to the project, or request new lectures or library features.
+You can reach out to the [QuantEcon team](team) via the [Discourse forum](http://discourse.quantecon.org/). 
+
+The forum is a good place to ask questions, get guidance on contributing to the project, or request new lectures or library features.
 
 ## Donate
 
@@ -45,11 +51,11 @@ To support the QuantEcon project:
 
 ## Develop and contribute code
 
-We welcome submission of algorithms and high quality code to [QuantEcon.py](https://quantecon.org/quantecon-py) and [QuantEcon.jl](https://quantecon.org/quantecon-jl) on all topics in quantitative economics.
+We welcome submission of algorithms and high quality code to [QuantEcon.py](/quantecon-py) and [QuantEcon.jl](/quantecon-jl) on all topics in quantitative economics.
 
-*   Information on contributing to [QuantEcon.py](https://quantecon.org/quantecon-py) is found [here](https://quantecon.org/python-developers)
+*   Information on contributing to [QuantEcon.py](/quantecon-py) is found [here](/python-developers)
 
-*   Information on contributing to [QuantEcon.jl](https://quantecon.org/quantecon-jl) is found [here](https://quantecon.org/julia-developers)
+*   Information on contributing to [QuantEcon.jl](/quantecon-jl) is found [here](/julia-developers)
 
 Less experienced developers who wish to get involved can help improve documentation, work on smaller enhancements or report bugs and request features.
 
@@ -59,16 +65,15 @@ If you’ve written code related to quantitative economics and want to share it 
 
 ## Contributing to the lectures
 
-QuantEcon develops and supports the following 
-[lecture series](https://quantecon.org/lectures/) for quantitative economics 
-and datascience. Bug fixes or small updates are welcome as pull requests (PR). Some PR
-requirements:
+QuantEcon develops and supports the following [lecture series](/lectures) for quantitative economics and datascience. 
+
+Bug fixes or small updates are welcome as pull requests (PR). Some PR requirements:
 
 1. If possible, a PR should address just one lecture
 2. Python lectures should execute with the *latest* Anaconda environment.
    Please update and check prior to submitting your PR.
 
-Information on contributing to the python lectures can be found [here](https://quantecon.org/contribute-lectures/)
+Information on contributing to the python lectures can be found [here](/contribute-lectures)
 
 ## Resources
 
