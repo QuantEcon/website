@@ -4,6 +4,7 @@ description: This is one of a series of online texts on modern quantitative econ
 link: https://python-advanced.quantecon.org/
 image: project-python.png
 order: 4
-type: lecture
+topic: Programming, Modelling, Python
 lang: python
+dificulty: 3
 ---

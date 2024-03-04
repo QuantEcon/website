@@ -1,7 +1,8 @@
 ---
-title: About
+title: About Us
 permalink: /about/
 menu_item: true
+order: 2
 ---
 # About
 

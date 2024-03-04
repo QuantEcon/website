@@ -4,35 +4,45 @@ layout: default
 
 {{ content }}
 
-<!-- 
-	# Filters for language or difficulty
- -->
-<!-- <ul id="projects-flters" class="projects-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
+<ul id="projects-flters" class="projects-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
   <li data-filter="*" class="filter-active">All</li>
-  <li data-filter=".filter-python">Python</li>
-  <li data-filter=".filter-julia">Julia</li>
-</ul> -->
+  <li data-filter=".filter-DataScience">DataScience</li>
+  <li data-filter=".filter-Dynamics">Dynamics</li>
+  <li data-filter=".filter-Introduction">Introduction</li>
+  <li data-filter=".filter-JAX">JAX</li>
+  <li data-filter=".filter-Julia">Julia</li>
+  <li data-filter=".filter-Modelling">Modelling</li>
+  <li data-filter=".filter-Programming">Programming</li>
+  <li data-filter=".filter-Programming">Python</li>
+  <li data-filter=".filter-Statistics">Statistics</li>
+  <li data-filter=".filter-Tools">Tools</li>
+</ul>
 
-
+<div class="container">
 <ul class="row projects projects-container">
 
   {% assign sorted_lectures = site.lectures | sort: 'order' %}
 
   {% for lecture in sorted_lectures %}
-    <li class="projects-item filter-{{ lecture.lang }}">
+
+
+  {% assign topics = lecture.topic | split: ", " %}  
+  <li class="col-lg-4 projects-item {% for topic in topics %}filter-{{ topic }} {% endfor %}">
       <a target="_blank" href="{{ lecture.link }}">
         <div class="project d-flex flex-column align-items-start">
           <div class="item-info d-flex">
             <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div>
             <div class="item-title">
               <h3 class="name">{{ lecture.name }}</h3>
-				<div class="item-desc">
-					{{ lecture.description | markdownify }}
-				</div>
-			</div>
+              <p class="item-topics">{{ lecture.topic }}</p>
+            <div class="item-desc">
+              {{ lecture.description | markdownify }}
+            </div>
+          </div>
         </div>
       </a>
     </li>
   {% endfor %}
 
 </ul>
+</div>

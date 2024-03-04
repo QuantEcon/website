@@ -4,6 +4,7 @@ description: A set of lectures on quantitative economic modeling, designed and w
 link: https://julia.quantecon.org/
 image: project-julia.png
 order: 5
-type: lecture
+topic: Programming, Modelling, Julia
 lang: julia
+dificulty: 2
 ---

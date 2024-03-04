@@ -846,7 +846,7 @@ section {
     position: relative;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid #b7b7b7;
-    padding: 1rem;
+    padding: 1rem 1rem 0rem 1rem;
     border-radius: 5px;
     background: #fff;
     transition: 0.5s;
@@ -901,8 +901,14 @@ section {
         }
       }
     }
+    .item-topics {
+      margin: 0.25rem 0 0.5rem;
+      color: #888;
+      font-size: 0.9rem;
+      //font-weight: bold;
+    }
     .item-desc {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin:0;
       color: $color-dark;
       overflow: hidden;

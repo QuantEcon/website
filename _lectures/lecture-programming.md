@@ -4,6 +4,7 @@ description: This lecture series on Python programming for economics and finance
 link: https://python-programming.quantecon.org/
 image: project-python.png
 order: 1
-type: lecture
+topic: Programming, Modelling, Python
 lang: python
+dificulty: 1
 ---

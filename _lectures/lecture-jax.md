@@ -4,6 +4,7 @@ description: This website presents a set of lectures on quantitative economic mo
 link: https://jax.quantecon.org/
 image: project-python.png
 order: 8
-type: lecture
+topic: Programming, Modelling, JAX
 lang: python
+dificulty: 2
 ---
