@@ -4,7 +4,8 @@ description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 link: https://eqm.quantecon.org/intro.html
 image: project-python.png
 order: 14
-topic: Modelling, Python
+topic: Topics
 lang: python
-dificulty: 3
+difficulty: 3
+new: 1
 ---

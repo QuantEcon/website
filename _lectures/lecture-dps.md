@@ -4,7 +4,8 @@ description: Tsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 link: https://dps.quantecon.org/intro.html
 image: project-python.png
 order: 15
-topic: Programming, Modelling, Statistics, Python
+topic: Statistics, Topics
 lang: python
-dificulty: 1
+difficulty: 1
+new: 1
 ---

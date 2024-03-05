@@ -4,7 +4,8 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 link: https://stats.quantecon.org/intro.html
 image: project-python.png
 order: 10
-topic: Programming, Modelling, Statistics, Python
+topic: Statistics, Topics
 lang: python
-dificulty: 1
+difficulty: 1
+new: 1
 ---

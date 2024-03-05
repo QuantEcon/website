@@ -4,7 +4,8 @@ description: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
 link: https://tools-techniques.quantecon.org/intro.html
 image: project-python.png
 order: 11
-topic: Programming, Tools, Python
+topic: Topics
 lang: python
-dificulty: 2
+difficulty: 1
+new: 1
 ---

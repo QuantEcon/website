@@ -4,7 +4,7 @@ description: This lecture series provides a short introduction to the fascinatin
 link: https://quantecon.github.io/continuous_time_mcs/
 image: project-lectures.png
 order: 7
-topic: Modelling, Python
+topic: Topics
 lang: python
-dificulty: 3
+difficulty: 3
 ---

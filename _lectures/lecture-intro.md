@@ -4,7 +4,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit ex ea commo
 link: https://intro.quantecon.org/intro.html
 image: project-python.png
 order: 16
-topic: Introduction, Python
+topic: Introductory
 lang: python
-dificulty: 1
+difficulty: 1
 ---

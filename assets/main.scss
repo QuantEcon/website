@@ -831,7 +831,7 @@ section {
 
 
 /*--------------------------------------------------------------
-# Projects Style (Linear Listing)
+# Projects Style (Grid Listing)
 --------------------------------------------------------------*/
 
 .projects {
@@ -859,25 +859,25 @@ section {
     .item-info {
       margin: 0 0 1rem 0;
       //min-height: 72px;
-      .item-pic {
-        overflow: hidden;
-        flex-shrink: 0;
-        width: 50px;
-        margin-right: 1rem;
-        img {
-          width: 100%;
-        }
-      }
+      // .item-pic {
+      //   overflow: hidden;
+      //   flex-shrink: 0;
+      //   width: 50px;
+      //   margin-right: 1rem;
+      //   img {
+      //     width: 100%;
+      //   }
+      // }
       // Item pic style for book page
-      .item-pic-books {
-        overflow: hidden;
-        flex-shrink: 0;
-        width: 150px;
-        margin-right: 1rem;
-        img {
-          width: 150%;
-        }
-      }
+      // .item-pic-books {
+      //   overflow: hidden;
+      //   flex-shrink: 0;
+      //   width: 150px;
+      //   margin-right: 1rem;
+      //   img {
+      //     width: 150%;
+      //   }
+      // }
       .item-title {
         h3 {
           color: $color-link;
@@ -901,11 +901,19 @@ section {
         }
       }
     }
-    .item-topics {
+    .item-badges {
       margin: 0.25rem 0 0.5rem;
-      color: #888;
+      color: #666;
       font-size: 0.9rem;
       //font-weight: bold;
+      .difficulty {
+        font-size: 1.1rem;
+        margin: 0 0.25rem 0 0;
+      }
+      .language {
+        font-weight: bold;
+        text-transform: capitalize;
+      }
     }
     .item-desc {
       font-size: 1rem;
