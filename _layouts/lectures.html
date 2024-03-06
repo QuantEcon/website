@@ -6,58 +6,58 @@ layout: default
 
 <ul id="projects-flters" class="projects-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
   <li data-filter="*" class="filter-active">All</li>
-  <li data-filter=".filter-Introductory">Introductory</li>
-  <li data-filter=".filter-Programming">Programming</li>
-  <li data-filter=".filter-Topics">Topics</li>
-  <li data-filter=".filter-Statistics">Statistics</li>
+  <li data-filter=".filter-1">Introductory</li>
+  <li data-filter=".filter-2">Intermediate</li>
+  <li data-filter=".filter-3">Advanced</li>
 </ul>
 
 <div class="container">
-<ul class="row projects projects-container">
 
-  {% assign sorted_lectures = site.lectures | sort: 'order' %}
+  {% assign sorted_lectures = site.lectures | sort: 'difficulty' %}
 
-  {% for lecture in sorted_lectures %}
+  <ul class="row projects projects-container">
 
-
-  {% assign topics = lecture.topic | split: ", " %}  
-  <li class="col-lg-4 projects-item {% for topic in topics %}filter-{{ topic }} {% endfor %}">
-      <a target="_blank" href="{{ lecture.link }}">
-        <div class="project d-flex flex-column align-items-start">
-          <div class="item-info d-flex">
-            <!-- <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div> -->
-            <div class="item-title">
-              <h3 class="name">{{ lecture.name }}</h3>
-              <p class="item-badges">
-
-                {% if lecture.difficulty %}
-                  {% if lecture.difficulty == 3 %}
-                    <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i class="bi bi-diamond-fill" style="color: #000;"></i></span>
-                  {% elsif lecture.difficulty == 2 %}
-                  <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
-                  {% else if lecture.difficulty == 1 %}
-                  <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill" style="color: #00ba00;"></i></span>
+    {% for lecture in sorted_lectures %}
+  
+    {% assign topics = lecture.topic | split: ", " %}  
+    {% assign difficulty = lecture.difficulty %}
+    <li class="col-lg-4 projects-item filter-{{ difficulty }}">
+        <a target="_blank" href="{{ lecture.link }}">
+          <div class="project d-flex flex-column align-items-start">
+            <div class="item-info d-flex">
+              <div class="item-title">
+                <h3 class="name">{{ lecture.name }}</h3>
+                <p class="item-badges">
+  
+                  {% if lecture.difficulty %}
+                    {% if lecture.difficulty == 3 %}
+                      <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i class="bi bi-diamond-fill" style="color: #000;"></i></span>
+                    {% elsif lecture.difficulty == 2 %}
+                    <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+                    {% else if lecture.difficulty == 1 %}
+                    <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill" style="color: #00ba00;"></i></span>
+                    {% endif %}
                   {% endif %}
-                {% endif %}
-
-                <span class="language">{{ lecture.lang }}</span>
-
-                {% if lecture.new %}
-                  <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
-                    New
+  
+                  <span class="language">{{ lecture.lang }}</span>
+  
+                  {% if lecture.new %}
+                    <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                      New
+                    </span>
+                  {% endif %}
+  
                   </span>
-                {% endif %}
-
-                </span>
-              </p>
-            <div class="item-desc">
-              {{ lecture.description | markdownify }}
+                </p>
+              <div class="item-desc">
+                {{ lecture.description | markdownify }}
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-    </li>
-  {% endfor %}
+        </a>
+      </li>
+    {% endfor %}
+  
+    </ul>
 
-</ul>
-</div>
+  </div>
