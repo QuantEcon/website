@@ -11,9 +11,11 @@ layout: default
   <li data-filter=".filter-3">Advanced</li>
 </ul>
 
+
+
 <div class="container">
 
-  {% assign sorted_lectures = site.lectures | sort: 'difficulty' %}
+  {% assign sorted_lectures = site.lectures | sort: 'name' %}
 
   <ul class="row projects projects-container">
 
