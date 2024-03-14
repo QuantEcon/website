@@ -180,7 +180,13 @@
           //  name: '.name'
           //},
           //sortBy: 'name'
-          sortBy: 'original-order'
+          //sortBy: 'original-order'
+
+          getSortData: {
+            difficulty: '[data-difficulty]',
+            number: '[data-name]'
+          },
+          sortBy: [ 'name', 'difficulty' ],
         });
   
         let projectsFilters = select('#projects-flters li', true);
@@ -197,9 +203,9 @@
           });
 
           var filterString = encodeURIComponent( this.getAttribute('data-filter') );
-          if ( filterString.length > 1 ) {
-            filterString = filterString.substring(8);
-          }
+          // if ( filterString.length > 1 ) {
+          //   filterString = filterString.substring(8);
+          // }
           location.hash = 'filter=' + filterString;
           
           projectsIsotope.on('arrangeComplete', function() {
@@ -211,7 +217,7 @@
         if (filterHash) {
           projectsFilters.forEach(function(el) {
             if ((el.dataset.filter) == ('.filter-' + filterHash)) {
-              console.log('we have a match');
+              //console.log('we have a match');
               el.click();
             }
           });
