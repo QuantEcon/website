@@ -1,7 +1,7 @@
 ---
 name: A First Course in Quantitative Economics
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit ex ea commodo consequat.
-link: https://intro.quantecon.org/intro.html
+description: This lecture series provides an introduction to quantitative economics using Python.
+link: https://intro.quantecon.org/
 image: project-python.png
 order: 16
 topic: Introductory

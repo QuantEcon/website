@@ -1,6 +1,6 @@
 ---
 name: Intermediate Quantitative Economics with Python
-description: This is one of a series of online texts on modern quantitative economics and programming with Python. This is the second text in the series, which focuses on introductory material.
+description: This website presents a set of intermediate lectures on quantitative economic modeling.
 link: https://python.quantecon.org/
 image: project-python.png
 order: 3

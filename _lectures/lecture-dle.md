@@ -1,7 +1,7 @@
 ---
 name: Introduction to Economic Dynamics
-description: Lorem ipsum nisi ut aliquip ex ea commodo dolor sit amet, consectetur adipiscing nisi ut aliquip ex ea commodo consequat.
-link: https://dynamics.quantecon.org/intro.html
+description: This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models.
+link: https://dle.quantecon.org
 image: project-python.png
 order: 13
 topic: Topics
