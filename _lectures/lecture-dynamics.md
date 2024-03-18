@@ -1,6 +1,6 @@
 ---
 name: Statistics for Computational Economics
-description: This website presents an introductory set of lectures on economic dynamics.
+description: An introductory set of lectures on economic dynamics.
 link: https://dynamics.quantecon.org/
 image: project-python.png
 order: 10

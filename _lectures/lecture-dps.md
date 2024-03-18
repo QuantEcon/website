@@ -1,6 +1,6 @@
 ---
 name: Statistics for Computational Economics
-description: This website presents a set of lectures on advanced topics in dynamic programming.
+description: A set of lectures on advanced topics in dynamic programming.
 link: https://dps.quantecon.org/
 image: project-python.png
 order: 15
