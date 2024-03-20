@@ -5,28 +5,30 @@ layout: default
 {{ content }}
 
 <ul id="projects-flters" class="projects-flters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
-  <li data-filter="*" class="filter-active">All</li>
-  <li data-filter=".Introductory">Introductory</li>
-  <li data-filter=".Programming">Programming</li>
-  <li data-filter=".Topics">Topics</li>
-  <li data-filter=".Statistics">Statistics</li>
+  <li data-topic="Introductory"  class="filter-active">Introductory</li>
+  <li data-topic="Programming">Programming</li>
+  <li data-topic="Topics">Topics</li>
+  <li data-topic="Statistics">Statistics</li>
+  <li data-topic="*">All</li>
 </ul>
 
 {% assign sorted_lectures = site.lectures | sort:"name" %}
 
 <div class="container">
 
-
   <ul class="row projects projects-container">
 
     {% for lecture in sorted_lectures %}
     {% assign difficulty = lecture.difficulty %}
     {% assign topics = lecture.topic | split: ", " %}
-
-    <li class="col-lg-4 projects-item {% for topic in topics %}{{ topic }} {% endfor %}">
+    
+    <li class="col-lg-4 projects-item {% for topic in topics %}{{ topic }} {% endfor %}"
+    data-topic="{{ lecture.topic }}"
+    data-difficulty="{{ lecture.difficulty }}"
+    data-order="{{ lecture.order }}">
       <div class="project d-flex flex-column align-items-start">
         <div class="item-info d-flex">
-          <div class="item-title" data-difficulty="{{ lecture.difficulty }}" data-name="{{ lecture.name }}">
+          <div class="item-title">
             <h3 class="name"><a target="_blank" href="{{ lecture.link }}">{{ lecture.name }}</a></h3>
             <p class="item-badges">
 
@@ -43,7 +45,7 @@ layout: default
               {% endif %}
               {% endif %}
 
-              <span class="language">{{ lecture.lang }}</span>
+              <span class="language">{{ lecture.topic }} <small>({{ lecture.lang }})</small></span>
 
               {% if lecture.new %}
               <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">

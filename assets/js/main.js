@@ -120,7 +120,7 @@
     }, true)
   
     /**
-     * Scrool with ofset on links with a class name .scrollto
+     * Scroll with offset on links with a class name .scrollto
      */
     on('click', '.scrollto', function(e) {
       if (select(this.hash)) {
@@ -138,7 +138,7 @@
     }, true)
   
     /**
-     * Scroll with ofset on page load with hash links in the url
+     * Scroll with offset on page load with hash links in the url
      */
     window.addEventListener('load', () => {
       if (window.location.hash) {
@@ -160,12 +160,12 @@
   
 
     // Isotope URL hash filtering
-    function getHashFilter() {
-      // get filter=filterName
-      var matches = location.hash.match( /filter=([^&]+)/i );
-      var hashFilter = matches && matches[1];
-      return hashFilter && decodeURIComponent( hashFilter );
-    }
+    // function getHashFilter() {
+    //   // get filter=filterName
+    //   var matches = location.hash.match( /topic=([^&]+)/i );
+    //   var hashFilter = matches && matches[1];
+    //   return hashFilter && decodeURIComponent( hashFilter );
+    // }
 
     /**
      * Projects isotope and filter
@@ -183,10 +183,14 @@
           //sortBy: 'original-order'
 
           getSortData: {
-            difficulty: '[data-difficulty]',
-            number: '[data-name]'
+            // name: '[lecture-name]',
+            // difficulty: '[data-difficulty]',
+            order: '[data-order] parseInt',
+            topic: '[data-topic]'
           },
-          sortBy: [ 'name', 'difficulty' ],
+          sortBy: 'order'
+          //sortBy: ['topic', 'order']
+          //sortBy: 'name'
         });
   
         let projectsFilters = select('#projects-flters li', true);
@@ -199,29 +203,29 @@
           this.classList.add('filter-active');
   
           projectsIsotope.arrange({
-            filter: this.getAttribute('data-filter')
+            filter: this.getAttribute('data-topic')
           });
 
-          var filterString = encodeURIComponent( this.getAttribute('data-filter') );
+          //var filterString = encodeURIComponent( this.getAttribute('data-topic') );
           // if ( filterString.length > 1 ) {
           //   filterString = filterString.substring(8);
           // }
-          location.hash = 'filter=' + filterString;
+          //location.hash = 'filter=' + filterString;
           
           projectsIsotope.on('arrangeComplete', function() {
             AOS.refresh()
           });
         }, true);
 
-        var filterHash = getHashFilter();
-        if (filterHash) {
-          projectsFilters.forEach(function(el) {
-            if ((el.dataset.filter) == ('.filter-' + filterHash)) {
-              //console.log('we have a match');
-              el.click();
-            }
-          });
-        }
+        //var filterHash = getHashFilter();
+        //if (filterHash) {
+        //  projectsFilters.forEach(function(el) {
+        //    if ((el.dataset.topic) == ('.topic-' + filterHash)) {
+        //      //console.log('we have a match');
+        //      el.click();
+        //    }
+        //  });
+        //}
       }
   
     });
