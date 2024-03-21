@@ -7,5 +7,4 @@ order: 1
 topic: Statistics
 lang: python
 difficulty: 2
-new: 1
 ---

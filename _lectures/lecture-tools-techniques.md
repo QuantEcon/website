@@ -7,5 +7,4 @@ order: 2
 topic: Topics
 lang: python
 difficulty: 1
-new: 1
 ---
