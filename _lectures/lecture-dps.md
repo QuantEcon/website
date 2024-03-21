@@ -6,5 +6,5 @@ image: project-python.png
 order: 10
 topic: Topics
 lang: python
-difficulty: 1
+difficulty: 3
 ---
