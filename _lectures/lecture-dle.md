@@ -1,10 +1,10 @@
 ---
 name: Introduction to Economic Dynamics
-description: A set of lectures on dynamic linear economies and tools needed for this class of economic models.
+description: This website presents an introductory set of lectures on economic dynamics.
 link: https://dle.quantecon.org
 image: project-python.png
-order: 8
-topic: Topics
+order: 4, 8
+topic: Introductory, Topics
 lang: python
-difficulty: 3
+difficulty: 2
 ---
