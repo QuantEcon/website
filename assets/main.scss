@@ -915,6 +915,16 @@ section {
         text-transform: capitalize;
       }
     }
+    .item-difficulty {
+      border: 1px solid $color-dark;
+      color: $color-dark;
+      position: relative;
+      top: -1px;
+      left: 0px;
+      margin-right:5px;
+      padding:3px 4px 1px 5px;
+      border-radius: 50%;
+    }
     .item-desc {
       font-size: 1rem;
       margin:0;

@@ -188,7 +188,8 @@
             order: '[data-order] parseInt',
             topic: '[data-topic]'
           },
-          sortBy: 'order'
+          sortBy: 'order',
+          filter: '.Introductory'
           //sortBy: ['topic', 'order']
           //sortBy: 'name'
         });
