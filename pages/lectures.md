@@ -1,7 +1,8 @@
 ---
 title: Lectures
 permalink: /lectures/
-menu_item: false
+menu_item: true
+order: 3
 layout: lectures
 ---
 
