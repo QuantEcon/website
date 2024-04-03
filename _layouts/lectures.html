@@ -22,8 +22,7 @@ layout: default
     {% assign difficulty = lecture.difficulty %}
     {% assign topics = lecture.topic | split: ", " %}
 
-    <li class="col-lg-4 projects-item {% for topic in topics %}{{ topic }} {% endfor %}"
-      data-topic="{{ lecture.topic }}" data-difficulty="{{ lecture.difficulty }}" data-order="{{ lecture.order }}">
+    <li class="col-lg-4 projects-item {% for topic in topics %}{{ topic }} {% endfor %}" data-topic="{{ lecture.topic }}" data-difficulty="{{ lecture.difficulty }}" data-number="{{ lecture.number }}">
       <div class="project d-flex flex-column align-items-start">
 
         <div class="item-info d-flex">
@@ -45,7 +44,7 @@ layout: default
 
               </span>
             </p>
-            
+             
             <div class="item-desc">
               {{ lecture.description | markdownify }}
             </div>

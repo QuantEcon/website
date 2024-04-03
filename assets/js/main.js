@@ -176,22 +176,10 @@
         let projectsIsotope = new Isotope(projectsContainer, {
           layoutMode: 'fitRows',
           itemSelector: '.projects-item',
-          //getSortData: {
-          //  name: '.name'
-          //},
-          //sortBy: 'name'
-          //sortBy: 'original-order'
-
           getSortData: {
-            // name: '[lecture-name]',
-            // difficulty: '[data-difficulty]',
-            order: '[data-order] parseInt',
-            topic: '[data-topic]'
+            number: '[data-number] parseInt',
           },
-          sortBy: 'order',
-          filter: '.Introductory'
-          //sortBy: ['topic', 'order']
-          //sortBy: 'name'
+          sortBy : 'number'
         });
   
         let projectsFilters = select('#projects-flters li', true);
@@ -203,30 +191,19 @@
           });
           this.classList.add('filter-active');
   
+          console.log(this.getAttribute('data-topic'));
+
           projectsIsotope.arrange({
-            filter: this.getAttribute('data-topic')
+            sortBy: '[data-number]',
+            filter: this.getAttribute('data-topic'),
           });
 
-          //var filterString = encodeURIComponent( this.getAttribute('data-topic') );
-          // if ( filterString.length > 1 ) {
-          //   filterString = filterString.substring(8);
-          // }
-          //location.hash = 'filter=' + filterString;
           
           projectsIsotope.on('arrangeComplete', function() {
             AOS.refresh()
           });
         }, true);
 
-        //var filterHash = getHashFilter();
-        //if (filterHash) {
-        //  projectsFilters.forEach(function(el) {
-        //    if ((el.dataset.topic) == ('.topic-' + filterHash)) {
-        //      //console.log('we have a match');
-        //      el.click();
-        //    }
-        //  });
-        //}
       }
   
     });

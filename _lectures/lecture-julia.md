@@ -3,8 +3,8 @@ name: Quantitative Economics with Julia
 description: A set of lectures on quantitative economic modeling.
 link: https://julia.quantecon.org/
 image: project-julia.png
-order: 3, 5
-topic: Programming, Topics
+number: 09
+topic: Programming 3, Topics 5
 lang: julia
 difficulty: 2
 ---
