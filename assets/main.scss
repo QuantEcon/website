@@ -709,196 +709,101 @@ section {
 
 
 /*--------------------------------------------------------------
-# Services
+# Lecture Series Layout
 --------------------------------------------------------------*/
-.services {
-  .section-title {
-    //padding-bottom: 60px;
-    //font-size: 26px;
-  }
-  .icon-box {
-    //height: 100%;
-    //box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-    // border: 1px solid $color-med;
-    //padding: 3rem 3rem;
-    //transition: all ease-in-out 0.4s;
-    //background: #fff; // #f6f6f6;
-    //border-radius: 5px;
-    
-    .icon {
-      // margin-bottom: 10px;
-      // i {
-      //   color: $color-link;
-      //   font-size: 36px;
-      //   transition: 0.3s;
-      // }
-    }
-    h2 {
-      //margin-bottom: 25px;
-      //font-size: 26px;
-      //font-family: $font-main; 
-      // text-align: center;
-      // a {
-      //   color: $color-dark;
-      //   transition: ease-in-out 0.3s;
-      // }
-    }
-    p {
-      //margin-bottom: 0;
-    }
-  }
-}
 
-.services .project-list {
+
+.lectures-filters {
   list-style: none;
-  padding: 1rem 0 2rem 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-//   &::after { 
-// content: '';
-// flex: auto;
-// }
-
-  // display: grid;
-  // grid-template-columns: repeat(auto-fill, 45%);
-  // justify-content: space-between;
-  // grid-gap: 10px;
-  // margin: 0 4rem;
-
-  //>div {
-    // margin: 0 0 1rem 0;
-    //width:40%;
-    a {
-      text-decoration: none;
+  margin-bottom: 20px;
+  padding: 0;
+  border-bottom: 1px solid $color-light;
+  padding:1rem 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  &:after {
+    position: absolute;
+    right:0;
+    bottom: 0.5rem;
+    color: #999;
+    content: "";
+  }
+  li {
+    cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    color: $color-link;
+    line-height: 1;
+    display: inline-block;
+    padding: 0 0;
+    margin:0 2rem 0 0;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: $color-link;
+      visibility: hidden;
+      width: 0px;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    &:hover:before {
+      visibility: visible;
+      width: 100%;   
+    }
+    &:hover {
+    }
+    &.filter-active {
       color: $color-dark;
-      position: relative;
-      padding-left: 70px;
-      display: block;
-
-      h3 {
-        font-size: 1.3rem;
-        margin: 0.5rem 0 0.5rem 0;
-        line-height: 1.3rem;
+      cursor: default;
+      &:before {
+        visibility: visible;
+        width: 100%;  
+        background-color: $color-dark;
       }
-
-      .thumb {
-        position: absolute;
-        top: 3px;
-        left: 0;
-        width: 50px;
-        height: 50px;
-        box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-        border-radius: 5px;
-        box-sizing: border-box;
-        padding: 5px;
-        border: 1px solid #999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #fff;
-
-        img {
-          width: 38px;
-        }
-
-      }
-
-      .desc {
-        color: #666;
-        line-height: 1.5rem;
-        //font-size: 0.9rem;
-        min-height: 2rem;
-        font-size: 1rem;
-
-        >p {
-          margin: 0;
-        }
-      }
-
-      &:hover {
-        h3 {
-          text-decoration: underline;
-        }
-
-        .desc {}
-      }
+    }
   }
 }
 
-
-/*--------------------------------------------------------------
-# Projects Style (Grid Listing)
---------------------------------------------------------------*/
-
-.projects {
+.lectures {
   padding: 0;
   list-style: none;
   margin: 0;
   h2 {
     margin: 2rem 0 1rem 0;
   }
-  .project {
+  .lecture {
     list-style: none;
     position: relative;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid #b7b7b7;
-    padding: 1rem 1rem 0rem 1rem;
-    border-radius: 5px;
-    background: #fff;
+    // box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    // border: 1px solid #b7b7b7;
+    // padding: 1rem 1rem 0rem 1rem;
+    // border-radius: 5px;
+    // background: #fff;
     transition: 0.5s;
     margin: 0 0 1.5rem 0;
     @media (min-width: 768px) {
       min-height: 100px;
     }
-    
-
     .item-info {
-      margin: 0 0 1rem 0;
-      //min-height: 72px;
-      // .item-pic {
-      //   overflow: hidden;
-      //   flex-shrink: 0;
-      //   width: 50px;
-      //   margin-right: 1rem;
-      //   img {
-      //     width: 100%;
-      //   }
-      // }
-      // Item pic style for book page
-      // .item-pic-books {
-      //   overflow: hidden;
-      //   flex-shrink: 0;
-      //   width: 150px;
-      //   margin-right: 1rem;
-      //   img {
-      //     width: 150%;
-      //   }
-      // }
-      .item-title {
-        h3 {
-          color: $color-link;
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin:0;
-          //color: $color-dark;
-        }
-        .type {
-          margin:0;
-          text-transform: capitalize;
-          color: $color-dark;
-          border-radius: 4px;
-          border: 1px solid $color-med;
-          padding: 0.2rem 0.5rem 0.1rem 0.5rem;
-          margin: 0.5rem 0 0 0;
-          display: inline-block;
-          line-height: 1;
-          font-size: 0.8rem;
-          font-weight: bold;
-        }
+      margin: 0 0 0.5rem 0;
+      .name {
+        display: inline;
+        margin:0;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin:0;
+      }
+      .language {
+        margin: 0;
+        text-transform: capitalize;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .item-badges {
+        margin:0;
       }
     }
     .item-badges {
@@ -909,10 +814,6 @@ section {
       .difficulty {
         font-size: 0.9rem;
         margin: 0 0.25rem 0 0;
-      }
-      .language {
-        font-weight: bold;
-        text-transform: capitalize;
       }
     }
     .item-difficulty {
@@ -1367,93 +1268,4 @@ section {
   }
 }
 
-.projects-flters {
-  list-style: none;
-  margin-bottom: 20px;
-  padding: 0;
-  border-bottom: 1px solid $color-light;
-  padding:1rem 1rem;
-  li {
-    cursor: pointer;
-    position: relative;
-    font-weight: bold;
-    color: $color-link;
-    line-height: 1;
-    display: inline-block;
-    padding: 0 0;
-    margin:0 2rem 0 0;
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background-color: $color-link;
-      visibility: hidden;
-      width: 0px;
-      transition: all 0.3s ease-in-out 0s;
-    }
-    &:hover:before {
-      visibility: visible;
-      width: 100%;   
-    }
-    &:hover {
-    }
-    &.filter-active {
-      color: $color-dark;
-      cursor: default;
-      &:before {
-        visibility: visible;
-        width: 100%;  
-        background-color: $color-dark;
-      }
-    }
-  }
-}
-
-.lectures-flters {
-  list-style: none;
-  margin-bottom: 20px;
-  padding: 0;
-  border-bottom: 1px solid $color-light;
-  padding:1rem 1rem;
-  li {
-    cursor: pointer;
-    position: relative;
-    font-weight: bold;
-    color: $color-link;
-    line-height: 1;
-    display: inline-block;
-    padding: 0 0;
-    margin:0 2rem 0 0;
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background-color: $color-link;
-      visibility: hidden;
-      width: 0px;
-      transition: all 0.3s ease-in-out 0s;
-    }
-    &:hover:before {
-      visibility: visible;
-      width: 100%;   
-    }
-    &:hover {
-    }
-    &.filter-active {
-      color: $color-dark;
-      cursor: default;
-      &:before {
-        visibility: visible;
-        width: 100%;  
-        background-color: $color-dark;
-      }
-    }
-  }
-}
 

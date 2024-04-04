@@ -168,40 +168,39 @@
     // }
 
     /**
-     * Projects isotope and filter
+     * Lecture Series isotope and filter
      */
     window.addEventListener('load', () => {
-      let projectsContainer = select('.projects-container');
-      if (projectsContainer) {
-        let projectsIsotope = new Isotope(projectsContainer, {
+      let lecturesContainer = select('.lectures-container');
+      if (lecturesContainer) {
+        let lecturesIsotope = new Isotope(lecturesContainer, {
           layoutMode: 'fitRows',
-          itemSelector: '.projects-item',
+          itemSelector: '.lectures',
           getSortData: {
             number: '[data-number] parseInt',
           },
-          sortBy : 'number'
+          sortBy : 'number',
+          filter: '.Introductory',
         });
   
-        let projectsFilters = select('#projects-flters li', true);
+        let lecturesFilters = select('#lectures-filters li', true);
   
-        on('click', '#projects-flters li', function(e) {
+        on('click', '#lectures-filters li', function(e) {
           e.preventDefault();
-          projectsFilters.forEach(function(el) {
+          lecturesFilters.forEach(function(el) {
             el.classList.remove('filter-active');
           });
           this.classList.add('filter-active');
   
-          console.log(this.getAttribute('data-topic'));
-
-          projectsIsotope.arrange({
+          lecturesIsotope.arrange({
             sortBy: '[data-number]',
             filter: this.getAttribute('data-topic'),
           });
 
-          
-          projectsIsotope.on('arrangeComplete', function() {
+          lecturesIsotope.on('arrangeComplete', function() {
             AOS.refresh()
           });
+
         }, true);
 
       }

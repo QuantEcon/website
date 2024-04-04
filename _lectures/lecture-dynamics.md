@@ -6,5 +6,5 @@ image: project-python.png
 number: 05
 topic: Introductory 4, Topics 6
 lang: python
-difficulty: 1
+difficulty: 2
 ---
