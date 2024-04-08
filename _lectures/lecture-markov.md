@@ -4,7 +4,7 @@ description: This lecture series provides a short introduction to the fascinatin
 link: https://continuous-time-mcs.quantecon.org
 image: project-lectures.png
 number: 10
-topic: Topics 7
+topic: Topics 8
 lang: python
 difficulty: 3
 ---
