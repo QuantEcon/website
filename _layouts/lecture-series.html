@@ -19,10 +19,23 @@ layout: default
 
     {% for lecture in sorted_lectures %}
     {% assign difficulty = lecture.difficulty %}
-    {% assign topics = lecture.topic | split: ", " %}
 
-    <li class="lectures {% for topic in topics %}{{ topic }} {% endfor %}" data-topic="{{ lecture.topic }}"
-      data-difficulty="{{ lecture.difficulty }}" data-number="{{ lecture.number }}">
+    <li class="lectures 
+    {% for item in lecture.topic %}
+    {% if item.Introductory > 0 %}Introductory {{ item.Introduction }} {% endif %}
+    {% if item.Programming > 0 %}Programming {% endif %}
+    {% if item.Topics > 0 %}Topics {% endif %}
+    {% if item.All > 0 %}All {% endif %}
+    {% endfor %}   
+    "
+    data-difficulty="{{ lecture.difficulty }}"
+    {% for item in lecture.topic %}
+    tab0-sort="{{ item.Introductory }}"
+    tab1-sort="{{ item.Programming }}"
+    tab2-sort="{{ item.Topics }}"
+    tab3-sort="{{ item.All }}"
+    {% endfor %} 
+    >
       <div class="lecture">
         <div class="item-info">
           <p class="name"><a target="_blank" href="{{ lecture.link }}">{{ lecture.name }}</a></p>
@@ -48,7 +61,6 @@ layout: default
 
         </div>
       </div>
-      <!-- </a> -->
     </li>
     {% endfor %}
 

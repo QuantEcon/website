@@ -191,9 +191,18 @@
             el.classList.remove('filter-active');
           });
           this.classList.add('filter-active');
-  
+
+          const items = document.querySelectorAll("#lectures-filters li");
+
+          // Add click event listener to each item
+          items.forEach(function(item, index) {
+              item.addEventListener("click", function() {
+                  const clickedTab = '[tab' + index + '-sort]';
+              });
+          });
+
           lecturesIsotope.arrange({
-            sortBy: '[data-number]',
+            sortBy: 'clickedTab',
             filter: this.getAttribute('data-topic'),
           });
 
