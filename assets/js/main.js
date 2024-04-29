@@ -170,52 +170,82 @@
     /**
      * Lecture Series isotope and filter
      */
-    window.addEventListener('load', () => {
-      let lecturesContainer = select('.lectures-container');
-      if (lecturesContainer) {
-        let lecturesIsotope = new Isotope(lecturesContainer, {
-          layoutMode: 'fitRows',
-          itemSelector: '.lectures',
-          getSortData: {
-            number: '[data-number] parseInt',
-          },
-          sortBy : 'number',
-          filter: '.Introductory',
+    // window.addEventListener('load', () => {
+    //   let lecturesContainer = select('.lectures-container');
+    //   if (lecturesContainer) {
+    //     let lecturesIsotope = new Isotope(lecturesContainer, {
+    //       layoutMode: 'fitRows',
+    //       itemSelector: '.lectures',
+    //       getSortData: {
+    //         number: '[data-number] parseInt',
+    //       },
+    //       sortBy : 'number',
+    //       filter: '.Introductory',
+    //     });
+  
+    //     let lecturesFilters = select('#lectures-filters li', true);
+  
+    //     on('click', '#lectures-filters li', function(e) {
+    //       e.preventDefault();
+    //       lecturesFilters.forEach(function(el) {
+    //         el.classList.remove('filter-active');
+    //       });
+    //       this.classList.add('filter-active');
+
+    //       const items = document.querySelectorAll("#lectures-filters li");
+
+    //       // Add click event listener to each item
+    //       items.forEach(function(item, index) {
+    //           item.addEventListener("click", function() {
+    //               const clickedTab = '[tab' + index + '-sort]';
+    //           });
+    //       });
+
+    //       lecturesIsotope.arrange({
+    //         sortBy: 'clickedTab',
+    //         filter: this.getAttribute('data-topic'),
+    //       });
+
+    //       lecturesIsotope.on('arrangeComplete', function() {
+    //         AOS.refresh()
+    //       });
+
+    //     }, true);
+
+    //   }
+  
+    // });
+
+    /**
+     * Lecture Series Tabs
+     */
+
+    const tabLinks = document.querySelectorAll('.tablink');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const tabId = this.dataset.tab;
+
+            tabContents.forEach(content => {
+                if (content.id === tabId) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+
+            tabLinks.forEach(tablink => {
+                if (tablink === this) {
+                    tablink.classList.add('active');
+                } else {
+                    tablink.classList.remove('active');
+                }
+            });
         });
-  
-        let lecturesFilters = select('#lectures-filters li', true);
-  
-        on('click', '#lectures-filters li', function(e) {
-          e.preventDefault();
-          lecturesFilters.forEach(function(el) {
-            el.classList.remove('filter-active');
-          });
-          this.classList.add('filter-active');
-
-          const items = document.querySelectorAll("#lectures-filters li");
-
-          // Add click event listener to each item
-          items.forEach(function(item, index) {
-              item.addEventListener("click", function() {
-                  const clickedTab = '[tab' + index + '-sort]';
-              });
-          });
-
-          lecturesIsotope.arrange({
-            sortBy: 'clickedTab',
-            filter: this.getAttribute('data-topic'),
-          });
-
-          lecturesIsotope.on('arrangeComplete', function() {
-            AOS.refresh()
-          });
-
-        }, true);
-
-      }
-  
     });
-  
+    
+    
     /**
      * Animation on scroll
      */

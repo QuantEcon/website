@@ -712,6 +712,12 @@ section {
 # Lecture Series Layout
 --------------------------------------------------------------*/
 
+.lectures-container {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
 
 .lectures-filters {
   list-style: none;

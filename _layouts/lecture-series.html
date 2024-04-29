@@ -4,66 +4,664 @@ layout: default
 
 {{ content }}
 
-<ul id="lectures-filters" class="lectures-filters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
-  <li data-topic=".Introductory" class="filter-active">Introductory</li>
-  <li data-topic=".Programming">Programming</li>
-  <li data-topic=".Topics">Topics</li>
-  <li data-topic="*">All</li>
+<ul id="lectures-filters" class="tabs lectures-filters d-flex justify-content-start" data-aos="fade-up" data-aos-delay="100">
+  <li class="tablink active" data-tab="tab1">Introductory</li>
+  <li class="tablink" data-tab="tab2">Programming</li>
+  <li class="tablink" data-tab="tab3">Topics</li>
+  <li class="tablink" data-tab="tab4">All</li>
 </ul>
 
-{% assign sorted_lectures = site.lectures | sort:"name" %}
 
 <div class="container">
 
-  <ul class="row lectures-container">
+  <ul id="tab1" class="tab-content row lectures-container active" data-aos="flip-left">
 
-    {% for lecture in sorted_lectures %}
-    {% assign difficulty = lecture.difficulty %}
-
-    <li class="lectures 
-    {% for item in lecture.topic %}
-    {% if item.Introductory > 0 %}Introductory {{ item.Introduction }} {% endif %}
-    {% if item.Programming > 0 %}Programming {% endif %}
-    {% if item.Topics > 0 %}Topics {% endif %}
-    {% if item.All > 0 %}All {% endif %}
-    {% endfor %}   
-    "
-    data-difficulty="{{ lecture.difficulty }}"
-    {% for item in lecture.topic %}
-    tab0-sort="{{ item.Introductory }}"
-    tab1-sort="{{ item.Programming }}"
-    tab2-sort="{{ item.Topics }}"
-    tab3-sort="{{ item.All }}"
-    {% endfor %} 
-    >
+    <li class="lectures pos1">
       <div class="lecture">
         <div class="item-info">
-          <p class="name"><a target="_blank" href="{{ lecture.link }}">{{ lecture.name }}</a></p>
+          <p class="name"><a target="_blank" href="https://intro.quantecon.org/">A First Course in Quantitative
+              Economics</a></p>
           <p class="language">
             <span class="item-badges">
-              {% if lecture.difficulty == 3 %}
-              <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i
-                  class="bi bi-diamond-fill" style="color: #000;"></i></span>
-              {% elsif lecture.difficulty == 2 %}
-              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
-                  style="color: #0164CC;"></i></span>
-              {% else if lecture.difficulty == 1 %}
               <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill"
                   style="color: #00ba00;"></i></span>
-              {% endif %}
             </span>
-            {{ lecture.lang }}</p>
+            python
+          </p>
+        </div>
+        <div class="item-desc">
+          <p>An introduction to quantitative economics using Python.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos2">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://python-programming.quantecon.org/">Python Programming
+              for Economics and Finance</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill"
+                  style="color: #00ba00;"></i></span>
+            </span>
+            python
+          </p>
+        </div>
+        <div class="item-desc">
+          <p>A set of lectures on Python programming for economics and finance.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos3">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://datascience.quantecon.org/">Introduction to Economic
+              Modeling and Data Science</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill"
+                  style="color: #00ba00;"></i></span>
+            </span>
+            python
+          </p>
+        </div>
+        <div class="item-desc">
+          <p>A series of lectures on programming, data science, and economics.</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+  <ul id="tab2" class="tab-content row lectures-container" data-aos="flip-left">
+
+    <li class="lectures pos1">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://python-programming.quantecon.org/">Python Programming for
+              Economics and Finance</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill"
+                  style="color: #00ba00;"></i></span>
+            </span>
+            python
+          </p>
+        </div>
+        <div class="item-desc">
+          <p>A set of lectures on Python programming for economics and finance.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos2">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://jax.quantecon.org/">Quantitative Economics with JAX</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+            </span>
+            python
+          </p>
+        </div>
+        <div class="item-desc">
+          <p>A set of lectures on quantitative economic modeling using GPUs and Google JAX.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos3">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://julia.quantecon.org/">Quantitative Economics with Julia</a>
+          </p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+            </span>
+            julia
+          </p>
+        </div>
+        <div class="item-desc">
+          <p>A set of lectures on quantitative economic modeling.</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+  <ul id="tab3" class="tab-content row lectures-container" data-aos="flip-left">
+
+    <li class="lectures pos1">
+      <div class=" lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://tools-techniques.quantecon.org/">Tools and Techniques for
+              Computational Economics</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill"
+                  style="color: #00ba00;"></i></span>
+            </span>
+            python
+          </p>
+        </div>
+        <div class="item-desc">
+          <p>A set of lectures on the tools and techniques required to study computational economics.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos2">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://stats.quantecon.org/">Statistics for Computational
+              Economics</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+
+            </span>
+            python
+          </p>
         </div>
 
         <div class="item-desc">
 
-          {{ lecture.description | markdownify }}
+          <p>A set of lectures on statistics for computational economics.</p>
+
 
         </div>
       </div>
     </li>
-    {% endfor %}
+
+    <li class="lectures pos3">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://python.quantecon.org/">Intermediate Quantitative Economics
+              with Python</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>A set of intermediate lectures on quantitative economic modeling.</p>
+
+
+        </div>
+      </div>
+    </li>
+
+
+    <li class="lectures pos4">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://julia.quantecon.org/">Quantitative Economics with Julia</a>
+          </p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+
+            </span>
+            julia
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>A set of lectures on quantitative economic modeling.</p>
+
+
+        </div>
+      </div>
+    </li>
+
+
+    <li class="lectures pos5">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://datascience.quantecon.org/">Introduction to Economic
+              Modeling and Data Science</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill"
+                  style="color: #00ba00;"></i></span>
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+          <p>A series of lectures on programming, data science, and economics.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos6">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://jax.quantecon.org/">Quantitative Economics with JAX</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>A set of lectures on quantitative economic modeling using GPUs and Google JAX.</p>
+
+
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos7">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://eqm.quantecon.org/">Equilibrium Models</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>A set of lectures on equilibrium economic models.</p>
+
+
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos8">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://continuous-time-mcs.quantecon.org">Continuous Time Markov
+              Chains</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i
+                  class="bi bi-diamond-fill" style="color: #000;"></i></span>
+
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>This lecture series provides a short introduction to the fascinating field of continuous time Markov
+            chains.</p>
+
+
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos9">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://dynamics.quantecon.org/">Introduction to Economic
+              Dynamics</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>An introductory set of lectures on economic dynamics.</p>
+
+
+        </div>
+      </div>
+    </li>
+
+
+    <li class="lectures pos10">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://dps.quantecon.org/">Advanced Dynamic Programming</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i
+                  class="bi bi-diamond-fill" style="color: #000;"></i></span>
+
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>A set of lectures on advanced topics in dynamic programming.</p>
+
+
+        </div>
+      </div>
+    </li>
+
+
+    <li class="lectures pos11">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://dle.quantecon.org">Dynamic Linear Economies</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill"
+                  style="color: #0164CC;"></i></span>
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on dynamic linear economies and tools needed for this class of economic models.</p>
+        </div>
+      </div>
+    </li>
+
+
+    <li class="lectures pos12">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://python-advanced.quantecon.org/">Advanced Quantitative
+              Economics with Python</a></p>
+          <p class="language">
+            <span class="item-badges">
+
+              <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i
+                  class="bi bi-diamond-fill" style="color: #000;"></i></span>
+
+            </span>
+            python
+          </p>
+        </div>
+
+        <div class="item-desc">
+
+          <p>A set of advanced lectures on quantitative economic modeling.</p>
+
+
+        </div>
+      </div>
+    </li>
 
   </ul>
+
+  <ul id="tab4" class="tab-content row lectures-container" data-aos="flip-left">
+
+    <li class="lectures pos1">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://tools-techniques.quantecon.org/">Tools and Techniques for Computational Economics</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill" style="color: #00ba00;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on the tools and techniques required to study computational economics.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos2">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://python-programming.quantecon.org/">Python Programming for Economics and Finance</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill" style="color: #00ba00;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on Python programming for economics and finance.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos3">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://jax.quantecon.org/">Quantitative Economics with JAX</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on quantitative economic modeling using GPUs and Google JAX.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos4">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://tools-techniques.quantecon.org/">Tools and Techniques for Computational Economics</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill" style="color: #00ba00;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on the tools and techniques required to study computational economics.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos5">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://stats.quantecon.org/">Statistics for Computational Economics</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on statistics for computational economics.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos6">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://julia.quantecon.org/">Quantitative Economics with Julia</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+            </span>
+            julia</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on quantitative economic modeling.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos7">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://datascience.quantecon.org/">Introduction to Economic Modeling and Data Science</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Introductory"><i class="bi bi-circle-fill" style="color: #00ba00;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A series of lectures on programming, data science, and economics.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos8">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://eqm.quantecon.org/">Equilibrium Models</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>A set of lectures on equilibrium economic models.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos9">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://dynamics.quantecon.org/">Introduction to Economic Dynamics</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>An introductory set of lectures on economic dynamics.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos10">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://continuous-time-mcs.quantecon.org">Continuous Time Markov Chains</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i class="bi bi-diamond-fill" style="color: #000;"></i></span>
+            </span>
+            python</p>
+        </div>
+
+        <div class="item-desc">
+          <p>This lecture series provides a short introduction to the fascinating field of continuous time Markov chains.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos11">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://dle.quantecon.org">Dynamic Linear Economies</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+            </span>
+            python</p>
+        </div>
+        <div class="item-desc">
+          <p>A set of lectures on dynamic linear economies and tools needed for this class of economic models.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos12">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://dps.quantecon.org/">Advanced Dynamic Programming</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i class="bi bi-diamond-fill" style="color: #000;"></i></span>
+            </span>
+            python</p>
+        </div>
+        <div class="item-desc">
+          <p>A set of lectures on advanced topics in dynamic programming.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos13">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://python.quantecon.org/">Intermediate Quantitative Economics with Python</a></p>
+          <p class="language">
+            <span class="item-badges">
+              <span class="difficulty" title="Intermediate"><i class="bi bi-square-fill" style="color: #0164CC;"></i></span>
+            </span>
+            python</p>
+        </div>
+        <div class="item-desc">
+          <p>A set of intermediate lectures on quantitative economic modeling.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="lectures pos14">
+      <div class="lecture">
+        <div class="item-info">
+          <p class="name"><a target="_blank" href="https://python-advanced.quantecon.org/">Advanced Quantitative Economics with Python</a></p>
+          <p class="language">
+            <span class="item-badges">              
+              <span class="difficulty" title="Advanced"><i class="bi bi-diamond-fill" style="color: #000;"></i><i class="bi bi-diamond-fill" style="color: #000;"></i></span>
+            </span>
+            python</p>
+        </div>
+        <div class="item-desc">
+          <p>A set of advanced lectures on quantitative economic modeling.</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
 
 </div>
