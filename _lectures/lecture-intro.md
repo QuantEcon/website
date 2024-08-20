@@ -1,9 +1,15 @@
 ---
-name: A First Course in Quantitative Economics with Python
-description: This lecture series provides an introduction to quantitative economics using Python.
+name: A First Course in Quantitative Economics
+description: An introduction to quantitative economics using Python.
 link: https://intro.quantecon.org/
 image: project-python.png
-order: 2
-type: lecture
 lang: python
+difficulty: 1
+
+topic:
+  - 
+    Introductory: 1
+    Programming: 0
+    Topics: 0
+    All: 1
 ---
