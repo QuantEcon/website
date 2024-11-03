@@ -76,6 +76,72 @@ layout: default
 		{% endfor %}
 	</div>
 
+	<!-- ======= Testimonials Section ======= -->
+	<section id="testimonials" class="testimonials">
+
+		<div class="container" data-aos="fade-up">
+	
+		  <div class="section-title">
+			<h2>Working for QuantEcon</h2>
+		  </div>
+	
+		  <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+	
+			<div class="swiper-wrapper">
+	
+			  <div class="swiper-slide">
+	
+				<div class="testimonial-item">
+	
+				  <img src="/assets/img/testimonials/natasha.jpg" class="testimonial-img" alt="">
+				  <h3>Natasha Watkins</h3>
+				  <h4>Research Assistant</h4>
+	
+				  <p>Natasha is a PhD candidate in Economics at the University of California. During her pre-doctoral
+					fellowship at QuantEcon, Natasha assisted in running workshops on data analysis and econometrics in
+					Python. She has contributed material to QuantEcon lectures, covering the Pandas and Statsmodels
+					libraries, and maintains QuantEcon news and social media.</p>
+	
+				</div>
+			  </div><!-- End testimonial item -->
+	
+			  <div class="swiper-slide">
+	
+				<div class="testimonial-item">
+	
+				  <img src="/assets/img/testimonials/flint.jpg" class="testimonial-img" alt="">
+				  <h3>Flint O'Neil</h3>
+				  <h4>Lead Developer</h4>
+	
+				  <p>Flint is a QuantEcon research assistant and student in Economics at Stanford University. His primary
+					interest is in macro-finance and mathematical economics. Flint is working to understand the nature of
+					default and debt as amplification mechanisms in the macroeconomy. He is also a research assistant for
+					QuantEcon and was Professor Stachurski's Honours student at the ANU.</p>
+				</div>
+			  </div><!-- End testimonial item -->
+	
+			  <div class="swiper-slide">
+				<div class="testimonial-item">
+	
+				  <img src="/assets/img/testimonials/zejin_shi.jpg" class="testimonial-img" alt="">
+				  <h3>Zejin Shi</h3>
+				  <h4>Research Assistant</h4>
+	
+				  <p>Zejin is a PhD student at the University of Arizona, working on Macro labor economics, understanding
+					people's marital and labor supply decisions. He is a research assistant at QuantEcon and has helped
+					construct lecture notebooks and Python modules.</p>
+				</div>
+			  </div><!-- End testimonial item -->
+	
+			</div>
+			<div class="swiper-pagination"></div>
+		  </div>
+	
+		  <p class="text-center"><a href="/positions/" class="btn-learn-more">See available positions</a></p>
+	
+		</div>
+	  </section><!-- End Testimonials Section -->
+
 	<h2>Previous Steering Committee Members</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' %}
@@ -108,6 +174,6 @@ layout: default
 			</div>
 		</div>
 		{% endfor %}
-
 	</div>
+
 </section>
