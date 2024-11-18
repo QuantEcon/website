@@ -7,4 +7,4 @@ excerpt: QuantEcon has just delivered our Africa summer course
 
 QuantEcon has just delivered our Africa summer course in July across three universities in West Africa. Our aim is to bring the foundational skills required for working with more advanced computational economic models to a global audience. It was exciting for the team to be able to work with these talented students in West Africa. 
 
-![](/assets/img/africa-workshop.jpeg)
+![ASE Benin]](../assets/img/africa-workshop.jpeg)
