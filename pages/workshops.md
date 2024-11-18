@@ -8,6 +8,37 @@ menu_item: false
 QuantEcon runs workshops on computational modeling for economists using Python and Julia. 
 
 ## Recent Workshops
+
+**November 2024, Reserve Bank of Australia**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/rba_workshop_2024)
+
+**August 2024, University of Melbourne**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/melbourne_2024)
+
+**May 2024, Central Bank of Chile**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/cbc_2024)
+
+**March 2024, International Monetary Fund (Institute for Capacity Development)**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/imf_2024)
+
+**October 2023, International Monetary Fund**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/imf_october_2023)
+
+**October 2023, Columbia University**
+
+*   Presenters: John Stachurski
+*   [Website](https://github.com/QuantEcon/columbia_2023)
+
 **April 2023, Kobe University**
 
 *   Presenters: John Stachurski
