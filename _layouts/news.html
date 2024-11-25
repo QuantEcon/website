@@ -10,7 +10,7 @@ layout: default
       {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
       <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
         <p class="date">{{ post.date | date: date_format }}</p>
-        <p class="summary">{{ post.excerpt }}</p>
+        <p class="summary">{{ post.content }}</p>
     </li>
   {% endfor %}
 </ul>
