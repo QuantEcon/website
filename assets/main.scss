@@ -616,6 +616,10 @@ section {
   padding: 8rem 0;
   overflow: hidden;
 
+  &.sponsors {
+    padding: 4rem 0;
+  }
+
   @media (max-width: 576px) {
     padding: 4rem 1rem;
     &.inner-page {
