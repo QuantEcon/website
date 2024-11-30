@@ -1,7 +1,7 @@
 ---
 title: About
 permalink: /about/
-menu_item: true
+menu_item: false
 ---
 # About
 
