@@ -1,6 +1,6 @@
 ---
 name: Harvey Thompson
-image: harvey.jpg
+image: /assets/img/team/harvey.jpg
 link: https://github.com/Harveyt47
 role: "Previous Lead Developers"
 ---

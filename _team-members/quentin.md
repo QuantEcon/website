@@ -1,6 +1,6 @@
 ---
 name: Quentin Batista
-image: placeholder.png
+image: /assets/img/team/placeholder.png
 link: https://github.com/QBatista
 role: "Previous Lead Developers"
 ---

@@ -1,6 +1,6 @@
 ---
 name: David Backus
-image: david.jpg
+image: /assets/img/team/david.jpg
 link: http://people.stern.nyu.edu/dbackus/
 role: "Previous Steering Committee Members"
 ---

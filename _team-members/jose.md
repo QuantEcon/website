@@ -1,6 +1,6 @@
 ---
 name: José Bayoán Santiago Calderón
-image: jose.jpg
+image: /assets/img/team/jose.jpg
 link: https://jbsc.netlify.com/
 role: "Previous Lead Developers"
 ---

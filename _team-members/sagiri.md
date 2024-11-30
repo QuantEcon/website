@@ -1,6 +1,6 @@
 ---
 name: Sagiri Kitao
-image: sagiri.jpg
+image: /assets/img/team/sagiri.jpg
 link: https://sites.google.com/site/sagirikitao/
 role: "Previous Steering Committee Members"
 ---

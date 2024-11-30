@@ -1,6 +1,6 @@
 ---
 name: Matthew McKay
-image: placeholder.png
+image: https://avatars.githubusercontent.com/u/8263752?v=4
 link: https://github.com/mmcky
 role: "Committee Members"
 ---

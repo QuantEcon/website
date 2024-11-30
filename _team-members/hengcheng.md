@@ -1,6 +1,6 @@
 ---
 name: Hengcheng Zhang
-image: hengcheng.jpg
+image: /assets/img/team/hengcheng.jpg
 link: https://github.com/HengchengZhang
 role: "Previous Lead Developers"
 ---

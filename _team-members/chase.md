@@ -1,6 +1,6 @@
 ---
 name: Chase Coleman
-image: chase.jpg
+image: /assets/img/team/chase.jpg
 link: http://www.chasegcoleman.com/
 role: "Previous Lead Developers"
 ---

@@ -1,6 +1,6 @@
 ---
 name: Sevin Yeltekin
-image: placeholder.png
+image: /assets/img/team/sevin.jpg
 link: http://tepper.cmu.edu/our-faculty-and-research/about-our-faculty/faculty-profiles/sevin/yeltekin-sevin
 role: "Committee Members"
 ---

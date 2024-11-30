@@ -1,6 +1,6 @@
 ---
 name: Pablo Winant
-image: placeholder.png
+image: /assets/img/team/pablo.jpg
 link: http://www.mosphere.fr/
 role: "Lead Developers"
 ---
