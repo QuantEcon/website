@@ -157,6 +157,16 @@ img {
     align-items: center;
     li {
       position: relative;
+      &.github-link {
+        a {
+          i {
+            font-size: 30px;
+          }
+          &:before {
+            display: none !important;
+          }
+        }
+      }
     }
   }
   &>ul>li {
@@ -284,8 +294,6 @@ img {
         visibility: visible;
       }
     }
-
-
   }
 }
 
