@@ -11,7 +11,7 @@ layout: default
       <h2>
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> 
         {% if post.type %}
-        <span style="display:inline-block; margin-left: 1rem;" class="badge bg-dark">{{ post.type }}</span>
+        <span style="display:inline-block; margin-left: 1rem;" class="badge bg-dark">{{ post.badge }}</span>
         {% endif %}
       </h2>
       <p class="date">{{ post.date | date: date_format }}</p>
