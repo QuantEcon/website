@@ -1,6 +1,6 @@
 ---
 name: Shunsuke Hori
-image: shunsuke.jpg
+image: /assets/img/team/shunsuke.jpg
 link: https://github.com/Shunsuke-Hori
 role: "Previous Lead Developers"
 ---

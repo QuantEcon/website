@@ -149,7 +149,7 @@ layout: default
 		{% for team-member in team-members reversed %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
 					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
@@ -166,7 +166,7 @@ layout: default
 		{% for team-member in team-members reversed %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="/assets/img/team/{{ team-member.image }}" class="img-fluid" alt=""></div>
+				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
 					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
 					<p>{{ team-member.content }}</p>
