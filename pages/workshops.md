@@ -7,7 +7,7 @@ menu_item: false
 
 QuantEcon runs workshops on computational modeling for economists using Python and Julia. 
 
-## Recent Workshops
+<br>
 
 **November 2024, Reserve Bank of Australia**
 
