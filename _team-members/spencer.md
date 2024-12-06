@@ -1,6 +1,6 @@
 ---
 name: Spencer Lyon
-image: spencer.jpg
+image: /assets/img/team/spencer.jpg
 link: http://spencerlyon.com/
 role: "Previous Lead Developers"
 ---

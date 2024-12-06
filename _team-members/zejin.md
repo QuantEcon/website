@@ -1,6 +1,6 @@
 ---
 name: Zejin Shi
-image: zejin.jpg
+image: /assets/img/team/zejin.jpg
 link: https://github.com/shizejin
 role: "Previous Lead Developers"
 ---

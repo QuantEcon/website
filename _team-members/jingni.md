@@ -1,6 +1,6 @@
 ---
 name: Jingni Yang
-image: jingni.jpg
+image: /assets/img/team/jingni.jpg
 link: https://sites.google.com/site/jingniyangorange/home
 role: "Design and Marketing"
 ---

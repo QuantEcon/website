@@ -158,68 +158,6 @@
       });
     }
   
-
-    // Isotope URL hash filtering
-    function getHashFilter() {
-      // get filter=filterName
-      var matches = location.hash.match( /filter=([^&]+)/i );
-      var hashFilter = matches && matches[1];
-      return hashFilter && decodeURIComponent( hashFilter );
-    }
-
-    /**
-     * Projects isotope and filter
-     */
-    window.addEventListener('load', () => {
-      let projectsContainer = select('.projects-container');
-      if (projectsContainer) {
-        let projectsIsotope = new Isotope(projectsContainer, {
-          layoutMode: 'fitRows',
-          itemSelector: '.projects-item',
-          //getSortData: {
-          //  name: '.name'
-          //},
-          //sortBy: 'name'
-          sortBy: 'original-order'
-        });
-  
-        let projectsFilters = select('#projects-flters li', true);
-  
-        on('click', '#projects-flters li', function(e) {
-          e.preventDefault();
-          projectsFilters.forEach(function(el) {
-            el.classList.remove('filter-active');
-          });
-          this.classList.add('filter-active');
-  
-          projectsIsotope.arrange({
-            filter: this.getAttribute('data-filter')
-          });
-
-          var filterString = encodeURIComponent( this.getAttribute('data-filter') );
-          if ( filterString.length > 1 ) {
-            filterString = filterString.substring(8);
-          }
-          location.hash = 'filter=' + filterString;
-          
-          projectsIsotope.on('arrangeComplete', function() {
-            AOS.refresh()
-          });
-        }, true);
-
-        var filterHash = getHashFilter();
-        if (filterHash) {
-          projectsFilters.forEach(function(el) {
-            if ((el.dataset.filter) == ('.filter-' + filterHash)) {
-              console.log('we have a match');
-              el.click();
-            }
-          });
-        }
-      }
-  
-    });
-  
     /**
      * Animation on scroll
      */

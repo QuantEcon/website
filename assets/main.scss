@@ -27,6 +27,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+blockquote {
+  border-left: 5px solid $color-link;
+  background: $color-light;
+  padding: 1rem 1rem 0.2rem 1rem;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  max-width: 680px;
+}
+
 a {
   color: $color-link;
   text-decoration: none;
@@ -41,6 +50,7 @@ h1 {
   font-family: $font-brand;
   font-weight: 400;
   margin: 0 0 2rem 0;
+  font-size: 1.8rem;
 }
 
 h2 {
@@ -157,6 +167,16 @@ img {
     align-items: center;
     li {
       position: relative;
+      &.github-link {
+        a {
+          i {
+            font-size: 30px;
+          }
+          &:before {
+            display: none !important;
+          }
+        }
+      }
     }
   }
   &>ul>li {
@@ -284,8 +304,6 @@ img {
         visibility: visible;
       }
     }
-
-
   }
 }
 
@@ -615,6 +633,10 @@ img {
 section {
   padding: 8rem 0;
   overflow: hidden;
+
+  &.sponsors {
+    padding: 4rem 0;
+  }
 
   @media (max-width: 576px) {
     padding: 4rem 1rem;
@@ -1320,21 +1342,32 @@ section {
   list-style: none;
   padding: 0;
 
-  li {
+  >li {
     border-top: 1px solid #ececec;
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 8rem;
+    position: relative;
 
     &:first-child {
       border: 0;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      a {
+        color: #444;
+      }
     }
 
     .date {
-      margin: 0 0 0.5rem 0;
-      color: #888;
+      width: 6rem;
+      padding: 1rem 0 0 0;
+      //color: #888;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: right;
+
     }
 
     .summary {

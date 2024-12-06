@@ -1,6 +1,6 @@
 ---
 name: Smit Lunagariya
-image: smit.jpg
+image: https://avatars.githubusercontent.com/u/55887635?v=4
 link: https://github.com/Smit-create
 role: "Lead Developers"
 ---

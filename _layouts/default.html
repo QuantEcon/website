@@ -74,27 +74,26 @@
         <nav id="navbar" class="navbar">
           <ul class="nav">
             <li{% if page.layout=='home' %} class="active" {% endif %}><a href="{{ '/' | relative_url }}">Home</a></li>
-              {% assign pages = site.pages | where: "menu_item", "true" %}
-              {% for node in pages %}
-              <li{% if page.url==node.url %} class="active" {% endif %}><a href="{{ node.url | relative_url }}">{{
-                  node.title }}</a></li>
-              {% endfor %}
-              <!-- <li><a href="/projects/#filter=lecture">Lectures</a></li> -->
-              <li><a href="https://github.com/QuantEcon" target="_blank">GitHub</a></li>
-              <li class="dropdown"><a href="#"><span>Projects</span><i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a href="/lectures">Lectures</a></li>
-                  <li><a href="/code">Code</a></li>
-                  <li><a href="/books">Books</a></li>
-                  <li><a href="/projects">Others</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Support</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a href="/store/">Merchandise</a></li>
-                  <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Donate</a></li>
-                </ul>
-              </li>
+            <li{% if page.layout=='news' %} class="active" {% endif %}><a href="/news/"><span>News</span></a></li>
+            <li{% if page.layout=='lectures' %} class="active" {% endif %}><a href="/lectures/"><span>Lectures</span></a></li>
+            <li{% if page.permalink=='/workshops/' %} class="active" {% endif %}><a href="/workshops/"><span>Workshops</span></a></li>
+            <li class="dropdown"><a href="/projects"><span>Projects</span><i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="/code">Code</a></li>
+                <li><a href="/books">Books</a></li>
+                <li><a href="/projects">Others</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="/about" title="About QuantEcon"><span>About</span><i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="/about">About us</a></li>
+                <li><a href="/team">Our team</a></li>
+                <li><a href="/store">QE merchandise</a></li>
+                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Support &amp; donate</a></li>
+              </ul>
+            </li>
+            <li class="github-link"><a href="https://github.com/QuantEcon" target="_blank" title="GitHub"><i class="bi bi-github" style="font-size:30px;"></i></a></li>
+            <li class="github-link"><a href="https://discourse.quantecon.org/" target="_blank" title="Discourse"><i class="bi bi-chat-text" style="font-size:30px;"></i></a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

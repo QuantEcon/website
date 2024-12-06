@@ -1,6 +1,6 @@
 ---
 name: Richard W. Evans
-image: richard.jpg
+image: /assets/img/team/richard.jpg
 link: https://sites.google.com/site/rickecon/
 role: "Committee Members"
 ---

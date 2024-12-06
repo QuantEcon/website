@@ -1,6 +1,6 @@
 ---
 name: Natasha Watkins
-image: natasha.jpg
+image: /assets/img/team/natasha.jpg
 link: https://github.com/natashawatkins
 role: "QuantEcon Early Career Researchers"
 ---

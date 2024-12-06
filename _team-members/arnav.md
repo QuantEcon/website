@@ -1,6 +1,6 @@
 ---
 name: Arnav Sood
-image: arnav.jpg
+image: /assets/img/team/arnav.jpg
 link: http://arnavsood.com/
 role: "Previous Lead Developers"
 ---

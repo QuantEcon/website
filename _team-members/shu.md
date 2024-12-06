@@ -1,6 +1,6 @@
 ---
 name: Shu Hu
-image: shu.jpg
+image: /assets/img/team/shu.jpg
 link: https://shu-hu.com/
 role: "Lead Developers"
 ---

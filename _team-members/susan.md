@@ -1,6 +1,6 @@
 ---
 name: Susan Athey
-image: susan.jpg
+image: /assets/img/team/susan.jpg
 link: https://www.gsb.stanford.edu/faculty-research/faculty/susan-athey
 role: "Previous Steering Committee Members"
 ---
