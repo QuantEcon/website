@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<div class="plot-container-box">
+  <ul class="nav nav-tabs tabs-list" id="levelTabs" style="border-color: #959494;">
+    <li class="nav-item">
+      <button class="nav-button active" id="map-tab" onclick="setType('map')" >Map</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-button" id="month-tab" onclick="setType('month')">Monthly Users</button>
+    </li>
+  </ul>
+
+  <div class="filters d-flex flex-wrap mt-3" style="margin-bottom: 20px;">
+      {% assign plots = site.plots | sort: 'order' %}
+    <div class="dropdown">
+      <select id="dropdown-plots" class="form-control plot-dropdown">
+        {% for plot in plots %}
+          <option value="{{ plot.name }}">{{ plot.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="plot-container mt-4">
+    <iframe id="plotFrame" class="w-100" height="400" src="/assets/plots/{{plots[0].name}}_map.html"></iframe>
+  </div>
+
+</div>
+<script>
+  let currentType = 'map';
+
+  function setType(type) {
+    currentType = type;
+    document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    updatePlot();
+  }
+
+  function updatePlot() {
+    const selectedValue = document.querySelector('.plot-dropdown').value;  // Get the selected plot name
+
+    const plotPath = `/assets/plots/${selectedValue}_${currentType}.html`;
+    document.getElementById('plotFrame').src = plotPath;
+  }
+
+  document.querySelectorAll('.plot-dropdown').forEach(dropdown => {
+    dropdown.addEventListener('change', updatePlot);
+  });
+</script>

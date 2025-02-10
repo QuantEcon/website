@@ -23,6 +23,7 @@ collections:
   news:
   lectures:
   projects:
+  plots:
   team-members:
     people: true
 
@@ -34,6 +35,10 @@ defaults:
       order: 99
     scope:
       type: "projects"
+    values:
+      order: 99
+    scope:
+      type: "plots"
     values:
       order: 99
     scope:
