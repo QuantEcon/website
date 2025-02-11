@@ -1466,69 +1466,9 @@ section {
   }
 }
 
-.plot-container-box {
+.plot-container {
   background-color: #e6e6e6f5;
   border-radius: 10px;
   padding: 20px;
-  margin: 0 auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  .tabs-list {
-    border-color: #959494;
-    .nav-item .nav-button {
-      color: white;
-      background-color: #444444;
-      border: 1px solid #444444;
-      border-radius: 5px 5px 0 0;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    /* Hover effect for inactive tabs */
-    .nav-item .nav-button:hover {
-      background-color: #555555;
-      border-color: #555555;
-    }
-    
-    /* Active tab button styling */
-    .nav-item .nav-button.active {
-      background-color: #666666;
-      border-color: #444444;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Inactive tab button styling */
-    .nav-item .nav-button:not(.active) {
-      background-color: #646464;
-      border-color: #444444;
-      opacity: 0.7;
-    }
-    
-    /* Active tab text color */
-    .nav-item .nav-button.active {
-      color: #fff;
-    }
-    
-    /* Inactive tab text color */
-    .nav-item .nav-button:not(.active) {
-      color: #ccc;
-    }  
-  }
-  
-  .dropdown {
-    display: contents;
-  }
-  /* Dropdown select styling */
-  .plot-dropdown {
-    background-color: #9d9d9d;
-    color: white;
-    border: 1px solid #666666;
-    border-radius: 5px;
-    padding: 10px 20px;
-    width: 100%;
-    transition: all 0.3s ease;
-  }
-
 }
