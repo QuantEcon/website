@@ -5,10 +5,6 @@ menu_item: false
 ---
 # Workshops and Seminars
 
-QuantEcon runs workshops on computational modeling for economists using Python and Julia. 
-
-<br>
-
 **November 2024, Reserve Bank of Australia**
 
 *   Presenters: John Stachurski

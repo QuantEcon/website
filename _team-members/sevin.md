@@ -1,7 +1,7 @@
 ---
 name: Sevin Yeltekin
 image: /assets/img/team/sevin.jpg
-link: http://tepper.cmu.edu/our-faculty-and-research/about-our-faculty/faculty-profiles/sevin/yeltekin-sevin
+link: https://simon.rochester.edu/faculty/sevin-yeltekin
 role: "Committee Members"
 ---
-Sevin Yeltekin is a Professor of Economics at Carnegie Mellon University with research interests in computational economics and macroeconomics.
+Sevin Yeltekin is Dean and Professor of the Simon Business School at the University of Rochester
