@@ -1,0 +1,108 @@
+---
+title: Analytics Dashboard
+permalink: /books/
+menu_item: false
+---
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<h1>Analytics Dashboard</h1>
+
+<h2>Active Users by Country</h2>
+<div id="map-container" class="chart-container"></div>
+
+<h2>Monthly Users</h2>
+<div id="month-container" class="chart-container"></div>
+
+<script>
+  const BASE_DATA_URL = "https://quantecon.github.io/website-dynamic";
+
+  /**
+   * 1. Fetch and Render the Choropleth Map
+   */
+  fetch(`${BASE_DATA_URL}/map_data.json`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // data is an array of objects:
+      // [ { country: "Australia", iso_alpha_3: "AUS", users: 123 }, ... ]
+
+      const isoCodes = data.map(row => row.iso_alpha_3);
+      const usersArr = data.map(row => row.users);
+      const hoverText = data.map(row => row.country);
+
+      const trace = {
+        type: 'choropleth',
+        locations: isoCodes,
+        z: usersArr,
+        text: hoverText,
+        hovertemplate: "<b>Country: %{text}</b><br>Users: %{z}<extra></extra>",
+        colorscale: 'Teal',
+        colorbar: {
+          title: 'Users'
+        }
+      };
+
+      const layout = {
+        title: 'Active Users by Country (Fetched JSON)',
+        geo: {
+          showframe: false,
+          showcoastlines: true,
+          projection: { type: 'natural earth' }
+        },
+        margin: { l: 0, r: 0, t: 50, b: 0 },
+        title_x: 0.5
+      };
+
+      Plotly.newPlot('map-container', [trace], layout);
+    })
+    .catch(err => {
+      console.error("Error loading map_data.json:", err);
+    });
+
+
+  /**
+   * 2. Fetch and Render the Monthly Users Line Chart
+   */
+  fetch(`${BASE_DATA_URL}/month_data.json`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // data is an array of objects:
+      // [ { month_formatted: "Feb 2024", users: 567 }, ... ]
+
+      const xValues = data.map(row => row.month_formatted);
+      const yValues = data.map(row => row.users);
+
+      const trace = {
+        type: 'scatter',
+        mode: 'lines+markers',
+        x: xValues,
+        y: yValues,
+        hovertemplate: "Month: %{x}<br>Users: %{y}<extra></extra>",
+        line: { shape: 'linear', color: 'teal' },
+        marker: { size: 6 }
+      };
+
+      const layout = {
+        title: 'Monthly Users (Fetched JSON)',
+        xaxis: { title: 'Month' },
+        yaxis: { title: 'Number of Users' },
+        margin: { l: 50, r: 20, t: 50, b: 50 },
+        title_x: 0.5
+      };
+
+      Plotly.newPlot('month-container', [trace], layout);
+    })
+    .catch(err => {
+      console.error("Error loading month_data.json:", err);
+    });
+</script>
