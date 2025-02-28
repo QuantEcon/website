@@ -2,23 +2,61 @@
 title: Infrastructure
 permalink: /infrastructure/
 menu_item: false
+layout: default
 ---
 
-<h1>Infrastructure</h1>
+<h1 class="text-center">Open-science, Open-source Infrastructure</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <p class="fs-4">QuantEcon is dedicated to building open-source tools that facilitate and help us to deliver our mission, while contributing to the broader open-source open-science community.</p>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<h2 class="text-center">Current Projects</h2>
+
+<ul class="row projects projects-container">
+
+{% assign sorted_projects = site.projects | where: 'type', 'infrastructure' %}
+
+{% for project in sorted_projects reversed %}
+    <li class="projects-item">
+    <a target="_blank" href="{{ project.link }}">
+        <div class="project d-flex flex-column align-items-start">
+        <div class="item-info d-flex">
+            <div class="item-pic"><img src="/assets/img/projects/{{ project.image }}"></div>
+            <div class="item-title">
+            <h3 class="name">{{ project.name }}</h3>
+                <div class="item-desc">
+                    {{ project.description | markdownify }}
+                </div>
+            </div>
+        </div>
+    </a>
+    </li>
+{% endfor %}
+
+</ul>
+
+<hr class="dotted">
+
+<h2 class="text-center">History</h2>
 
 <div class="container">
     <div class="row">
         <div class="d-flex justify-content-center align-items-center">
             <div class="col-md-8">
 
-                <p class="fs-4">QuantEcon is dedicated to building open-source tools that facilitate and help us to deliver our mission, while contributing to the broader open-source open-science community.</p>
+                <p class="fs-4">QuantEcon has been a long term participant in the development of open-source, open-science tools</p>
 
             </div>
         </div>
     </div>
 </div> 
-
-<h2 class="text-center">Our infrastructure history</h2>
 
 <div class="quantecon-timeline">
 
