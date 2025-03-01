@@ -17,30 +17,47 @@ layout: default
     </div>
 </div> 
 
+<br>
+
 <h2 class="text-center">Current Projects</h2>
 
-<ul class="row projects projects-container">
+<br>
 
-{% assign sorted_projects = site.projects | where: 'type', 'infrastructure' %}
+<ul class="row projects-col2 projects-container">
 
-{% for project in sorted_projects reversed %}
-    <li class="projects-item">
-    <a target="_blank" href="{{ project.link }}">
-        <div class="project d-flex flex-column align-items-start">
+    <li class="projects-col2-item">
+    <a target="_blank" href="https://blog.valorumdata.com/introducing-jupyteach/">
+        <div class="project-col2 d-flex flex-column align-items-start">
         <div class="item-info d-flex">
-            <div class="item-pic"><img src="/assets/img/projects/{{ project.image }}"></div>
+            <div class="item-pic"><img src="/assets/img/projects/jupyteach-logo-small.png"></div>
             <div class="item-title">
-            <h3 class="name">{{ project.name }}</h3>
+            <h3 class="name">Jupyteach</h3>
                 <div class="item-desc">
-                    {{ project.description | markdownify }}
+                    A new, modern learning management system (LMS) focused on computational education
                 </div>
             </div>
         </div>
     </a>
     </li>
-{% endfor %}
+
+    <li class="projects-col2-item">
+        <a target="_blank" href="https://jupyterbook.org/en/stable/intro.html">
+            <div class="project-col2 d-flex flex-column align-items-start">
+            <div class="item-info d-flex">
+                <div class="item-pic"><img src="/assets/img/projects/jupyter-book-logo.svg"></div>
+                <div class="item-title">
+                <h3 class="name">Jupyter Book</h3>
+                    <div class="item-desc">
+                        Build beautiful, publication-quality books and documents from computational content.
+                    </div>
+                </div>
+            </div>
+        </a>
+        </li>
 
 </ul>
+
+<br>
 
 <hr class="dotted">
 
