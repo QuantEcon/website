@@ -261,6 +261,9 @@ img {
     visibility: hidden;
   }
   .dropdown {
+    a:not([href]) {
+      cursor: pointer;
+    }
     ul {
       display: block;
       position: absolute;

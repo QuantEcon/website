@@ -76,7 +76,7 @@
             <li{% if page.layout=='home' %} class="active" {% endif %}><a href="{{ '/' | relative_url }}">Home</a></li>
             <li{% if page.layout=='lectures' %} class="active" {% endif %}><a href="/lectures/"><span>Lectures</span></a></li>
             <li{% if page.permalink=='/workshops/' %} class="active" {% endif %}><a href="/workshops/"><span>Workshops</span></a></li>
-            <li class="dropdown"><span>Projects</span><i class="bi bi-chevron-down"></i>
+            <li class="dropdown"><a><span>Projects</span><i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="/books">Books</a></li>
                 <li><a href="/code">Code</a></li>
