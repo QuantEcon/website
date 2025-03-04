@@ -263,8 +263,9 @@ img {
     visibility: hidden;
   }
   .dropdown {
-    a:not([href]) {
-      cursor: pointer; 
+    a:not([href]):hover,
+    a[href=""]:hover {
+      cursor: default; 
     }
     ul {
       display: block;
