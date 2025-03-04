@@ -40,6 +40,7 @@ layout: default
     </a>
     </li>
 
+   
     <li class="projects-col2-item">
         <a target="_blank" href="https://jupyterbook.org/en/stable/intro.html">
             <div class="project-col2 d-flex flex-column align-items-start">
@@ -68,7 +69,7 @@ layout: default
         <div class="d-flex justify-content-center align-items-center">
             <div class="col-md-8">
 
-                <p class="fs-4">QuantEcon has built an international team of developers to help build the next generation of open-source tools for modern, computational compatible publishing for over 10 years</p>
+                <p class="fs-4">QuantEcon plays a key role in building international teams of developers to help build the next generation of open-source tools for modern, computational compatible publishing for over 10 years</p>
 
             </div>
         </div>
@@ -76,7 +77,6 @@ layout: default
 </div> 
 
 <div class="quantecon-timeline">
-
     <div style="margin:30px 100px;">
         <div class="vertical-timeline">
 
@@ -107,7 +107,11 @@ layout: default
                         The <a href="https://www.sphinx-doc.org/en/master/">sphinx documentation engine</a> was adopted to build lectures that enabled the inclusion of python code.
                         While not built for purpose, the QuantEcon team developed custom scripts to support the initial QuantEcon lecture website and pdf generation. 
                         </p>
-                        <p><b>Markup language:</b> <a href="">Restructured Text</a></p>
+                        <p>
+                            <b>Markup language:</b> <a href="">Restructured Text</a>
+                            <br>
+                            <b>Funding:</b> <a href="https://sloan.org">Alfred P. Sloan Foundation</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -163,7 +167,11 @@ layout: default
                             Jupyter notebooks as a built target for sphinx. All QuantEcon lectures were now able to be
                             downloaded as native Jupyter notebooks, built from Restructured Text source files.
                         </p>
-                        <p><b>Markup language:</b> <a href="">Restructured Text</a></p>
+                        <p>
+                            <b>Markup language:</b> <a href="">Restructured Text</a>
+                            <br>
+                            <b>Funding:</b> <a href="https://sloan.org">Alfred P. Sloan Foundation</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -180,21 +188,25 @@ layout: default
                         <div class="vt-line"></div>
                         <div class="vt-icon">
                             <div class="vt-icon-wrap">
-                                <img src="/assets/img/timeline/4.png" alt="" class="image-fluid">
+                                <img src="/assets/img/timeline/jupinx-logo.png" alt="" class="image-fluid">
 
                             </div>
                         </div>
                     </div>
                     <div class="vt-body">
-                        <h3 class="vt-title">Executable Books</h3>
+                        <h3 class="vt-title">Jupinx</h3>
                         <p>
-                        QuantEcon formed a partnership with the University of California (Berkeley) and Northern Arizona University which
-                        became known as the <a href="https://executablebooks.org/en/latest/">Executable books project</a>.
+                        QuantEcon built a tool called <a href="https://jupinx.quantecon.org/">Jupinx</a>, an open source tool for converting ReStructuredText 
+                        source files into a website via Jupyter Notebooks.
+                        </p>
+                        <p>
+                            <b>Markup language:</b> <a href="">Restructured Text</a>
+                            <br>
+                            <b>Funding:</b> <a href="https://sloan.org">Alfred P. Sloan Foundation</a>
                         </p>
                     </div>
                 </div>
             </div>
-
             <div class="vt-step vt-right vt-blue">
                 <div class="vt-column">
                     <div class="vt-start-point"></div>
@@ -215,16 +227,85 @@ layout: default
                     <div class="vt-body">
                         <h3 class="vt-title"><a href="">Jupyter Book</a></h3>
                         <p>
+                        QuantEcon formed a partnership with <a href="https://chrisholdgraf.com">Chris Holdgraf (UC Berkeley)</a> and <a href="https://cap-lab.bio">Caporaso Labs</a> which
+                        became known as the <a href="https://executablebooks.org/en/latest/">Executable books project</a>.
+                        </p>
+                        <p>
                         After a period of intense development, <a href="https://executablebooks.org/en/latest/tools/#tools-jupyter-book">Jupyter Book</a> was released. While it retained the use of sphinx
                         it was a step change in building beautiful, publication-quality books, websites, and documents from source material 
-                        that contains computational content.
+                        that contains computational content. The project also extended by markdown through the introduction of roles and directives, a new syntax called MyST.
                         </p>
-                        <p><b>Markup language:</b> <a href="https://executablebooks.org/en/latest/tools/#tools-myst">MyST</a></p>
+                        <p>
+                            <b>Markup language:</b> <a href="https://executablebooks.org/en/latest/tools/#tools-myst">MyST</a>
+                            <br>
+                            <b>Funding:</b> <a href="https://sloan.org">Alfred P. Sloan Foundation</a>
+                        </p>
                     </div>
                 </div>
             </div>
+            <div class="vt-step vt-left vt-orange">
+                <div class="vt-column">
+                    <div class="vt-start-point"></div>
+                    <div class="vt-end-point"></div>
+                </div>
+                <div class="vt-content">
+                    <div class="vt-header">
+                        <h2 class="vt-cat">2021</h2>
+                    </div>
+                    <div class="vt-splitter">
+                        <div class="vt-line"></div>
+                        <div class="vt-icon">
+                            <div class="vt-icon-wrap">
+                                <img src="/assets/img/timeline/jupyter-book-logo.svg" alt="" class="image-fluid">
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vt-body">
+                        <h3 class="vt-title">sphinx-proof, sphinx-exercise, and sphinx-tojupyter</h3>
+                        <p>
+                            QuantEcon continues to develop infrastructure in the EBP community including <a href="https://github.com/executablebooks/sphinx-exercise">sphinx-exercise</a> and
+                            <a href="https://github.com/executablebooks/sphinx-proof">sphinx-proof</a> to support more advanced scientific markup to include exercises and solutions, 
+                            in addition to a catalog of various proof related admonitions. 
+                        </p>
+                        <p>
+                            We used our experience building sphinxcontrib-jupyter to build <a href="https://github.com/quantecon/sphinx-tojupyter">sphinx-tojupyter</a> that enables building
+                            base Jupyter notebookos from MyST source files.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vt-step vt-right vt-pink">
+                <div class="vt-column">
+                    <div class="vt-start-point"></div>
+                    <div class="vt-end-point"></div>
+                </div>
+                <div class="vt-content">
+                    <div class="vt-header">
+                        <h2 class="vt-cat">2023</h2>
+                    </div>
+                    <div class="vt-splitter">
+                        <div class="vt-line"></div>
+                        <div class="vt-icon">
+                            <div class="vt-icon-wrap">
+                                <img src="/assets/img/timeline/jupyteach-logo.svg" alt="" class="image-fluid">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vt-body">
+                        <h3 class="vt-title"><a href="https://blog.valorumdata.com/introducing-jupyteach/">Jupyteach</a></h3>
+                        <p>
+                            QuantEcon partners with <a href="https://blog.valorumdata.com">Valorum Data</a> to start building a new, modern, next generation
+                            learning management system (LMS) to support delivery of QuantEcon courses online. 
+                        </p>
+                        <p>
+                            This platform is used to deliver our annual QuantEcon summer course in West Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
         </div>
     </div>
-
 </div> <!-- end .quantecon-timeline -->
