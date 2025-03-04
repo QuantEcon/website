@@ -76,11 +76,12 @@
             <li{% if page.layout=='home' %} class="active" {% endif %}><a href="{{ '/' | relative_url }}">Home</a></li>
             <li{% if page.layout=='lectures' %} class="active" {% endif %}><a href="/lectures/"><span>Lectures</span></a></li>
             <li{% if page.permalink=='/workshops/' %} class="active" {% endif %}><a href="/workshops/"><span>Workshops</span></a></li>
-            <li class="dropdown"><a href="/projects"><span>Projects</span><i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a><span>Projects</span><i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="/code">Code</a></li>
                 <li><a href="/books">Books</a></li>
-                <li><a href="/projects">Others</a></li>
+                <li><a href="/code">Code</a></li>
+                <li><a href="/infrastructure">Infrastructure</a></li>
+                <li><a href="https://cheatsheets.quantecon.org/">Cheatsheets</a></li>
               </ul>
             </li>
             <li class="dropdown"><a href="/about" title="About QuantEcon"><span>About</span><i class="bi bi-chevron-down"></i></a>
