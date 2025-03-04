@@ -1,6 +1,8 @@
+---
+---
 /*--------------------------------------------------------------
 # QuantEcon - quantecon.org
-# v1.1
+# v1.2
 --------------------------------------------------------------*/
 
 @import 'misc';
@@ -262,7 +264,7 @@ img {
   }
   .dropdown {
     a:not([href]) {
-      cursor: pointer;
+      cursor: pointer; 
     }
     ul {
       display: block;
