@@ -971,6 +971,8 @@ section {
 .projects-col2 {
   padding: 0;
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(132px, 1fr));
   margin: 0;
   h2 {
     margin: 2rem 0 1rem 0;
@@ -988,7 +990,7 @@ section {
     margin: 0 0 1.5rem 0;
     @media (min-width: 768px) {
       min-height: 100px;
-      width: 45%;
+      width: 100%;
     }
 
     .item-info {
