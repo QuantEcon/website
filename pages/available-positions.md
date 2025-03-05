@@ -1,10 +1,10 @@
 ---
-title: Available Positions
+title: Research Assistants
 permalink: /positions/
 menu_item: false
 ---
 
-# Available Positions
+# Research Assistants
 
 Currently there are no open positions available.
 
