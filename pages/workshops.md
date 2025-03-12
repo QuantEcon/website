@@ -5,7 +5,7 @@ menu_item: false
 ---
 # Workshops and Seminars
 
-**March 2025, International Monetary Fund**
+**May 2025, International Monetary Fund**
 
 *   Presenters: John Stachurski & Chase Coleman
 *   [Modern Computational Economics and Policy Applications](https://github.com/QuantEcon/imf_2025)
