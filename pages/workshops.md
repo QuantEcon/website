@@ -5,6 +5,13 @@ menu_item: false
 ---
 # Workshops and Seminars
 
+**March 2025, International Monetary Fund**
+
+*   Presenters: John Stachurski & Chase Coleman
+*   [Modern Computational Economics and Policy Applications](https://github.com/QuantEcon/imf_2025)
+
+>Open source scientific computing environments built around the Python programming language have expanded rapidly in recent years. They now form the dominant paradigm in artificial intelligence and many fields within the natural sciences. Economists can greatly enhance their modeling and data processing capabilities by exploiting Python's scientific ecosystem. This course will cover the foundations of Python programming and Python scientific libraries, as well as showing how they can be used in economic applications for rapid development and high performance computing.
+
 **November 2024, Reserve Bank of Australia**
 
 *   Presenters: John Stachurski
