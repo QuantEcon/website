@@ -1594,6 +1594,9 @@ section {
   .workshop-details {
     display: flex;
     padding: 1rem 0 0 0;
+    @media (max-width: 850px) {
+      flex-direction: column;
+    }
     ul {
       min-width:400px;
       max-width: 400px;
