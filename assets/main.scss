@@ -1579,3 +1579,38 @@ section {
     }
   }
 }
+
+/*--------------------------------------------------------------
+# Workshop
+--------------------------------------------------------------*/
+
+.workshop {
+  border-top: 1px solid #ececec;
+  padding: 1rem 0 0 0;
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .workshop-details {
+    display: flex;
+    padding: 1rem 0 0 0;
+    ul {
+      min-width:400px;
+      max-width: 400px;
+      list-style: none; 
+      padding:0 1rem 0 0;
+      li {
+        font-weight: bold;
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+  }  
+  .workshop-copy {
+    font-style: italic;
+    p {
+
+    }
+  }
+}
