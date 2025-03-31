@@ -48,7 +48,7 @@ menu_item: false
       };
 
       const layout = {
-        title: 'Active Users by Country (Fetched JSON)',
+        title: 'Active Users by Country (last six months)',
         geo: {
           showframe: false,
           showcoastlines: true,
@@ -93,9 +93,12 @@ menu_item: false
       };
 
       const layout = {
-        title: 'Monthly Users (Fetched JSON)',
+        title: 'Monthly Users',
         xaxis: { title: 'Month' },
-        yaxis: { title: 'Number of Users' },
+        yaxis: {
+          title: 'Number of Users',
+          range: [0, Math.max(...yValues) * 1.1]
+        },
         margin: { l: 50, r: 20, t: 50, b: 50 },
         title_x: 0.5
       };
