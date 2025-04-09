@@ -11,6 +11,9 @@ menu_item: false
 <h2>Active Users by Country</h2>
 <div id="map-container" class="chart-container"></div>
 
+<h2>Active Users per capita by Country</h2>
+<div id="map-per-capita-container" class="chart-container"></div>
+
 <h2>Monthly Users</h2>
 <div id="month-container" class="chart-container"></div>
 
@@ -29,12 +32,14 @@ menu_item: false
     })
     .then(data => {
       // data is an array of objects:
-      // [ { country: "Australia", iso_alpha_3: "AUS", users: 123 }, ... ]
+      // [ { country: "Australia", iso_alpha_3: "AUS", users: 123, users_per_capita: 0.002 }, ... ]
 
       const isoCodes = data.map(row => row.iso_alpha_3);
       const usersArr = data.map(row => row.users);
+      const usersPerCapitaArr = data.map(row => row.users_per_capita);
       const hoverText = data.map(row => row.country);
 
+      // Active users plot
       const trace = {
         type: 'choropleth',
         locations: isoCodes,
@@ -59,6 +64,32 @@ menu_item: false
       };
 
       Plotly.newPlot('map-container', [trace], layout);
+
+      // Active users per capita plot
+      const tracePerCapita = {
+        type: 'choropleth',
+        locations: isoCodes,
+        z: usersPerCapitaArr,
+        text: hoverText,
+        hovertemplate: "<b>Country: %{text}</b><br>Users per capita: %{z}<extra></extra>",
+        colorscale: 'Picnic',
+        colorbar: {
+          title: 'Users per capita'
+        }
+      };
+
+      const layoutPerCapita = {
+        title: 'Active Users per capita by Country (last six months)',
+        geo: {
+          showframe: false,
+          showcoastlines: true,
+          projection: { type: 'natural earth' }
+        },
+        margin: { l: 0, r: 0, t: 50, b: 0 },
+        title_x: 0.5
+      };
+
+      Plotly.newPlot('map-per-capita-container', [tracePerCapita], layoutPerCapita);
     })
     .catch(err => {
       console.error("Error loading map_data.json:", err);
