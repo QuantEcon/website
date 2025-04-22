@@ -6,13 +6,16 @@ menu_item: false
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-<h1>Analytics Dashboard</h1>
+
 
 <h2>Active Users by Country</h2>
 <div id="map-container" class="chart-container"></div>
 
 <h2>Monthly Users</h2>
 <div id="month-container" class="chart-container"></div>
+
+<h2>Active Users (per capita) by Country</h2>
+<div id="map-container-percapita" class="chart-container"></div>
 
 <script>
   const BASE_DATA_URL = "https://quantecon.github.io/website-dynamic";
@@ -41,7 +44,7 @@ menu_item: false
         z: usersArr,
         text: hoverText,
         hovertemplate: "<b>Country: %{text}</b><br>Users: %{z}<extra></extra>",
-        colorscale: 'Picnic',
+        colorscale: 'Portland',
         colorbar: {
           title: 'Users'
         }
@@ -108,4 +111,52 @@ menu_item: false
     .catch(err => {
       console.error("Error loading month_data.json:", err);
     });
+
+/**
+* 3. Fetch and Render the Choropleth Map (per capita)
+*/
+fetch(`${BASE_DATA_URL}/map_data.json`)
+ .then(response => {
+   if (!response.ok) {
+     throw new Error("Network response was not ok " + response.statusText);
+   }
+   return response.json();
+ })
+ .then(data => {
+   // data is an array of objects:
+   // [ { country: "Australia", iso_alpha_3: "AUS", users: 123 }, ... ]
+
+   const isoCodes = data.map(row => row.iso_alpha_3);
+   const usersArr = data.map(row => row.users_per_capita);
+   const hoverText = data.map(row => row.country);
+
+   const trace = {
+     type: 'choropleth',
+     locations: isoCodes,
+     z: usersArr,
+     text: hoverText,
+     hovertemplate: "<b>Country: %{text}</b><br>Users (per capita): %{z}<extra></extra>",
+     colorscale: 'Portland',
+     colorbar: {
+       title: 'Users (per capita)'
+     }
+   };
+
+   const layout = {
+     title: 'Active Users (per capita) by Country (last six months)',
+     geo: {
+       showframe: false,
+       showcoastlines: true,
+       projection: { type: 'natural earth' }
+     },
+     margin: { l: 0, r: 0, t: 50, b: 0 },
+     title_x: 0.5
+   };
+
+   Plotly.newPlot('map-container-percapita', [trace], layout);
+ })
+ .catch(err => {
+   console.error("Error loading map_data.json:", err);
+ });
+
 </script>
