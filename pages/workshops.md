@@ -6,7 +6,7 @@ menu_item: false
 <h1>Workshops and Seminars</h1>
 
 <div class="workshop">
-    <h2 class="title">May 2025, International Monetary Fund</h2>
+    <h2 class="title">December 2025, International Monetary Fund</h2>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
