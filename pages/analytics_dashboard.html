@@ -101,7 +101,7 @@ menu_item: false
 </div>
 
 <script>
-  // Smooth scroll for navigation links
+  // Smooth scroll for navigation links with header offset
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.dashboard-nav-links a').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -109,9 +109,14 @@ menu_item: false
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          // Get header height for offset calculation
+          const header = document.getElementById('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const offsetPosition = targetElement.offsetTop - headerHeight - 20; // 20px additional margin
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
           });
         }
       });
