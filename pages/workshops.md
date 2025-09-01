@@ -24,6 +24,19 @@ menu_item: false
 </div>
 
 <div class="workshop">
+    <h2 class="title">June 2025, Kyoto University</h2>
+    <div class="workshop-details">
+        <ul>
+            <li><span>Presenters:</span> John Stachurski</li>
+            <li><a href="https://github.com/QuantEcon/kyoto_2025">Computational Economics and AI</a></li>
+        </ul>
+        <div class="workshop-copy">
+            <p>The recent surge in artificial intelligence research and investment has driven emergence of groundbreaking scientific computing environments in recent years, each equipped with advanced features like automatic differentiation, parallel computing capabilities, and just-in-time compilation. This workshop will deliver a concise survey of these evolving AI-driven computational tools and explore their potential applications within economic research and analysis, demonstrating how the accelerated pace of AI development is creating new opportunities for computational economics.</p>
+        </div>
+    </div>
+</div>
+
+<div class="workshop">
     <h2 class="title">June 2025, International University of Japan</h2>
     <div class="workshop-details">
         <ul>
