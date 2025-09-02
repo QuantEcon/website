@@ -48,11 +48,8 @@ menu_item: false
 }
 
 .chart-section {
-  margin: 4rem 0;
+  margin: 3rem 0;
   position: relative;
-  min-height: 600px;
-  display: flex;
-  flex-direction: column;
 }
 
 .chart-section:not(:last-child)::after {
@@ -66,22 +63,6 @@ menu_item: false
 
 .chart-container {
   margin: 1rem 0;
-  min-height: 450px;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  position: relative;
-}
-
-.chart-container:empty::after {
-  content: 'Chart loading...';
-  color: #6c757d;
-  font-style: italic;
-  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -96,38 +77,6 @@ menu_item: false
     max-width: 300px;
   }
 }
-
-.back-to-top {
-  text-align: center;
-  margin: 2rem 0 1rem 0;
-}
-
-.back-to-top-btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #f8f9fa;
-  color: #0072bc;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: 1px solid #e9ecef;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.back-to-top-btn:hover {
-  background: #0072bc;
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0, 114, 188, 0.2);
-  text-decoration: none;
-}
-
-.back-to-top-btn::before {
-  content: '↑ ';
-  margin-right: 0.25rem;
-}
 </style>
 
 <div class="dashboard-nav">
@@ -141,29 +90,19 @@ menu_item: false
 
 <div id="country-users" class="chart-section">
   <div id="map-container" class="chart-container"></div>
-  <div class="back-to-top">
-    <a href="#top" class="back-to-top-btn">Back to Top</a>
-  </div>
 </div>
 
 <div id="monthly-users" class="chart-section">
   <div id="month-container" class="chart-container"></div>
-  <div class="back-to-top">
-    <a href="#top" class="back-to-top-btn">Back to Top</a>
-  </div>
 </div>
 
 <div id="country-per-capita" class="chart-section">
   <div id="map-container-percapita" class="chart-container"></div>
-  <div class="back-to-top">
-    <a href="#top" class="back-to-top-btn">Back to Top</a>
-  </div>
 </div>
 
 <script>
   // Smooth scroll for navigation links with header offset
   document.addEventListener('DOMContentLoaded', function() {
-    // Navigation links to chart sections
     document.querySelectorAll('.dashboard-nav-links a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -180,17 +119,6 @@ menu_item: false
             behavior: 'smooth'
           });
         }
-      });
-    });
-    
-    // Back to top buttons
-    document.querySelectorAll('.back-to-top-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
       });
     });
   });
