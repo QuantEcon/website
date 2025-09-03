@@ -1,5 +1,6 @@
 ---
 name: Eli Knaap
+last_name: Knaap
 image: /assets/img/team/eli.jpg
 link: https://knaaptime.com
 role: "Developers"

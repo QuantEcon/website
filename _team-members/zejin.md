@@ -1,5 +1,6 @@
 ---
 name: Zejin Shi
+last_name: Shi
 image: /assets/img/team/zejin.jpg
 link: https://www.zejinshi.com/
 role: "Developers"

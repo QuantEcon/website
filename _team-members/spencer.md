@@ -1,5 +1,6 @@
 ---
 name: Spencer Lyon
+last_name: Lyon
 image: /assets/img/team/spencer.jpg
 link: http://spencerlyon.com/
 role: "Previous Developers"

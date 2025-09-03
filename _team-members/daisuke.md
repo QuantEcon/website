@@ -1,5 +1,6 @@
 ---
 name: Daisuke Oyama
+last_name: Oyama
 image: https://avatars.githubusercontent.com/u/7353083?v=4
 link: http://www.oyama.e.u-tokyo.ac.jp/
 role: "Committee Members"

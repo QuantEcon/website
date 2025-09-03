@@ -1,5 +1,6 @@
 ---
 name: Richard W. Evans
+last_name: Evans
 image: /assets/img/team/richard.jpg
 link: https://sites.google.com/site/rickecon/
 role: "Committee Members"

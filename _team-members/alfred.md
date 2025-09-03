@@ -1,5 +1,6 @@
 ---
 name: Alfred Galichon
+last_name: Galichon
 image: /assets/img/team/alfred.jpg
 link: http://alfredgalichon.com
 role: "Committee Members"

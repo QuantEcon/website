@@ -1,5 +1,6 @@
 ---
 name: Shu Hu
+last_name: Hu
 image: /assets/img/team/shu.jpg
 link: https://shu-hu.com/
 role: "Developers"
