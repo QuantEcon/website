@@ -10,9 +10,9 @@ layout: default
 
 	<h2>Founding Members and Co-Chairs</h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' %}
+	{% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' | sort: 'name' %}
 	<div class="row">
-		{% for team-member in team-members reversed %}
+		{% for team-member in team-members %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
@@ -27,9 +27,9 @@ layout: default
 
 	<h2>Committee Members</h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Committee Members' %}
+	{% assign team-members = site.team-members | where: 'role', 'Committee Members' | sort: 'name' %}
 	<div class="row">
-		{% for team-member in team-members reversed %}
+		{% for team-member in team-members %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
@@ -44,9 +44,9 @@ layout: default
 
 	<h2>Developers</h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Developers' %}
+	{% assign team-members = site.team-members | where: 'role', 'Developers' | sort: 'name' %}
 	<div class="row">
-		{% for team-member in team-members reversed %}
+		{% for team-member in team-members %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
@@ -61,9 +61,9 @@ layout: default
 
 	<h2>Design and Marketing</h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Design and Marketing' %}
+	{% assign team-members = site.team-members | where: 'role', 'Design and Marketing' | sort: 'name' %}
 	<div class="row">
-		{% for team-member in team-members reversed %}
+		{% for team-member in team-members %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
@@ -144,9 +144,9 @@ layout: default
 
 	<h2>Previous Steering Committee Members</h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' %}
+	{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' | sort: 'name' %}
 	<div class="row">
-		{% for team-member in team-members reversed %}
+		{% for team-member in team-members %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
@@ -161,9 +161,9 @@ layout: default
 
 	<h2>Previous Developers</h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Previous Developers' %}
+	{% assign team-members = site.team-members | where: 'role', 'Previous Developers' | sort: 'name' %}
 	<div class="row">
-		{% for team-member in team-members reversed %}
+		{% for team-member in team-members %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
