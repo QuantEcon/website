@@ -11,8 +11,7 @@ layout: default
       <h2 class="title">
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> 
         {% if post.tag %}
-          {% assign tags = post.tag | split: ' ' %}
-          {% for tag in tags %}
+          {% for tag in post.tag %}
             <span class="badge">{{ tag }}</span>
           {% endfor %}
         {% endif %}
