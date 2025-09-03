@@ -1,5 +1,6 @@
 ---
 name: Nisha Peng
+last_name: Peng
 image: /assets/img/team/nisha.png
 link: https://github.com/nisha617
 role: "Developers"

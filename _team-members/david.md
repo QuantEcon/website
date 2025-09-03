@@ -1,5 +1,6 @@
 ---
 name: David Backus
+last_name: Backus
 image: /assets/img/team/david.jpg
 link: https://www.legacy.com/us/obituaries/nytimes/name/david-backus-obituary?id=14279333
 role: "Previous Steering Committee Members"

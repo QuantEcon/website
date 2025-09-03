@@ -1,5 +1,6 @@
 ---
 name: Humphrey Yang
+last_name: Yang
 image: /assets/img/team/humphrey.jpg
 link: https://github.com/HumphreyYang
 role: "Developers"

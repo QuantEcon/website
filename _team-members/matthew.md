@@ -1,5 +1,6 @@
 ---
 name: Matthew McKay
+last_name: McKay
 image: https://avatars.githubusercontent.com/u/8263752?v=4
 link: https://www.linkedin.com/in/matthew-mckay-8b354993/
 role: "Committee Members"

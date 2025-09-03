@@ -1,5 +1,6 @@
 ---
 name: Shunsuke Hori
+last_name: Hori
 image: /assets/img/team/shunsuke.jpg
 link: https://shunsuke-hori.pages.dev/
 role: "Developers"

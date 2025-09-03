@@ -1,5 +1,6 @@
 ---
 name: Frank Wu
+last_name: Wu
 image: /assets/img/team/frank.jpg
 link: https://github.com/chappiewuzefan
 role: "Previous Developers"

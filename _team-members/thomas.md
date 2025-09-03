@@ -1,5 +1,6 @@
 ---
 name: Thomas J. Sargent
+last_name: Sargent
 image: /assets/img/team/tom.jpg
 link: http://www.tomsargent.com/
 role: "Founding Members and Co-Chairs"
