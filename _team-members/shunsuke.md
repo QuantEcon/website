@@ -1,7 +1,7 @@
 ---
 name: Shunsuke Hori
 image: /assets/img/team/shunsuke.jpg
-link: https://github.com/Shunsuke-Hori
-role: "Previous Lead Developers"
+link: https://shunsuke-hori.pages.dev/
+role: "Developers"
 ---
-Shunsuke Hori is a PhD student in Economics at University of California, San Diego, with research interests in macroeconomics.
+Shunsuke Hori is an Assistant Professor at Hitotsubashi University.
