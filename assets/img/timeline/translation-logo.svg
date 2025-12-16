@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Translation/Language icon with overlapping speech bubbles -->
+  <rect x="4" y="8" width="32" height="24" rx="4" fill="#4A90D9"/>
+  <polygon points="12,32 18,32 15,40" fill="#4A90D9"/>
+  <text x="12" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">EN</text>
+  
+  <rect x="28" y="24" width="32" height="24" rx="4" fill="#E8762D"/>
+  <polygon points="52,48 46,48 49,56" fill="#E8762D"/>
+  <text x="36" y="40" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">中文</text>
+  
+  <!-- Sync arrows -->
+  <path d="M38 18 L44 14 L44 16 L52 16 L52 20 L44 20 L44 22 Z" fill="#2C3E50"/>
+  <path d="M26 46 L20 50 L20 48 L12 48 L12 44 L20 44 L20 42 Z" fill="#2C3E50"/>
+</svg>
