@@ -44,4 +44,4 @@ As QuantEcon.py evolves, the structure will naturally move towards having more s
 
 ## Further questions
 
-We encourage you to reach out to the [QuantEcon team](https://quantecon.org/team) on the [Discourse forum](http://discourse.quantecon.org/) if you have any further questions.
+We encourage you to reach out to the [QuantEcon team](https://quantecon.org/team) via [contact@quantecon.org](mailto:contact@quantecon.org) or open an issue on [GitHub](https://github.com/QuantEcon/QuantEcon.py/issues) if you have any further questions.
