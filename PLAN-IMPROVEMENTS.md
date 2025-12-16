@@ -67,7 +67,7 @@ via old blog posts and external links:
 
 ### Outdated Developer/Wiki Pages
 
-- [ ] [pages/contribute-lectures.md](pages/contribute-lectures.md) - References Jupinx and RST format, but lectures now use Jupyter Book and MyST markdown
+- [x] [pages/contribute-lectures.md](pages/contribute-lectures.md) - ~~References Jupinx and RST format~~ UPDATED to Jupyter Book and MyST markdown
 - [ ] [pages/wiki.md](pages/wiki.md) - Very sparse, only links to Python instructions
 - [ ] [pages/wiki-py-conda-dev-env.md](pages/wiki-py-conda-dev-env.md) - Needs review for current conda practices
 - [ ] [pages/wiki-py-docstrings.md](pages/wiki-py-docstrings.md) - May need updates
@@ -87,11 +87,11 @@ via old blog posts and external links:
 
 ### External Links to Verify
 
-- [ ] `http://notes.quantecon.org/` - Referenced in menubar, verify if still active
-- [ ] `http://blog.quantecon.org/` - Referenced in menubar, verify if still active
-- [ ] `http://cheatsheets.quantecon.org/` - Verify still working
+- [x] `http://notes.quantecon.org/` - ~~Referenced in menubar~~ CLOSED Feb 2025. Menubar updated to GitHub notebook-gallery
+- [x] `http://blog.quantecon.org/` - ~~Referenced in menubar~~ Redirects to Medium. Menubar updated to direct Medium link
+- [x] `http://cheatsheets.quantecon.org/` - ✅ WORKING
 - [ ] `http://store.quantecon.org/` - Verify still working (menubar references)
-- [ ] `https://jupinx.quantecon.org/` - Verify still available (referenced in multiple places)
+- [ ] `https://jupinx.quantecon.org/` - Historical (Jupinx replaced by Jupyter Book). Referenced in infrastructure.html and menubar
 
 ### Internal Navigation Issues
 
