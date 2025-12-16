@@ -41,21 +41,29 @@ The Discourse forum (`discourse.quantecon.org`) was closed in March 2025 (per [2
 
 ## Outdated Content
 
-### Workshop Pages (Historical - Consider Archiving)
+### Workshop Pages (Historical) ✅ UPDATED - Linked to GitHub repos
 
-These individual workshop pages are from 2016-2018 and contain outdated information (old software versions, past dates):
+Updated `workshops.md` to link directly to GitHub repositories instead of individual pages.
+These individual workshop pages are now orphaned from main navigation but still accessible
+via old blog posts and external links:
 
-- [ ] [pages/bayesian-workshop-2017.md](pages/bayesian-workshop-2017.md) - June 2017 workshop
-- [ ] [pages/econometric-society-workshop.md](pages/econometric-society-workshop.md) - June 2016, references Python 3.5
-- [ ] [pages/2017-phd-workshops-on-computational-methods.md](pages/2017-phd-workshops-on-computational-methods.md)
-- [ ] [pages/unsw-workshop-2017.md](pages/unsw-workshop-2017.md)
-- [ ] [pages/wams-2017.md](pages/wams-2017.md)
-- [ ] [pages/rba-rbnz-workshop.md](pages/rba-rbnz-workshop.md)
-- [ ] [pages/honours-workshop-2018.md](pages/honours-workshop-2018.md)
-- [ ] [pages/chicago-fed-workshop.md](pages/chicago-fed-workshop.md)
-- [ ] [pages/copenhagen-summer-school-2018.md](pages/copenhagen-summer-school-2018.md)
+- [x] [pages/bayesian-workshop-2017.md](pages/bayesian-workshop-2017.md) - NOT linked anywhere - CANDIDATE FOR DELETION
+- [x] [pages/econometric-society-workshop.md](pages/econometric-society-workshop.md) - Now orphaned, GitHub link in workshops.md
+- [x] [pages/2017-phd-workshops-on-computational-methods.md](pages/2017-phd-workshops-on-computational-methods.md) - Referenced in old blog posts
+- [x] [pages/unsw-workshop-2017.md](pages/unsw-workshop-2017.md) - Now orphaned (no GitHub repo available)
+- [x] [pages/wams-2017.md](pages/wams-2017.md) - Now orphaned, GitHub link in workshops.md
+- [x] [pages/rba-rbnz-workshop.md](pages/rba-rbnz-workshop.md) - Referenced in old blog posts
+- [x] [pages/honours-workshop-2018.md](pages/honours-workshop-2018.md) - Now orphaned, GitHub link in workshops.md
+- [x] [pages/chicago-fed-workshop.md](pages/chicago-fed-workshop.md) - Now orphaned, GitHub link in workshops.md
+- [x] [pages/copenhagen-summer-school-2018.md](pages/copenhagen-summer-school-2018.md) - Now orphaned, GitHub link in workshops.md
+- [x] [pages/department-of-industry-innovation-and-science.md](pages/department-of-industry-innovation-and-science.md) - Referenced in old blog post
 
-**Action:** Move these to archive or consolidate into [pages/workshops.md](pages/workshops.md) history section. The main workshops.md page already has comprehensive listings.
+**Changes made:**
+- workshops.md now links to GitHub repos instead of local pages
+- Harmonized link format (all say "GitHub repository")
+- Removed redundant "Workshop page" + "GitHub repository" dual links
+
+**Future consideration:** Could add redirects from old pages to GitHub repos, or delete pages not referenced elsewhere.
 
 ### Outdated Developer/Wiki Pages
 
