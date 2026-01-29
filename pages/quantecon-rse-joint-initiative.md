@@ -1,9 +1,11 @@
 ---
-title: QuantEcon RSE Joint Intitiative
-permalink: /quantecon-rse-joint-intitiative/
+title: QuantEcon RSE Joint Initiative
+permalink: /quantecon-rse-joint-initiative/
+redirect_from:
+  - /quantecon-rse-joint-intitiative/
 menu_item: false
 ---
-# QuantEcon RSE Joint Intitiative
+# QuantEcon RSE Joint Initiative
 
 The QuantEcon RSE Joint Initiative (QRJI) is a collaboration between the QuantEcon project and computational researchers at the Research School of Economics, Australian National University.  
 

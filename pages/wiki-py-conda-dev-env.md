@@ -17,7 +17,7 @@ Googling will locate plenty of tutorials on setting up Conda environments but he
 
 Create a `conda` environment called `quantecon-dev` (say) by opening a terminal and typing
 
-    conda create -n quantecon-dev python=3.7
+    conda create -n quantecon-dev python=3.11
 
 ## Step 3:
 
@@ -33,13 +33,17 @@ Change into your local copy of the `quantecon` repo. For example, on a UNIX-li
 
 ## Step 5:  
 
-Install your local version of `quantecon`. If you’re at the top of the repo directory tree (where the file setup.py exists) then type
+Install the required build tool and your local version of `quantecon`:
 
-    python setup.py install
+    pip install flit
 
-Instead you may wish to install a developer copy which allows for changes to take effect immediately. Rather than copying files to site-packages this command will make symbolic links instead.The above command installs quantecon into the local site-packages folder on your machine. If you make changes you will need to rerun the command for changes to be installed into site-packages.
+Then install in development mode (editable install), which allows changes to take effect immediately:
 
-    python setup.py develop
+    flit install --symlink
+
+Alternatively, for a non-editable install:
+
+    flit install
 
 ## Other useful commands  
 
