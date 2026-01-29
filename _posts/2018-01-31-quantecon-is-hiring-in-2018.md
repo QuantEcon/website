@@ -3,6 +3,7 @@ layout: post
 title: "QuantEcon is Hiring in 2018"
 author: Natasha Watkins
 excerpt: Apply by February 25 for the QuantEcon Early Career Researcher in Computational Economics position.
+tag: [news]
 ---
 
 **Term Length: **Fixed Term, 12 Months

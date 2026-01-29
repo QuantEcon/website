@@ -3,6 +3,7 @@ layout: post
 title: "New book on dynamic programming"
 author: Jingni Yang
 excerpt: The new book "Dynamic Programming Volume 1" by Tom Sargent and John Stachurski is available.
+tag: [news]
 ---
 
 The new book " Dynamic Programming Volume 1" by Tom Sargent and John Stachurski is available [here](https://dp.quantecon.org).

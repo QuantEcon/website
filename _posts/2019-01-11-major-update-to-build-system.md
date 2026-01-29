@@ -3,6 +3,7 @@ layout: post
 title: "Major Update to Build System"
 author: Natasha Watkins
 excerpt: The new build system allows easier editing of QuantEcon lectures, with output being automatically generated from lecture code.
+tag: [news]
 ---
 
 Over the past year, the QuantEcon team has been working on a major update to the QuantEcon lecture build system. For a reader, the changes are not obvious -- lectures are still styled to appear as Jupyter notebooks, and feature integrated testing implemented [at the end of 2018](https://quantecon.org/news-item/code-testing-lecture-site).

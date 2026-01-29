@@ -3,6 +3,7 @@ layout: post
 title: 'Data Science Student Project Showcase'
 author: QuantEcon
 excerpt: Data Science Student Project Showcase
+tag: [news]
 ---
 
 QuantEcon is showcasing the 2020 student projects taught with the QuantEcon [Data Science](datascience.quantecon.org) lecture series.

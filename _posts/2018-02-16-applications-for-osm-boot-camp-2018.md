@@ -3,6 +3,7 @@ layout: post
 title: "Applications for OSM Boot Camp 2018"
 author: Natasha Watkins
 excerpt: The OSM Lab Boot Camp will be held at the University of Chicago from June 18 to August 3.
+tag: [workshop]
 ---
 
 Applications are open for the *2018 Open Source Macroeconomics Lab Boot Camp*. The boot camp will be held at the University of Chicago from June 18 to August 3.

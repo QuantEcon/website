@@ -3,6 +3,7 @@ layout: post
 title: "QuantEcon Workshops in Japan"
 author: Jingni Yang
 excerpt: QuantEcon hosted several workshops in Japan.
+tag: [workshop]
 ---
 
 QuantEcon hosted several introductory workshops in universities in Japan.

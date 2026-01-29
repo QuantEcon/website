@@ -3,6 +3,7 @@ layout: post
 title: "Upcoming QuantEcon Workshops in Canberra and Paris"
 author: Natasha Watkins
 excerpt: QuantEcon is holding workshops at Australian National University and the Center for Research in Economics and Statistics. 
+tag: [workshop]
 ---
 
 QuantEcon will hold a workshop in computational economics at Australian National University, Canberra on July 22, 2022. The workshop is open to students from the College of Business and Economics and is targeted towards graduate students at the start of masters or PhD programs, or advanced undergraduates who want to boost their computing skills. Further details and workshop materials can be found in [the GitHub repository](https://github.com/QuantEcon/rse_comp_econ_2022).

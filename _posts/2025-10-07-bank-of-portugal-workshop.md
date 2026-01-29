@@ -2,6 +2,7 @@
 layout: post
 title: "Workshop: Computational Methods for Macroeconomic Modeling at Bank of Portugal"
 excerpt: "QuantEcon delivered a four-day workshop on modern computational tools for macroeconomic modeling at the Bank of Portugal."
+tag: [workshop]
 ---
 
 QuantEcon instructor [John Stachurski](https://johnstachurski.net/) delivered a four-day workshop on **Computational Methods for Macroeconomic Modeling** at the Bank of Portugal from October 7-10, 2025.

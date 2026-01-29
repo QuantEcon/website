@@ -3,6 +3,7 @@ layout: post
 title: "Updates to the lectures site"
 author: Natasha Watkins
 excerpt: We have a new McCall job search lecture that introduces dynamic programming, and a revised table of contents for the lecture site.
+tag: [lectures]
 ---
 
 Due to our growing number of lectures, we have revised the table of contents ([python](https://lectures.quantecon.org/py/) / [julia](https://lectures.quantecon.org/jl/)) into more specific topics such as dynamic programming and time series.

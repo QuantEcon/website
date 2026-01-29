@@ -8,10 +8,12 @@ layout: default
   {% for post in site.posts %}
     <li>
       {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
-      <h2>
+      <h2 class="title">
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> 
-        {% if post.type %}
-        <span style="display:inline-block; margin-left: 1rem;" class="badge bg-dark">{{ post.badge }}</span>
+        {% if post.tag %}
+          {% for tag in post.tag %}
+            <span class="badge">{{ tag }}</span>
+          {% endfor %}
         {% endif %}
       </h2>
       <p class="date">{{ post.date | date: date_format }}</p>

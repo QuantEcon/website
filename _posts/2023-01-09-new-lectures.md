@@ -3,6 +3,7 @@ layout: post
 title: "Recently Added Lectures"
 author: Natasha Watkins
 excerpt: We have been busy adding new material to our Python lectures site.
+tag: [lectures]
 ---
 
 We have been busy adding new material to our Python lectures site.

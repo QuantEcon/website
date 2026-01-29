@@ -2,8 +2,7 @@
 layout: post
 title: "Run QuantEcon Lectures with Google Colab!"
 author: Natasha Watkins
-excerpt: You can now open a lecture as a Jupyter notebook in Google Colab, allowing code to be run and edited live in the cloud. 
----
+excerpt: You can now open a lecture as a Jupyter notebook in Google Colab, allowing code to be run and edited live in the cloud. tag: [news]---
 
 You can now open a lecture as a Jupyter notebook in [Google Colab](https://colab.research.google.com/), allowing code to be run and edited live in the cloud. Simply click the 'Run Notebook' button in the top left-hand corner to launch the notebook in Colab (you will need to be signed in with a Google account).
 

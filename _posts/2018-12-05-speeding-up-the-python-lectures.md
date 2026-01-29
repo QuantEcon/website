@@ -3,6 +3,7 @@ layout: post
 title: "Speeding up the Python Lectures"
 author: Natasha Watkins
 excerpt: QuantEcon has been working to speed up the Python lectures with the help of just-in-time compilation from Numba.
+tag: [lectures]
 ---
 
 QuantEcon has been working to speed up the Python lectures with the help of just-in-time compilation from [Numba](http://numba.pydata.org/). Just-in-time (jit) compilation allows code to be compiled on the fly - a flexible combination of ahead-of-time compilation and interpretation (standard Python is interpreted).

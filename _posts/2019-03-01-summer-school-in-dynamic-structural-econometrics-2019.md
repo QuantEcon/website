@@ -3,6 +3,7 @@ layout: post
 title: "Summer School in Dynamic Structural Econometrics 2019"
 author: Natasha Watkins
 excerpt: Applications are now open for the Econometric Society's Summer School in Dynamic Structural Econometrics.
+tag: [workshop]
 ---
 
 **Application deadline: April 15, 2019  
