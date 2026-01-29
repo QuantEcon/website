@@ -3,6 +3,7 @@ layout: post
 title: 'Python Lecture Series Split'
 author: QuantEcon
 excerpt: Python Lecture Series Split
+tag: [lectures]
 ---
 
 QuantEcon has divided its [main Python lecture series](https://python.quantecon.org) into three parts to help guide our readers through the series. This split was carried out in response to requests from many readers to make the lectures more accessible, and to provide more guidance on the order in which lectures should be read.

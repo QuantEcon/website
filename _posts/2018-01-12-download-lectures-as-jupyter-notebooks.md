@@ -3,6 +3,7 @@ layout: post
 title: "Download Lectures as Jupyter Notebooks"
 author: Natasha Watkins
 excerpt: QuantEcon lectures now feature a button to download code from the lectures in a Jupyter notebook.
+tag: [news]
 ---
 
 ![download button](/assets/img/download-button.svg)

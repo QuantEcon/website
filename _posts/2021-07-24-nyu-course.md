@@ -3,6 +3,7 @@ layout: post
 title: 'NYU Computational Social Science Certificate Program'
 author: QuantEcon
 excerpt: NYU Computational Social Science Certificate Program
+tag: [workshop]
 ---
 
 Tom Sargent, Chase Coleman, and Spencer Lyon have put together The [NYU Computational Social

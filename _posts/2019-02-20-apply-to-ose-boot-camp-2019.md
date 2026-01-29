@@ -3,6 +3,7 @@ layout: post
 title: "Apply to OSE Boot Camp 2019"
 author: Natasha Watkins
 excerpt: The Open Source Economics Laboratory (OSE Lab) at the University of Chicago is now accepting applications for its 2019 boot camp.
+tag: [workshop]
 ---
 
 The Open Source Economics Laboratory (OSE Lab) at the University of Chicago is excited to announce that we are now accepting applications for the 2019 OSE Lab six-week summer boot camp in computational economics, July 1 to August 9, 2019, at the University of Chicago. This is our third year supporting the boot camp, and the OSE Lab has funding for 25 student positions. Students can get more information and submit an application from the following page. The application deadline is **Mar. 15, 2019**.

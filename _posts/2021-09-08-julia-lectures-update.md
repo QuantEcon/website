@@ -3,6 +3,7 @@ layout: post
 title: 'Julia Lectures Updated'
 author: QuantEcon
 excerpt: The Julia lectures updated to Jupyter Book, with additional software engineering content
+tag: [lectures]
 ---
 
 The [Quantitative Economics with Julia](https://julia.quantecon.org/) lectures have been given a significant update.

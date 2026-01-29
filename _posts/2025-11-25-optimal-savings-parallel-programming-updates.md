@@ -8,7 +8,7 @@ tag: [lectures]
 
 We've completed a significant reorganization of lectures across two of our Python lecture sites to improve content flow and learning progression.
 
-## Optimal Savings Lectures (python.quantecon.org)
+**Optimal Savings Lectures (python.quantecon.org)**
 
 The [Intermediate Quantitative Economics with Python](https://python.quantecon.org/) series has undergone a major restructuring of the optimal savings content:
 
@@ -17,7 +17,9 @@ The [Intermediate Quantitative Economics with Python](https://python.quantecon.o
 - **Improved code organization** with consistent function signatures across lectures
 - **Enhanced JAX implementations** with unified operator signatures between standard and JAX versions
 
-## Parallel Programming Lectures (python-programming.quantecon.org)
+<br>
+
+**Parallel Programming Lectures (python-programming.quantecon.org)**
 
 The [Python Programming for Economics and Finance](https://python-programming.quantecon.org/) site now features reorganized parallel programming content:
 
