@@ -5,7 +5,7 @@ author: QuantEcon
 excerpt: A new lecture on Gorman aggregation has been added to the Advanced Quantitative Economics series, exploring conditions under which heterogeneous household economies can be represented by a single representative agent.
 ---
 
-We're pleased to announce a new lecture on [Advanced Quantitative Economics with Python](https://python-advanced.quantecon.org/): **Gorman Aggregation with Heterogeneous Households**.
+We're pleased to announce a new lecture on [Advanced Quantitative Economics with Python](https://python-advanced.quantecon.org/): **[Gorman Aggregation with Heterogeneous Households](https://python-advanced.quantecon.org/gorman_aggregation.html)**.
 
 ## About the Lecture
 
