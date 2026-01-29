@@ -3,6 +3,7 @@ layout: post
 title: "Reorganized Optimal Savings and Parallel Programming Lectures"
 author: QuantEcon
 excerpt: Major reorganization of optimal savings lectures on python.quantecon.org and parallel programming lectures on python-programming.quantecon.org for improved learning flow.
+tag: [lectures]
 ---
 
 We've completed a significant reorganization of lectures across two of our Python lecture sites to improve content flow and learning progression.

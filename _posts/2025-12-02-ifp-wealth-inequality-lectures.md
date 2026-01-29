@@ -3,6 +3,7 @@ layout: post
 title: "New IFP Lectures with Wealth Inequality Analysis"
 author: QuantEcon
 excerpt: Expanded income fluctuation problem lectures now include transient income shocks, wealth inequality analysis, and labor income volatility studies.
+tag: [lectures]
 ---
 
 The [Quantitative Economics with Python](https://python.quantecon.org/) series has been expanded with significant new content on income fluctuation problems and wealth inequality.
