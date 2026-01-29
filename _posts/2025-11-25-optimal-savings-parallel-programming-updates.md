@@ -17,8 +17,6 @@ The [Intermediate Quantitative Economics with Python](https://python.quantecon.o
 - **Improved code organization** with consistent function signatures across lectures
 - **Enhanced JAX implementations** with unified operator signatures between standard and JAX versions
 
-<br>
-
 **Parallel Programming Lectures (python-programming.quantecon.org)**
 
 The [Python Programming for Economics and Finance](https://python-programming.quantecon.org/) site now features reorganized parallel programming content:
