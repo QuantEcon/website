@@ -1,5 +1,6 @@
 ---
 name: Andrij Stachurski
+last_name: Stachurski
 image: https://avatars.githubusercontent.com/u/5886045?v=4
 link: http://drdrij.com/
 role: "Design and Marketing"

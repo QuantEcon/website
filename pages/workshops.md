@@ -254,7 +254,7 @@ menu_item: false
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski, Natasha Watkins</li>
-            <li><a href="https://quantecon.org/department-of-industry-innovation-and-science">Website</a></li>
+            <li><a href="https://github.com/QuantEcon/DIIS_workshop">GitHub repository</a></li>
         </ul>
     </div>
 </div>
@@ -264,7 +264,7 @@ menu_item: false
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski, Natasha Watkins</li>
-            <li><a href="https://quantecon.org/copenhagen-summer-school-2018">Website</a></li>
+            <li><a href="https://github.com/QuantEcon/Copenhagen_workshop_2018">GitHub repository</a></li>
         </ul>
     </div>
 </div>
@@ -275,7 +275,7 @@ menu_item: false
         <ul>
             <li><span>Presenters:</span> Thomas Sargent, John Stachurski, Fedor Iskhakov, Natasha Watkins, Sophie Stearn
             </li>
-            <li><a href="https://quantecon.org/honours-workshop-2018">Website</a></li>
+            <li><a href="https://github.com/QuantEcon/honours_workshop">GitHub repository</a></li>
         </ul>
     </div>
 </div>
@@ -286,7 +286,7 @@ menu_item: false
         <ul>
             <li><span>Presenters:</span> John Stachurski, Matthew McKay, Chase Coleman, Victoria Gregory, Natasha
                 Watkins</li>
-            <li><a href="http://quantecon.org/2017-phd-workshops-on-computational-methods">Website</a></li>
+            <li><a href="https://github.com/QuantEcon/phd_workshops">GitHub repository</a></li>
         </ul>
     </div>
 </div>
@@ -296,7 +296,7 @@ menu_item: false
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski, Matthew McKay, Natasha Watkins</li>
-            <li><a href="/wams-2017">Website</a></li>
+            <li><a href="https://github.com/QuantEcon/WAMS-2017">GitHub repository</a></li>
         </ul>
     </div>
 </div>
@@ -306,7 +306,6 @@ menu_item: false
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski, Matthew McKay, Natasha Watkins</li>
-            <li><a href="https://quantecon.org/unsw-workshop-2017">Website</a></li>
         </ul>
     </div>
 </div>
@@ -327,8 +326,7 @@ menu_item: false
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski, Pablo Winant, Pearl Li, Erica Moszkowski</li>
-            <li><a href="https://quantecon.org/rba_rbnz_workshop.html">Workshop page</a></li>
-            <li><a href="https://github.com/QuantEcon/RBA_RBNZ_Workshops">Github repository</a></li>
+            <li><a href="https://github.com/QuantEcon/RBA_RBNZ_Workshops">GitHub repository</a></li>
         </ul>
     </div>
 </div>
@@ -379,8 +377,7 @@ menu_item: false
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski, Matthew McKay, Chase Coleman</li>
-            <li><a href="https://quantecon.org/econometric_society_workshop.html">Workshop page</a></li>
-            <li><a href="https://github.com/QuantEcon/emet_summer_workshop">Github repository</a></li>
+            <li><a href="https://github.com/QuantEcon/emet_summer_workshop">GitHub repository</a></li>
         </ul>
     </div>
 </div>
@@ -390,8 +387,7 @@ menu_item: false
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski, Viral Shah, Pablo Winant, Matthew McKay, Chase Coleman</li>
-            <li><a href="https://quantecon.org/chicago_fed_workshop.html">Workshop page</a></li>
-            <li><a href="https://github.com/QuantEcon/ChicagoFed_workshop">Github repository</a></li>
+            <li><a href="https://github.com/QuantEcon/ChicagoFed_workshop">GitHub repository</a></li>
         </ul>
     </div>
 </div>

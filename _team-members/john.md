@@ -1,5 +1,6 @@
 ---
 name: John Stachurski
+last_name: Stachurski
 image: /assets/img/team/john.jpg
 link: http://johnstachurski.net/
 role: "Founding Members and Co-Chairs"

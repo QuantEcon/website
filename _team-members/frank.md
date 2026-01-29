@@ -1,7 +1,8 @@
 ---
 name: Frank Wu
+last_name: Wu
 image: /assets/img/team/frank.jpg
 link: https://github.com/chappiewuzefan
-role: "Previous Lead Developers"
+role: "Previous Developers"
 ---
-Frank Wu is a QuantEcon research assistant final-year student at Australian National University (ANU).
+Frank Wu was a QuantEcon research assistant final-year student at Australian National University (ANU).

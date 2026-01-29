@@ -19,6 +19,6 @@ Forthcoming hardcopy textbooks include
 * Macroeconomic Dynamics: Theory and Computation
 * Machine Learning and Econometrics
 
-Suggestions on topics are welcome.  Please direct them to
-[contact@quantecon.org](mailto:contact@quantecon.org) or the [Discourse forum](https://discourse.quantecon.org/).
+Suggestions on topics are welcome. Please direct them to
+[contact@quantecon.org](mailto:contact@quantecon.org).
 

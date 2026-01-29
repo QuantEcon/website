@@ -1,7 +1,9 @@
 ---
 name: Zejin Shi
+last_name: Shi
 image: /assets/img/team/zejin.jpg
-link: https://github.com/shizejin
-role: "Previous Lead Developers"
+link: https://www.zejinshi.com/
+role: "Developers"
+tag: "Lead Developer"
 ---
-Zejin Shi is a pre-doctoral research assistant at QuantEcon based in Shenzhen.
+Zejin Shi has completed his PhD at the University of Arizona, and is now an Assistant Professor at Wuhan University.
