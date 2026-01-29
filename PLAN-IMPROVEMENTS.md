@@ -69,9 +69,9 @@ via old blog posts and external links:
 
 - [x] [pages/contribute-lectures.md](pages/contribute-lectures.md) - ~~References Jupinx and RST format~~ UPDATED to Jupyter Book and MyST markdown
 - [ ] [pages/wiki.md](pages/wiki.md) - Very sparse, only links to Python instructions
-- [ ] [pages/wiki-py-conda-dev-env.md](pages/wiki-py-conda-dev-env.md) - Needs review for current conda practices
-- [ ] [pages/wiki-py-docstrings.md](pages/wiki-py-docstrings.md) - May need updates
-- [ ] [pages/wiki-py-unit-testing.md](pages/wiki-py-unit-testing.md) - May need updates
+- [x] [pages/wiki-py-conda-dev-env.md](pages/wiki-py-conda-dev-env.md) - ~~Python 3.7~~ UPDATED to Python 3.11
+- [ ] [pages/wiki-py-docstrings.md](pages/wiki-py-docstrings.md) - May need updates (content is still valid)
+- [x] [pages/wiki-py-unit-testing.md](pages/wiki-py-unit-testing.md) - ~~Uses Nose~~ UPDATED to pytest
 
 **Action:** Review and update developer documentation to reflect current practices.
 
@@ -90,13 +90,13 @@ via old blog posts and external links:
 - [x] `http://notes.quantecon.org/` - ~~Referenced in menubar~~ CLOSED Feb 2025. Menubar updated to GitHub notebook-gallery
 - [x] `http://blog.quantecon.org/` - ~~Referenced in menubar~~ Redirects to Medium. Menubar updated to direct Medium link
 - [x] `http://cheatsheets.quantecon.org/` - ✅ WORKING
-- [ ] `http://store.quantecon.org/` - Verify still working (menubar references)
-- [ ] `https://jupinx.quantecon.org/` - Historical (Jupinx replaced by Jupyter Book). Referenced in infrastructure.html and menubar
+- [x] `http://store.quantecon.org/` - ✅ Redirects to quantecon.org/store (working)
+- [ ] `https://jupinx.quantecon.org/` - Historical (Jupinx replaced by Jupyter Book). Still online, referenced in infrastructure.html and menubar
 
 ### Internal Navigation Issues
 
-- [ ] [pages/nb-contrib.md](pages/nb-contrib.md) - References `/notebooks` page which may not exist
-- [ ] Menubar has "NB Library" link to `quantecon.org/notebooks` - verify this page exists
+- [x] [pages/nb-contrib.md](pages/nb-contrib.md) - ~~References `/notebooks` page~~ UPDATED to point to notebook-gallery
+- [x] Menubar had "NB Library" link to broken `quantecon.org/notebooks` - REMOVED, kept only Notebook Gallery link
 
 ---
 
