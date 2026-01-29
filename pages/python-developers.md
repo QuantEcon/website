@@ -12,13 +12,13 @@ If you’d like to contribute to [QuantEcon.py](quantecon-py.md), a good place t
 
 One of the advantages of the [Anaconda Python environment](https://www.anaconda.com/distribution/) is that it is cheap to set up (and discard) Python environments for development versions of packages and populate them with your favorite scientific tools. For example, if you’re working on QuantEcon.py you might find it useful to set up an environment (containing NumPy, SciPy, etc.) that uses your development version rather than the default ones. This facilitates contributing to QuantEcon.py without worrying about corrupting the Python environment on which your other work depends.
 
-See [creating a Conda development environment](wiki-py-conda-dev-env.md)
+See [creating a Conda development environment](/wiki-py-conda-dev-env/)
 
 ## Write tests
 
 All functions and methods contributed to QuantEcon.py should be paired with tests to verify that they are functioning correctly.
 
-See [unit testing in QuantEcon](wiki-py-unit-testing.md)
+See [unit testing in QuantEcon](/wiki-py-unit-testing/)
 
 ## Write documentation
 
@@ -30,7 +30,7 @@ We try to maintain a simple and consistent format for inline documentation, know
 
 *   Easily generate a reference manual using sphinx’s autodoc and apidoc
 
-See [docstrings and documentation](wiki-py-docstrings.md)
+See [docstrings and documentation](/wiki-py-docstrings/)
 
 Instructions to compile a local version of the documentation can be found [here](https://github.com/QuantEcon/QuantEcon.py/tree/master/docs). This can be useful if you would like to check how your docstrings render in html prior to submitting a pull request.
 

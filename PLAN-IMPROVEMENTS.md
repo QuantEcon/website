@@ -168,32 +168,37 @@ Very old posts (2014-2016) reference outdated software versions and practices:
 
 ## Technical Debt
 
-### CSS/SCSS Cleanup
+### CSS/SCSS Cleanup ✅ VERIFIED
 
-- [ ] Review [assets/sass/]( assets/sass/) for unused styles
-- [ ] `_misc.scss` and `_timeline.scss` - verify all styles are used
+- [x] Review [assets/sass/]( assets/sass/) for unused styles - ALL STYLES USED
+- [x] `_misc.scss` and `_timeline.scss` - verified all styles are actively used
 
-### JavaScript Review
+### JavaScript Review ✅ VERIFIED
 
-- [ ] [assets/js/main.js](assets/js/main.js) - Single JS file, review for dead code
+- [x] [assets/js/main.js](assets/js/main.js) - Single JS file, all code is actively used (preloader, AOS, Swiper, navigation)
 
-### Image Assets
+### Image Assets ✅ CLEANED
 
-Potentially unused images in [assets/img/](assets/img/):
-- [ ] Old workshop photos
-- [ ] Team member photos for people no longer listed
-- [ ] Various logo versions
+Removed unused images:
+- [x] `test-qe.png` - test file removed
+- [x] `qe-logo-discourse.png` - Discourse-specific logo removed
+- [x] `project-notes.png` - notes.quantecon.org discontinued
+- [x] `project-notebooks.png` - notebooks page discontinued  
+- [x] `timeline/1.png`, `2.png`, `3.png`, `4.png` - unused placeholders removed
 
-**Action:** Audit images against actual usage in HTML/MD files
+Remaining unused images kept for potential future use:
+- Logo variants (qe-logo-*.png) - may be used externally
+- Alternative sponsor logos - may be needed for print/different contexts
+- lectures-*.png variants - may be used in external references
 
-### HTML in Markdown Files
+### HTML in Markdown Files ✅ REVIEWED
 
 Several pages use raw HTML in markdown files:
-- [pages/workshops.md](pages/workshops.md) - Almost entirely HTML
+- [pages/workshops.md](pages/workshops.md) - Almost entirely HTML (acceptable for complex layouts)
 - [pages/infrastructure.html](pages/infrastructure.html) - Correctly using .html extension
-- [pages/visitor-application.md](pages/visitor-application.md) - Complex form HTML
+- [pages/visitor-application.md](pages/visitor-application.md) - ~~Complex form HTML~~ SIMPLIFIED to redirect-only
 
-**Action:** Consider converting HTML-heavy .md files to .html for consistency
+**Status:** No action needed - HTML in markdown is acceptable for complex layouts
 
 ---
 
