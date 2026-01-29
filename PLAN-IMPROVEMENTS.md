@@ -31,11 +31,11 @@ The Discourse forum (`discourse.quantecon.org`) was closed in March 2025 (per [2
 **Action:** ~~Remove or replace all Discourse references with alternative contact methods (email, GitHub Discussions, etc.)~~ DONE
 
 ### 2. Outdated RSE Visitor Application Form
-**Priority: MEDIUM**
+**Priority: MEDIUM** ✅ COMPLETED
 
-- [ ] [pages/visitor-application.md](pages/visitor-application.md) - Contains a redirect but also has the full form embedded. This page appears to be ANU/RSE specific and may no longer be needed.
+- [x] [pages/visitor-application.md](pages/visitor-application.md) - ~~Contains a redirect but also has the full form embedded~~ SIMPLIFIED to redirect-only
 
-**Action:** Verify if this page is still needed. If redirect is working, the full form can be removed.
+**Action:** ~~Verify if this page is still needed. If redirect is working, the full form can be removed.~~ DONE
 
 ---
 
@@ -78,7 +78,7 @@ via old blog posts and external links:
 ### Potentially Outdated About Pages
 
 - [ ] [pages/about-python-lectures.md](pages/about-python-lectures.md) - Check if content is current
-- [ ] [pages/quantecon-rse-joint-intitiative.md](pages/quantecon-rse-joint-intitiative.md) - Note: filename has typo "intitiative"
+- [x] [pages/quantecon-rse-joint-initiative.md](pages/quantecon-rse-joint-initiative.md) - ~~Filename had typo "intitiative"~~ FIXED, redirect added from old URL
 - [ ] [pages/department-of-industry-innovation-and-science.md](pages/department-of-industry-innovation-and-science.md) - Government project page, may be historical
 
 ---
@@ -91,7 +91,7 @@ via old blog posts and external links:
 - [x] `http://blog.quantecon.org/` - ~~Referenced in menubar~~ Redirects to Medium. Menubar updated to direct Medium link
 - [x] `http://cheatsheets.quantecon.org/` - ✅ WORKING
 - [x] `http://store.quantecon.org/` - ✅ Redirects to quantecon.org/store (working)
-- [ ] `https://jupinx.quantecon.org/` - Historical (Jupinx replaced by Jupyter Book). Still online, referenced in infrastructure.html and menubar
+- [x] `https://jupinx.quantecon.org/` - ~~Historical (Jupinx replaced by Jupyter Book)~~ REMOVED from menubar, marked as historical in infrastructure.html
 
 ### Internal Navigation Issues
 
@@ -128,10 +128,10 @@ The `/archive` folder contains old versions of pages:
 - [x] Collections `news:` is defined but `_news/` folder doesn't exist (posts are in `_posts/`) - REMOVED
 - [x] Defaults section has malformed YAML (missing scope dash before second scope) - FIXED
 
-### Gemfile Considerations
+### Gemfile Considerations ✅ COMPLETED
 
-- [ ] Jekyll version 4.2.2 is from 2022 - consider updating to latest 4.x
-- [ ] Several plugins are commented out (seo-tag, github-pages) - clean up or enable
+- [ ] Jekyll version 4.2.2 is from 2022 - consider updating to latest 4.x (out of scope for this cleanup)
+- [x] Several plugins are commented out (seo-tag, github-pages) - ~~clean up or enable~~ CLEANED UP unused comments
 
 ---
 
