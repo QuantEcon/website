@@ -1472,14 +1472,19 @@ section {
         color: #444;
       }
       .badge {
-        background-color: $color-link;
+        background-color: #fff;
+        color: $color-link;
+        border: 1px solid $color-link;
         font-family: $font-main;
-        font-size: 0.9rem;
-        display:inline-block;
+        font-size: 0.75rem;
+        font-weight: normal;
+        display: inline-block;
         margin-left: 0.5rem;
+        padding: 0.2em 0.5em;
+        border-radius: 10px;
       }
       a + .badge {
-        margin-left: 2rem;
+        margin-left: 1.5rem;
       }
     }
 

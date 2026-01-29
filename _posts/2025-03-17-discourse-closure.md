@@ -3,7 +3,7 @@ layout: post
 title: Closure of discourse.quantecon.org
 author: Matt McKay
 excerpt: Closing the discourse.quantecon.org forum
-#tag: workshop news article
+tag: [announcement, infrastructure]
 ---
 
 The QuantEcon organization is closing the discourse forum (running since 2016) hosted at
