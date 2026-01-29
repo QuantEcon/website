@@ -14,16 +14,12 @@ The [Quantitative Economics with Python](https://python.quantecon.org/) series h
 - **Wealth Inequality Analysis**: New exercises analyzing how return volatility and labor income volatility affect wealth distribution
 - **Stochastic Returns**: Improved simulation methods for studying wealth dynamics under uncertainty
 
-<br>
-
 **Key Findings Highlighted**
 
 The new content demonstrates important economic insights:
 
 - Varying return volatility (capital income risk) has a much larger impact on wealth inequality than labor income volatility
 - The lectures include Gini coefficient calculations showing how different parameter choices affect wealth distribution
-
-<br>
 
 **Technical Improvements**
 

@@ -1505,6 +1505,14 @@ section {
 
     .summary {
       margin: 0;
+      
+      ul, ol {
+        margin-bottom: 1.5rem !important;
+      }
+      
+      p {
+        margin-bottom: 1rem;
+      }
     }
   }
 }

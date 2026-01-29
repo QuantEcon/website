@@ -18,8 +18,6 @@ Key topics covered include:
 - **Linear Engel curves**: The role of quasi-homothetic preferences in enabling aggregation
 - **Practical implications**: Understanding when representative agent models are appropriate approximations
 
-<br>
-
 **Why This Matters**
 
 Representative agent models are ubiquitous in macroeconomics, but their validity depends on specific conditions that aren't always met. This lecture provides the theoretical foundations for understanding:

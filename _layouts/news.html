@@ -17,7 +17,7 @@ layout: default
         {% endif %}
       </h2>
       <p class="date">{{ post.date | date: date_format }}</p>
-      <p class="summary">{{ post.content }}</p>
+      <div class="summary">{{ post.content }}</div>
     </li>
   {% endfor %}
 </ul>
