@@ -1,0 +1,17 @@
+# Netlify configuration for PR deploy previews
+# Production hosting is on GitHub Pages — Netlify is used for previews only
+
+[build]
+  command = "bundle install && bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  RUBY_VERSION = "3.2.2"
+  BUNDLE_PATH = "vendor/bundle"
+
+# Deploy preview context (PRs)
+[context.deploy-preview]
+  command = "bundle install && bundle exec jekyll build"
+
+[context.deploy-preview.environment]
+  JEKYLL_ENV = "development"
