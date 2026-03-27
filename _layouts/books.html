@@ -4,27 +4,27 @@ layout: default
 
 {{ content }}
 
-{% assign all_books = site.projects | where: 'type', 'book' %}
-{% assign qe_books = all_books | where: 'category', 'quantecon' | sort: 'order' %}
-{% assign community_books = all_books | where: 'category', 'community' | sort: 'order' %}
+{% assign all_books = site.projects | where: 'type', 'book' | sort: 'order' %}
 
-<ul class="row projects projects-container">
+<ul class="row projects projects-container books-listing">
 
-  {% for project in qe_books %}
+  {% for project in all_books %}
     <li class="projects-item">
       <a target="_blank" href="{{ project.link }}">
         <div class="project d-flex flex-column align-items-start">
+          {% if project.category == 'quantecon' %}
           <div class="book-watermark-wrap">
             <img class="book-watermark" src="/assets/img/qe-logo-small.png" alt="QuantEcon logo">
           </div>
+          {% endif %}
           <div class="item-info d-flex">
             <div class="item-pic-books"><img src="/assets/img/books/{{ project.image }}"></div>
             <div class="item-title">
               <h3 class="name">{{ project.name }}{% if project.new %} <span class="badge-new">NEW</span>{% endif %}</h3>
-				<div class="item-desc">
-					{{ project.description | markdownify }}
-				</div>
-			</div>
+			  <div class="item-desc">
+				{{ project.description | markdownify }}
+			  </div>
+		    </div>
           </div>
         </div>
       </a>
@@ -32,28 +32,3 @@ layout: default
   {% endfor %}
 
 </ul>
-
-{% if community_books.size > 0 %}
-
-<ul class="row projects projects-container">
-
-  {% for project in community_books %}
-    <li class="projects-item">
-      <a target="_blank" href="{{ project.link }}">
-        <div class="project d-flex flex-column align-items-start">
-          <div class="item-info d-flex">
-            <div class="item-pic-books"><img src="/assets/img/books/{{ project.image }}"></div>
-            <div class="item-title">
-              <h3 class="name">{{ project.name }}</h3>
-				<div class="item-desc">
-					{{ project.description | markdownify }}
-				</div>
-			</div>
-          </div>
-        </div>
-      </a>
-    </li>
-  {% endfor %}
-
-</ul>
-{% endif %}

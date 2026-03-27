@@ -918,10 +918,13 @@ section {
       .item-pic-books {
         overflow: hidden;
         flex-shrink: 0;
-        width: 150px;
+        width: 110px;
+        height: 140px;
         margin-right: 1rem;
         img {
-          width: 150%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
       // NEW badge for recently added books
@@ -996,6 +999,25 @@ section {
         margin: 0;
       }
     }
+  }
+}
+
+/*--------------------------------------------------------------
+# Books listing overrides (smaller cards)
+--------------------------------------------------------------*/
+
+.books-listing {
+  .project {
+    padding: 0.75rem;
+    @media (min-width: 768px) {
+      min-height: unset;
+    }
+  }
+  .item-info {
+    margin: 0;
+  }
+  .item-desc {
+    font-size: 0.95rem;
   }
 }
 
