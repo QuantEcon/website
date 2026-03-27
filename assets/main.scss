@@ -856,12 +856,6 @@ section {
         }
       }
 
-      &:hover {
-        background: $color-bg;
-      }
-  }
-  a:hover {
-    text-decoration: none;
   }
 }
 
@@ -996,10 +990,19 @@ section {
     }
     .desc {
       color: $color-dark;
-    
+
       p {
         margin: 0;
       }
+    }
+    &:hover {
+      background: $color-bg;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
