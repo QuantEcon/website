@@ -915,6 +915,18 @@ section {
           width: 150%;
         }
       }
+      // NEW badge for recently added books
+      .badge-new {
+        display: inline-block;
+        background-color: #e94560;
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 0.15em 0.5em;
+        border-radius: 3px;
+        vertical-align: middle;
+        letter-spacing: 0.05em;
+      }
       .item-title {
         h3 {
           color: $color-link;

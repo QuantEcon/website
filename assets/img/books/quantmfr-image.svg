@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)"/>
+  <!-- Decorative curves -->
+  <path d="M0 400 Q180 300 360 350 Q540 400 720 300" stroke="#e94560" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M0 430 Q180 330 360 380 Q540 430 720 330" stroke="#e94560" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M0 460 Q180 360 360 410 Q540 460 720 360" stroke="#0f3460" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M0 490 Q180 390 360 440 Q540 490 720 390" stroke="#0f3460" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <!-- Title -->
+  <text x="360" y="240" font-family="Georgia, serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle">Quant Macro</text>
+  <text x="360" y="310" font-family="Georgia, serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle">Finance</text>
+  <!-- Authors -->
+  <text x="360" y="560" font-family="Georgia, serif" font-size="24" fill="#cccccc" text-anchor="middle" font-style="italic">Hansen, Sargent, and Borovička</text>
+</svg>
