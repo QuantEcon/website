@@ -871,16 +871,11 @@ section {
 # Projects Style (Linear Listing)
 --------------------------------------------------------------*/
 
-.books-section-heading {
-  text-align: center;
-  margin: 2.5rem 0 1.5rem 0;
-}
-
 .books-nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin: 1.5rem 0 0.5rem 0;
+  margin: 1.5rem 0 1rem 0;
 }
 
 .books-nav-pill {
@@ -888,14 +883,15 @@ section {
   padding: 0.5rem 1.5rem;
   border: 2px solid $color-link;
   border-radius: 25px;
+  background: none;
   color: $color-link;
+  font-size: 1rem;
   font-weight: 600;
-  text-decoration: none;
+  cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
   &:hover, &.active {
     background-color: $color-link;
     color: #fff;
-    text-decoration: none;
   }
 }
 

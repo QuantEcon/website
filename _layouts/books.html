@@ -10,12 +10,12 @@ layout: default
 
 {% if community_books.size > 0 %}
 <div class="books-nav">
-  <a href="#quantecon-books" class="books-nav-pill active">QuantEcon Books</a>
-  <a href="#community-books" class="books-nav-pill">Community Books</a>
+  <button class="books-nav-pill active" data-target="quantecon-books">QuantEcon Books</button>
+  <button class="books-nav-pill" data-target="community-books">Community Books</button>
 </div>
 {% endif %}
 
-<h2 id="quantecon-books" class="books-section-heading">QuantEcon Books</h2>
+<div id="quantecon-books" class="books-section">
 
 <ul class="row projects projects-container">
 
@@ -39,8 +39,10 @@ layout: default
 
 </ul>
 
+</div>
+
 {% if community_books.size > 0 %}
-<h2 id="community-books" class="books-section-heading">Community Books</h2>
+<div id="community-books" class="books-section" style="display: none;">
 
 <ul class="row projects projects-container">
 
@@ -63,4 +65,20 @@ layout: default
   {% endfor %}
 
 </ul>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var pills = document.querySelectorAll('.books-nav-pill');
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      document.querySelectorAll('.books-section').forEach(function(s) { s.style.display = 'none'; });
+      document.getElementById(pill.getAttribute('data-target')).style.display = 'block';
+    });
+  });
+});
+</script>
 {% endif %}
