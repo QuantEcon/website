@@ -857,12 +857,11 @@ section {
       }
 
       &:hover {
-        h3 {
-          text-decoration: underline;
-        }
-
-        .desc {}
+        background: $color-bg;
       }
+  }
+  a:hover {
+    text-decoration: none;
   }
 }
 
