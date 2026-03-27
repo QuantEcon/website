@@ -918,6 +918,7 @@ section {
       .item-pic-books {
         overflow: hidden;
         flex-shrink: 0;
+        align-self: flex-start;
         width: 110px;
         height: 140px;
         margin-right: 1rem;
@@ -925,6 +926,7 @@ section {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: top;
         }
       }
       // NEW badge for recently added books
