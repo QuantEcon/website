@@ -876,6 +876,29 @@ section {
   margin: 2.5rem 0 1.5rem 0;
 }
 
+.books-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.books-nav-pill {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid $color-link;
+  border-radius: 25px;
+  color: $color-link;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  &:hover, &.active {
+    background-color: $color-link;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 .projects {
   padding: 0;
   list-style: none;

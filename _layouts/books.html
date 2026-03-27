@@ -8,7 +8,14 @@ layout: default
 {% assign qe_books = all_books | where: 'category', 'quantecon' | sort: 'order' %}
 {% assign community_books = all_books | where: 'category', 'community' | sort: 'order' %}
 
-<h2 class="books-section-heading">QuantEcon Books</h2>
+{% if community_books.size > 0 %}
+<div class="books-nav">
+  <a href="#quantecon-books" class="books-nav-pill active">QuantEcon Books</a>
+  <a href="#community-books" class="books-nav-pill">Community Books</a>
+</div>
+{% endif %}
+
+<h2 id="quantecon-books" class="books-section-heading">QuantEcon Books</h2>
 
 <ul class="row projects projects-container">
 
@@ -33,7 +40,7 @@ layout: default
 </ul>
 
 {% if community_books.size > 0 %}
-<h2 class="books-section-heading">Community Books</h2>
+<h2 id="community-books" class="books-section-heading">Community Books</h2>
 
 <ul class="row projects projects-container">
 
