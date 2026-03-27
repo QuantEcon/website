@@ -1,8 +1,10 @@
 ---
-name: Dynamic Programming
-description: This book is about dynamic programming and its applications in economics, finance, and adjacent fields like operations research. It brings together recent innovations in the theory of dynamic programming.
+name: "Dynamic Programming, Volume I: Finite States"
+authors: "Thomas J. Sargent and John Stachurski"
+description: "Volume I covers dynamic programming theory and applications for finite state spaces, including operators and fixed points, Markov dynamics, optimal stopping, and Markov decision processes."
 link: https://dp.quantecon.org
 image: dp-image.png
-order: 1
+order: 3
 type: book
+category: quantecon
 ---

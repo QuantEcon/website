@@ -856,13 +856,6 @@ section {
         }
       }
 
-      &:hover {
-        h3 {
-          text-decoration: underline;
-        }
-
-        .desc {}
-      }
   }
 }
 
@@ -891,6 +884,15 @@ section {
     @media (min-width: 768px) {
       min-height: 100px;
     }
+    .book-watermark-wrap {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.8rem;
+    }
+    .book-watermark {
+      width: 36px;
+      opacity: 0.45;
+    }
     
 
     .item-info {
@@ -907,13 +909,26 @@ section {
       }
       // Item pic style for book page
       .item-pic-books {
-        overflow: hidden;
         flex-shrink: 0;
-        width: 150px;
+        align-self: flex-start;
+        width: 110px;
         margin-right: 1rem;
         img {
-          width: 150%;
+          width: 100%;
+          display: block;
         }
+      }
+      // NEW badge for recently added books
+      .badge-new {
+        display: inline-block;
+        background-color: #e94560;
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 0.15em 0.5em;
+        border-radius: 3px;
+        vertical-align: middle;
+        letter-spacing: 0.05em;
       }
       .item-title {
         h3 {
@@ -922,6 +937,11 @@ section {
           font-weight: bold;
           margin:0;
           //color: $color-dark;
+        }
+        .book-authors {
+          margin: 0.2rem 0 0.3rem 0;
+          font-size: 0.85rem;
+          color: #666;
         }
         .type {
           margin:0;
@@ -970,11 +990,39 @@ section {
     }
     .desc {
       color: $color-dark;
-    
+
       p {
         margin: 0;
       }
     }
+    &:hover {
+      background: $color-bg;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Books listing overrides (smaller cards)
+--------------------------------------------------------------*/
+
+.books-listing {
+  .project {
+    padding: 0.75rem;
+    @media (min-width: 768px) {
+      min-height: unset;
+    }
+  }
+  .item-info {
+    margin: 0;
+  }
+  .item-desc {
+    font-size: 0.95rem;
   }
 }
 
