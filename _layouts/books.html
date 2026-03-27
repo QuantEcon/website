@@ -21,6 +21,7 @@ layout: default
             <div class="item-pic-books"><img src="/assets/img/books/{{ project.image }}"></div>
             <div class="item-title">
               <h3 class="name">{{ project.name }}{% if project.new %} <span class="badge-new">NEW</span>{% endif %}</h3>
+              {% if project.authors %}<p class="book-authors">{{ project.authors }}</p>{% endif %}
 			  <div class="item-desc">
 				{{ project.description | markdownify }}
 			  </div>

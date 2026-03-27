@@ -916,17 +916,13 @@ section {
       }
       // Item pic style for book page
       .item-pic-books {
-        overflow: hidden;
         flex-shrink: 0;
         align-self: flex-start;
         width: 110px;
-        height: 140px;
         margin-right: 1rem;
         img {
           width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: top;
+          display: block;
         }
       }
       // NEW badge for recently added books
@@ -948,6 +944,12 @@ section {
           font-weight: bold;
           margin:0;
           //color: $color-dark;
+        }
+        .book-authors {
+          margin: 0.2rem 0 0.3rem 0;
+          font-size: 0.85rem;
+          color: $color-med;
+          font-style: italic;
         }
         .type {
           margin:0;
