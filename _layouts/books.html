@@ -8,21 +8,15 @@ layout: default
 {% assign qe_books = all_books | where: 'category', 'quantecon' | sort: 'order' %}
 {% assign community_books = all_books | where: 'category', 'community' | sort: 'order' %}
 
-{% if community_books.size > 0 %}
-<div class="books-nav">
-  <button class="books-nav-pill active" data-target="quantecon-books">QuantEcon Books</button>
-  <button class="books-nav-pill" data-target="community-books">Community Books</button>
-</div>
-{% endif %}
-
-<div id="quantecon-books" class="books-section">
-
 <ul class="row projects projects-container">
 
   {% for project in qe_books %}
     <li class="projects-item">
       <a target="_blank" href="{{ project.link }}">
         <div class="project d-flex flex-column align-items-start">
+          <div class="book-watermark-wrap">
+            <img class="book-watermark" src="/assets/img/qe-logo-small.png" alt="QuantEcon logo">
+          </div>
           <div class="item-info d-flex">
             <div class="item-pic-books"><img src="/assets/img/books/{{ project.image }}"></div>
             <div class="item-title">
@@ -39,10 +33,7 @@ layout: default
 
 </ul>
 
-</div>
-
 {% if community_books.size > 0 %}
-<div id="community-books" class="books-section" style="display: none;">
 
 <ul class="row projects projects-container">
 
@@ -65,20 +56,4 @@ layout: default
   {% endfor %}
 
 </ul>
-
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var pills = document.querySelectorAll('.books-nav-pill');
-  pills.forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      pills.forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      document.querySelectorAll('.books-section').forEach(function(s) { s.style.display = 'none'; });
-      document.getElementById(pill.getAttribute('data-target')).style.display = 'block';
-    });
-  });
-});
-</script>
 {% endif %}

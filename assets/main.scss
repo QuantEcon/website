@@ -871,30 +871,6 @@ section {
 # Projects Style (Linear Listing)
 --------------------------------------------------------------*/
 
-.books-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0 1rem 0;
-}
-
-.books-nav-pill {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border: 2px solid $color-link;
-  border-radius: 25px;
-  background: none;
-  color: $color-link;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-  &:hover, &.active {
-    background-color: $color-link;
-    color: #fff;
-  }
-}
-
 .projects {
   padding: 0;
   list-style: none;
@@ -914,6 +890,15 @@ section {
     margin: 0 0 1.5rem 0;
     @media (min-width: 768px) {
       min-height: 100px;
+    }
+    .book-watermark-wrap {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.8rem;
+    }
+    .book-watermark {
+      width: 36px;
+      opacity: 0.25;
     }
     
 
