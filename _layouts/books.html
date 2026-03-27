@@ -8,7 +8,7 @@ layout: default
 {% assign qe_books = all_books | where: 'category', 'quantecon' | sort: 'order' %}
 {% assign community_books = all_books | where: 'category', 'community' | sort: 'order' %}
 
-<h2>QuantEcon Books</h2>
+<h2 class="books-section-heading">QuantEcon Books</h2>
 
 <ul class="row projects projects-container">
 
@@ -32,7 +32,7 @@ layout: default
 </ul>
 
 {% if community_books.size > 0 %}
-<h2>Community Books</h2>
+<h2 class="books-section-heading">Community Books</h2>
 
 <ul class="row projects projects-container">
 
