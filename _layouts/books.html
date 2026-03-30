@@ -6,30 +6,32 @@ layout: default
 
 {% assign all_books = site.projects | where: 'type', 'book' | sort: 'order' %}
 
-<ul class="row projects projects-container books-listing">
-
+<div class="row row-cols-1 row-cols-md-2 gy-4 gx-5">
   {% for project in all_books %}
-    <li class="projects-item">
-      <a target="_blank" href="{{ project.link }}">
-        <div class="project d-flex flex-column align-items-start">
+  <div class="col">
+    <div class="qe-card">
+      <a href="{{ project.link }}" target="_blank">
+        <div class="d-flex align-items-start">
           {% if project.category == 'quantecon' %}
-          <div class="book-watermark-wrap">
-            <img class="book-watermark" src="/assets/img/qe-logo-small.png" alt="QuantEcon logo">
+          <div class="position-absolute" style="top: 0.6rem; right: 0.8rem;">
+            <img src="/assets/img/qe-logo-small.png" alt="QuantEcon" style="width: 36px; opacity: 0.45;">
           </div>
           {% endif %}
-          <div class="item-info d-flex">
-            <div class="item-pic-books"><img src="/assets/img/books/{{ project.image }}"></div>
-            <div class="item-title">
-              <h3 class="name">{{ project.name }}{% if project.new %} <span class="badge-new">NEW</span>{% endif %}</h3>
-              {% if project.authors %}<p class="book-authors">{{ project.authors }}</p>{% endif %}
-			  <div class="item-desc">
-				{{ project.description | markdownify }}
-			  </div>
-		    </div>
+          <div class="flex-shrink-0 me-3">
+            <img src="/assets/img/books/{{ project.image }}" alt="" style="width: 100px; border-radius: 4px;">
+          </div>
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 0.2rem 0; color: #283039;">
+              {{ project.name }}{% if project.new %} <span class="qe-badge qe-badge--new">NEW</span>{% endif %}
+            </h3>
+            {% if project.authors %}<p style="margin: 0 0 0.3rem 0; font-size: 0.85rem; color: #888;">{{ project.authors }}</p>{% endif %}
+            <div style="font-size: 0.9rem; color: #666;">
+              {{ project.description | markdownify }}
+            </div>
           </div>
         </div>
       </a>
-    </li>
+    </div>
+  </div>
   {% endfor %}
-
-</ul>
+</div>

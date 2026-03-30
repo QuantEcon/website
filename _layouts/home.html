@@ -4,238 +4,235 @@ layout: default
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
-
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-6 d-flex flex-column justify-content-center pt-lg-0 order-2 order-lg-2" data-aos="fade-up"
-        data-aos-delay="200">
-        <h1>Quant<span>Econ</span></h1>
-        <p class="tagline">Open source code for economic modeling</p>
-      </div>
-      <div
-        class="col-lg-4 d-flex flex-m-column justify-content-center align-items-sm-center flex-sm-row order-1 order-lg-1 hero-img"
-        data-aos="zoom-in" data-aos-delay="200">
-        <img src="/assets/img/qehills.png" class="img-fluid" alt="">
+      <div class="col-lg-8 d-flex flex-column justify-content-center">
+        <h1>Open Source Tools for<br>Computational Economics</h1>
+        <p class="tagline">Lecture series, textbooks, and code libraries in Python and Julia &mdash;<br class="d-none d-md-inline"> used by researchers, central banks, and universities worldwide.</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="/lectures/" class="qe-btn qe-btn--primary">Browse Lectures</a>
+          <a href="/workshops/" class="qe-btn qe-btn--outline">Explore Workshops</a>
+          <a href="/books/" class="qe-btn qe-btn--outline">Browse Books</a>
+        </div>
       </div>
     </div>
   </div>
-
-  <a href="#main" class="continue-down d-flex align-items-center justify-content-center" data-aos="fade-in"
-    data-aos-delay="2000" data-aos-anchor="#hero"><i class="bi bi-arrow-down-short"></i></a>
-
-</section><!-- End Hero -->
+  <a href="#main" class="continue-down d-flex align-items-center justify-content-center"><i class="bi bi-chevron-down"></i></a>
+</section>
 
 <main id="main">
 
-  <section id="sponsors" class="sponsors section-bg">
-
+  <!-- ======= Metrics Bar ======= -->
+  <section class="qe-metrics">
     <div class="container">
+      <div class="row row-cols-2 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="metric">
+            <div class="number">8</div>
+            <div class="label">Lecture Series</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="metric">
+            <div class="number">5+</div>
+            <div class="label">Books &amp; Textbooks</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="metric">
+            <div class="number">30+</div>
+            <div class="label">Workshops Delivered</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="metric">
+            <div class="number">2</div>
+            <div class="label">Code Libraries</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ======= Lectures Section ======= -->
+  <section class="qe-section" id="lectures">
+    <div class="container">
+      <h2 class="qe-section-title">Lecture Series</h2>
+
+      {% assign sorted_lectures = site.lectures | sort: 'order' %}
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for lecture in sorted_lectures %}
+        <div class="col">
+          <div class="qe-card">
+            <a href="{{ lecture.link }}" target="_blank">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0 me-3">
+                  <img src="/assets/img/projects/{{ lecture.image }}" alt="" style="width: 48px; border-radius: 6px;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 0.25rem 0; color: #283039;">
+                    {{ lecture.name }}
+                    {% if lecture.lang == 'python' %}
+                    <span class="qe-badge qe-badge--python">Python</span>
+                    {% elsif lecture.lang == 'julia' %}
+                    <span class="qe-badge qe-badge--julia">Julia</span>
+                    {% endif %}
+                  </h3>
+                  <p style="margin: 0; font-size: 0.9rem; color: #666;">{{ lecture.description }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <p class="text-center mt-4"><a href="/lectures/" class="qe-btn qe-btn--outline-dark">View all lectures</a></p>
+    </div>
+  </section>
+
+  <!-- ======= Featured Books Section ======= -->
+  <section class="qe-section qe-section--alt" id="books">
+    <div class="container">
+      <h2 class="qe-section-title">Books &amp; Textbooks</h2>
+
+      {% assign all_books = site.projects | where: 'type', 'book' | sort: 'order' %}
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for book in all_books %}
+        <div class="col">
+          <div class="qe-card">
+            <a href="{{ book.link }}" target="_blank">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0 me-3">
+                  <img src="/assets/img/books/{{ book.image }}" alt="" style="width: 80px; border-radius: 4px;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 0.2rem 0; color: #283039;">
+                    {{ book.name }}
+                    {% if book.new %}<span class="qe-badge qe-badge--new">NEW</span>{% endif %}
+                  </h3>
+                  {% if book.authors %}<p style="margin: 0 0 0.3rem 0; font-size: 0.8rem; color: #888;">{{ book.authors }}</p>{% endif %}
+                  <p style="margin: 0; font-size: 0.9rem; color: #666;">{{ book.description }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <p class="text-center mt-4"><a href="/books/" class="qe-btn qe-btn--outline-dark">View all books</a></p>
+    </div>
+  </section>
+
+  <!-- ======= Workshops Section (condensed) ======= -->
+  <section class="qe-section" id="workshops">
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-md-5">
+          <h2 class="qe-section-title" style="text-align: left;">Workshops</h2>
+          <p>QuantEcon runs remote and in-person workshops and short courses on quantitative economics and high-performance computing using Python and Julia.</p>
+          <p>Past locations include the IMF, Columbia University, Reserve Bank of Australia, Stanford, Princeton, Harvard, MIT, Berkeley, UCLA, and the Central Bank of Chile.</p>
+          <a href="mailto:contact@quantecon.org" class="qe-btn qe-btn--primary mt-2">Contact us</a>
+        </div>
+        <div class="col-md-6 offset-md-1 mt-4 mt-md-0">
+          <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 700; color: #888; margin-bottom: 1rem;">Recent Workshops</h3>
+          <ul class="list-unstyled">
+            <li class="d-flex justify-content-between border-bottom py-2">
+              <span><strong>International Monetary Fund</strong></span>
+              <span class="text-muted">Dec 2025</span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+              <span><strong>Kyoto University</strong></span>
+              <span class="text-muted">Jun 2025</span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+              <span><strong>International University of Japan</strong></span>
+              <span class="text-muted">Jun 2025</span>
+            </li>
+            <li class="d-flex justify-content-between py-2">
+              <span><strong>Reserve Bank of Australia</strong></span>
+              <span class="text-muted">Nov 2024</span>
+            </li>
+          </ul>
+          <a href="/workshops/" class="mt-2 d-inline-block">View all workshops &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Open Source Section ======= -->
+  <section class="qe-section qe-section--alt" id="opensource">
+    <div class="container">
+      <h2 class="qe-section-title">Open Source Projects</h2>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="qe-card">
+            <a href="/code/">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #283039; margin-bottom: 0.5rem;">Code Libraries</h3>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">High-performance open source code libraries for quantitative economics in Python and Julia.</p>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="qe-card">
+            <a href="https://jupyterbook.org/" target="_blank">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #283039; margin-bottom: 0.5rem;">Executable Books</h3>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">QuantEcon is a founding member of the Executable Books Project, which develops Jupyter Book.</p>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="qe-card">
+            <a href="/infrastructure/">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #283039; margin-bottom: 0.5rem;">Infrastructure</h3>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">Tools and infrastructure for computational education, including Jupyteach and analytics.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Latest News Section ======= -->
+  <section class="qe-section" id="news">
+    <div class="container">
+      <h2 class="qe-section-title">Latest News</h2>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for post in site.posts limit:3 %}
+        <div class="col">
+          <div class="qe-card">
+            <a href="{{ post.url | relative_url }}">
+              {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
+              <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #888;">{{ post.date | date: date_format }}</p>
+              <h3 style="font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem 0; color: #283039;">{{ post.title | escape }}</h3>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <p class="text-center mt-4"><a href="/news/" class="qe-btn qe-btn--outline-dark">View all news</a></p>
+    </div>
+  </section>
+
+  <!-- ======= Sponsors Section ======= -->
+  <section class="qe-section qe-section--alt" id="sponsors" style="padding: 3rem 0;">
+    <div class="container">
       <div class="row align-items-center text-center">
-
-        <p><strong>Current sponsors</strong></p>
-
+        <p class="text-muted mb-3"><strong>Current Sponsors</strong></p>
         <p>
           <a href="https://chow.xmu.edu.cn/en/index.htm" title="Paula and Gregory Chow Institute for Studies in Economics, Xiamen University">
-            <img src="/assets/img/chow_logo_en.png" width="600"
-            alt="Sponsored by the Paula and Gregory Chow Institute for Studies in Economics, Xiamen University">
+            <img src="/assets/img/chow_logo_en.png" style="max-width: 500px;"
+              alt="Sponsored by the Paula and Gregory Chow Institute for Studies in Economics, Xiamen University">
           </a>
         </p>
-
+        <p class="mt-2"><a href="/sponsors/" class="text-muted">View all sponsors &rarr;</a></p>
       </div>
     </div>
-
   </section>
 
-  <section id="featured" class="featured">
-    <!-- Lectures and Code Libraries -->
-    <div class="container">
-
-      <div class="row justisfy-content-center gx-5" data-aos="zoom-in" data-aos-delay="150">
-
-        <div class="col-md-6">
-
-          <div class="row">
-
-            <div class="col-md-4 offset-md-0 d-none d-md-block">
-              <p><img src="/assets/img/lectures-thumb.png" class="img-thumbnail"
-                  alt="Screenshot showing a lecture page"></p>
-            </div>
-
-            <div class="col-md-8 offset-md-0">
-              <h2>Lectures</h2>
-              <p>QuantEcon hosts lecture series on economics, finance, econometrics and data science. All lecture series
-                are based on open source languages and open computing environments.</p>
-              <p><a href="/lectures/" class="btn-learn-more">Browse lectures</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-5 mt-md-0">
-
-          <div class="row">
-
-            <div class="col-md-4 offset-md-0 d-none d-md-block">
-              <p><img src="/assets/img/code-thumb.png" class="img-thumbnail" alt="Screenshot showing python code"></p>
-            </div>
-
-            <div class="col-md-8 offset-md-0">
-              <h2>Code Libraries</h2>
-              <p>QuantEcon has developed and maintains high-performance, open source, code libraries in Python and
-                Julia.</p>
-              <br>
-              <p><a href="/code/" class="btn-learn-more">View libraries</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <br>
-      <!-- <div class="section-title">
-        <h1>Books</h1>
-      </div> -->
-      <br>
-      <!-- Books's image and descriptions -->
-      <div class="row justisfy-content-center gx-5" data-aos="zoom-in" data-aos-delay="150">
-
-        <div class="col-md-6">
-
-          <div class="row">
-
-            <div class="col-md-4 offset-md-0 d-none d-md-block">
-              <p><img src="/assets/img/books/dp-image.jpg" class="img-thumbnail" alt="Icon of Dynamic Programming book"></p>
-            </div>
-
-            <div class="col-md-8 offset-md-0">
-              <h3>Dynamic Programming</h3>
-              <p>This book is about dynamic programming and its applications in economics, finance, and adjacent
-                fields like operations research. It brings together recent innovations in the theory of dynamic
-                programming.</p>
-              <p><a href="https://dp.quantecon.org/" class="btn-learn-more">View online version</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mt-5 mt-md-0">
-
-          <div class="row">
-
-            <div class="col-md-4 offset-md-0 d-none d-md-block">
-              <p><img src="/assets/img/books/networks-image.jpg" class="img-thumbnail" alt="Icon of Economic Networks book">
-              </p>
-            </div>
-
-            <div class="col-md-8 offset-md-0">
-              <h3>Economic Networks</h3>
-              <p>This book is an introduction to economic networks and it emphasizes quantitative modeling, with the
-                main underlying tools being graph theory, linear algebra, fixed point theory and programming.</p>
-              <p><a href="https://networks.quantecon.org/" class="btn-learn-more">View online version</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <section id="workshops" class="workshops section-bg">
-
-    <div class="container">
-
-      <div class="row justisfy-content-center gx-5">
-
-        <div class="col-md-5 offset-md-1">
-          <p><img class="img-thumbnail" src="/assets/img/services_workshop_photo.jpg"></p>
-
-        </div>
-
-        <div class="col-md-5">
-          <h2>Workshops</h2>
-
-          <p>QuantEcon runs remote and in-person workshops and
-            short courses on quantitative economics and high-performance computing
-            using Python and Julia.</p>
-
-          <p><a href="/workshops">Past locations</a> include the Econometric
-            Society meetings, Columbia University, Copenhagen, the Reserve Bank of Australia,
-            Stanford, Princeton, Harvard, MIT, Berkeley, UCLA, Paris and the Central Bank of Chile.</p>
-          
-          <br>
-            
-          <p class="m-0">
-            <a href="mailto:contact@quantecon.org" class="btn-learn-more">Contact us</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-
-
-
-
-
-  <!-- ======= Services Section ======= -->
-  <section id="services" class="services">
-
-    <!-- <div class="container" data-aos="fade-up"> -->
-
-    <!-- <div class="section-title d-flex justify-content-around">
-      <div class="col-md-10">
-        <p>QuantEcon is a nonprofit organization dedicated
-          to development and documentation of open source <a href="/projects/">computational tools</a> for economics, econometrics,
-          and decision making. </p>
-      </div>
-    </div> -->
-
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-
-      <div class="section-title">
-        <h2><a href="/infrastructure">Open Source</a></h2>
-      </div>
-
-      <div class="row justisfy-content-center gx-5">
-
-        <div class="col-md-10 offset-md-1" data-aos="fade-up">
-
-          <div class="project-list">
-
-            <div class="row gy-3 gx-5">
-
-              <div class="col-md-6">
-                <a href="https://jupyterbook.org/">
-                  <div class="thumb"><img src="/assets/img/projects/jupyter-book-logo.svg" alt=" "
-                      style="width:30px;" />
-                  </div>
-                  <h3>Executable Books</h3>
-                  <div class="desc">
-                    <p>QuantEcon a founding member of the Executable Books Project, which develops Jupyter Book.</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-md-6">
-                <a href="">
-                  <div class="thumb"><img src="/assets/img/projects/jupyteach-logo-small.png" alt=" " style="width:30px;" />
-                  </div>
-                  <h3>Jupyteach</h3>
-                  <div class="desc">
-                    <p>A new, modern learning management system (LMS) focused on computational education</p>
-                  </div>
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <br>
-
-        <!-- <p class="text-center m-0"><a href="/projects/" class="btn-learn-more">View All Projects</a></p> -->
-
-      </div>
-    </div>
-
-  </section><!-- End Services Section -->
-
-</main><!-- End #main -->
+</main>

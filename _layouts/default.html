@@ -14,7 +14,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
+
     gtag('config', '{{ site.google_analytics }}');
   </script>
 
@@ -39,14 +39,8 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <!-- Template Main CSS File -->
   <link href="/assets/main.css?v={{ site.time | date: '%Y%m%d%H%M%S' }}" rel="stylesheet">
   <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon" />
 </head>
@@ -59,49 +53,43 @@
   <body class="language-python internal">
     {% endif %}
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top ">
+    <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-center">
 
-        <!-- <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1> -->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/logo.png" alt="" class="img-fluid"></a>-->
         <a href="/" class="branding me-auto">
-          <img src="/assets/img/qehills.png" class="logo img-fluid" alt="">
+          <img src="/assets/img/qehills.png" class="logo img-fluid" alt="QuantEcon">
           <h2 class="title">Quant<span>Econ</span></h2>
         </a>
 
         <nav id="navbar" class="navbar">
           <ul class="nav">
-            <li{% if page.layout=='home' %} class="active" {% endif %}><a href="{{ '/' | relative_url }}">Home</a></li>
             <li{% if page.layout=='lectures' %} class="active" {% endif %}><a href="/lectures/"><span>Lectures</span></a></li>
             <li{% if page.permalink=='/workshops/' %} class="active" {% endif %}><a href="/workshops/"><span>Workshops</span></a></li>
             <li{% if page.layout=='books' %} class="active" {% endif %}><a href="/books/"><span>Books</span></a></li>
-            <li class="dropdown"><a><span>Projects</span><i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown{% if page.permalink=='/code/' or page.permalink=='/infrastructure/' %} active{% endif %}"><a><span>Projects</span><i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="/code">Code</a></li>
+                <li><a href="/code">Code Libraries</a></li>
                 <li><a href="/infrastructure">Infrastructure</a></li>
                 <li><a href="https://cheatsheets.quantecon.org/">Cheatsheets</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="/about" title="About QuantEcon"><span>About</span><i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown{% if page.permalink=='/about/' or page.permalink=='/team/' or page.permalink=='/sponsors/' %} active{% endif %}"><a><span>About</span><i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="/about">About</a></li>
+                <li><a href="/about">About QuantEcon</a></li>
                 <li><a href="/team">Team</a></li>
-                <li><a href="/store">Merch</a></li>
-                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Donate</a></li>
                 <li><a href="/sponsors">Sponsors</a></li>
                 <li><a href="/analytics-dashboard">Analytics</a></li>
+                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Donate</a></li>
               </ul>
             </li>
             <li{% if page.layout=='news' %} class="active" {% endif %}><a href="/news/"><span>News</span></a></li>
             <li class="github-link"><a href="https://github.com/QuantEcon" target="_blank" title="GitHub"><i class="bi bi-github" style="font-size:30px;"></i></a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+        </nav>
 
       </div>
-    </header><!-- End Header -->
+    </header>
 
     {% if page.layout != "home" %}
     <main id="main">
@@ -117,10 +105,9 @@
         </div>
       </section>
 
-    </main><!-- End #main -->
+    </main>
     {% endif %}
 
-    <!-- ======= Footer ======= -->
     <footer id="footer">
 
       <div class="footer-top">
@@ -130,67 +117,55 @@
             <div class="col-lg-3 col-md-6 footer-contact">
               <h2 class="branding">Quant<span>Econ</span></h2>
 
-              <p>QuantEcon is a nonprofit organization dedicated to development and documentation of open source
-                computational tools for economics, econometrics, and decision making.</p>
+              <p>Open source tools for computational economics, developed by economists for economists.</p>
 
-              <br>
-
-              <h3>Sponsors</h3>
-
+              <h3>Affiliations</h3>
               <ul class="footer-sponsors">
-
                 <li><a href="https://numfocus.org/">
-                  <img src="/assets/img/NumFocus_LRG.png" alt="" class="img-fluid">
+                  <img src="/assets/img/NumFocus_LRG.png" alt="NumFOCUS" class="img-fluid">
                 </a></li>
-
                 <li><a href="https://psl-foundation.org">
-                  <img src="/assets/img/PSLF_Logo.png" alt="" class="img-fluid" width="250px">
+                  <img src="/assets/img/PSLF_Logo.png" alt="PSL Foundation" class="img-fluid" width="250px">
                 </a></li>
               </ul>
-
-          </div>
-
-          <div class="col-lg-5 col-md-6 footer-articles">
-            <h3>Latest News</h3>
-
-            <ul>
-              {% for post in site.posts limit:3 %}
-              <li>
-                {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
-                <h4><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
-                <p class="date">{{ post.date | date: date_format }}</p>
-                <p class="summ">{{ post.excerpt }}</p>
-              </li>
-              {% endfor %}
-            </ul>
-            <p><strong><a href="/news/">View all news</a></strong></p>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6 offset-lg-1 footer-links">
-            <h3>QuantEcon Links</h3>
-            <ul>
-              <li><a href="{{ '/' | relative_url }}">Home</a></li>
-              {% for node in pages %}
-              <li{% if page.url==node.url %} class="active" {% endif %}><a href="{{ node.url | relative_url }}">{{
-                  node.title }}</a></li>
-                {% endfor %}
-                <li><a href="https://github.com/QuantEcon" target="_blank">GitHub</a></li>
-                <li><a href="/store/">Merchandise Store</a></li>
-                <li><a href="/positions/">Available Positions</a></li>
-            </ul>
-            <br>
-            <h3>Social Links</h3>
-            <div class="social-links mt-3">
-              <a href="https://twitter.com/quantecon" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="https://www.linkedin.com/company/quantecon" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/QuantEcon" class="github"><i class="bx bxl-github"></i></a>
             </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="/lectures/">Lectures</a></li>
+                <li><a href="/books/">Books</a></li>
+                <li><a href="/code/">Code Libraries</a></li>
+                <li><a href="/workshops/">Workshops</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="https://cheatsheets.quantecon.org/">Cheatsheets</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h3>Organization</h3>
+              <ul>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/team/">Team</a></li>
+                <li><a href="/sponsors/">Sponsors</a></li>
+                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Donate</a></li>
+                <li><a href="/positions/">Positions</a></li>
+                <li><a href="/store/">Merch Store</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h3>Connect</h3>
+              <div class="social-links mt-3">
+                <a href="https://github.com/QuantEcon" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://x.com/quantecon" target="_blank" title="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.linkedin.com/company/quantecon" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              </div>
+              <p class="mt-3"><a href="mailto:contact@quantecon.org">contact@quantecon.org</a></p>
+            </div>
+
           </div>
-
-
         </div>
-      </div>
       </div>
 
       <div class="container footer-bottom clearfix">
@@ -200,7 +175,7 @@
           Website by <a href="https://drdrij.com/">DrDrij</a>
         </div>
       </div>
-    </footer><!-- End Footer -->
+    </footer>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
@@ -208,29 +183,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
 
     <script src="/assets/js/main.js"></script>
 
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            // enable automatic line breaks (might look ugly)
-            CommonHTML: { linebreaks: { automatic: true } },
-            "HTML-CSS": { linebreaks: { automatic: true } },
-            SVG: { linebreaks: { automatic: true } },
-            // enable $ for inline math -> use \$ for ordinary dollar-sign
-            tex2jax: {
-              inlineMath: [['$','$'], ['\\(','\\)']],
-              processEscapes: true
-            },
-          });
-        </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   </body>
 

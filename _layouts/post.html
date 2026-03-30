@@ -2,16 +2,30 @@
 layout: default
 ---
 
-<h1>{{ page.title | escape }}</h1>
+<article class="post-article">
+  <header class="post-header">
+    <div class="post-meta">
+      <time>{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.tag %}
+        {% for tag in page.tag %}
+          <span class="qe-badge qe-badge--{{ tag | downcase | replace: ' ', '-' }}">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.author %}<p class="post-author">By {{ page.author }}</p>{% endif %}
+  </header>
 
-<p class="news-date">{{ page.date | date: "%-d %b %Y" }}</p>
+  <div class="post-content">
+    {{ page.content }}
+  </div>
 
-{{ page.content }}
-
-<p><a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-url="{{site.url}}{{ page.url }}" data-via="quantecon">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<p><small>Published by: {{ page.author }}</small></p>
-
-<hr>
-
-<p class="news-readmore"><a href="{{ '/news' | relative_url }}">Read more news</a></p>
+  <footer class="post-footer">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <a href="{{ '/news' | relative_url }}" class="qe-btn qe-btn--outline-dark"><i class="bi bi-arrow-left"></i> All News</a>
+      <a href="https://x.com/intent/tweet?url={{site.url}}{{ page.url }}&text={{ page.title | uri_escape }}&via=quantecon" target="_blank" rel="noopener" class="post-share">
+        <i class="bi bi-twitter-x"></i> Share on X
+      </a>
+    </div>
+  </footer>
+</article>
