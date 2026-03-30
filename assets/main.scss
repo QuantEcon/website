@@ -1108,6 +1108,12 @@ section {
       }
     }
   }
+  .footer-sponsor-logo {
+    max-width: 200px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+    &:hover { opacity: 1; }
+  }
   .social-links {
     display: flex;
     margin: 0 0 2rem 0;
