@@ -1100,16 +1100,17 @@ section {
   }
   .footer-sponsors {
     list-style: none;
-    padding: 0 0 2rem 0;
+    padding: 0 0 1rem 0;
     li {
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.75rem 0;
       img, svg {
-        max-width: 75%;
+        max-width: 50%;
       }
     }
   }
   .footer-sponsor-logo {
     max-width: 200px;
+    filter: brightness(0) invert(1);
     opacity: 0.85;
     transition: opacity 0.2s;
     &:hover { opacity: 1; }
