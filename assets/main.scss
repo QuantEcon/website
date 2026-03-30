@@ -620,6 +620,33 @@ img {
   }
 }
 
+/* Sponsor banner */
+.qe-sponsor-banner {
+  padding: 1.25rem 0;
+  background: #fff;
+  border-bottom: 1px solid $color-border;
+  .sponsor-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+  }
+  .sponsor-logo {
+    max-width: 360px;
+    transition: opacity 0.2s;
+    &:hover { opacity: 0.8; }
+    @media (max-width: 576px) {
+      max-width: 240px;
+    }
+  }
+  .sponsor-more {
+    font-size: 0.8rem;
+    color: #999;
+    &:hover { color: $color-link; }
+  }
+}
+
 /* Section component */
 .qe-section {
   padding: 5rem 0;
