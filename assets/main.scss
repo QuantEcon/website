@@ -273,6 +273,7 @@ img {
         line-height: 0;
         margin-left: 5px;
       }
+      &::after { display: none; } // suppress Bootstrap caret — using bi-chevron-down icon instead
       &:hover { color: #fff; }
       &:focus-visible {
         outline: 2px solid #fff;
