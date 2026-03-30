@@ -39,6 +39,7 @@ layout: default
 {% if older_posts.size > 0 %}
 <div class="news-archive">
   <h2 class="qe-section-title" style="margin-top: 3rem;">Older Posts</h2>
+  <div class="accordion" id="news-archive-accordion">
   {% assign current_year = nil %}
   {% for post in older_posts %}
     {% assign post_year = post.date | date: "%Y" %}
@@ -70,7 +71,8 @@ layout: default
       </button>
       <div class="collapse" id="archive-post-{{ forloop.index }}">
         <div class="news-card-body" style="margin-top: 0.75rem;">
-          {{ post.content }}
+          {{ post.excerpt }}
+          <p><a href="{{ post.url | relative_url }}">Read full post &rarr;</a></p>
           {% if post.author %}<p class="news-card-author">Published by {{ post.author }}</p>{% endif %}
         </div>
       </div>
@@ -81,5 +83,6 @@ layout: default
         </div>
       </div>
   {% endif %}
+  </div>
 </div>
 {% endif %}

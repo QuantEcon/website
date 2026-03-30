@@ -10,7 +10,7 @@ layout: default
   {% for project in all_books %}
   <div class="col">
     <div class="qe-card">
-      <a href="{{ project.link }}" target="_blank">
+      <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
         <div class="d-flex align-items-start">
           {% if project.category == 'quantecon' %}
           <div class="position-absolute" style="top: 0.6rem; right: 0.8rem;">

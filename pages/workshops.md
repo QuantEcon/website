@@ -12,7 +12,7 @@ menu_item: false
 <h2>Recent Workshops</h2>
 
 <div class="workshop">
-    <h2 class="title">December 2025, International Monetary Fund</h2>
+    <h3 class="title">December 2025, International Monetary Fund</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
@@ -28,7 +28,7 @@ menu_item: false
 </div>
 
 <div class="workshop">
-    <h2 class="title">June 2025, Kyoto University</h2>
+    <h3 class="title">June 2025, Kyoto University</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
@@ -41,7 +41,7 @@ menu_item: false
 </div>
 
 <div class="workshop">
-    <h2 class="title">June 2025, International University of Japan</h2>
+    <h3 class="title">June 2025, International University of Japan</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
@@ -54,7 +54,7 @@ menu_item: false
 </div>
 
 <div class="workshop">
-    <h2 class="title">November 2024, Reserve Bank of Australia</h2>
+    <h3 class="title">November 2024, Reserve Bank of Australia</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
@@ -67,7 +67,7 @@ menu_item: false
 </div>
 
 <div class="workshop">
-    <h2 class="title">August 2024, University of Melbourne</h2>
+    <h3 class="title">August 2024, University of Melbourne</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
@@ -77,7 +77,7 @@ menu_item: false
 </div>
 
 <div class="workshop">
-    <h2 class="title">May 2024, Central Bank of Chile</h2>
+    <h3 class="title">May 2024, Central Bank of Chile</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
@@ -87,7 +87,7 @@ menu_item: false
 </div>
 
 <div class="workshop">
-    <h2 class="title">March 2024, International Monetary Fund</h2>
+    <h3 class="title">March 2024, International Monetary Fund</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> John Stachurski</li>
@@ -111,7 +111,7 @@ menu_item: false
     <div id="workshops2023" class="accordion-collapse collapse show" data-bs-parent="#pastWorkshops">
       <div class="accordion-body">
         <div class="workshop">
-            <h2 class="title">October 2023, International Monetary Fund</h2>
+            <h3 class="title">October 2023, International Monetary Fund</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -120,7 +120,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">October 2023, Columbia University</h2>
+            <h3 class="title">October 2023, Columbia University</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -129,7 +129,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">April 2023, Kobe University</h2>
+            <h3 class="title">April 2023, Kobe University</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -138,7 +138,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">April 2023, Nagoya University</h2>
+            <h3 class="title">April 2023, Nagoya University</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -147,7 +147,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">April 2023, Keio University</h2>
+            <h3 class="title">April 2023, Keio University</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -168,7 +168,7 @@ menu_item: false
     <div id="workshops2022" class="accordion-collapse collapse" data-bs-parent="#pastWorkshops">
       <div class="accordion-body">
         <div class="workshop">
-            <h2 class="title">September 2022, Central Bank of Chile</h2>
+            <h3 class="title">September 2022, Central Bank of Chile</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Pablo Winant</li>
@@ -177,7 +177,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">September 2022, CREST, Paris</h2>
+            <h3 class="title">September 2022, CREST, Paris</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> Edouard Challe, Beatrice Cherrier, Alfred Galichon, John Stachurski, Pablo Winant</li>
@@ -186,7 +186,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">July 2022, Research School of Economics, ANU</h2>
+            <h3 class="title">July 2022, Research School of Economics, ANU</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -207,7 +207,7 @@ menu_item: false
     <div id="workshopsArchive" class="accordion-collapse collapse" data-bs-parent="#pastWorkshops">
       <div class="accordion-body">
         <div class="workshop">
-            <h2 class="title">April 2019, Department of Industry, Innovation and Science</h2>
+            <h3 class="title">April 2019, Department of Industry, Innovation and Science</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Natasha Watkins</li>
@@ -216,7 +216,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">May 2018, University of Copenhagen</h2>
+            <h3 class="title">May 2018, University of Copenhagen</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Natasha Watkins</li>
@@ -225,7 +225,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">March 2018, ANU Honours Workshop</h2>
+            <h3 class="title">March 2018, ANU Honours Workshop</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> Thomas Sargent, John Stachurski, Fedor Iskhakov, Natasha Watkins, Sophie Stearn</li>
@@ -234,7 +234,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">September 2017, US PhD Workshops series</h2>
+            <h3 class="title">September 2017, US PhD Workshops series</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Matthew McKay, Chase Coleman, Victoria Gregory, Natasha Watkins</li>
@@ -243,7 +243,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">August 2017, ANU / Australasian Macroeconomics Society (AMS)</h2>
+            <h3 class="title">August 2017, ANU / Australasian Macroeconomics Society (AMS)</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Matthew McKay, Natasha Watkins</li>
@@ -252,7 +252,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">June - August 2017, University of Chicago, Becker Friedman Institute</h2>
+            <h3 class="title">June - August 2017, University of Chicago, Becker Friedman Institute</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -260,7 +260,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">March 2017, Reserve Bank of Australia &amp; Reserve Bank of New Zealand</h2>
+            <h3 class="title">March 2017, Reserve Bank of Australia &amp; Reserve Bank of New Zealand</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Pablo Winant, Pearl Li, Erica Moszkowski</li>
@@ -269,7 +269,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">October 2016, University of Economics Ho Chi Minh City</h2>
+            <h3 class="title">October 2016, University of Economics Ho Chi Minh City</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski</li>
@@ -278,7 +278,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">June 2016, North American Summer Meeting of Econometric Society</h2>
+            <h3 class="title">June 2016, North American Summer Meeting of Econometric Society</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Matthew McKay, Chase Coleman</li>
@@ -287,7 +287,7 @@ menu_item: false
             </div>
         </div>
         <div class="workshop">
-            <h2 class="title">May 2016, Chicago Federal Reserve</h2>
+            <h3 class="title">May 2016, Chicago Federal Reserve</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> John Stachurski, Viral Shah, Pablo Winant, Matthew McKay, Chase Coleman</li>

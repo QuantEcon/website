@@ -10,7 +10,7 @@ layout: default
   {% for project in sorted_projects reversed %}
   <div class="col">
     <div class="qe-card">
-      <a href="{{ project.link }}" target="_blank">
+      <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
         <div class="d-flex align-items-start">
           <div class="flex-shrink-0 me-3">
             <img src="/assets/img/projects/{{ project.image }}" alt="" style="width: 48px; border-radius: 6px;">

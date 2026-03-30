@@ -253,6 +253,32 @@ img {
     }
   }
   .dropdown {
+    .dropdown-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3px;
+      font-family: $font-main;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
+      transition: 0.3s;
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+      i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+      }
+      &:hover { color: #fff; }
+      &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+    }
     a:not([href]):hover,
     a[href=""]:hover {
       cursor: default;
@@ -351,6 +377,13 @@ img {
     font-size: 15px;
     color: #37517e;
   }
+  .dropdown-toggle {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #37517e;
+    width: 100%;
+    text-align: left;
+  }
   a:hover:before,
   li:hover>a:before,
   .active:before {
@@ -430,7 +463,16 @@ img {
   position: relative;
   display: flex;
   align-items: center;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+  }
   .container {
+    position: relative;
+    z-index: 1;
     padding-top: 72px;
     h1 {
       margin: 0 0 10px 0;
@@ -456,6 +498,7 @@ img {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
   width: 50px;
   height: 50px;
   border: 2px solid rgba(255, 255, 255, 0.6);
@@ -1225,8 +1268,9 @@ section {
       transform: rotate(180deg);
     }
   }
-  &:focus {
-    outline: none;
+  &:focus-visible {
+    outline: 2px solid $color-link;
+    outline-offset: 2px;
   }
 }
 
@@ -1302,7 +1346,9 @@ section {
       color: $color-dark;
       box-shadow: none;
     }
-    &:focus { box-shadow: none; }
+    &:focus-visible {
+      box-shadow: 0 0 0 2px $color-link;
+    }
   }
 }
 
@@ -1325,7 +1371,10 @@ section {
   font-size: 0.95rem;
   color: $color-dark;
   &:hover { color: $color-link; }
-  &:focus { outline: none; }
+  &:focus-visible {
+    outline: 2px solid $color-link;
+    outline-offset: 2px;
+  }
   .news-archive-date {
     display: inline-block;
     width: 4rem;

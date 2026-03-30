@@ -10,9 +10,10 @@ layout: default
         <h1>Open Source Tools for<br>Computational Economics</h1>
         <p class="tagline">Lecture series, textbooks, and code libraries in Python and Julia &mdash;<br class="d-none d-md-inline"> used by researchers, central banks, and universities worldwide.</p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="/lectures/" class="qe-btn qe-btn--primary">Browse Lectures</a>
-          <a href="/workshops/" class="qe-btn qe-btn--outline">Explore Workshops</a>
-          <a href="/books/" class="qe-btn qe-btn--outline">Browse Books</a>
+          <a href="/lectures/" class="qe-btn qe-btn--primary">Lectures</a>
+          <a href="/workshops/" class="qe-btn qe-btn--outline">Workshops</a>
+          <a href="/books/" class="qe-btn qe-btn--outline">Books</a>
+          <a href="/code/" class="qe-btn qe-btn--outline">Code</a>
         </div>
       </div>
     </div>
@@ -64,7 +65,7 @@ layout: default
         {% for lecture in sorted_lectures %}
         <div class="col">
           <div class="qe-card">
-            <a href="{{ lecture.link }}" target="_blank">
+            <a href="{{ lecture.link }}" target="_blank" rel="noopener noreferrer">
               <div class="d-flex align-items-start">
                 <div class="flex-shrink-0 me-3">
                   <img src="/assets/img/projects/{{ lecture.image }}" alt="" style="width: 48px; border-radius: 6px;">
@@ -101,7 +102,7 @@ layout: default
         {% for book in all_books %}
         <div class="col">
           <div class="qe-card">
-            <a href="{{ book.link }}" target="_blank">
+            <a href="{{ book.link }}" target="_blank" rel="noopener noreferrer">
               <div class="d-flex align-items-start">
                 <div class="flex-shrink-0 me-3">
                   <img src="/assets/img/books/{{ book.image }}" alt="" style="width: 80px; border-radius: 4px;">
@@ -177,7 +178,7 @@ layout: default
         </div>
         <div class="col">
           <div class="qe-card">
-            <a href="https://jupyterbook.org/" target="_blank">
+            <a href="https://jupyterbook.org/" target="_blank" rel="noopener noreferrer">
               <h3 style="font-size: 1.1rem; font-weight: 700; color: #283039; margin-bottom: 0.5rem;">Executable Books</h3>
               <p style="margin: 0; font-size: 0.9rem; color: #666;">QuantEcon is a founding member of the Executable Books Project, which develops Jupyter Book.</p>
             </a>

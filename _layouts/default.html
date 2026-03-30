@@ -66,24 +66,24 @@
             <li{% if page.layout=='lectures' %} class="active" {% endif %}><a href="/lectures/"><span>Lectures</span></a></li>
             <li{% if page.permalink=='/workshops/' %} class="active" {% endif %}><a href="/workshops/"><span>Workshops</span></a></li>
             <li{% if page.layout=='books' %} class="active" {% endif %}><a href="/books/"><span>Books</span></a></li>
-            <li class="dropdown{% if page.permalink=='/code/' or page.permalink=='/infrastructure/' %} active{% endif %}"><a><span>Projects</span><i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown{% if page.permalink=='/code/' or page.permalink=='/infrastructure/' %} active{% endif %}"><button type="button" class="dropdown-toggle"><span>Projects</span><i class="bi bi-chevron-down"></i></button>
               <ul>
                 <li><a href="/code">Code Libraries</a></li>
                 <li><a href="/infrastructure">Infrastructure</a></li>
                 <li><a href="https://cheatsheets.quantecon.org/">Cheatsheets</a></li>
               </ul>
             </li>
-            <li class="dropdown{% if page.permalink=='/about/' or page.permalink=='/team/' or page.permalink=='/sponsors/' %} active{% endif %}"><a><span>About</span><i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown{% if page.permalink=='/about/' or page.permalink=='/team/' or page.permalink=='/sponsors/' %} active{% endif %}"><button type="button" class="dropdown-toggle"><span>About</span><i class="bi bi-chevron-down"></i></button>
               <ul>
                 <li><a href="/about">About QuantEcon</a></li>
                 <li><a href="/team">Team</a></li>
                 <li><a href="/sponsors">Sponsors</a></li>
                 <li><a href="/analytics-dashboard">Analytics</a></li>
-                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Donate</a></li>
+                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank" rel="noopener noreferrer">Donate</a></li>
               </ul>
             </li>
             <li{% if page.layout=='news' %} class="active" {% endif %}><a href="/news/"><span>News</span></a></li>
-            <li class="github-link"><a href="https://github.com/QuantEcon" target="_blank" title="GitHub"><i class="bi bi-github" style="font-size:30px;"></i></a></li>
+            <li class="github-link"><a href="https://github.com/QuantEcon" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="bi bi-github" style="font-size:30px;"></i></a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -148,7 +148,7 @@
                 <li><a href="/about/">About</a></li>
                 <li><a href="/team/">Team</a></li>
                 <li><a href="/sponsors/">Sponsors</a></li>
-                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank">Donate</a></li>
+                <li><a href="https://numfocus.org/donate-to-quantecon" target="_blank" rel="noopener noreferrer">Donate</a></li>
                 <li><a href="/positions/">Positions</a></li>
                 <li><a href="/store/">Merch Store</a></li>
               </ul>
@@ -157,9 +157,9 @@
             <div class="col-lg-3 col-md-6 footer-links">
               <h3>Connect</h3>
               <div class="social-links mt-3">
-                <a href="https://github.com/QuantEcon" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-                <a href="https://x.com/quantecon" target="_blank" title="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://www.linkedin.com/company/quantecon" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/QuantEcon" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://x.com/quantecon" target="_blank" rel="noopener noreferrer" title="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.linkedin.com/company/quantecon" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
               </div>
               <p class="mt-3"><a href="mailto:contact@quantecon.org">contact@quantecon.org</a></p>
             </div>

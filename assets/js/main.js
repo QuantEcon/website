@@ -57,7 +57,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  select('.navbar .dropdown > a', true).forEach(el => {
+  select('.navbar .dropdown > .dropdown-toggle', true).forEach(el => {
     el.addEventListener('click', function(e) {
       if (select('#navbar').classList.contains('navbar-mobile')) {
         e.preventDefault()
@@ -71,6 +71,7 @@
    */
   select('a[href^="#"]', true).forEach(el => {
     el.addEventListener('click', function(e) {
+      if (!this.hash || this.hash === '#') return
       const target = select(this.hash)
       if (target) {
         e.preventDefault()
