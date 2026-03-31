@@ -1556,6 +1556,60 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Sponsor Announcement Bar
+--------------------------------------------------------------*/
+.sponsor-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: #1e2d3a;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  padding: 6px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  a {
+    color: #fff;
+    text-decoration: underline;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  .sponsor-bar-sep {
+    opacity: 0.5;
+  }
+  .sponsor-bar-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0 0.25rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// When sponsor bar is visible, push the fixed header down
+body.sponsor-bar-visible #header {
+  top: var(--sponsor-bar-height, 34px);
+}
+
+body.sponsor-bar-visible .hero {
+  margin-top: var(--sponsor-bar-height, 34px);
+}
+
+body.sponsor-bar-visible.internal main {
+  padding-top: var(--sponsor-bar-height, 34px);
+}
+
+/*--------------------------------------------------------------
 # Homepage Featured Section
 --------------------------------------------------------------*/
 .featured {
