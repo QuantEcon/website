@@ -382,7 +382,6 @@ img {
   .dropdown-toggle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 10px 20px;
     font-family: $font-main;
     font-size: 15px;
@@ -390,6 +389,22 @@ img {
     color: #37517e;
     white-space: nowrap;
     transition: 0.3s;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: $font-main;
+    font-size: 15px;
+    font-weight: 600;
+    color: #37517e;
+    white-space: nowrap;
     width: 100%;
     text-align: left;
     background: none;
