@@ -365,9 +365,10 @@ img {
   transition: 0.3s;
   z-index: 999;
   .mobile-nav-toggle {
-    position: absolute;
+    position: fixed;
     top: 15px;
     right: 15px;
+    z-index: 1000;
   }
   &>ul>li {
     padding: 0;
@@ -379,11 +380,21 @@ img {
     color: #37517e;
   }
   .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
+    font-family: $font-main;
     font-size: 15px;
+    font-weight: 600;
     color: #37517e;
+    white-space: nowrap;
+    transition: 0.3s;
     width: 100%;
     text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
   a:hover:before,
   li:hover>a:before,
@@ -491,6 +502,11 @@ img {
       max-width: 600px;
       line-height: 1.6;
     }
+    @media (max-width: 575px) {
+      .d-flex.gap-3 {
+        justify-content: center;
+      }
+    }
   }
 }
 
@@ -576,7 +592,9 @@ img {
 
 /* Badge component */
 .qe-badge {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin: 0.5rem 0;
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.2em 0.6em;
@@ -1538,7 +1556,6 @@ section {
       flex-direction: column;
     }
     ul {
-      min-width: 400px;
       max-width: 400px;
       list-style: none;
       padding: 0 1rem 0 0;

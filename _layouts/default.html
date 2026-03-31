@@ -72,6 +72,7 @@
 
         <nav id="navbar" class="navbar">
           <ul class="nav">
+            <li class="d-lg-none{% if page.layout=='home' %} active{% endif %}"><a href="/"><span>Home</span></a></li>
             <li{% if page.layout=='lectures' %} class="active" {% endif %}><a href="/lectures/"><span>Lectures</span></a></li>
             <li{% if page.permalink=='/workshops/' %} class="active" {% endif %}><a href="/workshops/"><span>Workshops</span></a></li>
             <li{% if page.layout=='books' %} class="active" {% endif %}><a href="/books/"><span>Books</span></a></li>
