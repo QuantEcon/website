@@ -494,7 +494,7 @@ img {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.55);
     z-index: 0;
   }
   .container {
@@ -503,11 +503,12 @@ img {
     padding-top: 72px;
     h1 {
       margin: 0 0 10px 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #fff;
       font-family: $font-brand;
-      font-weight: 200;
+      font-weight: 400;
       line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
     .tagline {
       font-family: $font-main;

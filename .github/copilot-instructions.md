@@ -51,6 +51,7 @@ Key directories and files:
 - Blog posts: Add markdown files to `_posts/` with format `YYYY-MM-DD-title.md`
 - Team members: Add markdown files to `_team-members/` 
 - Lectures: Add markdown files to `_lectures/`
+- Workshops: Add to `pages/workshops.md` **and** update the hardcoded "Recent Workshops" list in `_layouts/home.html` (see #197 for planned automation)
 - Static pages: Add markdown files to `pages/`
 
 **Editing existing content:**

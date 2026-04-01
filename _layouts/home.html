@@ -10,7 +10,7 @@ layout: default
         <h1>Open Source Tools for<br>Computational Economics</h1>
         <p class="tagline">Lecture series, textbooks, and code libraries in Python and Julia &mdash;<br class="d-none d-md-inline"> used by researchers, central banks, and universities worldwide.</p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="/lectures/" class="qe-btn qe-btn--primary">Lectures</a>
+          <a href="/lectures/" class="qe-btn qe-btn--outline">Lectures</a>
           <a href="/workshops/" class="qe-btn qe-btn--outline">Workshops</a>
           <a href="/books/" class="qe-btn qe-btn--outline">Books</a>
           <a href="/code/" class="qe-btn qe-btn--outline">Code</a>
@@ -79,7 +79,7 @@ layout: default
         {% for lecture in sorted_lectures %}
         <div class="col">
           <div class="qe-card">
-            <a href="{{ lecture.link }}" target="_blank" rel="noopener noreferrer">
+            <a href="{{ lecture.link }}">
               <div class="d-flex align-items-start">
                 <div class="flex-shrink-0 me-3">
                   <img src="/assets/img/projects/{{ lecture.image }}" alt="" style="width: 48px; border-radius: 6px;">
@@ -147,27 +147,31 @@ layout: default
         <div class="col-md-5">
           <h2 class="qe-section-title" style="text-align: left;">Workshops</h2>
           <p>QuantEcon runs remote and in-person workshops and short courses on quantitative economics and high-performance computing using Python and Julia.</p>
-          <p>Past locations include the IMF, Columbia University, Reserve Bank of Australia, Stanford, Princeton, Harvard, MIT, Berkeley, UCLA, and the Central Bank of Chile.</p>
+          <p>Past locations include the IMF, Bank of Portugal, Hitotsubashi University, Columbia University, Reserve Bank of Australia, Stanford, Princeton, Harvard, MIT, Berkeley, UCLA, and the Central Bank of Chile.</p>
           <a href="mailto:contact@quantecon.org" class="qe-btn qe-btn--primary mt-2">Contact us</a>
         </div>
         <div class="col-md-6 offset-md-1 mt-4 mt-md-0">
           <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 700; color: #888; margin-bottom: 1rem;">Recent Workshops</h3>
           <ul class="list-unstyled">
             <li class="d-flex justify-content-between border-bottom py-2">
+              <span><strong>International University of Japan</strong></span>
+              <span class="text-muted">Feb 2026</span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
               <span><strong>International Monetary Fund</strong></span>
               <span class="text-muted">Dec 2025</span>
             </li>
             <li class="d-flex justify-content-between border-bottom py-2">
-              <span><strong>Kyoto University</strong></span>
-              <span class="text-muted">Jun 2025</span>
+              <span><strong>Bank of Portugal</strong></span>
+              <span class="text-muted">Oct 2025</span>
             </li>
             <li class="d-flex justify-content-between border-bottom py-2">
-              <span><strong>International University of Japan</strong></span>
-              <span class="text-muted">Jun 2025</span>
+              <span><strong>Hitotsubashi University</strong></span>
+              <span class="text-muted">Sep 2025</span>
             </li>
             <li class="d-flex justify-content-between py-2">
-              <span><strong>Reserve Bank of Australia</strong></span>
-              <span class="text-muted">Nov 2024</span>
+              <span><strong>Kyoto University</strong></span>
+              <span class="text-muted">Jun 2025</span>
             </li>
           </ul>
           <a href="/workshops/" class="mt-2 d-inline-block">View all workshops &rarr;</a>
@@ -242,7 +246,13 @@ layout: default
           <div class="qe-card">
             <a href="{{ post.url | relative_url }}">
               {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
-              <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #888;">{{ post.date | date: date_format }}</p>
+              <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #888;">{{ post.date | date: date_format }}
+                {% if post.tag %}
+                  {% for tag in post.tag %}
+                    <span class="qe-badge qe-badge--{{ tag | downcase | replace: ' ', '-' }}">{{ tag }}</span>
+                  {% endfor %}
+                {% endif %}
+              </p>
               <h3 style="font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem 0; color: #283039;">{{ post.title | escape }}</h3>
               <p style="margin: 0; font-size: 0.9rem; color: #666;">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
             </a>
