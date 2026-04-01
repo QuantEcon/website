@@ -4,25 +4,26 @@ layout: default
 
 {{ content }}
 
-<ul class="row projects projects-container">
+{% assign sorted_projects = site.projects | where: 'type', 'code' %}
 
-  {% assign sorted_projects = site.projects | where: 'type', 'code' %}
-
+<div class="row row-cols-1 row-cols-md-2 g-4">
   {% for project in sorted_projects reversed %}
-    <li class="projects-item filter-{{ project.lang }}">
-      <a target="_blank" href="{{ project.link }}">
-        <div class="project d-flex flex-column align-items-start">
-          <div class="item-info d-flex">
-            <div class="item-pic"><img src="/assets/img/projects/{{ project.image }}"></div>
-            <div class="item-title">
-              <h3 class="name">{{ project.name }}</h3>
-				<div class="item-desc">
-					{{ project.description | markdownify }}
-				</div>
-			</div>
+  <div class="col">
+    <div class="qe-card">
+      <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
+        <div class="d-flex align-items-start">
+          <div class="flex-shrink-0 me-3">
+            <img src="/assets/img/projects/{{ project.image }}" alt="" style="width: 48px; border-radius: 6px;">
+          </div>
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 0.25rem 0; color: #283039;">{{ project.name }}</h3>
+            <div style="font-size: 0.9rem; color: #666;">
+              {{ project.description | markdownify }}
+            </div>
+          </div>
         </div>
       </a>
-    </li>
+    </div>
+  </div>
   {% endfor %}
-
-</ul>
+</div>

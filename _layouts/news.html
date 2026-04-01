@@ -4,20 +4,85 @@ layout: default
 
 {{ content }}
 
-<ul class="news-listing">
-  {% for post in site.posts %}
-    <li>
-      {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
-      <h2 class="title">
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> 
+{% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
+{% assign recent_limit = 20 %}
+
+<!-- Recent Posts -->
+<div class="news-cards">
+  {% for post in site.posts limit: recent_limit %}
+  <div class="news-card" id="news-{{ forloop.index }}">
+    <button class="news-card-header" type="button" data-bs-toggle="collapse" data-bs-target="#news-body-{{ forloop.index }}" aria-expanded="false" aria-controls="news-body-{{ forloop.index }}">
+      <div class="news-card-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+      <h3 class="news-card-title">
+        {{ post.title | escape }}
         {% if post.tag %}
           {% for tag in post.tag %}
-            <span class="badge">{{ tag }}</span>
+            <span class="qe-badge qe-badge--{{ tag | downcase | replace: ' ', '-' }}">{{ tag }}</span>
           {% endfor %}
         {% endif %}
-      </h2>
-      <p class="date">{{ post.date | date: date_format }}</p>
-      <div class="summary">{{ post.content }}</div>
-    </li>
+      </h3>
+      <p class="news-card-excerpt">{{ post.excerpt | strip_html | truncate: 250 }}</p>
+      <span class="news-card-toggle"><i class="bi bi-chevron-down"></i></span>
+    </button>
+    <div class="collapse" id="news-body-{{ forloop.index }}">
+      <div class="news-card-body">
+        {{ post.content }}
+        {% if post.author %}<p class="news-card-author">Published by {{ post.author }}</p>{% endif %}
+      </div>
+    </div>
+  </div>
   {% endfor %}
-</ul>
+</div>
+
+<!-- Older Posts by Year -->
+{% assign older_posts = site.posts | slice: recent_limit, 1000 %}
+{% if older_posts.size > 0 %}
+<div class="news-archive">
+  <h2 class="qe-section-title" style="margin-top: 3rem;">Older Posts</h2>
+  <div class="accordion" id="news-archive-accordion">
+  {% assign current_year = nil %}
+  {% for post in older_posts %}
+    {% assign post_year = post.date | date: "%Y" %}
+    {% if post_year != current_year %}
+      {% if current_year != nil %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% assign current_year = post_year %}
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#archive-{{ current_year }}">
+            {{ current_year }}
+          </button>
+        </h2>
+        <div id="archive-{{ current_year }}" class="accordion-collapse collapse" data-bs-parent="#news-archive-accordion">
+          <div class="accordion-body">
+    {% endif %}
+    <div class="news-archive-item">
+      <button type="button" class="news-archive-link" data-bs-toggle="collapse" data-bs-target="#archive-post-{{ forloop.index }}">
+        <span class="news-archive-date">{{ post.date | date: "%b %-d" }}</span>
+        {{ post.title | escape }}
+        {% if post.tag %}
+          {% for tag in post.tag %}
+            <span class="qe-badge qe-badge--{{ tag | downcase | replace: ' ', '-' }}">{{ tag }}</span>
+          {% endfor %}
+        {% endif %}
+      </button>
+      <div class="collapse" id="archive-post-{{ forloop.index }}">
+        <div class="news-card-body" style="margin-top: 0.75rem;">
+          {{ post.excerpt }}
+          <p><a href="{{ post.url | relative_url }}">Read full post &rarr;</a></p>
+          {% if post.author %}<p class="news-card-author">Published by {{ post.author }}</p>{% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  {% if current_year != nil %}
+          </div>
+        </div>
+      </div>
+  {% endif %}
+  </div>
+</div>
+{% endif %}

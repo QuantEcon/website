@@ -4,26 +4,31 @@ layout: default
 
 {{ content }}
 
+{% assign sorted_lectures = site.lectures | sort: 'order' %}
 
-<ul class="row projects projects-container">
-
-  {% assign sorted_lectures = site.lectures | sort: 'order' %}
-
+<div class="row row-cols-1 row-cols-md-2 g-4">
   {% for lecture in sorted_lectures %}
-    <li class="projects-item filter-{{ lecture.lang }}">
-      <a target="_blank" href="{{ lecture.link }}">
-        <div class="project d-flex flex-column align-items-start">
-          <div class="item-info d-flex">
-            <div class="item-pic"><img src="/assets/img/projects/{{ lecture.image }}"></div>
-            <div class="item-title">
-              <h3 class="name">{{ lecture.name }}</h3>
-				<div class="item-desc">
-					{{ lecture.description | markdownify }}
-				</div>
-			</div>
+  <div class="col">
+    <div class="qe-card">
+      <a href="{{ lecture.link }}">
+        <div class="d-flex align-items-start">
+          <div class="flex-shrink-0 me-3">
+            <img src="/assets/img/projects/{{ lecture.image }}" alt="" style="width: 48px; border-radius: 6px;">
+          </div>
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 0.25rem 0; color: #283039;">
+              {{ lecture.name }}
+              {% if lecture.lang == 'python' %}
+              <span class="qe-badge qe-badge--python">Python</span>
+              {% elsif lecture.lang == 'julia' %}
+              <span class="qe-badge qe-badge--julia">Julia</span>
+              {% endif %}
+            </h3>
+            <p style="margin: 0; font-size: 0.9rem; color: #666;">{{ lecture.description }}</p>
+          </div>
         </div>
       </a>
-    </li>
+    </div>
+  </div>
   {% endfor %}
-
-</ul>
+</div>
