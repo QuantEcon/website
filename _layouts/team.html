@@ -42,41 +42,23 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>Lead Developers</h2>
+	<h2>Developers &amp; Research Assistants</h2>
 
-	{% assign ra_leads = site.team-members | where: 'role', 'Research Assistant' | where: 'tag', 'Lead Developer' %}
+	{% assign ras = site.team-members | where: 'role', 'Research Assistant' %}
 	{% assign committee_leads = site.team-members | where: 'role', 'Committee Members' | where: 'tag', 'Lead Developer' %}
-	{% assign team-members = ra_leads | concat: committee_leads | sort: 'last_name' %}
+	{% assign team-members = ras | concat: committee_leads | sort: 'last_name' %}
 	<div class="row">
 		{% for team-member in team-members %}
 		<div class="col-lg-6 team-item">
 			<div class="member d-flex align-items-start">
 				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
 				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a></h3>
+					{% assign badge = team-member.tag | default: 'Research Assistant' %}
+					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a> <span class="type">{{ badge }}</span></h3>
 					<p>{{ team-member.content }}</p>
 				</div>
 			</div>
 		</div>
-		{% endfor %}
-	</div>
-
-	<h2>Research Assistants</h2>
-
-	{% assign team-members = site.team-members | where: 'role', 'Research Assistant' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		{% unless team-member.tag == 'Lead Developer' %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
-				</div>
-			</div>
-		</div>
-		{% endunless %}
 		{% endfor %}
 	</div>
 
