@@ -5,10 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Minimal top-level permissions: build job only needs to read the repo.
+# Deployment credentials (pages: write, id-token: write) are scoped to
+# the deploy job only, so a compromised build step cannot use them.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Only one deployment at a time; don't cancel in-flight deploys.
 concurrency:
@@ -40,11 +41,17 @@ jobs:
         uses: actions/upload-pages-artifact@v3
 
   deploy:
+    # Guard: only deploy from main, even when triggered via workflow_dispatch
+    # on a different branch.
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
