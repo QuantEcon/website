@@ -152,27 +152,14 @@ layout: default
         </div>
         <div class="col-md-6 offset-md-1 mt-4 mt-md-0">
           <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 700; color: #888; margin-bottom: 1rem;">Recent Workshops</h3>
+          {% assign recent_workshops = site.workshops | sort: "date" | reverse %}
           <ul class="list-unstyled">
-            <li class="d-flex justify-content-between border-bottom py-2">
-              <span><strong>International University of Japan</strong></span>
-              <span class="text-muted">Feb 2026</span>
+            {% for workshop in recent_workshops limit:5 %}
+            <li class="d-flex justify-content-between {% unless forloop.last %}border-bottom {% endunless %}py-2">
+              <span><strong>{{ workshop.location }}</strong></span>
+              <span class="text-muted">{{ workshop.date | date: "%b %Y" }}</span>
             </li>
-            <li class="d-flex justify-content-between border-bottom py-2">
-              <span><strong>International Monetary Fund</strong></span>
-              <span class="text-muted">Dec 2025</span>
-            </li>
-            <li class="d-flex justify-content-between border-bottom py-2">
-              <span><strong>Bank of Portugal</strong></span>
-              <span class="text-muted">Oct 2025</span>
-            </li>
-            <li class="d-flex justify-content-between border-bottom py-2">
-              <span><strong>Hitotsubashi University</strong></span>
-              <span class="text-muted">Sep 2025</span>
-            </li>
-            <li class="d-flex justify-content-between py-2">
-              <span><strong>Kyoto University</strong></span>
-              <span class="text-muted">Jun 2025</span>
-            </li>
+            {% endfor %}
           </ul>
           <a href="/workshops/" class="mt-2 d-inline-block">View all workshops &rarr;</a>
         </div>
