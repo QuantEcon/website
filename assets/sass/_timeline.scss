@@ -1,388 +1,121 @@
-.vertical-timeline {
+/*--------------------------------------------------------------
+# Timeline (Infrastructure page)
+--------------------------------------------------------------*/
 
-}
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin-left: 1rem;
 
-.vertical-timeline h1,.vertical-timeline h2,.vertical-timeline h3{
-    margin:0px;
-}
-.vertical-timeline {
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-}
-
-.vertical-timeline .vt-step {
-    position: relative;
-    min-height: 80px;
-    margin-top: -20px;
-    margin-bottom: -20px;
-}
-
-.vertical-timeline .vt-step:first-child {
-    margin-bottom: -15px;
-}
-
-.vt-column {
+  &::before {
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 10px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    left: 0;
+    width: 2px;
+    background: #e2e8f0;
+  }
 }
 
-.vt-column .vt-start-point {
-    height: 20px;
-    width: 20px;
-    border-radius: 50px;
+.timeline-item {
+  position: relative;
+  padding: 0 0 2rem 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0.4rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0072bc;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #e2e8f0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .timeline-date {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: #444;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Legacy support for vertical-timeline class used in infrastructure page */
+.vertical-timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin-left: 1rem;
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+
+  &::before {
+    content: '';
     position: absolute;
     top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: #e2e8f0;
+  }
+}
+
+.vertical-timeline-element {
+  position: relative;
+  padding: 0 0 2rem 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
     left: -5px;
-
-}
-
-.vt-column .vt-start-point::before {
-    content: " ";
-    height: 10px;
-    width: 10px;
-    margin: 5px;
-    border-radius: 50px;
-    background-color: #f8f8f8;
-    display: inline-block;
-    box-shadow: -2px 3px 3px #0000004f;
-}
-
-.vt-column .vt-end-point {
-    height: 7px;
-    width: 7px;
-    margin-left: 1.5px;
-    transform: rotate(45deg);
-    position: absolute;
-    left: 0px;
-    bottom: -3.5px;
-
-}
-
-/* content */
-.vt-content {
-    position: relative;
-    display: inline-block;
-    padding-top: 5px;
-    margin-top: -76px;
-
-}
-
-/* header */
-.vt-header {
-    height: 80px;
-}
-
-.vt-header .vt-cat {
-    font-size: 36px;
-    display: block;
-
-}
-
-.vt-body p {
-    margin: 10px 0px 0px 0px;
-}
-
-
-/* spliter */
-
-
-.vt-splitter::before {
-    content: " ";
-    position: absolute;
-    display: block;
-    height: 10px;
-    width: 10px;
-    transform: rotate(45deg);
-    border-radius: 10px;
-    border: solid 4px;
-
-}
-
-.vt-splitter::after {
-    content: " ";
-    position: absolute;
-    display: block;
-    height: 10px;
-    width: 10px;
-    transform: rotate(45deg);
-    border-radius: 10px;
-}
-
-.vt-splitter .vt-line {
-    border-top: dotted 2px rgb(82, 82, 82);
-    
-}
-
-.vt-splitter .vt-icon {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    margin-top: -45px;
-    border-radius: 50px;
-}
-
-.vt-splitter .vt-icon .vt-icon-wrap {
-    height: 60px;
-    width: 60px;
-    margin: 5px;
-    border-radius: 50px;
-    background-color: #f8f8f8;
-    display: inline-block;
-    box-shadow: -2px 3px 3px #0000004f;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* body */
-
-.vt-body h3 {
-    margin: 0px;
-}
-
-.vt-body p {
-    font-size: .9rem;
-}
-
-
-
-/* right */
-.vt-right {
-    margin-left: calc(50% - 5px);
-}
-
-.vt-right .vt-column {
-    left: 0;
-}
-
-.vt-right .vt-content {
-
-}
-
-.vt-right .vt-icon {
-    right: 0;
-}
-
-.vt-right .vt-cat {
-    padding: 28px 0 0 40px;
-    text-align: left !important;
-}
-
-.vt-right .vt-body {
-    padding: 10px 90px 0 40px;
-    text-align: left !important;
-}
-
-.vt-right .vt-body * {
-    text-align: left !important;
-}
-
-.vt-right .vt-splitter {
-    padding: 0 80px 0 15px;
-
-}
-
-.vt-right .vt-splitter .vt-line {
-    margin: 0px 10px 0 25px;
-}
-
-.vt-right .vt-splitter::before {
-    margin: -6px 0px 0px 20px;
-    border-top-right-radius: 0;
-    left: 0;
-    border-left: 0px;
-    border-bottom: 0px;
-}
-
-.vt-right .vt-splitter::after {
-    margin: -6px 0px 0px 0px;
-    border-bottom-left-radius: 0;
-    right: 75px;
-    border-left: 0px;
-    border-bottom: 0px;
-}
-
-/* left */
-.vt-left {
-    margin-right: calc(50% - 5px);
-}
-
-.vt-left .vt-column {
-    right: 0;
-}
-
-.vt-left .vt-content {
-    /* padding-right: 20px; */
-
-}
-
-.vt-left .vt-icon {
-    left: 0;
-}
-
-.vt-left .vt-cat {
-    padding: 28px 40px 0 0;
-    text-align: right !important;
-}
-
-.vt-left .vt-body {
-    padding: 10px 40px 0 90px;
-    text-align: right !important;
-}
-
-.vt-left .vt-body>* {
-    padding: 10px 0px 0 30px;
-    text-align: right !important;
-}
-
-.vt-left .vt-splitter {
-    padding: 0 15px 0 80px;
-
-}
-.vt-left .vt-splitter .vt-line {
-    margin: 0px 25px 0 10px;
-}
-
-.vt-left .vt-splitter::before {
-    margin: -6px 20px 0px 0px;
-    border-bottom-left-radius: 0;
-    right: 0;
-    border-top: 0px;
-    border-right: 0px;
-}
-
-.vt-left .vt-splitter::after {
-    margin: -6px 0px 0px 0px;
-    border-top-right-radius: 0;
-    left: 75px;
-
-}
-
-/* blue */
-.vt-blue .vt-column,
-.vt-blue .vt-start-point,
-.vt-blue .vt-end-point,
-.vt-blue .vt-icon,
-.vt-blue .vt-splitter::after {
-    background-color: #22b7cf;
-}
-
-.vt-blue .vt-splitter::before {
-    border-color: #22b7cf;
-}
-
-.vt-blue .vt-title,
-.vt-blue .vt-cat {
-
-    color: #22b7cf;
-}
-
-/* orange */
-.vt-orange .vt-column,
-.vt-orange .vt-start-point,
-.vt-orange .vt-end-point,
-.vt-orange .vt-icon,
-.vt-orange .vt-splitter::after {
-    background-color: #f9a40d;
-}
-
-.vt-orange .vt-splitter::before {
-    border-color: #f9a40d;
-}
-
-.vt-orange .vt-title,
-.vt-orange .vt-cat {
-
-    color: #f9a40d;
-}
-
-/* pink */
-.vt-pink .vt-column,
-.vt-pink .vt-start-point,
-.vt-pink .vt-end-point,
-.vt-pink .vt-icon,
-.vt-pink .vt-splitter::after {
-    background-color: #e58088;
-}
-
-.vt-pink .vt-splitter::before {
-    border-color: #e58088;
-}
-
-.vt-pink .vt-title,
-.vt-pink .vt-cat {
-
-    color: #e58088;
-}
-
-/* navy-blue */
-.vt-navy-blue .vt-column,
-.vt-navy-blue .vt-start-point,
-.vt-navy-blue .vt-end-point,
-.vt-navy-blue .vt-icon,
-.vt-navy-blue .vt-splitter::after {
-    background-color: #486279;
-}
-
-.vt-navy-blue .vt-splitter::before {
-    border-color: #486279;
-}
-
-.vt-navy-blue .vt-title,
-.vt-navy-blue .vt-cat {
-
-    color: #486279;
-}
-
-/* light-blue */
-.vt-light-blue .vt-column,
-.vt-light-blue .vt-start-point,
-.vt-light-blue .vt-end-point,
-.vt-light-blue .vt-icon,
-.vt-light-blue .vt-splitter::after {
-    background-color: #86b8c3;
-}
-
-.vt-light-blue .vt-splitter::before {
-    border-color: #86b8c3;
-}
-
-.vt-light-blue .vt-title,
-.vt-light-blue .vt-cat {
-
-    color: #86b8c3;
-}
-
-/* green */
-.vt-green .vt-column,
-.vt-green .vt-start-point,
-.vt-green .vt-end-point,
-.vt-green .vt-icon,
-.vt-green .vt-splitter::after {
-    background-color: #60c293;
-}
-
-.vt-green .vt-splitter::before {
-    border-color: #60c293;
-}
-
-.vt-green .vt-title,
-.vt-green .vt-cat {
-
-    color: #60c293;
-}
-
-.vt-content {
-    width: 100% !important;
-}
-
-.image-fluid {
-    width: 70% !important;
-    border-radius: 100px;
+    top: 0.4rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0072bc;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #e2e8f0;
+  }
+
+  .vertical-timeline-element-content {
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+    }
+    h4 {
+      font-size: 0.85rem;
+      color: #666;
+      font-weight: normal;
+      margin: 0 0 0.5rem 0;
+    }
+    p {
+      margin: 0;
+      color: #444;
+    }
+  }
 }
