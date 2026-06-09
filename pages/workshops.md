@@ -12,13 +12,13 @@ menu_item: false
 {% assign all_workshops = site.workshops | sort: "date" | reverse %}
 {% assign recent_workshops = all_workshops | where_exp: "w", "w.year >= 2024" %}
 {% assign past_workshops = all_workshops | where_exp: "w", "w.year < 2024" %}
-{% assign past_years = past_workshops | map: "year" | uniq %}
+{% assign past_years = past_workshops | map: "year" | uniq | sort | reverse %}
 
 <h2>Recent Workshops</h2>
 
 {% for workshop in recent_workshops %}
 <div class="workshop">
-    <h3 class="title">{{ workshop.date | date: "%B %Y" }}, {{ workshop.location }}</h3>
+    <h3 class="title">{% if workshop.date_display %}{{ workshop.date_display }}{% else %}{{ workshop.date | date: "%B %Y" }}{% endif %}, {{ workshop.location }}</h3>
     <div class="workshop-details">
         <ul>
             <li><span>Presenters:</span> {{ workshop.presenters }}</li>
@@ -50,7 +50,7 @@ menu_item: false
       <div class="accordion-body">
         {% for workshop in year_workshops %}
         <div class="workshop">
-            <h3 class="title">{{ workshop.date | date: "%B %Y" }}, {{ workshop.location }}</h3>
+            <h3 class="title">{% if workshop.date_display %}{{ workshop.date_display }}{% else %}{{ workshop.date | date: "%B %Y" }}{% endif %}, {{ workshop.location }}</h3>
             <div class="workshop-details">
                 <ul>
                     <li><span>Presenters:</span> {{ workshop.presenters }}</li>
