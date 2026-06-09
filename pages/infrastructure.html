@@ -133,9 +133,12 @@ layout: default
                 <h3>Jupinx <small class="text-muted">(Historical)</small></h3>
                 <div class="timeline-date">2019</div>
                 <p>
-                    QuantEcon built <a href="https://jupinx.quantecon.org/">Jupinx</a>, an open source tool for converting
-                    ReStructuredText source files into a website via Jupyter Notebooks.
-                    <em>Note: Jupinx has been superseded by Jupyter Book.</em>
+                    QuantEcon built <a href="https://jupinx.quantecon.org/">Jupinx</a>, an open source command-line build
+                    tool for the lecture series. It paired a <code>quickstart</code> project scaffolder with a unified
+                    build driver that turned reStructuredText sources into executed Jupyter notebooks, PDFs, and a
+                    notebook-backed website, with support for parallel execution and coverage testing. Jupinx wrapped the
+                    <a href="https://github.com/QuantEcon/sphinxcontrib-jupyter">sphinxcontrib-jupyter</a> extension.
+                    <em>Note: Jupinx has been superseded by Jupyter Book and MyST.</em>
                 </p>
                 <p><b>Funding:</b> <a href="https://sloan.org">Alfred P. Sloan Foundation</a></p>
             </div>
@@ -145,7 +148,9 @@ layout: default
                 <div class="timeline-date">2018</div>
                 <p>
                     QuantEcon developed <a href="https://github.com/QuantEcon/sphinxcontrib-jupyter">sphinxcontrib-jupyter</a>,
-                    a sphinx extension that enabled the generation of Jupyter notebooks from reStructuredText source files.
+                    a Sphinx extension that enabled the generation of Jupyter notebooks from reStructuredText source files.
+                    <em>Note: sphinxcontrib-jupyter has been deprecated; its notebook writers were migrated to
+                    <a href="https://github.com/QuantEcon/sphinx-tojupyter">sphinx-tojupyter</a> for the MyST toolchain.</em>
                 </p>
                 <p><b>Funding:</b> <a href="https://sloan.org">Alfred P. Sloan Foundation</a></p>
             </div>
