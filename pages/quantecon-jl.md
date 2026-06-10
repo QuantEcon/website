@@ -21,8 +21,8 @@ A high performance, open source Julia code library for economics
 		<p><a href="http://quantecon.github.io/QuantEcon.jl/latest/">Documentation</a></p>
 	</li>
 	<li>
-		<p><a href="/julia-developers"><img alt=" " src="/assets/img/library-button-contribute.png"></a></p>
-		<p><a href="/julia-developers">Contribute</a></p>
+		<p><a href="https://quantecon.github.io/QuantEcon.jl/latest/man/contributing.html"><img alt=" " src="/assets/img/library-button-contribute.png"></a></p>
+		<p><a href="https://quantecon.github.io/QuantEcon.jl/latest/man/contributing.html">Contribute</a></p>
 	</li>
 	<li>
 		<p><a href="https://github.com/QuantEcon/QuantEcon.jl/issues" target="_blank"><img alt=" " src="/assets/img/library-button-issue.png"></a></p>
