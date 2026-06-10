@@ -21,8 +21,8 @@ A high performance, open source Python code library for economics
 		<p><a href="http://quanteconpy.readthedocs.org/en/latest/">Documentation</a></p>
 	</li> -->
 	<li>
-		<p><a href="https://github.com/QuantEcon/QuantEcon.py/blob/master/CONTRIBUTING.md"><img alt=" " src="/assets/img/library-button-contribute.png"></a></p>
-		<p><a href="https://github.com/QuantEcon/QuantEcon.py/blob/master/CONTRIBUTING.md">Contribute</a></p>
+		<p><a href="https://quanteconpy.readthedocs.io/en/latest/contributing.html"><img alt=" " src="/assets/img/library-button-contribute.png"></a></p>
+		<p><a href="https://quanteconpy.readthedocs.io/en/latest/contributing.html">Contribute</a></p>
 	</li>
 	<li>
 		<p><a href="https://github.com/QuantEcon/QuantEcon.py-wasm/issues" target="_blank"><img alt=" " src="/assets/img/library-button-issue.png"></a></p>
