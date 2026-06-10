@@ -27,6 +27,8 @@ exclude:
 collections:
   lectures:
   projects:
+  workshops:
+    output: false
   team-members:
     people: true
 
