@@ -5,8 +5,8 @@
 # v2.0 - Redesign
 --------------------------------------------------------------*/
 
-@import 'misc';
-@import 'timeline';
+@use 'misc';
+@use 'timeline';
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400&family=Roboto:wght@400;700&display=swap');
 $font-brand: 'Exo 2', sans-serif;
 $font-main: 'Roboto', sans-serif;
