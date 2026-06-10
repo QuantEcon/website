@@ -5,6 +5,10 @@ keywords: QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan F
 timezone: Australia/Sydney
 google_analytics: G-609ZCT25LS
 
+# Site host for absolute URLs (og:url, share links, sitemap). The legacy
+# GitHub Pages builder injected this automatically; the Actions build does not.
+url: "https://quantecon.org"
+
 # baseurl: /quantecon-jekyll-theme/
 baseurl: /
 
