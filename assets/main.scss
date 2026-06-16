@@ -644,6 +644,14 @@ img {
     background: $qe-red;
     color: #fff;
   }
+  &--website {
+    background: #2a9d8f;
+    color: #fff;
+  }
+  &--software {
+    background: #9558b2;
+    color: #fff;
+  }
   &--tools {
     background: $qe-yellow;
     color: #333;
@@ -1358,7 +1366,8 @@ section {
   color: $color-dark;
   margin: 0 0 0.3rem 0;
   .qe-badge {
-    margin-left: 0.5rem;
+    display: inline-block;
+    margin: 0 0 0 0.5rem;
     vertical-align: middle;
   }
 }
@@ -1450,6 +1459,11 @@ section {
     font-size: 0.8rem;
     font-weight: normal;
     color: #999;
+  }
+  .qe-badge {
+    display: inline-block;
+    margin: 0 0 0 0.5rem;
+    vertical-align: middle;
   }
 }
 
