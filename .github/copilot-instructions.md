@@ -10,7 +10,7 @@ The QuantEcon website is a Jekyll-based static site that serves as the main port
 
 Install bundler and set up the development environment:
 - `gem install bundler --user-install` - Install bundler locally (required for Jekyll)
-- `export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"` - Add bundler to PATH
+- `export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"` - Add bundler to PATH
 - `bundle config set --local path 'vendor/bundle'` - Configure local gem installation path
 - `bundle install` - Install Jekyll dependencies (takes ~30 seconds)
 
@@ -82,9 +82,9 @@ Key directories and files:
 ## Dependencies and Requirements
 
 **Ruby Environment:**
-- Ruby 3.2+ (3.2.3 confirmed working)
+- Ruby 3.4+
 - Bundler gem manager
-- Jekyll 4.2.2 (specified in Gemfile)
+- Jekyll 4.4 (specified in Gemfile)
 
 **Key Jekyll plugins used:**
 - jekyll-feed - RSS feed generation
@@ -101,7 +101,7 @@ Key directories and files:
 - Never use `sudo` with gem commands
 
 **Build failures:**
-- Check that Ruby 3.2+ is installed
+- Check that Ruby 3.4+ is installed
 - Verify all dependencies installed with `bundle install`
 - Clear cache with `bundle exec jekyll clean` before rebuilding
 
@@ -133,7 +133,7 @@ Key directories and files:
 ```bash
 # Setup (run once after clone)
 gem install bundler --user-install
-export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 bundle config set --local path 'vendor/bundle'
 bundle install
 
@@ -171,9 +171,9 @@ bundle exec jekyll build
 ### Key files content
 
 **Gemfile dependencies:**
-- jekyll ~> 4.2.2
+- jekyll ~> 4.4
 - minima ~> 2.5
-- jekyll-feed ~> 0.12
+- jekyll-feed ~> 0.17
 - jekyll-redirect-from
 - webrick ~> 1.8
 
