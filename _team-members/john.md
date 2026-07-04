@@ -5,4 +5,4 @@ image: /assets/img/team/john.jpg
 link: http://johnstachurski.net/
 role: "Founding Members and Co-Chairs"
 ---
-John Stachurski is a Professor of Economics at the National Graduate Institute for Policy Studies (GRIPS) with interests in optimization, statistics, and numerical methods.
+John Stachurski is a Professor of Economics at Australian National University with interests in Markov process theory, asset pricing, dynamic programming and numerical methods.
