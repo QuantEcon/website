@@ -238,21 +238,14 @@ $about-rainbow: linear-gradient(
     color: $about-body;
   }
 
-  &--dark {
-    background: var(--qe-dark);
-
-    h4 {
-      color: #fff;
-    }
+  // soft blue-tinted "action" card — distinct from its white neighbours
+  // without the weight of a dark block
+  &--highlight {
+    background: #eef4fb;
+    border-color: #dbe8f5;
 
     p {
-      color: #c9d0d7;
       margin-bottom: 14px;
-    }
-
-    a {
-      color: #6fb4e8;
-      &:hover { color: #8ec1ff; }
     }
   }
 
@@ -265,8 +258,8 @@ $about-rainbow: linear-gradient(
     font-family: 'Exo 2', sans-serif;
     font-weight: 600;
     font-size: 15px;
-    color: #6fb4e8;
-    &:hover { color: #8ec1ff; }
+    color: var(--qe-link);
+    &:hover { color: var(--qe-link-hover); }
   }
 }
 
