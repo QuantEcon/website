@@ -176,7 +176,7 @@ $about-rainbow: linear-gradient(
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--accent, var(--qe-blue));
+    background: var(--qe-blue);
     border: 3px solid #fff;
     box-shadow: 0 0 0 1px var(--qe-border);
   }
@@ -192,7 +192,7 @@ $about-rainbow: linear-gradient(
     font-family: 'Exo 2', sans-serif;
     font-weight: 700;
     font-size: 15px;
-    color: var(--accent, var(--qe-blue));
+    color: var(--qe-blue);
   }
 
   .about-tl-title {
