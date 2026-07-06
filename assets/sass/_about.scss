@@ -102,7 +102,8 @@ $about-rainbow: linear-gradient(
 .about-do-card {
   display: block;
   border: 1px solid $about-border-soft;
-  border-left: 4px solid var(--accent, var(--qe-blue));
+  // single brand-blue accent — the mission rail is the one multi-colour moment
+  border-left: 4px solid var(--qe-blue);
   border-radius: 10px;
   padding: 20px 22px;
   background: #fff;
@@ -129,23 +130,9 @@ $about-rainbow: linear-gradient(
     transform: translateY(-2px);
   }
 
-  // full-width card (Infrastructure) — rainbow rail instead of a single accent
+  // full-width card (Infrastructure) — same blue accent, just spans the row
   &--full {
     grid-column: 1 / -1;
-    border-left: 1px solid $about-border-soft;
-    position: relative;
-    padding-left: 26px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      border-radius: 10px 0 0 10px;
-      background: $about-rainbow;
-    }
   }
 }
 
