@@ -130,6 +130,11 @@ $about-rainbow: linear-gradient(
     transform: translateY(-2px);
   }
 
+  &:focus-visible {
+    outline: 2px solid var(--qe-blue);
+    outline-offset: 2px;
+  }
+
   // full-width card (Infrastructure) — same blue accent, just spans the row
   &--full {
     grid-column: 1 / -1;
@@ -260,6 +265,10 @@ $about-rainbow: linear-gradient(
     font-size: 15px;
     color: var(--qe-link);
     &:hover { color: var(--qe-link-hover); }
+    &:focus-visible {
+      outline: 2px solid var(--qe-link);
+      outline-offset: 2px;
+    }
   }
 }
 
