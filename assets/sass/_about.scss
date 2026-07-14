@@ -1,0 +1,329 @@
+/*--------------------------------------------------------------
+# About page (Design 1E — card layout)
+#
+# Brand colours are pulled from the global --qe-* custom properties
+# defined on :root in main.scss (red / yellow / green / blue = the
+# four QuantEcon logo colours). Only page-local neutrals live here.
+--------------------------------------------------------------*/
+
+$about-body: #5a636c; // softer than the site body grey, matches the design
+$about-muted: #7a828b;
+$about-border-soft: #eef1f4;
+$about-tint: #fbfbfc;
+$about-gap: 52px;
+
+// 4-stop brand gradient that echoes the equalizer logo
+$about-rainbow: linear-gradient(
+  180deg,
+  var(--qe-red),
+  var(--qe-yellow),
+  var(--qe-green),
+  var(--qe-blue)
+);
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  gap: $about-gap;
+
+  b {
+    font-family: 'Exo 2', sans-serif;
+  }
+}
+
+/* ---- 1. Mission ---- */
+.about-mission {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--qe-border);
+  border-radius: 14px;
+  background: $about-tint;
+  padding: 44px 48px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: $about-rainbow;
+  }
+}
+
+.about-eyebrow {
+  display: block;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--qe-blue);
+  margin-bottom: 14px;
+}
+
+.about-headline {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 1.3;
+  color: var(--qe-dark);
+  margin: 0;
+  text-wrap: balance;
+
+  b {
+    font-weight: 700;
+  }
+}
+
+.about-sub {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: $about-body;
+  margin: 22px 0 0;
+  max-width: 900px;
+}
+
+/* ---- 2. What we do ---- */
+.about-section-title {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--qe-dark);
+  margin: 0 0 16px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about-do-card {
+  display: block;
+  border: 1px solid $about-border-soft;
+  // single brand-blue accent — the mission rail is the one multi-colour moment
+  border-left: 4px solid var(--qe-blue);
+  border-radius: 10px;
+  padding: 20px 22px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  b {
+    color: var(--qe-dark);
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: $about-body;
+  }
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--qe-blue);
+    outline-offset: 2px;
+  }
+
+  // full-width card (Infrastructure) — same blue accent, just spans the row
+  &--full {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---- 3. History & grants ---- */
+.about-history {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-history-lead {
+  .about-section-title {
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $about-muted;
+  }
+}
+
+.about-timeline {
+  border-left: 2px solid var(--qe-border);
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.about-tl {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--qe-blue);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px var(--qe-border);
+  }
+
+  .about-tl-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .about-tl-year {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--qe-blue);
+  }
+
+  .about-tl-title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--qe-dark);
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: $about-body;
+  }
+
+  .about-tl-grants {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: $about-body;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--qe-blue);
+      }
+    }
+  }
+}
+
+/* ---- 4. Supporting cards ---- */
+.about-support {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 16px;
+}
+
+.about-card {
+  border: 1px solid var(--qe-border);
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+
+  h4 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--qe-dark);
+    margin: 0 0 10px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: $about-body;
+  }
+
+  // soft blue-tinted "action" card — distinct from its white neighbours
+  // without the weight of a dark block
+  &--highlight {
+    background: #eef4fb;
+    border-color: #dbe8f5;
+
+    p {
+      margin-bottom: 14px;
+    }
+  }
+
+  &--contact p {
+    margin-bottom: 6px;
+    &:last-child { margin-bottom: 0; }
+  }
+
+  .about-cta {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--qe-link);
+    &:hover { color: var(--qe-link-hover); }
+    &:focus-visible {
+      outline: 2px solid var(--qe-link);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .about-page {
+    gap: 40px;
+  }
+
+  .about-mission {
+    padding: 30px 28px;
+  }
+
+  .about-headline {
+    font-size: 26px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-history {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-support {
+    grid-template-columns: 1fr;
+  }
+}
