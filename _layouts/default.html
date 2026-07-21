@@ -43,6 +43,11 @@
 
   <link href="/assets/main.css?v={{ site.time | date: '%Y%m%d%H%M%S' }}" rel="stylesheet">
   <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon" />
+  {% if page.layout == "home" %}
+  <!-- Preload the hero background so it starts downloading during HTML parse
+       instead of after the CSS round-trip (it's a CSS background-image). -->
+  <link rel="preload" as="image" href="/assets/img/mountains1.jpg">
+  {% endif %}
 </head>
 
 {% if page.layout == "home" %}
