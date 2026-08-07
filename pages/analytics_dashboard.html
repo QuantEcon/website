@@ -47,6 +47,22 @@ menu_item: false
   text-decoration: none;
 }
 
+.dashboard-note {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  color: #5a6472;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.dashboard-note p {
+  margin: 0 0 0.75rem 0;
+}
+
+.dashboard-note p:last-child {
+  margin-bottom: 0;
+}
+
 .chart-section {
   margin: 3rem 0;
   position: relative;
@@ -82,10 +98,15 @@ menu_item: false
 <div class="dashboard-nav">
   <h2>Analytics Dashboard</h2>
   <div class="dashboard-nav-links">
-    <a href="#country-users">Users by Country</a>
-    <a href="#monthly-users">Users by Month</a>
-    <a href="#country-per-capita">Users by Country (Per Capita)</a>
+    <a href="#country-users">Sessions by Country</a>
+    <a href="#monthly-users">Sessions by Month</a>
+    <a href="#country-per-capita">Sessions by Country (Per Capita)</a>
   </div>
+</div>
+
+<div class="dashboard-note">
+  <p>These charts count <strong>sessions</strong>, not people. A session is a single visit, and one reader usually makes several over time, so these figures are larger than the size of the audience.</p>
+  <p>The totals aggregate eight QuantEcon lecture series. Sessions can be added across sites; user counts cannot, because a reader who visits three series would be counted three times, and Google Analytics offers no way to deduplicate them. That is why sessions are the figure reported here. Traffic from the Chinese, Persian and French translations is included under the corresponding English series.</p>
 </div>
 
 <div id="country-users" class="chart-section">
@@ -137,26 +158,26 @@ menu_item: false
     })
     .then(data => {
       // data is an array of objects:
-      // [ { country: "Australia", iso_alpha_3: "AUS", users: 123 }, ... ]
+      // [ { country: "Australia", iso_alpha_3: "AUS", sessions: 123 }, ... ]
 
       const isoCodes = data.map(row => row.iso_alpha_3);
-      const usersArr = data.map(row => row.users);
+      const sessionsArr = data.map(row => row.sessions);
       const hoverText = data.map(row => row.country);
 
       const trace = {
         type: 'choropleth',
         locations: isoCodes,
-        z: usersArr,
+        z: sessionsArr,
         text: hoverText,
-        hovertemplate: "<b>Country: %{text}</b><br>Users: %{z}<extra></extra>",
+        hovertemplate: "<b>Country: %{text}</b><br>Sessions: %{z}<extra></extra>",
         colorscale: 'Portland',
         colorbar: {
-          title: 'Users'
+          title: 'Sessions'
         }
       };
 
       const layout = {
-        title: 'Active Users by Country (last six months)',
+        title: 'Sessions by Country (last six months)',
         geo: {
           showframe: false,
           showcoastlines: true,
@@ -174,7 +195,7 @@ menu_item: false
 
 
   /**
-   * 2. Fetch and Render the Monthly Users Line Chart
+   * 2. Fetch and Render the Monthly Sessions Line Chart
    */
   fetch(`${BASE_DATA_URL}/month_data.json`)
     .then(response => {
@@ -185,26 +206,26 @@ menu_item: false
     })
     .then(data => {
       // data is an array of objects:
-      // [ { month_formatted: "Feb 2024", users: 567 }, ... ]
+      // [ { month_formatted: "Feb 2024", sessions: 567 }, ... ]
 
       const xValues = data.map(row => row.month_formatted);
-      const yValues = data.map(row => row.users);
+      const yValues = data.map(row => row.sessions);
 
       const trace = {
         type: 'scatter',
         mode: 'lines+markers',
         x: xValues,
         y: yValues,
-        hovertemplate: "Month: %{x}<br>Users: %{y}<extra></extra>",
+        hovertemplate: "Month: %{x}<br>Sessions: %{y}<extra></extra>",
         line: { shape: 'linear', color: 'teal' },
         marker: { size: 6 }
       };
 
       const layout = {
-        title: 'Monthly Users',
+        title: 'Monthly Sessions',
         xaxis: { title: 'Month' },
         yaxis: {
-          title: 'Number of Users',
+          title: 'Number of Sessions',
           range: [0, Math.max(...yValues) * 1.1]
         },
         margin: { l: 50, r: 20, t: 50, b: 50 },
@@ -229,26 +250,28 @@ fetch(`${BASE_DATA_URL}/map_data.json`)
  })
  .then(data => {
    // data is an array of objects:
-   // [ { country: "Australia", iso_alpha_3: "AUS", users: 123 }, ... ]
+   // [ { country: "Australia", iso_alpha_3: "AUS", sessions_per_capita: 0.0000047 }, ... ]
+   // sessions_per_capita is null where the population is unknown; Plotly leaves
+   // those countries uncoloured rather than placing them at the bottom of the ramp.
 
    const isoCodes = data.map(row => row.iso_alpha_3);
-   const usersArr = data.map(row => row.users_per_capita);
+   const perCapitaArr = data.map(row => row.sessions_per_capita);
    const hoverText = data.map(row => row.country);
 
    const trace = {
      type: 'choropleth',
      locations: isoCodes,
-     z: usersArr,
+     z: perCapitaArr,
      text: hoverText,
-     hovertemplate: "<b>Country: %{text}</b><br>Users (per capita): %{z}<extra></extra>",
+     hovertemplate: "<b>Country: %{text}</b><br>Sessions (per capita): %{z}<extra></extra>",
      colorscale: 'Portland',
      colorbar: {
-       title: 'Users (per capita)'
+       title: 'Sessions (per capita)'
      }
    };
 
    const layout = {
-     title: 'Active Users (per capita) by Country (last six months)',
+     title: 'Sessions (per capita) by Country (last six months)',
      geo: {
        showframe: false,
        showcoastlines: true,
