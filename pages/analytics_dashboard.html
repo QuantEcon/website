@@ -47,20 +47,14 @@ menu_item: false
   text-decoration: none;
 }
 
-.dashboard-note {
+.dashboard-footnote {
   max-width: 800px;
-  margin: 0 auto 3rem auto;
-  color: #5a6472;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.dashboard-note p {
-  margin: 0 0 0.75rem 0;
-}
-
-.dashboard-note p:last-child {
-  margin-bottom: 0;
+  margin: 3rem auto 0 auto;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  color: #7a828d;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 .chart-section {
@@ -104,11 +98,6 @@ menu_item: false
   </div>
 </div>
 
-<div class="dashboard-note">
-  <p>These charts count <strong>sessions</strong>, not people. A session is a single visit, and one reader usually makes several over time, so these figures are larger than the size of the audience.</p>
-  <p>The totals aggregate eight QuantEcon lecture series. Sessions can be added across sites; user counts cannot, because a reader who visits three series would be counted three times, and Google Analytics offers no way to deduplicate them. That is why sessions are the figure reported here. Traffic from the Chinese, Persian and French translations is included under the corresponding English series.</p>
-</div>
-
 <div id="country-users" class="chart-section">
   <div id="map-container" class="chart-container"></div>
 </div>
@@ -120,6 +109,8 @@ menu_item: false
 <div id="country-per-capita" class="chart-section">
   <div id="map-container-percapita" class="chart-container"></div>
 </div>
+
+<p class="dashboard-footnote">Sessions are visits rather than unique readers, summed across eight QuantEcon lecture series. Translation traffic is counted under the corresponding English series.</p>
 
 <script>
   // Smooth scroll for navigation links with header offset
