@@ -6,7 +6,7 @@ excerpt: "QuantEcon delivered a four-hour tutorial on accelerating simulations w
 tag: [workshop]
 ---
 
-Google Engineer [Smit Lunagariya](https://smit-create.github.io/intro.html), a QuantEcon lead developer, delivered a four-hour tutorial on **Computational Methods for Simulation using JAX and NumPy** at [SciPy 2026](https://www.scipy2026.scipy.org/), held at the University of Minnesota in Minneapolis, on July 14, 2026.
+Google Engineer [Smit Lunagariya](https://smit-create.github.io/intro.html), a QuantEcon Ambassador, delivered a four-hour tutorial on **Computational Methods for Simulation using JAX and NumPy** at [SciPy 2026](https://www.scipy2026.scipy.org/), held at the University of Minnesota in Minneapolis, on July 14, 2026.
 
 The tutorial uses Thomas Schelling's segregation model as its running example — a classic demonstration of how mild individual preferences can lead to extreme aggregate outcomes — and works through how to turn readable but slow Python code into a high-performance simulation:
 
