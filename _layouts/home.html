@@ -233,7 +233,7 @@ layout: default
           <div class="qe-card">
             <a href="{{ post.url | relative_url }}">
               {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
-              <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #888;">{{ post.date | date: date_format }}
+              <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #666;">{{ post.date | date: date_format }}
                 {% if post.tag %}
                   {% for tag in post.tag %}
                     <span class="qe-badge qe-badge--{{ tag | downcase | replace: ' ', '-' }}">{{ tag }}</span>
