@@ -1,0 +1,28 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Library releases the reporter missed, added by hand when Activity was introduced.
+
+- date: 2026-06-14
+  type: release
+  project: GameTheory.jl
+  version: v0.6.0
+  url: https://github.com/QuantEcon/GameTheory.jl/releases/tag/v0.6.0
+- date: 2026-06-14
+  type: release
+  project: GameTracer.jl
+  version: v0.1.1
+  url: https://github.com/QuantEcon/GameTracer.jl/releases/tag/v0.1.1
+- date: 2026-06-20
+  type: release
+  project: jlgametheory
+  version: v0.1.2
+  url: https://github.com/QuantEcon/jlgametheory/releases/tag/v0.1.2
+- date: 2026-08-16
+  type: release
+  project: jlgametheory
+  version: v0.2.0
+  url: https://github.com/QuantEcon/jlgametheory/releases/tag/v0.2.0
+- date: 2026-09-19
+  type: release
+  project: jlgametheory
+  version: v0.3.0
+  url: https://github.com/QuantEcon/jlgametheory/releases/tag/v0.3.0

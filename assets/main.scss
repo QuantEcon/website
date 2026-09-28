@@ -645,12 +645,13 @@ img {
     background: $qe-red;
     color: #fff;
   }
-  &--website {
-    background: #2a9d8f;
+  // Activity entry types
+  &--release {
+    background: #9558b2;
     color: #fff;
   }
-  &--software {
-    background: #9558b2;
+  &--translation {
+    background: #1f7a70; // teal darkened from #2a9d8f to pass WCAG AA with white text
     color: #fff;
   }
   &--tools {
@@ -1465,6 +1466,95 @@ section {
     display: inline-block;
     margin: 0 0 0 0.5rem;
     vertical-align: middle;
+  }
+}
+
+/*--------------------------------------------------------------
+# Activity
+--------------------------------------------------------------*/
+
+.activity-month {
+  // Reset the global `section` padding and overflow.
+  padding: 0;
+  overflow: visible;
+  margin-bottom: 2.5rem;
+}
+
+.activity-feed {
+  margin-top: 2.5rem;
+}
+
+.activity-month-title {
+  font-family: $font-brand;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: $color-dark;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid $color-border;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #edf0f5;
+  &:last-child { border-bottom: 0; }
+}
+
+.activity-date {
+  flex: 0 0 4rem;
+  font-size: 0.8rem;
+  color: #666; // not the site's #888 meta grey, which fails WCAG AA at this size
+  padding-top: 0.15rem;
+}
+
+.activity-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: $color-dark;
+  .qe-badge {
+    display: inline-block;
+    margin: 0 0.5rem 0 0;
+    vertical-align: middle;
+  }
+}
+
+.activity-summary {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0.3rem 0 0 0;
+}
+
+.activity-changes {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0.3rem 0 0 0;
+  padding-left: 1.1rem;
+  color: #888;
+}
+
+@media (max-width: 576px) {
+  .activity-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .activity-date {
+    flex-basis: auto;
+    padding-top: 0;
   }
 }
 

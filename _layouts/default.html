@@ -76,10 +76,11 @@
             <li{% if page.layout=='lectures' %} class="active" {% endif %}><a href="/lectures/"><span>Lectures</span></a></li>
             <li{% if page.permalink=='/workshops/' %} class="active" {% endif %}><a href="/workshops/"><span>Workshops</span></a></li>
             <li{% if page.layout=='books' %} class="active" {% endif %}><a href="/books/"><span>Books</span></a></li>
-            <li class="dropdown{% if page.permalink=='/code/' or page.permalink=='/infrastructure/' %} active{% endif %}"><button type="button" class="dropdown-toggle"><span>Projects</span><i class="bi bi-chevron-down"></i></button>
+            <li class="dropdown{% if page.permalink=='/code/' or page.permalink=='/infrastructure/' or page.permalink=='/activity/' %} active{% endif %}"><button type="button" class="dropdown-toggle"><span>Projects</span><i class="bi bi-chevron-down"></i></button>
               <ul>
                 <li><a href="/code">Code Libraries</a></li>
                 <li><a href="/infrastructure">Infrastructure</a></li>
+                <li><a href="/activity/">Activity</a></li>
                 <li><a href="https://cheatsheets.quantecon.org/">Cheatsheets</a></li>
               </ul>
             </li>
@@ -148,6 +149,7 @@
                 <li><a href="/code/">Code Libraries</a></li>
                 <li><a href="/workshops/">Workshops</a></li>
                 <li><a href="/news/">News</a></li>
+                <li><a href="/activity/">Activity</a></li>
                 <li><a href="https://cheatsheets.quantecon.org/">Cheatsheets</a></li>
               </ul>
             </div>

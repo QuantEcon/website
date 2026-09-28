@@ -1,0 +1,8 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#262; excluded items removed.
+
+- date: 2026-09-24
+  type: release
+  project: QuantEcon.py
+  version: v0.12.0
+  url: https://github.com/QuantEcon/QuantEcon.py/releases/tag/v0.12.0

@@ -1,0 +1,19 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's post _posts/2026-07-12-lectures.md (removed); excluded items removed.
+
+- date: 2026-07-07
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Added a new lecture, Dynamic Supply and Demand Curves.
+  changes:
+  - title: Adding Tom's lecture on dynamic supply and demand curves
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/352
+- date: 2026-07-07
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added missing `pip install` cells to four lectures.
+  changes:
+  - title: Add missing pip dependencies
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/951

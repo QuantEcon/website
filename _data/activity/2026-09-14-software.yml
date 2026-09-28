@@ -1,0 +1,8 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#258; excluded items removed.
+
+- date: 2026-09-14
+  type: release
+  project: gametracer
+  version: 0.2.2
+  url: https://github.com/QuantEcon/gametracer/releases/tag/0.2.2

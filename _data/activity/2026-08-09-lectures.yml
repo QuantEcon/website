@@ -1,0 +1,43 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#251; excluded items removed.
+
+- date: 2026-08-06
+  type: lectures
+  project: A First Course in Quantitative Economics with Python
+  url: https://intro.quantecon.org/
+  summary: Added a new lecture, Fitting Distributions to Data.
+  changes:
+  - title: 'New lecture: Fitting Distributions to Data'
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/814
+- date: 2026-08-03
+  type: lectures
+  project: Python Programming for Economics and Finance
+  url: https://python-programming.quantecon.org/
+  summary: Added a language switcher linking to the Persian, French and Simplified Chinese editions.
+  changes:
+  - title: Add language switcher support for fa, fr and zh-cn editions
+    url: https://github.com/QuantEcon/lecture-python-programming/pull/490
+- date: 2026-08-03
+  type: translation
+  project: Python Programming for Economics and Finance (Persian)
+  url: https://quantecon.github.io/lecture-python-programming.fa/
+  summary: Enabled the language switcher between the English, Persian, French and Simplified Chinese editions.
+  changes:
+  - title: Enable the language switcher and fix this edition's site URLs
+    url: https://github.com/QuantEcon/lecture-python-programming.fa/pull/145
+- date: 2026-08-03
+  type: translation
+  project: Python Programming for Economics and Finance (French)
+  url: https://quantecon.github.io/lecture-python-programming.fr/
+  summary: Enabled the language switcher between the English, Persian, French and Simplified Chinese editions.
+  changes:
+  - title: Enable the language switcher for the French edition
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/21
+- date: 2026-08-03
+  type: translation
+  project: Python Programming for Economics and Finance (Simplified Chinese)
+  url: https://quantecon.github.io/lecture-python-programming.zh-cn/
+  summary: Enabled the language switcher between the English, Persian, French and Simplified Chinese editions.
+  changes:
+  - title: Enable the language switcher and fix URLs copied from the English config
+    url: https://github.com/QuantEcon/lecture-python-programming.zh-cn/pull/80

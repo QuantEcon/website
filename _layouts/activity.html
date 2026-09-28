@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% comment %}
+  Activity entries live in _data/activity/<run-date>-<stream>.yml, one file per
+  reporter run and stream (see "News and Activity" in README.md). Flatten every file into one
+  list, group it by day (group_by_exp keeps file order within a day), sort the days
+  newest first, then group the days by month. Sorting whole days rather than
+  entries keeps the order stable, since Liquid's sort is not a stable sort.
+{% endcomment %}
+{% assign entries = "" | split: "" %}
+{% for file in site.data.activity %}
+  {% assign entries = entries | concat: file[1] %}
+{% endfor %}
+{% assign days = entries | group_by_exp: "entry", "entry.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% assign months = days | group_by_exp: "day", "day.name | slice: 0, 7" %}
+
+<div class="activity-feed">
+  {% for month in months %}
+  <section class="activity-month" id="activity-{{ month.name }}" aria-labelledby="activity-{{ month.name }}-title">
+    <h2 class="activity-month-title" id="activity-{{ month.name }}-title">{{ month.items[0].items[0].date | date: "%B %Y" }}</h2>
+    <ul class="activity-list">
+      {% for day in month.items %}
+      {% for entry in day.items %}
+      <li class="activity-item activity-item--{{ entry.type }}">
+        <time class="activity-date" datetime="{{ day.name }}">{{ entry.date | date: "%b %-d" }}</time>
+        <div class="activity-main">
+          <p class="activity-title">
+            <span class="qe-badge qe-badge--{{ entry.type }}">{{ entry.type }}</span>
+            <a href="{{ entry.url | escape }}">{{ entry.project | escape }}{% if entry.version %} {{ entry.version | escape }}{% endif %}</a>
+          </p>
+          {% if entry.summary %}
+          {% comment %} Plain text, except that `backtick` spans become inline code. {% endcomment %}
+          {% assign parts = entry.summary | escape | split: "`" %}
+          <p class="activity-summary">{% for part in parts %}{% assign odd = forloop.index0 | modulo: 2 %}{% if odd == 1 %}<code>{{ part }}</code>{% else %}{{ part }}{% endif %}{% endfor %}</p>
+          {% endif %}
+          {% if entry.changes %}
+          <ul class="activity-changes">
+            {% for change in entry.changes %}
+            <li><a href="{{ change.url | escape }}">{{ change.title | remove: "`" | escape }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+      {% endfor %}
+    </ul>
+  </section>
+  {% else %}
+  <p class="activity-empty">No activity has been recorded yet.</p>
+  {% endfor %}
+</div>

@@ -16,6 +16,9 @@ jobs:
           ruby-version: '3.4'
           bundler-cache: true
 
+      - name: Check Activity data
+        run: ruby .github/scripts/check-activity-data.rb
+
       - name: Build Jekyll site
         run: bundle exec jekyll build
         env:
