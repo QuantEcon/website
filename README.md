@@ -12,17 +12,17 @@ bundle exec jekyll serve
 
 The site has two streams of updates. The rule of thumb: **people write News, the reporter bot writes Activity.** The bot never publishes to News.
 
-| | News ([/news/](https://quantecon.org/news/)) | Activity ([/activity/](https://quantecon.org/activity/)) |
+| | News | Activity |
 |---|---|---|
 | **What goes in** | New projects (a new lecture series, book, a library's first public release, or a new language edition of a lecture series), grants and funding, people (RAs, team changes, open positions), workshops, tutorials and talks, partnerships, and changes that affect users | Every library release; changes to existing lecture series (new lectures, new sections and exercises, substantive revisions, fixes a reader would notice); updates to translated editions |
 | **Written by** | A person | The reporter bot (maintained in the private `QuantEcon/reports-activity` repository) |
-| **Source** | `_posts/` | `_data/activity/` |
-| **Appears on** | `/news/`, the home page "Latest News" block, and `feed.xml` | `/activity/` only |
 | **Review** | Normal PR review of the wording | A light check of the reporter's PR |
 
 **Excluded from both:** dependency and action version bumps, CI, build, deploy and publishing-workflow changes, analytics, editor-of-record and other metadata changes, translation-sync tooling, and website changes. Releases of tooling (GitHub Actions, themes, plugins) are not library releases, and a GitHub release published later for an old version is not a new release.
 
 **Promotion is a human decision.** When a release or a batch of lecture changes deserves wider attention, someone writes a News post that links to it.
+
+These definitions decide which stream an item belongs to, not where it is shown. News posts are stored in `_posts/` and Activity entries in `_data/activity/` (schema below). Which pages display each stream is a design choice: today News appears on `/news/`, the home page and `feed.xml`, and Activity on `/activity/`.
 
 ### Activity data
 
