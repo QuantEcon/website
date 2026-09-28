@@ -1245,6 +1245,8 @@ section {
   padding: 0;
   h2 {
     margin: 2rem 0 1rem 0;
+    // Keep section anchors (e.g. /team/#translators) clear of the fixed header and sponsor bar
+    scroll-margin-top: calc(100px + var(--sponsor-bar-height, 0px));
   }
   .member {
     position: relative;

@@ -8,7 +8,7 @@ layout: default
 
 <section id="team" class="team">
 
-	<h2>Founding Members and Co-Chairs</h2>
+	<h2 id="founding-members-and-co-chairs">Founding Members and Co-Chairs</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' | sort: 'last_name' %}
 	<div class="row">
@@ -25,7 +25,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>Chief Technology Officer</h2>
+	<h2 id="chief-technology-officer">Chief Technology Officer</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Chief Technology Officer' | sort: 'last_name' %}
 	<div class="row">
@@ -42,7 +42,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>Committee Members</h2>
+	<h2 id="committee-members">Committee Members</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Committee Members' | sort: 'last_name' %}
 	<div class="row">
@@ -59,7 +59,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>Developers &amp; Research Assistants</h2>
+	<h2 id="developers-and-research-assistants">Developers &amp; Research Assistants</h2>
 
 	{% assign ras = site.team-members | where: 'role', 'Research Assistant' %}
 	{% assign committee_leads = site.team-members | where: 'role', 'Committee Members' | where: 'tag', 'Lead Developer' %}
@@ -79,7 +79,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>Translators</h2>
+	<h2 id="translators">Translators</h2>
 
 	{% assign team-members = site.team-members | where_exp: 'member', 'member.translator' | sort: 'last_name' %}
 	<div class="row">
@@ -96,7 +96,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>QuantEcon Ambassadors</h2>
+	<h2 id="quantecon-ambassadors">QuantEcon Ambassadors</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'QuantEcon Ambassador' | sort: 'last_name' %}
 	<div class="row">
@@ -113,7 +113,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>Design and Marketing</h2>
+	<h2 id="design-and-marketing">Design and Marketing</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Design and Marketing' | sort: 'last_name' %}
 	<div class="row">
@@ -134,7 +134,7 @@ layout: default
 		<p><a href="/positions/" class="qe-btn qe-btn--primary">See available positions</a></p>
 	</div>
 
-	<h2>Previous Steering Committee Members</h2>
+	<h2 id="previous-steering-committee-members">Previous Steering Committee Members</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' | sort: 'last_name' %}
 	<div class="row">
@@ -151,7 +151,7 @@ layout: default
 		{% endfor %}
 	</div>
 
-	<h2>Previous Developers &amp; Research Assistants</h2>
+	<h2 id="previous-developers-and-research-assistants">Previous Developers &amp; Research Assistants</h2>
 
 	{% assign team-members = site.team-members | where: 'role', 'Previous Developers' | sort: 'last_name' %}
 	<div class="row">
