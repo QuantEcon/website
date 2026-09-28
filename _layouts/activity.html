@@ -7,13 +7,18 @@ layout: default
 {% comment %}
   Activity entries live in _data/activity/<run-date>-<stream>.yml, one file per
   reporter run and stream (see "News and Activity" in README.md). Flatten every file into one
-  list, group it by day (group_by_exp keeps file order within a day), sort the days
-  newest first, then group the days by month. Sorting whole days rather than
-  entries keeps the order stable, since Liquid's sort is not a stable sort.
+  list in filename order, group it by day (group_by_exp keeps that order within a day),
+  sort the days newest first, then group the days by month. Sorting whole days rather
+  than entries keeps the order stable, since Liquid's sort is not a stable sort.
 {% endcomment %}
-{% assign entries = "" | split: "" %}
+{% assign files = "" | split: "" %}
 {% for file in site.data.activity %}
-  {% assign entries = entries | concat: file[1] %}
+  {% assign files = files | push: file[0] %}
+{% endfor %}
+{% assign files = files | sort %}
+{% assign entries = "" | split: "" %}
+{% for file in files %}
+  {% assign entries = entries | concat: site.data.activity[file] %}
 {% endfor %}
 {% assign days = entries | group_by_exp: "entry", "entry.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
 {% assign months = days | group_by_exp: "day", "day.name | slice: 0, 7" %}
