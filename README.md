@@ -36,7 +36,7 @@ Each reporter run adds one file per stream, `_data/activity/<run-date>-<stream>.
 | `url` | yes | The release notes (`release`) or the live site (`lectures`, `translation`) |
 | `version` | `release` only | The released version tag, as a string, e.g. `v0.12.0` (quote numeric-looking versions such as `"1.10"`) |
 | `summary` | no | One factual sentence describing what changed. Plain text, except that text in single backticks renders as inline code. |
-| `changes` | no | List of `{title, url}` links to the pull requests behind the entry, merged into the default branch. Titles are plain text, lightly tidied: prefixes such as `[slug]`, `FIX:` or `chore:`, and internal notes, may be dropped. |
+| `changes` | no | List of `{title, url}` links to the pull requests behind the entry (GitHub pull-request URLs), merged into the default branch. Titles are plain text, lightly tidied: prefixes such as `[slug]`, `FIX:` or `chore:`, and internal notes, may be dropped. |
 
 For example, `_data/activity/2026-09-27-lectures.yml`:
 

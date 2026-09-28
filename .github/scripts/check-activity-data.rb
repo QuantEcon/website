@@ -8,6 +8,7 @@ require "yaml"
 DATA_DIR = File.expand_path("../../_data/activity", __dir__)
 TYPES = %w[release lectures translation].freeze
 REQUIRED = %w[date type project url].freeze
+PULL_URL = %r{\Ahttps://github\.com/[^/]+/[^/]+/pull/\d+\z}
 
 def blank?(value)
   value.nil? || value.to_s.strip.empty?
@@ -44,6 +45,9 @@ paths.each do |full_path|
     errors << "#{where}: date must be an unquoted YYYY-MM-DD date" if entry["date"] && !entry["date"].is_a?(Date)
     errors << "#{where}: type must be one of #{TYPES.join(', ')}" if entry["type"] && !TYPES.include?(entry["type"])
     errors << "#{where}: url must start with https://" unless blank?(entry["url"]) || entry["url"].to_s.start_with?("https://")
+    if entry["type"] == "translation" && !entry["project"].to_s.match?(/\A.+ \([^)]+\)\z/)
+      errors << "#{where}: a translation's project must be \"<series name> (<language>)\""
+    end
     if entry["type"] == "release" && !(entry["version"].is_a?(String) && !blank?(entry["version"]))
       errors << "#{where}: release entries need a version, written as a string (quote numeric-looking versions)"
     end
@@ -64,8 +68,8 @@ paths.each do |full_path|
     errors << "#{where}: changes must not be an empty list (omit the key instead)" if entry.key?("changes") && changes.empty?
     changes.each_with_index do |change, j|
       next if change.is_a?(Hash) && change["title"].is_a?(String) && !blank?(change["title"]) &&
-              change["url"].to_s.start_with?("https://")
-      errors << "#{where}, change #{j + 1}: needs a string title and an https:// url"
+              change["url"].to_s.match?(PULL_URL)
+      errors << "#{where}, change #{j + 1}: needs a string title and a GitHub pull-request url"
     end
   end
 end
