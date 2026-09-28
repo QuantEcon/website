@@ -2,7 +2,7 @@
 title: Activity
 layout: activity
 permalink: /activity/
-menu_item: true
+menu_item: false
 # The reporter's posts lived in _posts/ until the News/Activity split; keep their URLs working.
 redirect_from:
   - /2026/06/14/lectures.html
