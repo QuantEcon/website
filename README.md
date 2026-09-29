@@ -16,7 +16,7 @@ The site has two streams of updates. The rule of thumb: **people write News, the
 |---|---|---|
 | **What goes in** | New projects (a new lecture series, book, a library's first public release, or a new language edition of a lecture series), grants and funding, people (RAs, team changes, open positions), workshops, tutorials and talks, partnerships, and changes that affect users | Every library release; changes to existing lecture series (new lectures, new sections and exercises, substantive revisions, fixes a reader would notice); updates to translated editions |
 | **Written by** | A person | The reporter bot (maintained in the private `QuantEcon/reports-activity` repository) |
-| **Review** | Normal PR review of the wording | A light check of the reporter's PR |
+| **Review** | Normal PR review of the wording | None day to day: the reporter's daily PR merges itself once the data check passes (planned; until then, a light check of each PR) |
 
 **Excluded from both:** dependency and action version bumps, CI, build, deploy and publishing-workflow changes, analytics, editor-of-record and other metadata changes, translation-sync tooling, and website changes. Releases of tooling (GitHub Actions, themes, plugins) are not library releases, and a GitHub release published later for an old version is not a new release.
 
