@@ -1251,6 +1251,7 @@ section {
       color: inherit;
       &::after {
         content: "#";
+        content: "#" / ""; // empty alternative text: screen readers don't read the # as part of the title
         margin-left: 0.5rem;
         color: $color-link;
         opacity: 0;

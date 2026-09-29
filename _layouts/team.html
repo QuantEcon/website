@@ -194,12 +194,13 @@ layout: default
 
 <script>
 	// Web fonts arriving mid-load reflow the page, so the browser's jump to /team/#section can
-	// land off target; repeat the jump once the fonts are in, unless the reader has scrolled
+	// land off target; repeat the jump once the fonts are in, unless the reader has moved on
+	// (scrolled, pressed a key, or clicked or tapped anything, including a section link)
 	(() => {
 		const target = location.hash && document.getElementById(location.hash.slice(1));
 		if (!target) return;
 		let scrolledByReader = false;
-		['wheel', 'touchmove', 'keydown'].forEach(type =>
+		['wheel', 'touchmove', 'keydown', 'pointerdown', 'hashchange'].forEach(type =>
 			window.addEventListener(type, () => { scrolledByReader = true; }, { once: true, passive: true }));
 		// Wait two frames so this runs after the browser's own final fragment scroll
 		window.addEventListener('load', () => document.fonts.ready.then(() =>
@@ -212,8 +213,14 @@ layout: default
 	// scrolled up to where a jump to it lands (its scroll-margin-top, just below the header)
 	(() => {
 		const toc = document.querySelector('.team-toc');
-		const links = [...toc.querySelectorAll('a')];
-		const headings = links.map(link => document.getElementById(link.hash.slice(1)));
+		if (!toc) return;
+		// Pair each contents entry with its heading, skipping any whose heading is missing
+		const pairs = [...toc.querySelectorAll('a')]
+			.map(link => [link, document.getElementById(link.hash.slice(1))])
+			.filter(([, heading]) => heading);
+		if (!pairs.length) return;
+		const links = pairs.map(([link]) => link);
+		const headings = pairs.map(([, heading]) => heading);
 		const update = () => {
 			if (!toc.offsetParent) return; // contents column hidden on narrow screens
 			const line = parseFloat(getComputedStyle(headings[0]).scrollMarginTop) + 20;
