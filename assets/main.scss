@@ -625,7 +625,7 @@ img {
     color: #fff;
   }
   &--new {
-    background: #e94560;
+    background: #d0344f; // darkened from #e94560 to pass WCAG AA (4.90:1) with white text
     color: #fff;
   }
   // News post tag pills
@@ -638,11 +638,11 @@ img {
     color: #fff;
   }
   &--workshop {
-    background: $qe-green;
+    background: #4a7c3c; // darker than $qe-green (#6EAC5B) to pass WCAG AA (4.95:1) with white text
     color: #fff;
   }
   &--books {
-    background: $qe-red;
+    background: #b83d4b; // darker than $qe-red (#D25663) to pass WCAG AA (5.52:1) with white text
     color: #fff;
   }
   &--website {
@@ -939,7 +939,7 @@ section {
       }
       .badge-new {
         display: inline-block;
-        background-color: #e94560;
+        background-color: #d0344f;
         color: #fff;
         font-size: 0.65rem;
         font-weight: 700;
@@ -1346,15 +1346,27 @@ section {
       transform: rotate(180deg);
     }
   }
+  // .news-card has overflow: hidden, which clips an outline drawn outside the
+  // button. Draw the ring inside the button by default...
   &:focus-visible {
     outline: 2px solid $color-link;
-    outline-offset: 2px;
+    outline-offset: -4px;
   }
+}
+
+// ...and, where :has() is supported, around the whole card instead. Browsers
+// without :has() drop both rules and keep the inset ring above.
+.news-card:has(> .news-card-header:focus-visible) {
+  outline: 2px solid $color-link;
+  outline-offset: 2px;
+}
+.news-card:has(> .news-card-header:focus-visible) > .news-card-header:focus-visible {
+  outline: none;
 }
 
 .news-card-date {
   font-size: 0.8rem;
-  color: #888;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 0.25rem;
@@ -1384,7 +1396,7 @@ section {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  color: #aaa;
+  color: #64748b;
   i {
     transition: transform 0.2s;
     font-size: 1.1rem;
@@ -1404,7 +1416,7 @@ section {
 
 .news-card-author {
   font-size: 0.8rem;
-  color: #999;
+  color: #666;
   margin-top: 1rem;
 }
 
@@ -1459,7 +1471,7 @@ section {
     width: 4rem;
     font-size: 0.8rem;
     font-weight: normal;
-    color: #999;
+    color: #666;
   }
   .qe-badge {
     display: inline-block;
@@ -1666,5 +1678,18 @@ body.sponsor-bar-visible.internal main {
   }
   h3 {
     font-size: 1.3rem;
+  }
+}
+
+/* Respect a reduced-motion preference for the card and button transitions */
+@media (prefers-reduced-motion: reduce) {
+  .qe-card,
+  .qe-btn,
+  .news-card,
+  .news-card-toggle i {
+    transition: none;
+  }
+  .qe-card:hover {
+    transform: none;
   }
 }
