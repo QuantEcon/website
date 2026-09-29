@@ -17,6 +17,6 @@ The talk suggested two starting baselines for each family, open to discussion: A
 
 Under the proposal, projects would author and maintain their own content and keep credit and editorial control. QuantEcon would host and publish the library as an executable Jupyter Book, use continuous integration to check that the Python and Julia code runs, and develop supporting infrastructure, including for MATLAB.
 
-The initiative is now part of the Society's [Working Group 1 on Language, Calculus & Formal Semantics](https://llorracc.github.io/workspace-comp-econ-soc/t1-language-calculus-semantics), one of the working groups in the research program it launched at the meeting.
+The initiative is now part of [SCE Working Group 1: Language and Semantics](https://econ-ark.github.io/sce-wg-1/), through the group's Baseline Model Library.
 
 The [slides](https://quantecon.github.io/conference-cef2026/) are available online, and the talk's materials are on [GitHub](https://github.com/QuantEcon/conference-cef2026).
