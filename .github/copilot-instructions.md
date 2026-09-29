@@ -35,6 +35,7 @@ Key directories and files:
 - `_includes/` - Jekyll include templates (quantecon-menubar.html)
 - `_posts/` - News posts, written by people (sorted chronologically)
 - `_data/activity/` - Activity feed data (library releases, lecture updates), written by the reporter bot — see "News and Activity" in README.md
+- `_plugins/` - Jekyll plugins, which every build runs: `activity_generator.rb` and `activity/rows.rb` compute the Activity rows as `site.data.activity_view` — see "Activity rows" in README.md
 - `_lectures/` - Collection of lecture series pages
 - `_projects/` - Collection of project pages  
 - `_team-members/` - Collection of team member profiles
@@ -77,7 +78,11 @@ Key directories and files:
 5. Test responsive design by resizing browser window
 6. Verify images and styling load correctly
 
-**No formal testing infrastructure exists** - validation is done through manual browser testing. The one automated check is `ruby .github/scripts/check-activity-data.rb`, which CI runs to validate the Activity data files.
+**Automated checks** - CI's `build` job runs these checks before it builds the site. Run them locally the same way, with plain `ruby` (minitest isn't in the Gemfile, so not with `bundle exec`):
+- `ruby .github/scripts/check-activity-data.rb` - checks the Activity data files in `_data/activity/` against the schema in README.md
+- `ruby .github/scripts/test-activity.rb` - tests the Activity rows plugin (`_plugins/activity/`) with minitest, against a frozen copy of the data in `.github/scripts/fixtures/activity/` and against the live data
+
+Everything else is validated through manual browser testing.
 
 **No linting or formatting commands** - the repository has minimal tooling beyond Jekyll itself.
 
@@ -93,6 +98,7 @@ Key directories and files:
 - jekyll-redirect-from - URL redirects
 - minima - Base theme
 - webrick - Development server
+- `_plugins/activity_generator.rb` - this repository's own generator, which every build runs: it computes `site.data.activity_view` from `_data/activity/` (see "Activity rows" in README.md)
 
 **No Node.js, npm, or JavaScript build tools required** - this is a pure Jekyll/Ruby environment.
 
@@ -106,6 +112,7 @@ Key directories and files:
 - Check that Ruby 3.4+ is installed
 - Verify all dependencies installed with `bundle install`
 - Clear cache with `bundle exec jekyll clean` before rebuilding
+- `Activity data: <file>, entry <n> (<project>): …` means the Activity rows plugin can't use that entry, for example because its `type` is unknown: fix the file and entry it names, then run `ruby .github/scripts/check-activity-data.rb` to check every Activity file against the schema
 
 **Server access issues:**
 - Ensure server is bound to `0.0.0.0` not just `127.0.0.1`
@@ -160,6 +167,7 @@ bundle exec jekyll build
 ├── _includes/
 ├── _layouts/
 ├── _lectures/
+├── _plugins/
 ├── _posts/ 
 ├── _projects/
 ├── _team-members/

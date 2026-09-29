@@ -1,0 +1,15 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's post _posts/2026-06-21-lectures.md (removed); excluded items removed.
+
+- date: 2026-06-19
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Rewrote the Non-Conjugate Priors lecture, adding notes on NUTS and variational inference, and revised the exposition and notation of Another Look at the Kalman Filter.
+  changes:
+  - title: 'Add explanatory notes to bayes_nonconj: NUTS and variational inference'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/918
+  - title: Rewrite the Non-Conjugate Priors lecture
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/913
+  - title: Update exposition of first three sections
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/903

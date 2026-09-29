@@ -65,6 +65,18 @@ and `_data/activity/2026-09-24-software.yml`:
   url: https://github.com/QuantEcon/QuantEcon.py/releases/tag/v0.12.0
 ```
 
+### Activity rows
+
+At build time, a plugin turns the entries into the rows that the Activity views show, and exposes them to Liquid as `site.data.activity_view`. The rules are in `_plugins/activity/rows.rb`, and `_plugins/activity_generator.rb` connects them to Jekyll. The view holds every row, the `/news/` rail's rows grouped by week, the `/activity/` log's months and days, the mobile panel's summary, the home strip's rows and the log's first date. The generator's header comment lists every key and field.
+
+- **Order.** File names and the order of entries don't matter. Days run newest first. Within a day come lecture updates, then book updates, then translations, then releases, each A to Z by project.
+- **Merges.** A day's releases form one row. A series' translations on one day form one row that lists the editions. A lecture series or book that published twice in a day forms one ordinary row. Each row has a stable `id` built from what it merges on, such as `2026-08-02/release` or `2026-09-27/lectures/intermediate-quantitative-economics-with-python`.
+- **Dates** are calendar days. The plugin computes every label ("Sep 27", "Sep 21–27", `2026-W39`, "September 2026"), so templates don't need Liquid's date filters, which work in the site's Sydney timezone.
+
+Run the tests with `ruby .github/scripts/test-activity.rb`; CI runs them after the data check. They check fixed numbers against a frozen copy of the data in `.github/scripts/fixtures/activity/` (the 40 entries at commit 4c47f03, which must not change). On the live data they check only rules that stay true as entries are added. To see the pages with the frozen data, build a copy of the site with `_data/activity/` replaced by the fixture.
+
+The interim `/activity/` page doesn't use the view yet. It keeps file order within a day until #277 switches it to the view.
+
 ## News Post Tags
 
 Posts in `_posts/` use a `tag` frontmatter field with coloured pill badges on the News page.

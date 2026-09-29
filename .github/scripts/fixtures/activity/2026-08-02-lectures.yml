@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#246; excluded items removed.
+
+- date: 2026-07-26
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added missing `quantecon` and `jax` installs to nine lectures.
+  changes:
+  - title: Add pip install cells for quantecon and jax in lectures that were missing them
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1006
