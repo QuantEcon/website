@@ -19,6 +19,9 @@ jobs:
       - name: Check Activity data
         run: ruby .github/scripts/check-activity-data.rb
 
+      - name: Test Activity rows
+        run: ruby .github/scripts/test-activity.rb
+
       - name: Build Jekyll site
         run: bundle exec jekyll build
         env:

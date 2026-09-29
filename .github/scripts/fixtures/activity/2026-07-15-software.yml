@@ -1,0 +1,28 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's post _posts/2026-07-15-software.md (removed); excluded items removed.
+
+- date: 2026-07-15
+  type: release
+  project: QuantEcon.py
+  version: v0.11.4
+  url: https://github.com/QuantEcon/QuantEcon.py/releases/tag/v0.11.4
+- date: 2026-07-15
+  type: release
+  project: GameTheory.jl
+  version: v0.7.0
+  url: https://github.com/QuantEcon/GameTheory.jl/releases/tag/v0.7.0
+- date: 2026-07-15
+  type: release
+  project: BasisMatrices.jl
+  version: v0.8.1
+  url: https://github.com/QuantEcon/BasisMatrices.jl/releases/tag/v0.8.1
+- date: 2026-07-15
+  type: release
+  project: ContinuousDPs.jl
+  version: v0.2.1
+  url: https://github.com/QuantEcon/ContinuousDPs.jl/releases/tag/v0.2.1
+- date: 2026-07-15
+  type: release
+  project: GameTracer.jl
+  version: v0.1.2
+  url: https://github.com/QuantEcon/GameTracer.jl/releases/tag/v0.1.2

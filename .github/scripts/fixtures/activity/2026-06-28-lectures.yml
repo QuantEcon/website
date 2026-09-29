@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's post _posts/2026-06-28-lectures.md (removed); excluded items removed.
+
+- date: 2026-06-22
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added three new lectures, including The Kalman Filter and Vector Autoregressions and Robust Permanent Income and Pricing.
+  changes:
+  - title: Adding Tom's new lectures on Kalman Filter and Robust Income
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/931

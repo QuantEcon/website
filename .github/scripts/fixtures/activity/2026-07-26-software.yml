@@ -1,0 +1,8 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#243; excluded items removed.
+
+- date: 2026-07-26
+  type: release
+  project: ContinuousDPs.jl
+  version: v0.3.1
+  url: https://github.com/QuantEcon/ContinuousDPs.jl/releases/tag/v0.3.1

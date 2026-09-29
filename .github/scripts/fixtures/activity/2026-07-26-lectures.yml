@@ -1,0 +1,13 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#242; excluded items removed.
+
+- date: 2026-07-23
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added a new section of ten lectures on Phillips Curve Tradeoffs, and added figure captions and standardized CDF notation in the Incorrect Models lecture.
+  changes:
+  - title: Adding Tom's new section on Phillips Curve Tradeoffs
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/992
+  - title: Add figure captions and use CDF
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/982

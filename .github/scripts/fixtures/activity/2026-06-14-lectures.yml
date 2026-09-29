@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's post _posts/2026-06-14-lectures.md (removed); excluded items removed.
+
+- date: 2026-06-12
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Added three lectures on contract theory under moral hazard and a lecture, Survey Data and Subjective Beliefs in Business Cycle Models.
+  changes:
+  - title: Add three lectures on contract theory and one lecture on survey data and robustness
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/343

@@ -1,0 +1,15 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#263; excluded items removed.
+
+- date: 2026-09-27
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added three new lectures (Linear Quadratic Mean Field Games, Investment Under Uncertainty, and Optimal Growth Under Uncertainty and Tobin's q), and added exercises to the two auction lectures.
+  changes:
+  - title: Two sequels to rational_expectations
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1070
+  - title: Add exercises and further reading
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1069
+  - title: Add VCG comparison section and exercises
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1068
