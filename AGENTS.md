@@ -1,195 +1,120 @@
-# QuantEcon Website
+# AGENTS.md
 
-The QuantEcon website is a Jekyll-based static site that serves as the main portal for QuantEcon, a nonprofit organization providing open source computational tools for economics, econometrics, and decision making.
+Guidance for AI coding agents and human contributors working in this repository. This is the canonical guide: tool-specific files (`.github/copilot-instructions.md`) only point here, so edit this file, not them. Where this guide and the code disagree, trust the code and correct the guide in the same pull request.
 
-**Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.**
+## Project overview
 
-## Working Effectively
+This is the source of [quantecon.org](https://quantecon.org), the website of QuantEcon, a nonprofit that develops open-source computational tools for economics, econometrics and decision making. The site presents the lecture series, books, code libraries, workshops and team, and two streams of updates: **News**, written by people, and **Activity**, written by a reporter bot.
 
-### Bootstrap and Build the Repository
+It is a Jekyll 4.4 static site with a plugin of its own. GitHub Actions deploys `main` to GitHub Pages, and Netlify builds a preview of every pull request. There is no Node.js or JavaScript build step, and no linter or formatter.
 
-Install bundler and set up the development environment:
-- `gem install bundler --user-install` - Install bundler locally (required for Jekyll)
-- `export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"` - Add bundler to PATH
-- `bundle config set --local path 'vendor/bundle'` - Configure local gem installation path
-- `bundle install` - Install Jekyll dependencies (takes ~30 seconds)
+[README.md](README.md) is the spec for News and Activity: which stream an item belongs to, the Activity data files and their schema, and how the Activity rows are built. It also lists the News post tags and the brand colours. Read its "News and Activity" section before you change `_posts/`, `_data/activity/`, `_plugins/` or an Activity template.
 
-Build the static site:
-- `bundle exec jekyll build` - Build the site (takes ~1-2 seconds). **NEVER CANCEL**: Fast build, 5 second timeout is sufficient.
-- Output goes to `_site/` directory
+## Repository layout
 
-### Development Server
+| Path | What it holds |
+|---|---|
+| `_config.yml` | Site settings: `url`, `timezone`, `exclude`, the collections and the front-matter defaults |
+| `Gemfile` | Jekyll and its plugins; the site uses no theme. No `Gemfile.lock` is committed, so every install resolves the newest matching versions |
+| `index.md`, `pages/` | The home page and every other page, in Markdown or HTML |
+| `_layouts/` | A layout for each kind of page. `default.html` wraps them all, with the header navigation, the footer and the links to CSS and JavaScript |
+| `_posts/` | News posts |
+| `_data/activity/` | Activity entries, one YAML file per UTC day and stream |
+| `_plugins/` | `activity/rows.rb` turns the Activity entries into rows, and `activity_generator.rb` exposes them to Liquid as `site.data.activity_view`. Jekyll runs both on every build |
+| `_lectures/`, `_projects/`, `_workshops/`, `_team-members/` | Collections with no pages of their own: layouts and pages list their files |
+| `assets/` | `main.scss` (the Sass entry point, which loads `sass/_*.scss` with `@use`), `js/main.js`, `img/` and `downloads/` |
+| `feed.xml`, `sitemap.xml` | The RSS feed and the sitemap, both hand-written Liquid templates. The jekyll-feed plugin skips `/feed.xml` because this file exists, so edit the template |
+| `.github/workflows/` | `build.yml`, the checks on every pull request, and `deploy.yml`, the GitHub Pages deploy |
+| `.github/scripts/` | The Activity data check and two test suites, with a frozen copy of the data in `fixtures/activity/` |
+| `archive/` | Retired pages: still published, but nothing links to them |
+| `PLAN-IMPROVEMENTS.md` | A maintenance checklist from January 2026, partly out of date |
 
-Run the Jekyll development server:
-- `bundle exec jekyll serve --host 0.0.0.0 --port 4000` - Start development server (takes ~2 seconds to start)
-- Access the site at `http://localhost:4000`
-- **NEVER CANCEL**: Server startup is fast, but may run indefinitely for development
-- Use `Ctrl+C` to stop the server when done
+`_includes/quantecon-menubar.html` is unused: nothing includes it.
 
-### Repository Structure
+## Commands
 
-Key directories and files:
-- `_config.yml` - Jekyll configuration file
-- `Gemfile` - Ruby dependencies specification
-- `_layouts/` - Jekyll layout templates (home.html, default.html, post.html, etc.)
-- `_includes/` - Jekyll include templates (quantecon-menubar.html)
-- `_posts/` - News posts, written by people (sorted chronologically)
-- `_data/activity/` - Activity feed data (library releases, lecture updates), written by the reporter bot — see "News and Activity" in README.md
-- `_plugins/` - Jekyll plugins, which every build runs: `activity_generator.rb` and `activity/rows.rb` compute the Activity rows as `site.data.activity_view` — see "Activity rows" in README.md
-- `_lectures/` - Collection of lecture series pages
-- `_projects/` - Collection of project pages  
-- `_team-members/` - Collection of team member profiles
-- `pages/` - Static pages (about.md, lectures.md, workshops.md, etc.)
-- `assets/` - Static assets (images, CSS, JavaScript)
-  - `assets/js/main.js` - Main JavaScript file
-  - `assets/sass/` - SCSS stylesheets
-  - `assets/img/` - Images and graphics
-- `_site/` - Generated static site (excluded from git)
-- `vendor/` - Bundler gems (excluded from git)
+CI uses Ruby 3.4, and 4.0 works too. Bundler comes with Ruby.
 
-### Common Operations
-
-**Adding new content:**
-- News posts: Add markdown files to `_posts/` with format `YYYY-MM-DD-title.md` — only for announcements (new projects, grants, people, workshops); releases and lecture updates belong in Activity (see "News and Activity" in README.md)
-- Team members: Add markdown files to `_team-members/` — `role` picks the section on the team page and `tag` the badge; the Translators section instead lists anyone with a `translator` field (e.g. `translator: "Chinese Editor"`), so a member can appear there as well as in their own section
-- Lectures: Add markdown files to `_lectures/`
-- Workshops: Add to `pages/workshops.md` **and** update the hardcoded "Recent Workshops" list in `_layouts/home.html` (see #197 for planned automation)
-- Static pages: Add markdown files to `pages/`
-
-**Editing existing content:**
-- All content uses markdown with Jekyll front matter
-- Edit the appropriate markdown file in the relevant directory
-- Run `bundle exec jekyll build` to regenerate the site
-- Test changes with `bundle exec jekyll serve`
-
-## Validation
-
-**Always validate changes by testing complete user scenarios:**
-1. Build the site: `bundle exec jekyll build`
-2. Start the development server: `bundle exec jekyll serve --host 0.0.0.0 --port 4000`
-3. Open browser to `http://localhost:4000`
-4. Navigate through the main sections:
-   - Home page - verify layout and content load
-   - Lectures page - verify lecture series are listed
-   - News page - verify news posts display
-   - Activity page - verify entries from `_data/activity/` display, grouped by month
-   - About page - verify team information
-   - Navigation menu - verify all links work
-5. Test responsive design by resizing browser window
-6. Verify images and styling load correctly
-
-**Automated checks** - CI's `build` job runs these checks before it builds the site. Run them locally the same way, with plain `ruby` (minitest isn't in the Gemfile, so not with `bundle exec`):
-- `ruby .github/scripts/check-activity-data.rb` - checks the Activity data files in `_data/activity/` against the schema in README.md
-- `ruby .github/scripts/test-activity.rb` - tests the Activity rows plugin (`_plugins/activity/`) with minitest, against a frozen copy of the data in `.github/scripts/fixtures/activity/` and against the live data
-
-Everything else is validated through manual browser testing.
-
-**No linting or formatting commands** - the repository has minimal tooling beyond Jekyll itself.
-
-## Dependencies and Requirements
-
-**Ruby Environment:**
-- Ruby 3.4+
-- Bundler gem manager
-- Jekyll 4.4 (specified in Gemfile)
-
-**Key Jekyll plugins used:**
-- jekyll-feed - RSS feed generation
-- jekyll-redirect-from - URL redirects
-- minima - Base theme
-- webrick - Development server
-- `_plugins/activity_generator.rb` - this repository's own generator, which every build runs: it computes `site.data.activity_view` from `_data/activity/` (see "Activity rows" in README.md)
-
-**No Node.js, npm, or JavaScript build tools required** - this is a pure Jekyll/Ruby environment.
-
-## Troubleshooting
-
-**Permission errors during bundle install:**
-- Use `bundle config set --local path 'vendor/bundle'` to install gems locally
-- Never use `sudo` with gem commands
-
-**Build failures:**
-- Check that Ruby 3.4+ is installed
-- Verify all dependencies installed with `bundle install`
-- Clear cache with `bundle exec jekyll clean` before rebuilding
-- `Activity data: <file>, entry <n> (<project>): …` means the Activity rows plugin can't use that entry, for example because its `type` is unknown: fix the file and entry it names, then run `ruby .github/scripts/check-activity-data.rb` to check every Activity file against the schema
-
-**Server access issues:**
-- Ensure server is bound to `0.0.0.0` not just `127.0.0.1`
-- Check port 4000 is not in use by another process
-- Access via `http://localhost:4000` not `0.0.0.0`
-
-## Important Information
-
-**Build times:**
-- Bundle install: ~30 seconds
-- Jekyll build: 1-2 seconds (very fast)
-- Server startup: ~2 seconds
-
-**Git workflow:**
-- `vendor/` and `.bundle/` directories are gitignored (contain local gems)
-- `_site/` directory is gitignored (contains generated output)
-- Only source files should be committed
-
-**External dependencies:**
-- Site loads external JavaScript libraries from CDNs (Bootstrap, AOS, Swiper, etc.)
-- Some JavaScript errors may appear in browser console due to blocked CDN requests in development environments
-- These errors don't affect core site functionality
-
-## Common Tasks Reference
-
-### Frequently used commands
 ```bash
-# Setup (run once after clone)
-gem install bundler --user-install
-export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
-bundle config set --local path 'vendor/bundle'
-bundle install
-
-# Development workflow
-bundle exec jekyll build
-bundle exec jekyll serve --host 0.0.0.0 --port 4000
-
-# Clean build (if needed)
-bundle exec jekyll clean
-bundle exec jekyll build
+bundle config set --local path vendor/bundle     # optional: keep the gems in the checkout (gitignored)
+bundle install                                   # never with sudo
+JEKYLL_ENV=production bundle exec jekyll build   # the build CI runs, into _site/, in about a second
+bundle exec jekyll serve                         # http://localhost:4000, rebuilt on each change; --port N to move it
+bundle exec jekyll clean                         # delete _site/ and the caches
 ```
 
-### Repository root listing
-```
-├── .gitignore
-├── .prettierignore  
-├── CNAME
-├── Gemfile
-├── README.md
-├── _config.yml
-├── _data/activity/
-├── _includes/
-├── _layouts/
-├── _lectures/
-├── _plugins/
-├── _posts/ 
-├── _projects/
-├── _team-members/
-├── archive/
-├── assets/
-├── feed.xml
-├── index.md
-├── pages/
-└── sitemap.xml
+CI runs these checks before the build. Run them with plain `ruby`, not `bundle exec`: minitest comes with Ruby but isn't in the Gemfile.
+
+```bash
+git fetch origin
+ruby .github/scripts/check-activity-data.rb --base "$(git merge-base HEAD origin/main)"
+ruby .github/scripts/test-check-activity-data.rb   # about 12 seconds; needs git
+ruby .github/scripts/test-activity.rb
 ```
 
-### Key files content
+With `--base`, the data check fails on any entry your branch changes, removes or reorders, as it does in CI. Compare with the merge base, not with `origin/main`: once `main` has Activity files that your branch lacks, `--base origin/main` reports them as deleted. Without `--base`, that comparison is skipped.
 
-**Gemfile dependencies:**
-- jekyll ~> 4.4
-- minima ~> 2.5
-- jekyll-feed ~> 0.17
-- jekyll-redirect-from
-- webrick ~> 1.8
+If a script stops with a `LoadError` (for minitest or mutex_m, say), `GEM_HOME` and `GEM_PATH` probably point at another Ruby's gems, as chruby sets them: run it as `env -u GEM_HOME -u GEM_PATH -u GEM_ROOT ruby …`.
 
-**_config.yml key settings:**
-- Site title: QuantEcon
-- Timezone: Australia/Sydney
-- Collections: news, lectures, projects, team-members
-- Plugins: jekyll-redirect-from
+## CI and deployment
+
+`.github/workflows/build.yml` runs one job, `build`, on every pull request to `main`. It is the only required status check: never rename it or split it into several jobs. Its steps, in order:
+
+1. Check out the pull request's merge commit with `fetch-depth: 2`: `HEAD^1` is `main` and `HEAD^2` the pull request's head.
+2. **Limit reporter PRs to Activity data**, on pull requests opened by the reporter App (bot user ID 294005175) only, before any code the pull request controls runs. It fails unless the pull request only adds `_data/activity/YYYY-MM-DD-software.yml` or `-lectures.yml` files or appends to them, keeping every existing byte.
+3. Set up Ruby 3.4 and install the gems.
+4. `ruby .github/scripts/check-activity-data.rb --base HEAD^1`
+5. `ruby .github/scripts/test-check-activity-data.rb`, which tests the data check and step 2's script, read from `build.yml`.
+6. `ruby .github/scripts/test-activity.rb`
+7. `JEKYLL_ENV=production bundle exec jekyll build`, which also fails on Activity data that the rows plugin can't use.
+
+`test-check-activity-data.rb` pins this shape: the job's name, the read-only token, the checkout depth, the guard's position and condition, and the data check's step name and command. Change the workflow and that test together.
+
+`deploy.yml` builds `main` the same way on every push, without the checks, and deploys it to GitHub Pages. Netlify builds each pull request's deploy preview (`netlify.toml`). Dependabot opens weekly pull requests for the gems and the actions.
+
+## Content
+
+To add something, copy the front matter of an existing file of the same kind. The layout that lists those files shows which fields render.
+
+| To add | Create | Notes |
+|---|---|---|
+| A News post | `_posts/YYYY-MM-DD-slug.md` | Only what README's "News and Activity" puts in News. Set `layout: post`, `title`, `author`, `excerpt` and `tag` (README's "News Post Tags"). Date the file to the event or launch it covers. Jekyll skips a file without the `-slug` |
+| An Activity entry | `_data/activity/<day>-<stream>.yml` | Written by the reporter bot: see README's "Activity data" for the file names, the schema and the append-only rule |
+| A workshop | `_workshops/YYYY-MM-DD-slug.md` | `/workshops/` lists those with `year` 2024 or later as recent, and the home page shows the newest 5 |
+| A lecture series | `_lectures/*.md` | `order` sets its place on `/lectures/` and the home page |
+| A book or code library | `_projects/*.md` | `type: book` lists it on `/books/` and the home page, and `type: code` on `/code/`. No page shows other types |
+| A team member | `_team-members/*.md` | `role` must match one of the section strings in `_layouts/team.html` exactly, or the member appears nowhere. `last_name` sets the order and `tag` adds a badge. A `translator` field (such as `"French Editor"`) also lists them under Translators |
+| A page | `pages/*.md` or `pages/*.html` | Set `permalink:`, or the page is published under `/pages/` |
+| A redirect | `redirect_from:` in the target page's front matter | As in `pages/activity.md` |
+
+The navigation is in `_layouts/default.html`. Styles go in `assets/main.scss`, or in a partial in `assets/sass/` that it loads with `@use`, using the colours in README's "Brand Colours".
+
+### News and Activity
+
+- **People write News; the reporter bot writes Activity, and never News.** README's "News and Activity" decides which stream an item belongs to and what belongs in neither. Promoting an Activity item to News is a person's decision.
+- **Activity files are append-only.** CI fails a pull request that changes, removes or reorders an entry already on `main`, so a correction to a published entry needs an admin to merge it.
+- **Don't edit or add to `.github/scripts/fixtures/activity/`.** It is a frozen copy of the data at 4c47f03, and `test-activity.rb` checks fixed numbers against it. To see the Activity pages with that data, build a copy of the site with `_data/activity/` replaced by the fixture.
+- **Build Activity views from `site.data.activity_view`,** not from `site.data.activity`. The header comment of `_plugins/activity_generator.rb` documents every key and field. In the templates:
+  - Escape every field, attributes included: nothing in the view is escaped, and summaries and PR titles come from outside the site. Turn backtick spans into `<code>` after escaping.
+  - Dates are `YYYY-MM-DD` strings for UTC days, with precomputed labels. Compare them as strings, and never pass them through Liquid's `date` filter, which works in Sydney time.
+  - A row's `id` is its merge key and feed guid, not an HTML id. Render the month and day anchors (`months[].id` and `months[].days[].id`): group and editions rows link to a day's anchor.
+- **A build that stops with `Activity data: <file>, entry <n> (<project>): …`** names the entry that the rows plugin can't use, with `<file>` missing its `.yml`. Correct the entry, then run the data check.
+
+## Gotchas
+
+- **Root files are published.** Jekyll publishes every file that `exclude:` in `_config.yml` doesn't list and whose name doesn't start with `_` or `.`, and it copies files without front matter as they are: `README.md` and `netlify.toml` are on quantecon.org. Add any new root file that isn't part of the site to `exclude:`, as `AGENTS.md` is.
+- **`url` is load-bearing.** `url: "https://quantecon.org"` in `_config.yml` makes og:url, share links, the feed, the sitemap and the redirect stubs absolute, and the Actions build doesn't set it for you. `jekyll serve` swaps in `http://localhost:4000`, so check absolute URLs in a `jekyll build`. Netlify previews keep the production `url`, so their absolute links and redirects lead to quantecon.org.
+- **Sydney time.** `timezone: Australia/Sydney` sets `TZ` for every build, CI included, so `site.time` and post dates are Sydney times. A `date:` with another UTC offset can move a post to another day, and so to another URL.
+- **Defaults.** Every file gets `layout: default` unless it sets a layout, so a post needs `layout: post`. A lecture or project without `order` sorts last (99).
+- **Analytics everywhere.** The Google Analytics tag is on every page in every environment, local builds and previews included.
+- **CDNs.** Bootstrap 5.2, Bootstrap Icons and MathJax 3 load from jsDelivr, the fonts from Google Fonts, and Plotly on the analytics dashboard. Where the network is blocked, pages render unstyled and log console errors that aren't the site's.
+- **Keep `jekyll serve` local.** `jekyll serve --host 0.0.0.0` exposes the server to the network and sets `site.url` to `http://0.0.0.0:4000`. Use it only inside a container.
+
+## Pull requests and commits
+
+- Work on a branch and open a pull request to `main`. Pull requests are squash-merged: the commit on `main` takes the pull request's title plus `(#N)` as its subject and every commit message on the branch as its body, so write each commit message for `main`.
+- Subjects read `area: lower-case summary`, with areas such as `activity`, `news`, `team`, `books`, `ci`, `docs`, `a11y` and `perf`.
+- Commit messages refer to an issue with `Part of #N.` Only the pull request's body closes one (`Closes #N.`).
+- Never put a closing keyword (close, fix or resolve in any form, even as a noun, as in "the fix:") directly before any other issue or pull request reference, or before any reference to another repository: GitHub closes the target when the text reaches `main`.
+- In pull request bodies, issues and comments, write each paragraph as one line, since GitHub turns single newlines into line breaks. Keep prose out of fenced code blocks: use lists and tables, and keep fences for commands and code.
+- `build` must pass. Check the change on the pull request's Netlify deploy preview too.
