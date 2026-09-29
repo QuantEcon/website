@@ -2,7 +2,7 @@
 layout: post
 title: "Central Bank of Chile Workshops"
 author: Natasha Watkins
-excerpt: In September 2022, we hosted workshops of scientific and high performance computing at the Central Bank of Chile.
+excerpt: In September 2022, we hosted workshops on scientific and high performance computing at the Central Bank of Chile.
 tag: [workshop]
 ---
 
