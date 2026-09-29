@@ -15,8 +15,9 @@ It is a Jekyll 4.4 static site with a plugin of its own. GitHub Actions deploys 
 | Path | What it holds |
 |---|---|
 | `_config.yml` | Site settings: `url`, `timezone`, `exclude`, the collections and the front-matter defaults |
-| `Gemfile` | Jekyll and its plugins; the site uses no theme. No `Gemfile.lock` is committed, so every install resolves the newest matching versions |
-| `index.md`, `pages/` | The home page and every other page, in Markdown or HTML |
+| `Gemfile` | Jekyll and its plugins; the site uses no theme. No `Gemfile.lock` is committed, so CI, the deploy and Netlify resolve the newest matching versions on every run. The gitignored `Gemfile.lock` that your first `bundle install` writes keeps your versions until you run `bundle update` |
+| `index.md` | The home page's URL and layout, nothing more. `_layouts/home.html` has no `{{ content }}`, so the body of `index.md` is never rendered: edit the home page's sections in that layout |
+| `pages/` | Every other page, in Markdown or HTML |
 | `_layouts/` | A layout for each kind of page. `default.html` wraps them all, with the header navigation, the footer and the links to CSS and JavaScript |
 | `_posts/` | News posts |
 | `_data/activity/` | Activity entries, one YAML file per UTC day and stream |
@@ -39,9 +40,11 @@ CI uses Ruby 3.4, and 4.0 works too. Bundler comes with Ruby.
 bundle config set --local path vendor/bundle     # optional: keep the gems in the checkout (gitignored)
 bundle install                                   # never with sudo
 JEKYLL_ENV=production bundle exec jekyll build   # the build CI runs, into _site/, in about a second
-bundle exec jekyll serve                         # http://localhost:4000, rebuilt on each change; --port N to move it
+bundle exec jekyll serve                         # http://localhost:4000; --port N to move it
 bundle exec jekyll clean                         # delete _site/ and the caches
 ```
+
+`jekyll serve` rebuilds the site when content, layouts or assets change, but it reads `_config.yml` and loads `_plugins/` only when it starts: restart it after editing either, or it keeps serving the old settings and plugin code.
 
 CI runs these checks before the build. Run them with plain `ruby`, not `bundle exec`: minitest comes with Ruby but isn't in the Gemfile.
 
@@ -68,7 +71,7 @@ If a script stops with a `LoadError` (for minitest or mutex_m, say), `GEM_HOME` 
 6. `ruby .github/scripts/test-activity.rb`
 7. `JEKYLL_ENV=production bundle exec jekyll build`, which also fails on Activity data that the rows plugin can't use.
 
-`test-check-activity-data.rb` pins this shape: the job's name, the read-only token, the checkout depth, the guard's position and condition, and the data check's step name and command. Change the workflow and that test together.
+`test-check-activity-data.rb` pins this shape: the job's name, the read-only token, the checkout depth, the guard's position and condition, and the data check's step name and command. Change the workflow, that test and this section together.
 
 `deploy.yml` builds `main` the same way on every push, without the checks, and deploys it to GitHub Pages. Netlify builds each pull request's deploy preview (`netlify.toml`). Dependabot opens weekly pull requests for the gems and the actions.
 
@@ -78,16 +81,16 @@ To add something, copy the front matter of an existing file of the same kind. Th
 
 | To add | Create | Notes |
 |---|---|---|
-| A News post | `_posts/YYYY-MM-DD-slug.md` | Only what README's "News and Activity" puts in News. Set `layout: post`, `title`, `author`, `excerpt` and `tag` (README's "News Post Tags"). Date the file to the event or launch it covers. Jekyll skips a file without the `-slug` |
+| A News post | `_posts/YYYY-MM-DD-slug.md` | Only what README's "News and Activity" puts in News. Set `layout: post`, `title`, `author`, `excerpt` and `tag` (README's "News Post Tags"). Date a post about an event or launch that has happened to that day, and an announcement of something still to come to the day it is published: the build skips a post dated in the future and still passes, and nothing rebuilds the site when that date arrives. Jekyll also skips a file without the `-slug` |
 | An Activity entry | `_data/activity/<day>-<stream>.yml` | Written by the reporter bot: see README's "Activity data" for the file names, the schema and the append-only rule |
 | A workshop | `_workshops/YYYY-MM-DD-slug.md` | `/workshops/` lists those with `year` 2024 or later as recent, and the home page shows the newest 5 |
 | A lecture series | `_lectures/*.md` | `order` sets its place on `/lectures/` and the home page |
-| A book or code library | `_projects/*.md` | `type: book` lists it on `/books/` and the home page, and `type: code` on `/code/`. No page shows other types |
-| A team member | `_team-members/*.md` | `role` must match one of the section strings in `_layouts/team.html` exactly, or the member appears nowhere. `last_name` sets the order and `tag` adds a badge. A `translator` field (such as `"French Editor"`) also lists them under Translators |
+| A book or code library | `_projects/*.md` | `type: book` lists it on `/books/` and the home page, in `order`. `type: code` lists it on `/code/`, which ignores `order` and shows code libraries in reverse file-name order. No page shows other types |
+| A team member | `_team-members/*.md` | `role` must match one of the section strings in `_layouts/team.html` exactly, or the member is in no section. A `translator` field (such as `"French Editor"`) lists the member under Translators too. A translator with no other role has `role: "Translator"`, which matches no section, and so appears only there. `last_name` sets the order and `tag` adds a badge |
 | A page | `pages/*.md` or `pages/*.html` | Set `permalink:`, or the page is published under `/pages/` |
 | A redirect | `redirect_from:` in the target page's front matter | As in `pages/activity.md` |
 
-The navigation is in `_layouts/default.html`. Styles go in `assets/main.scss`, or in a partial in `assets/sass/` that it loads with `@use`, using the colours in README's "Brand Colours".
+The navigation is in `_layouts/default.html`. Styles go in `assets/main.scss`, which defines the Sass variables in README's "Brand Colours", or in a partial in `assets/sass/` that it loads with `@use`. A partial can't see those variables (the build fails with "Undefined variable"), so use the `--qe-*` custom properties that `main.scss` sets on `:root`, such as `var(--qe-blue)`, as `_about.scss` does.
 
 ### News and Activity
 
@@ -105,7 +108,7 @@ The navigation is in `_layouts/default.html`. Styles go in `assets/main.scss`, o
 - **Root files are published.** Jekyll publishes every file that `exclude:` in `_config.yml` doesn't list and whose name doesn't start with `_` or `.`, and it copies files without front matter as they are: `README.md` and `netlify.toml` are on quantecon.org. Add any new root file that isn't part of the site to `exclude:`, as `AGENTS.md` is.
 - **`url` is load-bearing.** `url: "https://quantecon.org"` in `_config.yml` makes og:url, share links, the feed, the sitemap and the redirect stubs absolute, and the Actions build doesn't set it for you. `jekyll serve` swaps in `http://localhost:4000`, so check absolute URLs in a `jekyll build`. Netlify previews keep the production `url`, so their absolute links and redirects lead to quantecon.org.
 - **Sydney time.** `timezone: Australia/Sydney` sets `TZ` for every build, CI included, so `site.time` and post dates are Sydney times. A `date:` with another UTC offset can move a post to another day, and so to another URL.
-- **Defaults.** Every file gets `layout: default` unless it sets a layout, so a post needs `layout: post`. A lecture or project without `order` sorts last (99).
+- **Defaults.** Every file gets `layout: default` unless it sets a layout, so a post needs `layout: post`. A lecture or book without `order` sorts last (99).
 - **Analytics everywhere.** The Google Analytics tag is on every page in every environment, local builds and previews included.
 - **CDNs.** Bootstrap 5.2, Bootstrap Icons and MathJax 3 load from jsDelivr, the fonts from Google Fonts, and Plotly on the analytics dashboard. Where the network is blocked, pages render unstyled and log console errors that aren't the site's.
 - **Keep `jekyll serve` local.** `jekyll serve --host 0.0.0.0` exposes the server to the network and sets `site.url` to `http://0.0.0.0:4000`. Use it only inside a container.
