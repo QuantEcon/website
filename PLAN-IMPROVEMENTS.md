@@ -250,7 +250,7 @@ Several pages use raw HTML in markdown files:
 
 ## Notes
 
-- The `.github/copilot-instructions.md` is already set up and comprehensive
+- The agent and contributor guide is `AGENTS.md` (until September 2026, `.github/copilot-instructions.md`)
 - Site builds quickly (~1-2 seconds)
 - Overall structure is clean and well-organized
 - Main concern is outdated content and dead references to discontinued services
