@@ -14,7 +14,7 @@ The site has two streams of updates. The rule of thumb: **people write News, the
 
 | | News | Activity |
 |---|---|---|
-| **What goes in** | New projects (a new lecture series, book, a library's first public release, or a new language edition of a lecture series), grants and funding, people (RAs, team changes, open positions), workshops, tutorials and talks, partnerships, and changes that affect users | Every library release; changes to existing lecture series (new lectures, new sections and exercises, substantive revisions, fixes a reader would notice); updates to translated editions |
+| **What goes in** | New projects (a new lecture series, book, a library's first public release, or a new language edition of a lecture series), grants and funding, people (RAs, team changes, open positions), workshops, tutorials and talks, partnerships, and changes that affect users | Every library release; changes to existing lecture series (new lectures, new sections and exercises, substantive revisions, fixes a reader would notice); updates to translated editions; updates to existing books |
 | **Written by** | A person | The reporter bot (maintained in the private `QuantEcon/reports-activity` repository) |
 | **Review** | Normal PR review of the wording | None day to day: the reporter's daily PR merges itself once the data check passes (planned; until then, a light check of each PR) |
 
@@ -26,14 +26,14 @@ These definitions decide which stream an item belongs to, not where it is shown.
 
 ### Activity data
 
-Each reporter run adds one file per stream, `_data/activity/<run-date>-<stream>.yml`, holding a list of entries. `<stream>` is `software` for releases and `lectures` for lecture and translation updates, and a run writes no file for a stream with nothing to report. Entry dates can be earlier than the file's run date. The Activity page merges every file, orders the entries by date (newest first, and in file order within a day), and groups them by month. CI checks every file against this schema (`.github/scripts/check-activity-data.rb`).
+Each file is `_data/activity/<day>-<stream>.yml` and holds a list of entries. `<day>` is the UTC day the entries cover, not the day the reporter ran, and `<stream>` is `software` for releases and `lectures` for lecture, translation and book updates. A run writes no file for a stream with nothing to report. Files are append-only: a re-run adds its new entries after the existing ones and never changes or removes one. It appends them as text after the file's last byte, with no `---` line: re-dumping the whole file would drop its header comment, and Jekyll reads only a file's first YAML document. Older files, migrated from the previous reporter or added by hand (`2026-09-28-software.yml`), are named for the day they were written, so their entries can be earlier. The Activity page merges every file, orders the entries by date (newest first, and in file order within a day), and groups them by month. CI checks every file against this schema (`.github/scripts/check-activity-data.rb`), and fails if `_data/activity/` holds anything but `.yml` and `.yaml` files or a file holds more than one YAML document. It also fails when a release or pull-request URL is listed more than once, in one file or across files, and when a pull request changes or removes an entry that is already on `main`, so a correction to a published entry needs an admin to merge it. A pull request opened by the reporter bot also fails CI unless all it does is add day files or append to them, keeping every existing byte as it is (the first step after checkout in `.github/workflows/build.yml`).
 
 | Field | Required | Description |
 |---|---|---|
-| `date` | yes | Unquoted `YYYY-MM-DD`, in UTC. For a `release`, the day it was published. For `lectures` and `translation`, the day of the first `publish-*` release that included every listed change, i.e. when it went live. |
-| `type` | yes | `release`, `lectures` or `translation` |
+| `date` | yes | Unquoted `YYYY-MM-DD`, in UTC. For a `release`, the day it was published. For `lectures`, `translation` and `book`, the day of the first `publish-*` release that included every listed change, i.e. when it went live. |
+| `type` | yes | `release`, `lectures`, `translation` or `book` |
 | `project` | yes | Human-readable name, e.g. `QuantEcon.py` or `Intermediate Quantitative Economics with Python`. A translated edition is `<series name> (<language>)`, e.g. `Python Programming for Economics and Finance (French)`. |
-| `url` | yes | The release notes (`release`) or the live site (`lectures`, `translation`) |
+| `url` | yes | The release notes (`release`) or the live site (`lectures`, `translation`, `book`) |
 | `version` | `release` only | The released version tag, as a string, e.g. `v0.12.0` (quote numeric-looking versions such as `"1.10"`) |
 | `summary` | no | One factual sentence describing what changed. Plain text, except that text in single backticks renders as inline code. |
 | `changes` | no | List of `{title, url}` links to the pull requests behind the entry (GitHub pull-request URLs), merged into the default branch. Titles are plain text, lightly tidied: prefixes such as `[slug]`, `FIX:` or `chore:`, and internal notes, may be dropped. |
