@@ -5,8 +5,9 @@ layout: default
 {{ content }}
 
 {% comment %}
-  Activity entries live in _data/activity/<run-date>-<stream>.yml, one file per
-  reporter run and stream (see "News and Activity" in README.md). Flatten every file into one
+  Activity entries live in _data/activity/<day>-<stream>.yml, one file per UTC day covered
+  and stream. Files are append-only: a re-run adds new entries after the existing ones and
+  never changes or removes one (see "News and Activity" in README.md). Flatten every file into one
   list in filename order, group it by day (group_by_exp keeps that order within a day),
   sort the days newest first, then group the days by month. Sorting whole days rather
   than entries keeps the order stable, since Liquid's sort is not a stable sort.

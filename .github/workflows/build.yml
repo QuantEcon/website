@@ -4,11 +4,85 @@ on:
   pull_request:
     branches: [main]
 
+# The job runs the pull request's own code, so its token only reads.
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # A pull_request event checks out the PR's merge commit. Depth 2 also fetches
+      # its parents: HEAD^1 is the tip of main and HEAD^2 the PR's head.
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      # The reporter App's daily Activity PRs merge themselves, so they may only add
+      # day files under _data/activity/ or append to them. This step comes before
+      # any code the PR controls (setup-ruby's bundle install evaluates the PR's
+      # Gemfile, and later steps run its scripts and plugins), and it lives here
+      # because the App can't change workflow files. Keyed on the App's bot user
+      # ID, which survives a rename, not on its login.
+      - name: Limit reporter PRs to Activity data
+        if: github.event.pull_request.user.id == 294005175
+        shell: bash
+        run: |
+          if ! git rev-parse --verify --quiet 'HEAD^2' > /dev/null; then
+            echo "::error::HEAD^2, the pull request's head, is missing, so the reporter PR's changes can't be checked. This step needs the PR's merge commit, checked out with fetch-depth: 2"
+            exit 1
+          fi
+          day_file='^_data/activity/[0-9]{4}-[0-9]{2}-[0-9]{2}-(software|lectures)\.yml$'
+          fail=0 added=0 appended=0
+          error() {
+            # Paths come from the PR: escape what would end the workflow command.
+            local msg="$1"
+            msg=${msg//'%'/%25}; msg=${msg//$'\r'/%0D}; msg=${msg//$'\n'/%0A}
+            printf '::error::%s\n' "$msg"
+            fail=1
+          }
+          mode_name() {
+            case $1 in
+              100644) echo "a regular file" ;;
+              100755) echo "an executable file" ;;
+              120000) echo "a symlink" ;;
+              160000) echo "a submodule" ;;
+              *) echo "mode $1" ;;
+            esac
+          }
+          list=$(mktemp)
+          blob=$(mktemp)
+          trap 'rm -f "$list" "$blob"' EXIT
+          git diff-tree -r -z --no-renames 'HEAD^1' HEAD > "$list"
+          while IFS= read -r -d '' meta && IFS= read -r -d '' path; do
+            read -r old_mode new_mode old_blob new_blob status <<< "${meta#:}"
+            if [[ ! $path =~ $day_file ]]; then
+              error "Reporter PR changes $path: it may only add or append to _data/activity/YYYY-MM-DD-software.yml and -lectures.yml files"
+            elif [[ $status == D ]]; then
+              error "Reporter PR deletes $path: Activity files are append-only"
+            elif [[ $status == A && $new_mode == 100644 ]]; then
+              added=$((added + 1))
+            elif [[ $status == A ]]; then
+              error "Reporter PR adds $path as $(mode_name "$new_mode"): only regular files are allowed"
+            elif [[ $status != M || $old_mode != 100644 || $new_mode != 100644 ]]; then
+              error "Reporter PR changes $path from $(mode_name "$old_mode") to $(mode_name "$new_mode"): only appends to regular files are allowed"
+            else
+              # An append keeps the old bytes as a prefix: hash that many bytes of
+              # the new file and compare with the old file's object ID.
+              git cat-file blob "$new_blob" > "$blob"
+              size=$(git cat-file -s "$old_blob")
+              prefix=$(head -c "$size" "$blob" | git hash-object --stdin)
+              if [[ $prefix == "$old_blob" ]]; then
+                appended=$((appended + 1))
+              else
+                error "Reporter PR rewrites $path: only appends are allowed, keeping the existing bytes as they are"
+              fi
+            fi
+          done < "$list"
+          if (( fail )); then
+            exit 1
+          fi
+          echo "Reporter PR changes only Activity day files: $added added, $appended appended to."
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -17,7 +91,10 @@ jobs:
           bundler-cache: true
 
       - name: Check Activity data
-        run: ruby .github/scripts/check-activity-data.rb
+        run: ruby .github/scripts/check-activity-data.rb --base HEAD^1
+
+      - name: Test the Activity data check and the reporter PR limit
+        run: ruby .github/scripts/test-check-activity-data.rb
 
       - name: Test Activity rows
         run: ruby .github/scripts/test-activity.rb
