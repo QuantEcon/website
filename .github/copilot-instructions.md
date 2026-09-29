@@ -50,7 +50,7 @@ Key directories and files:
 
 **Adding new content:**
 - News posts: Add markdown files to `_posts/` with format `YYYY-MM-DD-title.md` — only for announcements (new projects, grants, people, workshops); releases and lecture updates belong in Activity (see "News and Activity" in README.md)
-- Team members: Add markdown files to `_team-members/` 
+- Team members: Add markdown files to `_team-members/` — `role` picks the section on the team page and `tag` the badge; the Translators section instead lists anyone with a `translator` field (e.g. `translator: "Chinese Editor"`), so a member can appear there as well as in their own section
 - Lectures: Add markdown files to `_lectures/`
 - Workshops: Add to `pages/workshops.md` **and** update the hardcoded "Recent Workshops" list in `_layouts/home.html` (see #197 for planned automation)
 - Static pages: Add markdown files to `pages/`

@@ -73,8 +73,8 @@ Posts in `_posts/` use a `tag` frontmatter field with coloured pill badges on th
 |---|---|---|
 | `news` | Blue | `#0072bc` |
 | `lectures` | Dark blue | `#306998` |
-| `workshop` | Green | `#6EAC5B` |
-| `books` | Red | `#D25663` |
+| `workshop` | Green | `#4a7c3c` |
+| `books` | Red | `#b83d4b` |
 | `tools` | Yellow | `#FCC837` |
 | `announcement` | Dark grey | `#283039` |
 
