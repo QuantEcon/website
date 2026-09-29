@@ -6,149 +6,239 @@ layout: default
 
 <h1>QuantEcon Team</h1>
 
-<section id="team" class="team">
+<div class="row">
+	<div class="col-xl-9">
+		<section id="team" class="team">
 
-	<h2>Founding Members and Co-Chairs</h2>
+			<h2 id="founding-members-and-co-chairs"><a href="{{ page.url }}#founding-members-and-co-chairs">Founding Members and Co-Chairs</a></h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
+			{% assign team-members = site.team-members | where: 'role', 'Founding Members and Co-Chairs' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<h2>Chief Technology Officer</h2>
+			<h2 id="chief-technology-officer"><a href="{{ page.url }}#chief-technology-officer">Chief Technology Officer</a></h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Chief Technology Officer' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
+			{% assign team-members = site.team-members | where: 'role', 'Chief Technology Officer' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<h2>Committee Members</h2>
+			<h2 id="committee-members"><a href="{{ page.url }}#committee-members">Committee Members</a></h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Committee Members' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
+			{% assign team-members = site.team-members | where: 'role', 'Committee Members' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<h2>Developers &amp; Research Assistants</h2>
+			<h2 id="developers-and-research-assistants"><a href="{{ page.url }}#developers-and-research-assistants">Developers &amp; Research Assistants</a></h2>
 
-	{% assign ras = site.team-members | where: 'role', 'Research Assistant' %}
-	{% assign committee_leads = site.team-members | where: 'role', 'Committee Members' | where: 'tag', 'Lead Developer' %}
-	{% assign team-members = ras | concat: committee_leads | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					{% assign badge = team-member.tag | default: 'Research Assistant' %}
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a> <span class="type">{{ badge }}</span></h3>
-					<p>{{ team-member.content }}</p>
+			{% assign ras = site.team-members | where: 'role', 'Research Assistant' %}
+			{% assign committee_leads = site.team-members | where: 'role', 'Committee Members' | where: 'tag', 'Lead Developer' %}
+			{% assign team-members = ras | concat: committee_leads | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							{% assign badge = team-member.tag | default: 'Research Assistant' %}
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a> <span class="type">{{ badge }}</span></h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<h2>QuantEcon Ambassadors</h2>
+			<h2 id="translators"><a href="{{ page.url }}#translators">Translators</a></h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'QuantEcon Ambassador' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
+			{% assign team-members = site.team-members | where_exp: 'member', 'member.translator' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a> <span class="type">{{ team-member.translator }}</span></h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<h2>Design and Marketing</h2>
+			<h2 id="quantecon-ambassadors"><a href="{{ page.url }}#quantecon-ambassadors">QuantEcon Ambassadors</a></h2>
 
-	{% assign team-members = site.team-members | where: 'role', 'Design and Marketing' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
+			{% assign team-members = site.team-members | where: 'role', 'QuantEcon Ambassador' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<div class="text-center my-5">
-		<p><a href="/positions/" class="qe-btn qe-btn--primary">See available positions</a></p>
-	</div>
+			<h2 id="design-and-marketing"><a href="{{ page.url }}#design-and-marketing">Design and Marketing</a></h2>
 
-	<h2>Previous Steering Committee Members</h2>
-
-	{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
+			{% assign team-members = site.team-members | where: 'role', 'Design and Marketing' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<h2>Previous Developers &amp; Research Assistants</h2>
+			<div class="text-center my-5">
+				<p><a href="/positions/" class="qe-btn qe-btn--primary">See available positions</a></p>
+			</div>
 
-	{% assign team-members = site.team-members | where: 'role', 'Previous Developers' | sort: 'last_name' %}
-	<div class="row">
-		{% for team-member in team-members %}
-		<div class="col-lg-6 team-item">
-			<div class="member d-flex align-items-start">
-				<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
-				<div class="member-info">
-					<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
-					<p>{{ team-member.content }}</p>
+			<h2 id="previous-steering-committee-members"><a href="{{ page.url }}#previous-steering-committee-members">Previous Steering Committee Members</a></h2>
+
+			{% assign team-members = site.team-members | where: 'role', 'Previous Steering Committee Members' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		</div>
-		{% endfor %}
+
+			<h2 id="previous-developers-and-research-assistants"><a href="{{ page.url }}#previous-developers-and-research-assistants">Previous Developers &amp; Research Assistants</a></h2>
+
+			{% assign team-members = site.team-members | where: 'role', 'Previous Developers' | sort: 'last_name' %}
+			<div class="row">
+				{% for team-member in team-members %}
+				<div class="col-lg-6 team-item">
+					<div class="member d-flex align-items-start">
+						<div class="pic"><img src="{{ team-member.image }}" class="img-fluid" alt=""></div>
+						<div class="member-info">
+							<h3><a href="{{ team-member.link }}">{{ team-member.name }}</a>{% if team-member.tag %} <span class="type">{{ team-member.tag }}</span>{% endif %}</h3>
+							<p>{{ team-member.content }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+		</section>
 	</div>
 
-</section>
+	<div class="col-xl-3 d-none d-xl-block">
+		{% comment %}Links carry the page path rather than a bare "#id" so main.js's smooth-scroll handler leaves them alone: the browser then updates the URL and applies the headings' scroll-margin-top.{% endcomment %}
+		<nav class="team-toc" aria-label="Sections on this page">
+			<p class="team-toc-title">On this page</p>
+			<ul>
+				<li><a href="{{ page.url }}#founding-members-and-co-chairs">Founding Members and Co-Chairs</a></li>
+				<li><a href="{{ page.url }}#chief-technology-officer">Chief Technology Officer</a></li>
+				<li><a href="{{ page.url }}#committee-members">Committee Members</a></li>
+				<li><a href="{{ page.url }}#developers-and-research-assistants">Developers &amp; Research Assistants</a></li>
+				<li><a href="{{ page.url }}#translators">Translators</a></li>
+				<li><a href="{{ page.url }}#quantecon-ambassadors">QuantEcon Ambassadors</a></li>
+				<li><a href="{{ page.url }}#design-and-marketing">Design and Marketing</a></li>
+				<li><a href="{{ page.url }}#previous-steering-committee-members">Previous Steering Committee Members</a></li>
+				<li><a href="{{ page.url }}#previous-developers-and-research-assistants">Previous Developers &amp; Research Assistants</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+<script>
+	// Web fonts arriving mid-load reflow the page, so the browser's jump to /team/#section can
+	// land off target; repeat the jump once the fonts are in, unless the reader has moved on
+	// (scrolled, pressed a key, or clicked or tapped anything, including a section link)
+	(() => {
+		const target = location.hash && document.getElementById(location.hash.slice(1));
+		if (!target) return;
+		let scrolledByReader = false;
+		['wheel', 'touchmove', 'keydown', 'pointerdown', 'hashchange'].forEach(type =>
+			window.addEventListener(type, () => { scrolledByReader = true; }, { once: true, passive: true }));
+		// Wait two frames so this runs after the browser's own final fragment scroll
+		window.addEventListener('load', () => document.fonts.ready.then(() =>
+			requestAnimationFrame(() => requestAnimationFrame(() => {
+				if (!scrolledByReader) target.scrollIntoView({ behavior: 'instant' });
+			}))));
+	})();
+
+	// Highlight the contents entry for the section being read: the last one whose heading has
+	// scrolled up to where a jump to it lands (its scroll-margin-top, just below the header)
+	(() => {
+		const toc = document.querySelector('.team-toc');
+		if (!toc) return;
+		// Pair each contents entry with its heading, skipping any whose heading is missing
+		const pairs = [...toc.querySelectorAll('a')]
+			.map(link => [link, document.getElementById(link.hash.slice(1))])
+			.filter(([, heading]) => heading);
+		if (!pairs.length) return;
+		const links = pairs.map(([link]) => link);
+		const headings = pairs.map(([, heading]) => heading);
+		const update = () => {
+			if (!toc.offsetParent) return; // contents column hidden on narrow screens
+			const line = parseFloat(getComputedStyle(headings[0]).scrollMarginTop) + 20;
+			let current = 0;
+			headings.forEach((heading, i) => { if (heading.getBoundingClientRect().top <= line) current = i; });
+			links.forEach((link, i) => {
+				link.classList.toggle('active', i === current);
+				if (i === current) link.setAttribute('aria-current', 'true');
+				else link.removeAttribute('aria-current');
+			});
+		};
+		let queued = false;
+		window.addEventListener('scroll', () => {
+			if (queued) return;
+			queued = true;
+			requestAnimationFrame(() => { queued = false; update(); });
+		}, { passive: true });
+		window.addEventListener('resize', update);
+		update();
+	})();
+</script>

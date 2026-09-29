@@ -1245,6 +1245,26 @@ section {
   padding: 0;
   h2 {
     margin: 2rem 0 1rem 0;
+    // Keep section anchors (e.g. /team/#translators) clear of the fixed header and sponsor bar
+    scroll-margin-top: calc(100px + var(--sponsor-bar-height, 0px));
+    a {
+      color: inherit;
+      &::after {
+        content: "#";
+        content: "#" / ""; // empty alternative text: screen readers don't read the # as part of the title
+        margin-left: 0.5rem;
+        color: $color-link;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      &:hover::after,
+      &:focus-visible::after {
+        opacity: 1;
+      }
+    }
   }
   .member {
     position: relative;
@@ -1303,6 +1323,60 @@ section {
             display: inline-block;
           }
         }
+      }
+    }
+  }
+}
+
+/* Team page contents column */
+// `clip` keeps the global section clipping but, unlike `hidden`, lets .team-toc stick to the viewport
+.inner-page:has(.team-toc) {
+  overflow: clip;
+}
+
+.team-toc {
+  position: sticky;
+  top: calc(100px + var(--sponsor-bar-height, 0px));
+  margin-top: 2rem;
+  padding-left: 1rem;
+  border-left: 1px solid $color-border;
+  font-size: 0.9rem;
+  .team-toc-title {
+    font-family: $font-brand;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color-text;
+    margin-bottom: 0.5rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin: 0.4rem 0;
+  }
+  a {
+    display: block;
+    position: relative;
+    color: $color-text;
+    &:hover {
+      color: $color-link;
+    }
+    // Section being read: marker sits over the column's left rule
+    &.active {
+      color: $color-link;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(-1rem - 2px);
+        width: 3px;
+        border-radius: 2px;
+        background: $color-link;
       }
     }
   }
