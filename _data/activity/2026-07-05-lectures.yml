@@ -1,0 +1,13 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's post _posts/2026-07-05-lectures.md (removed); excluded items removed.
+
+- date: 2026-07-02
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Replaced the LQ Consumption Smoothing lecture with a trilogy of lectures on the LQ permanent income model, and added two lectures on unemployment dynamics, A Linear Model of Unemployment and Unemployment Dynamics with Asymmetric Shocks.
+  changes:
+  - title: Add Tom's LQ permanent income trilogy of lectures
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/943
+  - title: Add unemployment dynamics lectures (linear + nonlinear)
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/928

@@ -33,7 +33,8 @@ Key directories and files:
 - `Gemfile` - Ruby dependencies specification
 - `_layouts/` - Jekyll layout templates (home.html, default.html, post.html, etc.)
 - `_includes/` - Jekyll include templates (quantecon-menubar.html)
-- `_posts/` - Blog posts and news articles (sorted chronologically)
+- `_posts/` - News posts, written by people (sorted chronologically)
+- `_data/activity/` - Activity feed data (library releases, lecture updates), written by the reporter bot — see "News and Activity" in README.md
 - `_lectures/` - Collection of lecture series pages
 - `_projects/` - Collection of project pages  
 - `_team-members/` - Collection of team member profiles
@@ -48,7 +49,7 @@ Key directories and files:
 ### Common Operations
 
 **Adding new content:**
-- Blog posts: Add markdown files to `_posts/` with format `YYYY-MM-DD-title.md`
+- News posts: Add markdown files to `_posts/` with format `YYYY-MM-DD-title.md` — only for announcements (new projects, grants, people, workshops); releases and lecture updates belong in Activity (see "News and Activity" in README.md)
 - Team members: Add markdown files to `_team-members/` — `role` picks the section on the team page and `tag` the badge; the Translators section instead lists anyone with a `translator` field (e.g. `translator: "Chinese Editor"`), so a member can appear there as well as in their own section
 - Lectures: Add markdown files to `_lectures/`
 - Workshops: Add to `pages/workshops.md` **and** update the hardcoded "Recent Workshops" list in `_layouts/home.html` (see #197 for planned automation)
@@ -69,13 +70,14 @@ Key directories and files:
 4. Navigate through the main sections:
    - Home page - verify layout and content load
    - Lectures page - verify lecture series are listed
-   - News page - verify blog posts display
+   - News page - verify news posts display
+   - Activity page - verify entries from `_data/activity/` display, grouped by month
    - About page - verify team information
    - Navigation menu - verify all links work
 5. Test responsive design by resizing browser window
 6. Verify images and styling load correctly
 
-**No formal testing infrastructure exists** - validation is done through manual browser testing.
+**No formal testing infrastructure exists** - validation is done through manual browser testing. The one automated check is `ruby .github/scripts/check-activity-data.rb`, which CI runs to validate the Activity data files.
 
 **No linting or formatting commands** - the repository has minimal tooling beyond Jekyll itself.
 
@@ -154,6 +156,7 @@ bundle exec jekyll build
 ├── Gemfile
 ├── README.md
 ├── _config.yml
+├── _data/activity/
 ├── _includes/
 ├── _layouts/
 ├── _lectures/

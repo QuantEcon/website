@@ -1,0 +1,21 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Migrated from the reporter's draft PR QuantEcon/website#255; excluded items removed.
+
+- date: 2026-08-19
+  type: lectures
+  project: A First Course in Quantitative Economics with Python
+  url: https://intro.quantecon.org/
+  summary: Added two new lectures, Measuring Mobility and Bivariate Distributions.
+  changes:
+  - title: Add Measuring Mobility lecture
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/839
+  - title: Add Bivariate Distributions lecture
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/837
+- date: 2026-08-20
+  type: translation
+  project: A First Course in Quantitative Economics with Python (Simplified Chinese)
+  url: https://quantecon.github.io/lecture-intro.zh-cn/
+  summary: Added the Simplified Chinese translation of the Measuring Mobility lecture.
+  changes:
+  - title: Add the Measuring Mobility lecture
+    url: https://github.com/QuantEcon/lecture-intro.zh-cn/pull/299
