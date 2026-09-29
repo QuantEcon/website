@@ -1,0 +1,4 @@
+# Activity feed self-test. The website's data check must reject this file,
+# because it holds no entries, so this PR must not merge. The workflow
+# closes it and deletes its branch.
+[]
