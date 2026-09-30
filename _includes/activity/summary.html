@@ -1,0 +1,9 @@
+{%- comment -%}
+  A summary, shared by the Activity views: plain text in which single backticks mark code. It is
+  escaped first, then every second backtick-separated part becomes <code>. Parameter: text.
+{%- endcomment -%}
+{%- assign activity_parts = include.text | escape | split: "`" -%}
+{%- for activity_part in activity_parts -%}
+  {%- assign activity_odd = forloop.index0 | modulo: 2 -%}
+  {%- if activity_odd == 1 -%}<code>{{ activity_part }}</code>{%- else -%}{{ activity_part }}{%- endif -%}
+{%- endfor -%}

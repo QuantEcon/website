@@ -1,0 +1,6 @@
+{%- comment -%}
+  A row's title, shared by the Activity views: the project or series, then a single release's
+  version at weight 400. Parameter: row. The caller supplies the link.
+{%- endcomment -%}
+{{- include.row.title | escape -}}
+{%- if include.row.version != "" %} <span class="activity-row__version">{{ include.row.version | escape }}</span>{% endif -%}

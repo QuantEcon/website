@@ -19,6 +19,7 @@ It is a Jekyll 4.4 static site with a plugin of its own. GitHub Actions deploys 
 | `index.md` | The home page's URL and layout, nothing more. `_layouts/home.html` has no `{{ content }}`, so the body of `index.md` is never rendered: edit the home page's sections in that layout |
 | `pages/` | Every other page, in Markdown or HTML |
 | `_layouts/` | A layout for each kind of page. `default.html` wraps them all, with the header navigation, the footer and the links to CSS and JavaScript |
+| `_includes/activity/` | The parts of an Activity row: `meta.html`, `title.html` and `summary.html`, for every Activity view, and `log-row.html`, a row of the `/activity/` log |
 | `_posts/` | News posts |
 | `_data/activity/` | Activity entries, one YAML file per UTC day and stream |
 | `_plugins/` | `activity/rows.rb` turns the Activity entries into rows, and `activity_generator.rb` exposes them to Liquid as `site.data.activity_view`. Jekyll runs both on every build |
@@ -92,6 +93,8 @@ To add something, copy the front matter of an existing file of the same kind. Th
 
 The navigation is in `_layouts/default.html`. Styles go in `assets/main.scss`, which defines the Sass variables in README's "Brand Colours", or in a partial in `assets/sass/` that it loads with `@use`. A partial can't see those variables (the build fails with "Undefined variable"), so use the `--qe-*` custom properties that `main.scss` sets on `:root`, such as `var(--qe-blue)`, as `_about.scss` does.
 
+`_layouts/default.html` adds a `js` class to `<html>` before first paint. Style states that need JavaScript, such as a collapsed list, under `.js`, and hide controls that need it under `html:not(.js)`: nothing then moves when scripts run, and without JavaScript everything shows. Have the script remove the class if it fails, or what it collapsed stays hidden. The `/activity/` filter and its "N changes" lists work this way.
+
 ### News and Activity
 
 - **People write News; the reporter bot writes Activity, and never News.** README's "News and Activity" decides which stream an item belongs to and what belongs in neither. Promoting an Activity item to News is a person's decision.
@@ -99,6 +102,7 @@ The navigation is in `_layouts/default.html`. Styles go in `assets/main.scss`, w
 - **Don't edit or add to `.github/scripts/fixtures/activity/`.** It is a frozen copy of the data at 4c47f03, and `test-activity.rb` checks fixed numbers against it. To see the Activity pages with that data, build a copy of the site with `_data/activity/` replaced by the fixture.
 - **Build Activity views from `site.data.activity_view`,** not from `site.data.activity`. The header comment of `_plugins/activity_generator.rb` documents every key and field. In the templates:
   - Escape every field, attributes included: nothing in the view is escaped, and summaries and PR titles come from outside the site. Turn backtick spans into `<code>` after escaping.
+  - Put the view inside an element with the `mathjax_ignore` class. MathJax runs on every page and would typeset the text between two `$` signs in a title or summary.
   - Dates are `YYYY-MM-DD` strings for UTC days, with precomputed labels. Compare them as strings, and never pass them through Liquid's `date` filter, which works in Sydney time.
   - A row's `id` is its merge key and feed guid, not an HTML id. Render the month and day anchors (`months[].id` and `months[].days[].id`): group and editions rows link to a day's anchor.
 - **A build that stops with `Activity data: <file>, entry <n> (<project>): …`** names the entry that the rows plugin can't use, with `<file>` missing its `.yml`. Correct the entry, then run the data check.

@@ -1,62 +1,131 @@
 ---
 layout: default
 ---
-
-{{ content }}
-
 {% comment %}
-  Activity entries live in _data/activity/<day>-<stream>.yml, one file per UTC day covered
-  and stream. Files are append-only: a re-run adds new entries after the existing ones and
-  never changes or removes one (see "News and Activity" in README.md). Flatten every file into one
-  list in filename order, group it by day (group_by_exp keeps that order within a day),
-  sort the days newest first, then group the days by month. Sorting whole days rather
-  than entries keeps the order stable, since Liquid's sort is not a stable sort.
-{% endcomment %}
-{% assign files = "" | split: "" %}
-{% for file in site.data.activity %}
-  {% assign files = files | push: file[0] %}
-{% endfor %}
-{% assign files = files | sort %}
-{% assign entries = "" | split: "" %}
-{% for file in files %}
-  {% assign entries = entries | concat: site.data.activity[file] %}
-{% endfor %}
-{% assign days = entries | group_by_exp: "entry", "entry.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
-{% assign months = days | group_by_exp: "day", "day.name | slice: 0, 7" %}
+  The /activity/ log, read from site.data.activity_view (the header comment of
+  _plugins/activity_generator.rb documents it): months, newest first, each holding its days,
+  each holding that day's rows in the view's order. Month and day ids are the anchors that
+  other pages link to. Nothing in the view is escaped: the includes in _includes/activity/
+  escape every field. mathjax_ignore stops MathJax, which loads on every page, from
+  typesetting a "$" in a summary.
 
-<div class="activity-feed">
-  {% for month in months %}
-  <section class="activity-month" id="activity-{{ month.name }}" aria-labelledby="activity-{{ month.name }}-title">
-    <h2 class="activity-month-title" id="activity-{{ month.name }}-title">{{ month.items[0].items[0].date | date: "%B %Y" }}</h2>
-    <ul class="activity-list">
-      {% for day in month.items %}
-      {% for entry in day.items %}
-      <li class="activity-item activity-item--{{ entry.type }}">
-        <time class="activity-date" datetime="{{ day.name }}">{{ entry.date | date: "%b %-d" }}</time>
-        <div class="activity-main">
-          <p class="activity-title">
-            <span class="qe-badge qe-badge--{{ entry.type }}">{{ entry.type }}</span>
-            <a href="{{ entry.url | escape }}">{{ entry.project | escape }}{% if entry.version %} {{ entry.version | escape }}{% endif %}</a>
-          </p>
-          {% if entry.summary %}
-          {% comment %} Plain text, except that `backtick` spans become inline code. {% endcomment %}
-          {% assign parts = entry.summary | escape | split: "`" %}
-          <p class="activity-summary">{% for part in parts %}{% assign odd = forloop.index0 | modulo: 2 %}{% if odd == 1 %}<code>{{ part }}</code>{% else %}{{ part }}{% endif %}{% endfor %}</p>
-          {% endif %}
-          {% if entry.changes %}
-          <ul class="activity-changes">
-            {% for change in entry.changes %}
-            <li><a href="{{ change.url | escape }}">{{ change.title | remove: "`" | escape }}</a></li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-        </div>
-      </li>
-      {% endfor %}
-      {% endfor %}
-    </ul>
-  </section>
-  {% else %}
-  <p class="activity-empty">No activity has been recorded yet.</p>
-  {% endfor %}
+  Without JavaScript the filter and the "N changes" toggles are hidden, and every row and PR
+  link shows. With it, CSS keyed on the js class that _layouts/default.html sets before first
+  paint shows the filter and collapses the PR lists, and the script below adds the behaviour.
+  If the script fails, it removes that class, so everything shows again.
+{% endcomment %}
+{%- assign activity = site.data.activity_view -%}
+<div class="activity-log mathjax_ignore">
+{{ content }}
+{%- if activity.months.size > 0 %}
+<div class="activity-filters" role="group" aria-label="Filter activity by type">
+  <button type="button" class="activity-filter" data-filter="all" aria-pressed="true">All</button>
+  <button type="button" class="activity-filter" data-filter="release" aria-pressed="false">Releases</button>
+  <button type="button" class="activity-filter" data-filter="lectures" aria-pressed="false">Lectures</button>
+  <button type="button" class="activity-filter" data-filter="translation" aria-pressed="false">Translations</button>
+  <button type="button" class="activity-filter" data-filter="book" aria-pressed="false">Books</button>
 </div>
+<p class="activity-status visually-hidden" aria-live="polite"></p>
+<p class="activity-empty" hidden></p>
+{%- for month in activity.months %}
+<section class="activity-month" id="{{ month.id | escape }}" aria-labelledby="{{ month.id | escape }}-title">
+  <h2 class="activity-month__title" id="{{ month.id | escape }}-title">{{ month.label | escape }}</h2>
+  <ol class="activity-days" role="list">
+    {%- for day in month.days %}
+    <li class="activity-day" id="{{ day.id | escape }}">
+      <ol class="activity-rows" role="list">
+        {%- for row in day.rows %}
+        {% include activity/log-row.html row=row %}
+        {%- endfor %}
+      </ol>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+{%- endfor %}
+<p class="activity-log__start">The log begins on <time datetime="{{ activity.first_date | escape }}">{{ activity.first_date_label | escape }}</time>.</p>
+{%- else %}
+<p>No activity has been recorded yet.</p>
+{%- endif %}
+</div>
+
+<script>
+  // The type filter, the "N changes" toggles, and links to a day or month on this page. If
+  // anything here fails, removing the js class hides the controls and shows every row and PR.
+  (() => {
+    try {
+      const log = document.querySelector('.activity-log');
+      const rows = [...log.querySelectorAll('.activity-row')];
+      const days = [...log.querySelectorAll('.activity-day')];
+      const months = [...log.querySelectorAll('.activity-month')];
+      const filters = [...log.querySelectorAll('.activity-filter')];
+      const status = log.querySelector('.activity-status');
+      const empty = log.querySelector('.activity-empty');
+      const nouns = {
+        release: ['release', 'releases'],
+        lectures: ['lecture update', 'lecture updates'],
+        translation: ['translation update', 'translation updates'],
+        book: ['book update', 'book updates']
+      };
+      let current = 'all';
+
+      // Shows one type's rows, or all of them, hides the days and months left empty, and
+      // announces how many rows show. The choice isn't remembered.
+      const show = type => {
+        current = type;
+        let count = 0;
+        rows.forEach(row => {
+          row.hidden = type !== 'all' && row.dataset.type !== type;
+          if (!row.hidden) count++;
+        });
+        days.forEach(day => { day.hidden = !day.querySelector('.activity-row:not([hidden])'); });
+        months.forEach(month => { month.hidden = !month.querySelector('.activity-day:not([hidden])'); });
+        filters.forEach(button => button.setAttribute('aria-pressed', button.dataset.filter === type));
+        let message;
+        if (type === 'all') message = count === 1 ? 'Showing 1 update' : `Showing all ${count} updates`;
+        else if (count === 0) message = `No ${nouns[type][1]} yet`;
+        else message = `Showing ${count} ${nouns[type][count === 1 ? 0 : 1]}`;
+        empty.textContent = message;
+        empty.hidden = count > 0;
+        status.textContent = message;
+      };
+
+      // Focus stays on the button pressed; CSS shows a PR list when its toggle is expanded
+      log.addEventListener('click', event => {
+        const filter = event.target.closest('.activity-filter');
+        if (filter && filter.dataset.filter !== current) show(filter.dataset.filter);
+        const toggle = event.target.closest('.activity-changes__toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      // A day or month anchor in the URL, #activity-2026-08-02 or #activity-2026-08
+      const anchor = () =>
+        /^#activity-\d{4}-\d{2}(-\d{2})?$/.test(location.hash) && document.getElementById(location.hash.slice(1));
+
+      // A link to a day followed on this page: back to All first, so the day shows, then go there
+      window.addEventListener('hashchange', () => {
+        const target = anchor();
+        if (!target) return;
+        if (current !== 'all') show('all');
+        target.scrollIntoView();
+      });
+
+      // Arriving at a day (the filter is All): web fonts and the sponsor bar move the page after
+      // the browser's jump, so repeat it once they are in, unless the reader has moved on (as
+      // /team/ does)
+      const arrival = anchor();
+      if (arrival) {
+        let moved = false;
+        ['wheel', 'touchmove', 'keydown', 'pointerdown', 'hashchange'].forEach(type =>
+          window.addEventListener(type, () => { moved = true; }, { once: true, passive: true }));
+        window.addEventListener('load', () => document.fonts.ready.then(() =>
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (!moved) arrival.scrollIntoView({ behavior: 'instant' });
+          }))));
+      }
+    } catch (error) {
+      document.documentElement.classList.remove('js');
+      console.error(error);
+    }
+  })();
+</script>

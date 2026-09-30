@@ -1,0 +1,17 @@
+{%- comment -%}
+  A row's meta line, shared by the Activity views: the type icon, the visually hidden type
+  word, the date and "· <tag>". Parameters: row, a row of site.data.activity_view; tag=false
+  leaves the tag out. The caller supplies the wrapping element.
+{%- endcomment -%}
+{%- case include.row.type -%}
+  {%- when "release" -%}{%- assign activity_icon = "bi-box-seam" -%}
+  {%- when "lectures" -%}{%- assign activity_icon = "bi-journal-text" -%}
+  {%- when "translation" -%}{%- assign activity_icon = "bi-translate" -%}
+  {%- when "book" -%}{%- assign activity_icon = "bi-book" -%}
+{%- endcase -%}
+<i class="bi {{ activity_icon }} activity-meta__icon" aria-hidden="true"></i>
+<span class="visually-hidden">{{ include.row.type_word | escape }}</span>
+<time datetime="{{ include.row.date | escape }}">{{ include.row.date_label | escape }}</time>
+{%- if include.tag != false and include.row.tag != "" %}
+<span>· {{ include.row.tag | escape }}</span>
+{%- endif -%}
