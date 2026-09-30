@@ -1,8 +1,80 @@
 ---
 layout: default
 ---
+{% comment %}
+  /news/: the News h1, then the Activity rail and the news. At 1200px and wider they sit in a
+  grid with the rail in the right column; below that the rail is a panel above the news. The
+  rail's <aside> comes first in the source, so the panel needs no reordering, and the hidden
+  "Latest news" heading keeps the posts from being filed under the rail's heading. With no
+  Activity data there is no aside, and the news keeps its column.
 
+  The rail reads site.data.activity_view (the header comment of _plugins/activity_generator.rb
+  documents it): week groups over the latest 6 rows of each type, each row once. The 6 newest
+  rows overall carry data-all; every other row, and every week without one, is rendered hidden,
+  so without JavaScript the rail shows the All view. The includes in _includes/activity/ escape
+  every field, and mathjax_ignore stops MathJax, which loads on every page, from typesetting a
+  "$" in a summary.
+
+  Without JavaScript the filter and the panel's toggle are hidden: the panel is open under a
+  plain heading, and the rail doesn't stick. With it, CSS keyed on the js class that
+  _layouts/default.html sets before first paint shows them and collapses the panel, and the
+  script below adds the behaviour. If the script fails, it removes that class.
+{% endcomment %}
 {{ content }}
+{%- assign activity = site.data.activity_view %}
+<div class="news-layout">
+{%- if activity.panel %}
+<aside class="activity-rail mathjax_ignore" aria-labelledby="activity-rail-title">
+  <h2 class="activity-rail__title" id="activity-rail-title">Activity</h2>
+  <h2 class="activity-rail__heading">
+    <button type="button" class="activity-rail__toggle" aria-expanded="false" aria-controls="activity-rail-body">
+      <i class="bi bi-activity activity-rail__icon" aria-hidden="true"></i>
+      <span class="activity-rail__label"><strong>Activity</strong> <span class="activity-rail__sep">· </span><span class="activity-rail__summary">{{ activity.panel.text | escape }}</span></span>
+      <i class="bi bi-chevron-down activity-rail__chevron" aria-hidden="true"></i>
+    </button>
+  </h2>
+  <p class="activity-rail__about">Library releases and lecture updates, from GitHub</p>
+  <div class="activity-rail__body" id="activity-rail-body">
+    <p class="activity-rail__subtitle">Library releases and updates to the lectures and their translations, compiled from GitHub.</p>
+    <div class="activity-filters" role="group" aria-label="Filter activity by type">
+      <button type="button" class="activity-filter" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="activity-filter" data-filter="release" aria-pressed="false">Releases</button>
+      <button type="button" class="activity-filter" data-filter="lectures" aria-pressed="false">Lectures</button>
+      <button type="button" class="activity-filter" data-filter="translation" aria-pressed="false">Translations</button>
+      <button type="button" class="activity-filter" data-filter="book" aria-pressed="false">Books</button>
+    </div>
+    <div class="activity-rail__panel">
+      <div class="activity-rail__list">
+        <p class="activity-empty" hidden></p>
+        {%- for week in activity.rail %}
+        <div class="activity-week"{% unless week.has_all %} hidden{% endunless %}>
+          <h3 class="activity-week__title"><time datetime="{{ week.datetime | escape }}">{{ week.label | escape }}</time></h3>
+          <ol class="activity-week__rows" role="list">
+            {%- for row in week.rows %}
+            <li class="activity-rail-row" data-type="{{ row.type | escape }}"{% if row.in_all %} data-all{% else %} hidden{% endif %}>
+              <div class="activity-meta">{% include activity/meta.html row=row %}</div>
+              <a class="activity-rail-row__title" href="{{ row.url | escape }}">{% include activity/title.html row=row %}</a>
+              {%- if row.per_edition %}
+              <p class="activity-rail-row__summary">
+                {%- for edition in row.per_edition %}{% if edition.summaries.size > 0 %}{% assign edition_text = edition.summaries | join: " " %} <strong>{{ edition.lang | escape }}:</strong> {% include activity/summary.html text=edition_text %}{% endif %}{% endfor -%}
+              </p>
+              {%- elsif row.summary != "" %}
+              <p class="activity-rail-row__summary">{% include activity/summary.html text=row.summary %}</p>
+              {%- endif %}
+            </li>
+            {%- endfor %}
+          </ol>
+        </div>
+        {%- endfor %}
+        <a class="qe-btn qe-btn--outline-dark activity-rail__all" href="/activity/">View all activity</a>
+      </div>
+    </div>
+  </div>
+  <p class="activity-status visually-hidden" aria-live="polite"></p>
+</aside>
+{%- endif %}
+<div class="news-main">
+<h2 class="visually-hidden">Latest news</h2>
 
 {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
 {% assign recent_limit = 20 %}
@@ -86,3 +158,67 @@ layout: default
   </div>
 </div>
 {% endif %}
+</div>
+</div>
+
+<script>
+  // The rail's type filter, the panel's toggle, and the height that lets a tall rail stick by
+  // its bottom edge. If anything here fails, removing the js class hides the filter and the
+  // toggle, opens the panel and shows the All view.
+  (() => {
+    try {
+      const rail = document.querySelector('.activity-rail');
+      if (!rail) return;
+      const rows = [...rail.querySelectorAll('.activity-rail-row')];
+      const weeks = [...rail.querySelectorAll('.activity-week')];
+      const filters = [...rail.querySelectorAll('.activity-filter')];
+      const toggle = rail.querySelector('.activity-rail__toggle');
+      const list = rail.querySelector('.activity-rail__list');
+      const status = rail.querySelector('.activity-status');
+      const empty = rail.querySelector('.activity-empty');
+      const nouns = {
+        release: ['release', 'releases'],
+        lectures: ['lecture update', 'lecture updates'],
+        translation: ['translation update', 'translation updates'],
+        book: ['book update', 'book updates']
+      };
+      let current = 'all';
+
+      // Shows the 6 newest rows, or one type's rows, hides the weeks left empty, and announces
+      // how many rows show. The choice isn't remembered.
+      const show = type => {
+        current = type;
+        let count = 0;
+        rows.forEach(row => {
+          row.hidden = type === 'all' ? !row.hasAttribute('data-all') : row.dataset.type !== type;
+          if (!row.hidden) count++;
+        });
+        weeks.forEach(week => { week.hidden = !week.querySelector('.activity-rail-row:not([hidden])'); });
+        filters.forEach(button => button.setAttribute('aria-pressed', button.dataset.filter === type));
+        let message;
+        if (type === 'all') message = count === 1 ? 'Showing the latest update' : `Showing the ${count} latest updates`;
+        else if (count === 0) message = `No ${nouns[type][1]} yet`;
+        else message = `Showing ${count} ${nouns[type][count === 1 ? 0 : 1]}`;
+        empty.textContent = message;
+        empty.hidden = count > 0;
+        status.textContent = message;
+      };
+
+      // Focus stays on the button pressed, a filter or the toggle
+      rail.addEventListener('click', event => {
+        const filter = event.target.closest('.activity-filter');
+        if (filter && filter.dataset.filter !== current) show(filter.dataset.filter);
+        if (event.target.closest('.activity-rail__toggle')) {
+          toggle.setAttribute('aria-expanded', rail.classList.toggle('is-open'));
+        }
+      });
+
+      // The list's height, which the sticky rule in main.scss reads: a list taller than the
+      // window sticks by its bottom edge. It changes with the filter, the fonts and the width.
+      new ResizeObserver(() => rail.style.setProperty('--rail-h', `${list.offsetHeight}px`)).observe(list);
+    } catch (error) {
+      document.documentElement.classList.remove('js');
+      console.error(error);
+    }
+  })();
+</script>
