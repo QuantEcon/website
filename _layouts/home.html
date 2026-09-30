@@ -232,8 +232,7 @@ layout: default
         <div class="col">
           <div class="qe-card">
             <a href="{{ post.url | relative_url }}">
-              {% assign date_format = site.minima.date_format | default: "%-d %b %Y" %}
-              <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #666;">{{ post.date | date: date_format }}
+              <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #666;">{{ post.date | date: "%b %-d, %Y" }}
                 {% if post.tag %}
                   {% for tag in post.tag %}
                     <span class="qe-badge qe-badge--{{ tag | downcase | replace: ' ', '-' }}">{{ tag }}</span>
@@ -248,7 +247,33 @@ layout: default
         {% endfor %}
       </div>
 
-      <p class="text-center mt-4"><a href="/news/" class="qe-btn qe-btn--outline-dark">View all news</a></p>
+      {%- comment -%}
+        The "Latest activity" strip: the 3 newest Activity rows, each one link. Nothing in the
+        view is escaped, so every field is escaped here. Below 1200px a stacked list; from
+        1200px one line, in which only titles are cut.
+      {%- endcomment -%}
+      {%- assign activity_strip = site.data.activity_view.strip -%}
+      {%- if activity_strip.size > 0 %}
+      <div class="activity-strip mathjax_ignore">
+        <h3 class="activity-strip__label"><i class="bi bi-activity" aria-hidden="true"></i>Latest activity</h3>
+        <ul class="activity-strip__rows" role="list">
+          {%- for activity_row in activity_strip %}
+          <li>
+            <a class="activity-strip__link" href="{{ activity_row.url | escape }}">
+              {% include activity/meta.html row=activity_row tag=false %}
+              <span class="activity-strip__title" title="{{ activity_row.title | escape }}{% if activity_row.version != "" %} {{ activity_row.version | escape }}{% endif %}">{% include activity/title.html row=activity_row %}</span>
+              {%- if activity_row.tag != "" %}
+              <span class="activity-strip__tag">· {{ activity_row.tag | escape }}</span>
+              {%- endif %}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+        <a class="activity-strip__all" href="/activity/">View all activity &rarr;</a>
+      </div>
+      {%- endif %}
+
+      <p class="text-center mt-4"><a href="/news/" class="qe-btn qe-btn--outline-dark d-block d-md-inline-block">View all news</a></p>
     </div>
   </section>
 
