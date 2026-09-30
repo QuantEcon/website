@@ -5,7 +5,11 @@
    * Sponsor announcement bar — show unless previously dismissed
    */
   const sponsorBar = document.getElementById('sponsor-bar');
-  if (sponsorBar && !sessionStorage.getItem('sponsor-bar-dismissed')) {
+  // sessionStorage throws where site data is blocked, and an uncaught error here would stop
+  // everything below; there, a dismissed bar comes back on the next page
+  let sponsorBarDismissed = false;
+  try { sponsorBarDismissed = !!sessionStorage.getItem('sponsor-bar-dismissed'); } catch (e) {}
+  if (sponsorBar && !sponsorBarDismissed) {
     sponsorBar.style.display = '';
     document.body.classList.add('sponsor-bar-visible');
     // Set CSS variable for actual bar height
@@ -18,7 +22,7 @@
         sponsorBar.style.display = 'none';
         document.body.classList.remove('sponsor-bar-visible');
         document.documentElement.style.removeProperty('--sponsor-bar-height');
-        sessionStorage.setItem('sponsor-bar-dismissed', '1');
+        try { sessionStorage.setItem('sponsor-bar-dismissed', '1'); } catch (e) {}
       });
     }
   }

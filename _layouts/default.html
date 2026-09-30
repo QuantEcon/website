@@ -8,6 +8,9 @@
 
 <head>
 
+  <!-- Styles for JavaScript-only states key on html.js: set it before first paint, so nothing moves -->
+  <script>document.documentElement.classList.add('js')</script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
@@ -206,7 +209,7 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"></script>
 
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main.js?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 
     <script>
       MathJax = {
