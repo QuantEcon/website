@@ -1,0 +1,57 @@
+{%- comment -%}
+  One row of the /activity/ log. Parameter: row, a row of site.data.activity_view. Nothing in
+  the view is escaped, so every field is escaped here. Two or more PRs are rendered as an open
+  list after an "N changes" toggle: with JavaScript, CSS collapses the list from the first
+  paint and the layout's script flips aria-expanded; without it, the toggle is hidden.
+{%- endcomment -%}
+{%- assign activity_row = include.row -%}
+<li class="activity-row" data-type="{{ activity_row.type | escape }}">
+  <div class="activity-meta">{% include activity/meta.html row=activity_row %}</div>
+  {%- case activity_row.kind -%}
+  {%- when "group" %}
+  <p class="activity-row__releases">
+    {%- for activity_release in activity_row.releases -%}
+    <a href="{{ activity_release.url | escape }}">{{ activity_release.project | escape }}{% if activity_release.version != "" %} <span class="activity-row__version">{{ activity_release.version | escape }}</span>{% endif %}</a>
+    {%- if forloop.rindex == 2 %} and {% elsif forloop.rindex > 2 %}, {% endif -%}
+    {%- endfor -%}
+  </p>
+  {%- when "editions" %}
+  <p class="activity-row__series">{{ activity_row.title | escape }}</p>
+  {%- else %}
+  <a class="activity-row__title" href="{{ activity_row.url | escape }}">{% include activity/title.html row=activity_row %}</a>
+  {%- endcase -%}
+  {%- if activity_row.summary != "" %}
+  <p class="activity-row__summary">{% include activity/summary.html text=activity_row.summary %}</p>
+  {%- endif -%}
+  {%- if activity_row.per_edition %}
+  <ul class="activity-row__per-edition" role="list">
+    {%- for activity_edition in activity_row.per_edition %}
+    <li><a href="{{ activity_edition.url | escape }}">{{ activity_edition.lang | escape }}</a>
+      {%- if activity_edition.summaries.size > 0 -%}
+      {%- assign activity_text = activity_edition.summaries | join: " " -%}
+      : {% include activity/summary.html text=activity_text %}
+      {%- endif -%}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- elsif activity_row.kind == "editions" %}
+  <ul class="activity-row__editions" role="list">
+    {%- for activity_edition in activity_row.editions %}
+    <li><a class="activity-chip" href="{{ activity_edition.url | escape }}">{{ activity_edition.lang | escape }}</a></li>
+    {%- endfor %}
+  </ul>
+  {%- endif -%}
+  {%- assign activity_changes = activity_row.changes -%}
+  {%- if activity_changes.size == 1 -%}
+  {%- assign activity_change = activity_changes.first %}
+  <p class="activity-row__pr"><i class="bi bi-github" aria-hidden="true"></i><span><a href="{{ activity_change.url | escape }}">{{ activity_change.title | remove: "`" | escape }}</a>{% if activity_change.num != "" %} <span class="activity-row__num">{{ activity_change.num | escape }}</span>{% endif %}</span></p>
+  {%- elsif activity_changes.size > 1 -%}
+  {%- assign activity_list_id = activity_row.id | slugify | prepend: "changes-" %}
+  <button type="button" class="activity-changes__toggle" aria-expanded="false" aria-controls="{{ activity_list_id | escape }}"><i class="bi bi-github" aria-hidden="true"></i>{{ activity_changes.size }} changes<i class="bi bi-chevron-down activity-changes__chevron" aria-hidden="true"></i></button>
+  <ul class="activity-changes__list" id="{{ activity_list_id | escape }}" role="list">
+    {%- for activity_change in activity_changes %}
+    <li><a href="{{ activity_change.url | escape }}">{{ activity_change.title | remove: "`" | escape }}</a>{% if activity_change.num != "" %} <span class="activity-row__num">{{ activity_change.num | escape }}</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+</li>

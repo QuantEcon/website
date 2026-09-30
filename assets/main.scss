@@ -645,15 +645,6 @@ img {
     background: #b83d4b; // darker than $qe-red (#D25663) to pass WCAG AA (5.52:1) with white text
     color: #fff;
   }
-  // Activity entry types
-  &--release {
-    background: #9558b2;
-    color: #fff;
-  }
-  &--translation {
-    background: #1f7a70; // teal darkened from #2a9d8f to pass WCAG AA with white text
-    color: #fff;
-  }
   &--tools {
     background: $qe-yellow;
     color: #333;
@@ -1559,88 +1550,341 @@ section {
 # Activity
 --------------------------------------------------------------*/
 
-.activity-month {
-  // Reset the global `section` padding and overflow.
-  padding: 0;
-  overflow: visible;
-  margin-bottom: 2.5rem;
-}
-
-.activity-feed {
-  margin-top: 2.5rem;
-}
-
-.activity-month-title {
-  font-family: $font-brand;
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: $color-dark;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0;
-  border-bottom: 1px solid $color-border;
-}
-
-.activity-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.activity-item {
+// Shared by the Activity views, which each set their own sizes: the type filter, shown only
+// with JavaScript (the `js` class on <html> is set in <head>, before first paint)...
+.activity-filters {
   display: flex;
-  gap: 1rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid #edf0f5;
-  &:last-child { border-bottom: 0; }
-}
-
-.activity-date {
-  flex: 0 0 4rem;
-  font-size: 0.8rem;
-  color: #666; // not the site's #888 meta grey, which fails WCAG AA at this size
-  padding-top: 0.15rem;
-}
-
-.activity-main {
-  flex: 1;
-  min-width: 0;
-}
-
-.activity-title {
-  margin: 0;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: $color-dark;
-  .qe-badge {
-    display: inline-block;
-    margin: 0 0.5rem 0 0;
-    vertical-align: middle;
+  flex-wrap: wrap; // on a wrapped line, each button keeps its own bar
+  border-bottom: 1px solid $color-border;
+  html:not(.js) & {
+    display: none;
   }
 }
 
-.activity-summary {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.5;
-  margin: 0.3rem 0 0 0;
-}
-
-.activity-changes {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin: 0.3rem 0 0 0;
-  padding-left: 1.1rem;
-  color: #666;
-}
-
-@media (max-width: 576px) {
-  .activity-item {
-    flex-direction: column;
-    gap: 0.25rem;
+.activity-filter {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 2px; // shapes the focus ring
+  background: none;
+  font-family: $font-main;
+  font-weight: 700;
+  line-height: 1;
+  color: $color-link;
+  white-space: nowrap;
+  cursor: pointer;
+  // A 2px bar over the group's bottom border, as in .content-filters: it grows in on hover
+  // and stays on the pressed button
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background: $color-link;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
   }
-  .activity-date {
-    flex-basis: auto;
-    padding-top: 0;
+  &:hover {
+    color: $color-visited;
+  }
+  &:hover::after,
+  &[aria-pressed="true"]::after {
+    width: 100%;
+    visibility: visible;
+  }
+  &[aria-pressed="true"] {
+    color: $color-text;
+    cursor: default;
+    &::after {
+      background: $color-text;
+    }
+  }
+  &:focus-visible {
+    outline: 2px solid $color-link;
+    outline-offset: 2px;
+  }
+}
+
+// ...and a row's meta line and version
+.activity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 6px;
+}
+
+.activity-row__version {
+  font-weight: 400;
+  color: $color-text;
+}
+
+// The /activity/ log. Day and month anchors, and keyboard focus, land below the fixed header
+// and the sponsor bar. Scoped to this page: on every page it would add to /team/'s
+// scroll-margin-top.
+html:has(.activity-log) {
+  scroll-padding-top: calc(84px + var(--sponsor-bar-height, 0px) + 16px);
+}
+
+.activity-log {
+  max-width: 880px;
+  overflow-wrap: anywhere; // a long name or title wraps rather than being clipped
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid $color-link;
+    outline-offset: 2px;
+  }
+  // Links inside the intro's sentences are underlined, as the PR and release links are: their
+  // colour alone is only 1.9:1 against the text
+  > p a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  code {
+    padding: 1px 4px;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    background: $color-bg;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    color: $color-dark; // not Bootstrap's pink
+    overflow-wrap: anywhere; // Bootstrap sets code's own
+  }
+  .activity-filters {
+    column-gap: 28px;
+    margin-top: 28px;
+  }
+  .activity-filter {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  // A filter with no rows: "No book updates yet"
+  .activity-empty {
+    margin: 24px 0 0;
+    padding: 24px 16px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14.4px;
+    color: $color-text;
+  }
+  .activity-month {
+    margin-top: 36px;
+    padding: 0; // resets the global section padding and overflow
+    overflow: visible;
+  }
+  .activity-month__title {
+    margin: 0;
+    padding: 0 0 10px;
+    border-bottom: 1px solid $color-border;
+    font-family: $font-brand;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $color-dark;
+  }
+  .activity-days,
+  .activity-rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .activity-row {
+    padding: 18px 0 20px;
+    border-bottom: 1px solid #edf0f5;
+  }
+  .activity-meta {
+    font-size: 13.6px;
+    line-height: 1.4;
+    color: #666;
+  }
+  .activity-meta__icon {
+    color: $color-link;
+  }
+  .activity-row__title {
+    display: block;
+    width: fit-content;
+    margin-top: 4px;
+    border-radius: 2px; // shapes the focus ring
+    font-size: 16.8px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $color-dark;
+    text-underline-offset: 3px;
+    &:hover {
+      color: $color-visited;
+    }
+  }
+  // A release group's title: a link for each release
+  .activity-row__releases {
+    margin: 4px 0 0;
+    font-size: 16.8px;
+    line-height: 1.55;
+    color: $color-text;
+    a {
+      font-weight: 700;
+      color: $color-dark;
+      text-decoration: underline;
+      text-decoration-color: #94a3b8;
+      text-underline-offset: 3px;
+      &:hover {
+        color: $color-visited;
+        text-decoration-color: $color-visited;
+      }
+    }
+  }
+  // An editions row's title: the series, not a link
+  .activity-row__series {
+    margin: 4px 0 0;
+    font-size: 16.8px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $color-dark;
+  }
+  .activity-row__summary {
+    max-width: 760px;
+    margin: 6px 0 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: $color-text;
+    text-wrap: pretty;
+  }
+  // An editions row whose editions have different summaries: each edition with its own
+  .activity-row__per-edition {
+    display: grid;
+    gap: 8px;
+    max-width: 760px;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.55;
+    color: $color-text;
+    a {
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+  // Otherwise, the editions as chips
+  .activity-row__editions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .activity-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    &:hover {
+      background: $color-bg;
+      color: $color-visited;
+      text-decoration: none;
+    }
+  }
+  // The PRs: one on a line of its own, or two or more behind an "N changes" toggle
+  .activity-row__pr {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.45;
+    .bi-github {
+      color: #666;
+    }
+  }
+  .activity-row__pr a,
+  .activity-changes__list a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .activity-row__num {
+    color: #666;
+  }
+  .activity-changes__toggle {
+    display: flex; // not inline-flex, which the body's line height would pad
+    width: fit-content;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 2px 0;
+    border: 0;
+    border-radius: 2px; // shapes the focus ring
+    background: none;
+    font: 700 14px $font-main;
+    color: $color-link;
+    cursor: pointer;
+    &:hover {
+      color: $color-visited;
+      text-decoration: underline;
+    }
+  }
+  .activity-changes__chevron {
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+  .activity-changes__toggle[aria-expanded="true"] .activity-changes__chevron {
+    transform: rotate(180deg);
+  }
+  .activity-changes__list {
+    margin: 6px 0 2px;
+    padding: 0 0 0 14px;
+    border-left: 2px solid $color-border;
+    list-style: none;
+    li {
+      margin: 0 0 6px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+  }
+  .activity-log__start {
+    margin: 40px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+}
+
+// The PR lists are in the HTML, open. Without JavaScript their toggles are hidden; with it,
+// each list is collapsed from the first paint until its toggle is expanded.
+html:not(.js) .activity-changes__toggle {
+  display: none;
+}
+
+.js .activity-changes__toggle[aria-expanded="false"] + .activity-changes__list {
+  display: none;
+}
+
+// Phones: smaller filters, and 44px targets
+@media (max-width: 575.98px) {
+  .activity-log {
+    .activity-filters {
+      column-gap: 14px; // one line from a 366px viewport
+    }
+    .activity-filter {
+      font-size: 14.4px;
+    }
+    .activity-month {
+      margin-top: 28px;
+    }
+    .activity-row__title {
+      min-height: 44px;
+      padding: 10px 0;
+    }
+    .activity-chip,
+    .activity-changes__toggle {
+      min-height: 44px;
+    }
   }
 }
 
@@ -1850,7 +2094,9 @@ body.sponsor-bar-visible.internal main {
   .qe-card,
   .qe-btn,
   .news-card,
-  .news-card-toggle i {
+  .news-card-toggle i,
+  .activity-filter::after,
+  .activity-log .activity-changes__chevron {
     transition: none;
   }
   .qe-card:hover {
