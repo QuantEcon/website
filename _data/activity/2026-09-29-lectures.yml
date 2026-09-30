@@ -1,0 +1,19 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-09-29.
+
+- date: 2026-09-29
+  type: translation
+  project: Python Programming for Economics and Finance (French)
+  url: https://quantecon.github.io/lecture-python-programming.fr/
+  summary: Updated the French translations of Names and Namespaces, Functions, and NumPy, and applied consistency fixes across six further lectures.
+  changes:
+  - title: 'Round-2 consistency pass: espace de nommage and renvoyer edition-wide, plus two hand-ports'
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/81
+  - title: Review of the French translation of Names and Namespaces
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/80
+  - title: Update oop_intro.md
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/78
+  - title: Update functions.md
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/77
+  - title: Port the numpy.md edits the resync regeneration dropped (seed docstring, qe.Timer)
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/38
