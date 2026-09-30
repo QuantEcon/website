@@ -93,7 +93,7 @@ To add something, copy the front matter of an existing file of the same kind. Th
 
 The navigation is in `_layouts/default.html`. Styles go in `assets/main.scss`, which defines the Sass variables in README's "Brand Colours", or in a partial in `assets/sass/` that it loads with `@use`. A partial can't see those variables (the build fails with "Undefined variable"), so use the `--qe-*` custom properties that `main.scss` sets on `:root`, such as `var(--qe-blue)`, as `_about.scss` does.
 
-`_layouts/default.html` adds a `js` class to `<html>` before first paint. Style states that need JavaScript, such as a collapsed list, under `.js`, and hide controls that need it under `html:not(.js)`: nothing then moves when scripts run, and without JavaScript everything shows. Have the script remove the class if it fails, or what it collapsed stays hidden. The `/activity/` filter and its "N changes" lists work this way.
+`_layouts/default.html` adds a `js` class to `<html>` before first paint. Style states that need JavaScript, such as a collapsed list, under `.js`, and hide controls that need it under `html:not(.js)`: nothing then moves when scripts run, and without JavaScript everything shows. Have the script remove the class if it fails, or what it collapsed stays hidden. The `/activity/` filter and its "N changes" lists, and the `/news/` rail's filter and panel, work this way.
 
 ### News and Activity
 
