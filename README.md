@@ -22,7 +22,7 @@ The site has two streams of updates. The rule of thumb: **people write News, the
 
 **Promotion is a human decision.** When a release or a batch of lecture changes deserves wider attention, someone writes a News post that links to it.
 
-These definitions decide which stream an item belongs to, not where it is shown. News posts are stored in `_posts/` and Activity entries in `_data/activity/` (schema below). Which pages display each stream is a design choice: today News appears on `/news/`, the home page and `feed.xml`, and Activity on `/activity/`.
+These definitions decide which stream an item belongs to, not where it is shown. News posts are stored in `_posts/` and Activity entries in `_data/activity/` (schema below). Which pages display each stream is a design choice: today News appears on `/news/`, the home page and `feed.xml`, and Activity on `/activity/` and beside News on `/news/`.
 
 ### Activity data
 

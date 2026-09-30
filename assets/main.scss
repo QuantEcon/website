@@ -1321,8 +1321,10 @@ section {
 }
 
 /* Team page contents column */
-// `clip` keeps the global section clipping but, unlike `hidden`, lets .team-toc stick to the viewport
-.inner-page:has(.team-toc) {
+// `clip` keeps the global section clipping but, unlike `hidden`, lets .team-toc and the /news/
+// Activity rail stick to the viewport. Without :has() or `clip` they stay in place.
+.inner-page:has(.team-toc),
+.inner-page:has(.activity-rail) {
   overflow: clip;
 }
 
@@ -1621,9 +1623,10 @@ section {
 }
 
 // The /activity/ log. Day and month anchors, and keyboard focus, land below the fixed header
-// and the sponsor bar. Scoped to this page: on every page it would add to /team/'s
-// scroll-margin-top.
-html:has(.activity-log) {
+// and the sponsor bar, here and on /news/ with its Activity rail. Scoped to these pages: on
+// every page it would add to /team/'s scroll-margin-top.
+html:has(.activity-log),
+html:has(.activity-rail) {
   scroll-padding-top: calc(84px + var(--sponsor-bar-height, 0px) + 16px);
 }
 
@@ -1885,6 +1888,331 @@ html:not(.js) .activity-changes__toggle {
     .activity-changes__toggle {
       min-height: 44px;
     }
+  }
+}
+
+// The Activity rail on /news/: at 1200px and wider a column beside the news, below that a
+// panel above them, collapsed with JavaScript. One <aside> serves both; the panel's colours are
+// the defaults here, and the rail's are set at 1200px.
+.activity-rail {
+  --rail-surface: #eef4fb;
+  --rail-line: #dbe8f5;
+  --rail-meta: #{$color-text};
+  --rail-dash: #94a3b8;
+  overflow-wrap: anywhere; // a long name wraps rather than widening the page
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid $color-link;
+    outline-offset: 2px;
+  }
+  .activity-filters {
+    column-gap: 18px;
+    border-bottom-color: var(--rail-line);
+  }
+  // A filter with no rows: "No book updates yet"
+  .activity-empty {
+    margin: 0 0 16px;
+    padding: 24px 16px;
+    border: 1px dashed var(--rail-dash);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14.4px;
+  }
+  .activity-meta {
+    font-size: 12.8px;
+    line-height: 1.35;
+    color: var(--rail-meta);
+  }
+}
+
+.activity-rail__title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: $color-dark;
+}
+
+.activity-rail__subtitle {
+  margin: 6px 0 0;
+  font-size: 14.4px;
+  line-height: 1.5;
+  color: var(--rail-meta);
+}
+
+// The panel's toggle and its second line show only below 1200px, with JavaScript
+.activity-rail__heading,
+.activity-rail__about {
+  display: none;
+}
+
+// A week: its heading, then a timeline of rows. 20px above every week shown after the first.
+.activity-week:not([hidden]) ~ .activity-week {
+  margin-top: 20px;
+}
+
+// The week headings, and the rail's "Activity" label (its content is set at 1200px)
+.activity-week__title,
+.activity-rail__list::before {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--rail-meta);
+}
+
+.activity-week__rows {
+  margin: 0 0 0 5px;
+  padding: 0;
+  border-left: 2px solid var(--rail-line);
+  list-style: none;
+}
+
+.activity-rail-row {
+  position: relative;
+  padding: 0 0 16px 18px;
+  // The timeline's dot
+  &::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--rail-surface);
+    border-radius: 50%;
+    background: $color-link;
+    box-shadow: 0 0 0 2px var(--rail-line);
+  }
+}
+
+.activity-rail-row__title,
+.activity-rail-row__summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.activity-rail-row__title {
+  margin-top: 3px;
+  border-radius: 2px; // shapes the focus ring
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: $color-dark;
+  text-underline-offset: 2px;
+}
+
+.activity-rail-row__summary {
+  margin: 3px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+  strong {
+    color: $color-dark;
+  }
+  code {
+    padding: 0 3px;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    background: #fff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px;
+    color: $color-dark; // not Bootstrap's pink
+  }
+}
+
+.activity-rail__all {
+  display: block;
+  margin-top: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+// Below 1200px: the panel, under the h1 and above the news
+@media (max-width: 1199.98px) {
+  .activity-rail {
+    margin-bottom: 20px;
+    border: 1px solid var(--rail-line);
+    border-radius: 8px;
+    background: var(--rail-surface);
+  }
+  .js .activity-rail__heading {
+    display: block;
+    margin: 0;
+    font: inherit;
+  }
+  .js .activity-rail__title {
+    display: none;
+  }
+  // Collapsed from the first paint: the toggle and a second line, until it is opened
+  .js .activity-rail:not(.is-open) {
+    .activity-rail__body {
+      display: none;
+    }
+    .activity-rail__about {
+      display: block;
+    }
+  }
+  .activity-rail__toggle {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 60px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 7px;
+    background: none;
+    text-align: left;
+    font: inherit;
+    color: $color-text;
+    &:hover {
+      background: #e3edf8;
+    }
+    // The ring goes 6px inside the button: the second line is pulled 6px up into its box, and a
+    // ring outside it, or less far in, would cross or touch that line's first letters
+    .activity-rail &:focus-visible {
+      outline-offset: -6px;
+    }
+  }
+  .activity-rail__icon {
+    font-size: 20px;
+    color: $color-link;
+  }
+  .activity-rail__label,
+  .activity-rail__about {
+    text-wrap: balance; // "latest Sep 27" stays together on phones
+  }
+  .activity-rail__label {
+    font-size: 14.4px;
+    line-height: 1.45;
+    strong {
+      font-size: 16px;
+      color: $color-dark;
+    }
+  }
+  .activity-rail__toggle[aria-expanded="true"] .activity-rail__chevron {
+    transform: rotate(180deg);
+  }
+  .activity-rail__about {
+    margin: -6px 0 0;
+    padding: 0 16px 12px 48px; // under the label, past the icon
+    font-size: 14.4px;
+    line-height: 1.45;
+  }
+  // Without JavaScript, a plain heading over the open panel
+  .activity-rail__title {
+    padding: 14px 16px 0;
+  }
+  .activity-rail__body {
+    padding: 0 16px 16px;
+  }
+  .activity-rail__subtitle {
+    margin: 0;
+  }
+  .activity-rail .activity-filters {
+    margin-top: 8px;
+  }
+  .activity-rail .activity-filter {
+    min-height: 44px;
+    font-size: 14.4px;
+  }
+  .activity-rail__list {
+    padding-top: 16px;
+  }
+  .activity-rail__all {
+    margin-top: 4px;
+    background: #fff;
+  }
+}
+
+// 1200px and wider: the rail, in the news grid's right column
+@media (min-width: 1200px) {
+  .news-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    column-gap: 3rem;
+  }
+  .news-main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  // The rail runs the full height of the news column: its tinted panel fills what the head
+  // leaves, and the list inside it sticks
+  .activity-rail,
+  .activity-rail__body {
+    display: flex;
+    flex-direction: column;
+  }
+  .activity-rail {
+    grid-column: 2;
+    grid-row: 1;
+    --rail-surface: #{$color-light};
+    --rail-line: #{$color-border};
+    --rail-meta: #666;
+    --rail-dash: #cbd5e1;
+  }
+  .activity-rail__body,
+  .activity-rail__panel {
+    flex: 1 0 auto;
+  }
+  .activity-rail .activity-filters {
+    margin-top: 14px;
+  }
+  .activity-rail .activity-filter {
+    padding: 10px 0 11px;
+    font-size: 14px;
+  }
+  .activity-rail__panel {
+    margin-top: 16px;
+    border: 1px solid var(--rail-line);
+    border-radius: 8px;
+    background: var(--rail-surface);
+  }
+  .activity-rail__list {
+    padding: 20px 22px;
+    // A small label, as the heading has scrolled away once the list sticks. Screen readers
+    // skip it where the alternative text after "/" is supported.
+    &::before {
+      content: "Activity";
+      content: "Activity" / "";
+      display: block;
+    }
+  }
+  // It sticks 24px below the header when it fits, and otherwise by its bottom edge, 24px above
+  // the window's, so every part of it can be reached. --rail-h is the list's height, which the
+  // layout's script keeps; without JavaScript the list doesn't stick.
+  .js .activity-rail__list {
+    position: sticky;
+    top: min(calc(84px + var(--sponsor-bar-height, 0px) + 24px), calc(100vh - var(--rail-h, 0px) - 24px));
+    // While keyboard focus is inside, the list scrolls with the page, so the browser can bring
+    // the focused row into view; stuck by its bottom edge, its top rows can't be scrolled to. A
+    // click doesn't match :focus-visible, so nothing moves under the pointer.
+    &:has(:focus-visible) {
+      position: static;
+    }
+  }
+}
+
+// Phones: the summary on a line of its own, the filter on one line from a 390px viewport, and
+// each row's title link stretched over the row
+@media (max-width: 575.98px) {
+  .activity-rail__sep {
+    display: none;
+  }
+  .activity-rail__summary {
+    display: block;
+  }
+  .activity-rail .activity-filters {
+    column-gap: 10px;
+  }
+  .activity-rail-row__title::after {
+    content: "";
+    position: absolute;
+    inset: 0;
   }
 }
 
