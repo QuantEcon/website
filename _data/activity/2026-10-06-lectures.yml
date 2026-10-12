@@ -1,0 +1,13 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-06.
+
+- date: 2026-10-06
+  type: translation
+  project: A First Course in Quantitative Economics with Python (Simplified Chinese)
+  url: https://quantecon.github.io/lecture-intro.zh-cn/
+  summary: Added the Simplified Chinese translation of the Estimating Wealth Tax Revenue lecture and reorganized the table of contents, with related updates to the Heavy-Tailed Distributions lecture.
+  changes:
+  - title: 'Add wealth_tax lecture: estimating wealth tax revenue'
+    url: https://github.com/QuantEcon/lecture-intro.zh-cn/pull/309
+  - title: Reorganize table of contents
+    url: https://github.com/QuantEcon/lecture-intro.zh-cn/pull/307
