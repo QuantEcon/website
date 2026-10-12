@@ -6,4 +6,4 @@ link: https://github.com/adisankarmt
 role: "Translator"
 translator: "Malayalam Editor"
 ---
-Adisankar Manoj Thanuja is a finance educator and research analyst based in India. He developed the translation methodology for Malayalam now embedded in the QuantEcon translation engine. Adisankar's association with QuantEcon began with his mission to make emerging financial technologies and quantitative tools more accessible to students in Kerala.
+Adisankar Manoj Thanuja is the Malayalam editor for QuantEcon's translation of Python Programming for Economics and Finance. A finance educator and research analyst based in India, he came to QuantEcon through his efforts to make emerging financial technologies and quantitative tools more accessible to students in Kerala. He greatly assisted with the development of Malayalam support in the QuantEcon translation tool, action-translation.
