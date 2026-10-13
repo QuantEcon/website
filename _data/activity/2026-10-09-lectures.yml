@@ -1,0 +1,55 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-09.
+
+- date: 2026-10-09
+  type: lectures
+  project: A First Course in Quantitative Economics with Python
+  url: https://intro.quantecon.org/
+  summary: Added a new lecture, Estimating Wealth Tax Revenue, rewrote Maximum Likelihood Estimation as an elementary introduction, and reorganized the table of contents.
+  changes:
+  - title: Rename mle to mle_intro so lecture names are unique across the published sites
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/857
+  - title: Rename lln_clt to lln_clt_intro so lecture names are unique across the published sites
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/856
+  - title: Rename lake_model to lake_model_intro so lecture names are unique across the published sites
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/855
+  - title: 'Add wealth_tax lecture: estimating wealth tax revenue'
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/852
+  - title: Rewrite MLE as an elementary lecture on maximum likelihood
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/849
+  - title: Reorganize table of contents
+    url: https://github.com/QuantEcon/lecture-python-intro/pull/848
+- date: 2026-10-09
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Corrected math and economics and added exercises to Transitions in an Overlapping Generations Model, A Long-Lived, Heterogeneous Agents, Overlapping Generations Model, and Two Computations to Fund Social Security, and updated two further lectures.
+  changes:
+  - title: '[ge_arrow] Add the rational expectations reading of Arrow''s sequential equilibrium'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1084
+  - title: '[wealth_dynamics] Retarget the JAX cross-reference after the lecture-jax rename'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1082
+  - title: '[ak2, ak_aiyagari, two_computation] Correct math and economics, add exercises'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1078
+  - title: 'Bayes_nonconj: declare the truncated log-normal prior''s (0, 1] support (numpyro 0.22)'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1065
+- date: 2026-10-09
+  type: lectures
+  project: Quantitative Economics with JAX
+  url: https://jax.quantecon.org/
+  summary: Renamed twelve lectures, including Default Risk and Income Fluctuations, Endogenous Grid Method, and Inventory Dynamics, to make lecture names unique across published sites.
+  changes:
+  - title: Rename twelve lectures so lecture names are unique across the published sites
+    url: https://github.com/QuantEcon/lecture-jax/pull/353
+- date: 2026-10-09
+  type: translation
+  project: A First Course in Quantitative Economics with Python (Simplified Chinese)
+  url: https://quantecon.github.io/lecture-intro.zh-cn/
+  summary: Updated the Simplified Chinese translations of several lectures, including A Lake Model of Employment, LLN and CLT, and Maximum Likelihood Estimation, with internal file renames to ensure unique lecture names across sites.
+  changes:
+  - title: Rename mle to mle_intro so lecture names are unique across the published sites
+    url: https://github.com/QuantEcon/lecture-intro.zh-cn/pull/313
+  - title: Rename lln_clt to lln_clt_intro so lecture names are unique across the published sites
+    url: https://github.com/QuantEcon/lecture-intro.zh-cn/pull/312
+  - title: Rename lake_model to lake_model_intro so lecture names are unique across the published sites
+    url: https://github.com/QuantEcon/lecture-intro.zh-cn/pull/311

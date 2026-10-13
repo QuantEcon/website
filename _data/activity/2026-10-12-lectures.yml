@@ -1,0 +1,45 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-12.
+
+- date: 2026-10-12
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added a new lecture, Which Moments to Match?, on Gallant and Tauchen's efficient method of moments, and updated Pandas for Panel Data.
+  changes:
+  - title: '[gallant_tauchen] Add a lecture on Gallant and Tauchen''s efficient method of moments'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1087
+  - title: '[pandas_panel] Take programming''s text, so both series publish one lecture'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1088
+- date: 2026-10-12
+  type: lectures
+  project: Python Programming for Economics and Finance
+  url: https://python-programming.quantecon.org/
+  summary: Revised the Pandas for Panel Data and Adventures with Autodiff lectures.
+  changes:
+  - title: '[pandas_panel] Describe the single .replace() call, not a loop'
+    url: https://github.com/QuantEcon/lecture-python-programming/pull/645
+  - title: '[autodiff] Open with a sentence that suits both series'
+    url: https://github.com/QuantEcon/lecture-python-programming/pull/644
+- date: 2026-10-12
+  type: lectures
+  project: Quantitative Economics with JAX
+  url: https://jax.quantecon.org/
+  summary: Updated the Adventures with Autodiff lecture to share text with the parallel lecture series.
+  changes:
+  - title: '[autodiff] Take programming''s text, so both series publish one lecture'
+    url: https://github.com/QuantEcon/lecture-jax/pull/357
+- date: 2026-10-12
+  type: translation
+  project: Intermediate Quantitative Economics with Python (Simplified Chinese)
+  url: https://quantecon.github.io/lecture-python.zh-cn/
+  summary: Updated the Simplified Chinese translations of Wealth Distribution Dynamics, Pandas for Panel Data, Non-Conjugate Priors, Competitive Equilibria with Arrow Securities, and Misspecified Recovery.
+  changes:
+  - title: '[wealth_dynamics] Retarget the JAX cross-reference after the lecture-jax rename'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/291
+  - title: '[pandas_panel] Take programming''s text, so both series publish one lecture'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/293
+  - title: Resync ge_arrow and misspecified_recovery to current source (recovers the 2026-09-20 and 2026-10-09 sync failures)
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/292
+  - title: 'Bayes_nonconj: declare the truncated log-normal prior''s (0, 1] support (numpyro 0.22)'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/288

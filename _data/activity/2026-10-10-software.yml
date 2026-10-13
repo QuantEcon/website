@@ -1,0 +1,13 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-10.
+
+- date: 2026-10-10
+  type: release
+  project: QuantEcon.jl
+  version: v0.20.0
+  url: https://github.com/QuantEcon/QuantEcon.jl/releases/tag/v0.20.0
+- date: 2026-10-10
+  type: release
+  project: BasisMatrices.jl
+  version: v0.8.3
+  url: https://github.com/QuantEcon/BasisMatrices.jl/releases/tag/v0.8.3
