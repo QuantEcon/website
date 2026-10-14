@@ -1,0 +1,25 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-13.
+
+- date: 2026-10-13
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Added a new lecture, Induced Priors for Impulse Responses, covering induced priors, VARs, and sign restrictions.
+  changes:
+  - title: 'Add induced_priors lecture: induced priors, VARs, and sign restrictions'
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/390
+- date: 2026-10-13
+  type: translation
+  project: Python Programming for Economics and Finance (Simplified Chinese)
+  url: https://quantecon.github.io/lecture-python-programming.zh-cn/
+  summary: Fixed a font-weight fallback warning in eighteen Simplified Chinese translated lectures, updated the Polars lecture's data-fetching method, and revised the Pandas for Panel Data and Adventures with Autodiff lectures.
+  changes:
+  - title: Silence matplotlib 3.11's font-weight fallback warning in the i18n font cells
+    url: https://github.com/QuantEcon/lecture-python-programming.zh-cn/pull/111
+  - title: '[polars] Fetch the FRED CSV with requests before parsing it'
+    url: https://github.com/QuantEcon/lecture-python-programming.zh-cn/pull/108
+  - title: '[pandas_panel] Describe the single .replace() call, not a loop'
+    url: https://github.com/QuantEcon/lecture-python-programming.zh-cn/pull/107
+  - title: '[autodiff] Open with a sentence that suits both series'
+    url: https://github.com/QuantEcon/lecture-python-programming.zh-cn/pull/106
