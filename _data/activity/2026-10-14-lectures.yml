@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-14.
+
+- date: 2026-10-14
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Added two new lectures, Policy Counterfactuals from Impulse Responses and Policy Regimes and the Lucas Critique, and modified three existing lectures on induced priors, Markov jump LQ, and supply and demand.
+  changes:
+  - title: 'Add policy_counterfactuals lecture: McKay-Wolf counterfactuals and invertibility'
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/392

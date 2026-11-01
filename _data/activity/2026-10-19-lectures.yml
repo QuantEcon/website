@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-19.
+
+- date: 2026-10-19
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Updated Covariance Stationary Processes, Markov Jump Linear Quadratic Dynamic Programming, and Policy Regimes and the Lucas Critique for `quantecon` 0.13.1.
+  changes:
+  - title: Update lectures for quantecon 0.13.1
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/393

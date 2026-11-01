@@ -1,0 +1,8 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-31.
+
+- date: 2026-10-31
+  type: release
+  project: GameTheory.jl
+  version: v0.8.1
+  url: https://github.com/QuantEcon/GameTheory.jl/releases/tag/v0.8.1
