@@ -5,7 +5,7 @@
   type: translation
   project: Intermediate Quantitative Economics with Python (Simplified Chinese)
   url: https://quantecon.github.io/lecture-python.zh-cn/
-  summary: Updated the Simplified Chinese translations of Which Moments to Match, Social Security Trust Fund Depletion, and Investment Under Uncertainty, and added three further translated lectures including Linear Quadratic Mean Field Games.
+  summary: Added Simplified Chinese translations of five lectures, including Which Moments to Match, Social Security Trust Fund Depletion and Investment Under Uncertainty, and revised twenty existing translated lectures.
   changes:
   - title: 'Sir_model: restore the 2025 reviewers'' wording lost in #302'
     url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/305

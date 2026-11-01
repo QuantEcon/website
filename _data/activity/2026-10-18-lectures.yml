@@ -5,7 +5,7 @@
   type: translation
   project: Python Programming for Economics and Finance (French)
   url: https://quantecon.github.io/lecture-python-programming.fr/
-  summary: 'Updated the French translations of OOP II: Building Classes, About These Lectures, Pandas for Panel Data, Adventures with Autodiff, and Polars.'
+  summary: Updated the French translations of the Polars, Pandas for Panel Data and Adventures with Autodiff lectures, among others.
   changes:
   - title: 'Python_oop: restore the French non-breaking spaces'
     url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/92
