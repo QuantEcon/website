@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-27.
+
+- date: 2026-10-27
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Added two new lectures, Gradualism in Self-Enforcing Trade Agreements and Institution Building Without Commitment.
+  changes:
+  - title: Add gradual_trade_agreements and organizational_equilibrium lectures
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/396

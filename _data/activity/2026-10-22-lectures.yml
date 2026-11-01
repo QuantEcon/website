@@ -1,0 +1,45 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-22.
+
+- date: 2026-10-22
+  type: translation
+  project: Intermediate Quantitative Economics with Python (Simplified Chinese)
+  url: https://quantecon.github.io/lecture-python.zh-cn/
+  summary: Added Simplified Chinese translations of five lectures, including Which Moments to Match, Social Security Trust Fund Depletion and Investment Under Uncertainty, and revised twenty existing translated lectures.
+  changes:
+  - title: 'Sir_model: restore the 2025 reviewers'' wording lost in #302'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/305
+  - title: '[var_dmd, svd_intro, measurement_models] Correct math, add exercises'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/304
+  - title: '[var_dmd, svd_intro, measurement_models] Correct math, add exercises'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/303
+  - title: '[sir_model] update code and text'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/302
+  - title: 'Recover six small gaps: five state-file advances and harrison_kreps'' la.solve port'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/301
+  - title: 'Deliver gallant_tauchen and social_security_depletion (the lectures of closed #294 and #296)'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/300
+  - title: '[lucas_prescott_investment, optimal_growth_uncertainty] Two sequels to rational_expectations'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/286
+  - title: '[two_auctions] Add exercises and further reading'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/284
+  - title: '[house_auction] Add VCG comparison section and exercises'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/283
+  - title: 'Make main build again: install JAX in the environment, finish ak_aiyagari''s household rename, add the programming intersphinx key'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/297
+  - title: Register the CJK font in util_rand_resp — five figures render Chinese as tofu
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/274
+  - title: '[ak2, ak_aiyagari, two_computation] Correct math and economics, add exercises'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/290
+  - title: '[hoist_failure] Revise fault-tree lecture and add exercises'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/285
+  - title: Fix Samuelson quadratic formula
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/282
+  - title: '[tom] edits to a few lectures [ge_arrow, affine_risk_prices, and recovery_trio]'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/281
+  - title: '[linear_algebra] Some updates on code and style and typos'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/280
+  - title: '[qr_decomp] Some updates to code and wording'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/277
+  - title: '[lq_robust_bewley] verify observational equivalence'
+    url: https://github.com/QuantEcon/lecture-python.zh-cn/pull/269

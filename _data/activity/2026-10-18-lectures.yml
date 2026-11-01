@@ -1,0 +1,31 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-18.
+
+- date: 2026-10-18
+  type: translation
+  project: Python Programming for Economics and Finance (French)
+  url: https://quantecon.github.io/lecture-python-programming.fr/
+  summary: Updated the French translations of the Polars, Pandas for Panel Data and Adventures with Autodiff lectures, among others.
+  changes:
+  - title: 'Python_oop: restore the French non-breaking spaces'
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/92
+  - title: Update about_py.md
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/84
+  - title: '[pandas_panel] Describe the single .replace() call, not a loop'
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/96
+  - title: '[autodiff] Open with a sentence that suits both series'
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/95
+  - title: '[polars] Fetch the FRED CSV with requests before parsing it'
+    url: https://github.com/QuantEcon/lecture-python-programming.fr/pull/97
+- date: 2026-10-18
+  type: translation
+  project: Python Programming for Economics and Finance (Persian)
+  url: https://quantecon.github.io/lecture-python-programming.fa/
+  summary: Updated the Persian translations of the Polars, Pandas for Panel Data, and Adventures with Autodiff lectures.
+  changes:
+  - title: '[polars] Fetch the FRED CSV with requests before parsing it'
+    url: https://github.com/QuantEcon/lecture-python-programming.fa/pull/171
+  - title: '[pandas_panel] Describe the single .replace() call, not a loop'
+    url: https://github.com/QuantEcon/lecture-python-programming.fa/pull/170
+  - title: '[autodiff] Open with a sentence that suits both series'
+    url: https://github.com/QuantEcon/lecture-python-programming.fa/pull/169

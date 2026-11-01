@@ -1,0 +1,8 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-10-17.
+
+- date: 2026-10-17
+  type: release
+  project: QuantEcon.py
+  version: v0.13.1
+  url: https://github.com/QuantEcon/QuantEcon.py/releases/tag/v0.13.1
