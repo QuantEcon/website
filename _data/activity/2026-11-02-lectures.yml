@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-02.
+
+- date: 2026-11-02
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Revised A Peculiar Definition of Bounded Rationality and six related bounded rationality lectures, including Exchange Rate Indeterminacy, Learning, and Experiments and 1993 Prospects for Bounded Rationality in Macroeconomics.
+  changes:
+  - title: '[bounded_rationality] Correct, connect, and extend the Bounded Rationality lectures'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1101
