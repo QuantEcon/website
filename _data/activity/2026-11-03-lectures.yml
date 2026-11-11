@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-03.
+
+- date: 2026-11-03
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added two new lectures, Drifts and Volatilities after 2000 and Econometric Policy Evaluation, and revised fourteen existing Phillips curve lectures including Escaping Nash Inflation and The Credibility Problem.
+  changes:
+  - title: '[phillips] Correct, connect, and extend the Phillips Curve Tradeoffs lectures'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1105

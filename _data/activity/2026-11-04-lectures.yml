@@ -1,0 +1,15 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-04.
+
+- date: 2026-11-04
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Fixed broken code cells and revised Two Modifications of Mean-Variance Portfolio Theory, removed an unused install command from Doubts or Variability?, and corrected a bibliography key in Policy Counterfactuals from Impulse Responses.
+  changes:
+  - title: 'Black_litterman: fix broken decolletage cells and revise the lecture'
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/403
+  - title: 'Doubts_or_variability: drop the pandas-datareader install nothing imports'
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/381
+  - title: 'Policy_counterfactuals: rename the bibliography key SimsZha2006 to SimsZha2006b'
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/402
