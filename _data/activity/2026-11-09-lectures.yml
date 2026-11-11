@@ -1,0 +1,23 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-09.
+
+- date: 2026-11-09
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added a new lecture, Equilibrium Search and Unemployment, and updated figure captions in three overlapping generations lectures.
+  changes:
+  - title: '[lucas_prescott_search] Add a lecture on Lucas and Prescott''s equilibrium search model'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1110
+  - title: '[bib] Merge the two entries for Lucas and Prescott (1971)'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1113
+  - title: '[ak2, ak_aiyagari, two_computation] Add figure captions and lw=2'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1081
+- date: 2026-11-09
+  type: book
+  project: Economic Networks
+  url: https://networks.quantecon.org/
+  summary: Updated the landing page to offer the web edition alongside the PDF.
+  changes:
+  - title: 'Landing page: offer the web edition alongside the PDF'
+    url: https://github.com/QuantEcon/book-networks-public/pull/71
