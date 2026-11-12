@@ -1,0 +1,21 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-11.
+
+- date: 2026-11-11
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Added two new lectures, A Competitive Entrepreneurial Model of a Stock Market and Corporate Financial Structure and Managerial Incentives.
+  changes:
+  - title: Add Kihlstrom-Laffont and Grossman-Hart lectures on firms and financial structure
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/408
+- date: 2026-11-11
+  type: lectures
+  project: Quantitative Economics with JAX
+  url: https://jax.quantecon.org/
+  summary: 'Updated Asset Pricing: The Lucas Asset Pricing Model and Kesten Processes and Firm Dynamics to the latest `numpy` API.'
+  changes:
+  - title: '[lucas_model] update lecture to latest numpy API'
+    url: https://github.com/QuantEcon/lecture-jax/pull/337
+  - title: '[kesten_processes] Update Kesten processes lecture to latest code version'
+    url: https://github.com/QuantEcon/lecture-jax/pull/233
