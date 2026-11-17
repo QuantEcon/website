@@ -1,0 +1,11 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-12.
+
+- date: 2026-11-12
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added a new lecture, Pareto Distributions and Aggregate Production Functions, and updated Von Neumann Growth Model (and a Generalization) and Wealth Distribution Dynamics.
+  changes:
+  - title: '[houthakker_aggregation] Add a lecture on Houthakker''s aggregate production function'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1126
