@@ -1,0 +1,23 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-22.
+
+- date: 2026-11-22
+  type: lectures
+  project: Advanced Quantitative Economics with Python
+  url: https://python-advanced.quantecon.org/
+  summary: Added two new lectures, Commitment and Flexibility in Policy and Temptation, Self-Control, and Consumption, and fixed a bibliography key in A Competitive Entrepreneurial Model of a Stock Market.
+  changes:
+  - title: Add temptation/self-control and commitment-versus-flexibility lectures
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/417
+  - title: 'Entrepreneurial_stock_market: rename the bibliography key Diamond1967 to diamond1967'
+    url: https://github.com/QuantEcon/lecture-python-advanced.myst/pull/411
+- date: 2026-11-22
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Added three lectures — Approximation Errors in Time Series Models, Turbulence, Earnings Instability, and Indirect Inference, and Specification Tests — and revised 22 existing lectures including Information Projections and Optimal Transport.
+  changes:
+  - title: '[exponential_families, information_projections, opt_transport, approximation_errors, turbulence_inference, phillips_*] Information Geometry section, optimal-transport links, Phillips connections'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1144
+  - title: '[approximation_errors, specification_tests, turbulence_inference, blackwell_kihlstrom] Add three lectures applying information projections'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1138
