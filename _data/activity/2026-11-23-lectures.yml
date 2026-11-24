@@ -1,0 +1,13 @@
+# Activity data: see "News and Activity" in README.md for the schema.
+# Written by the Activity feed for 2026-11-23.
+
+- date: 2026-11-23
+  type: lectures
+  project: Intermediate Quantitative Economics with Python
+  url: https://python.quantecon.org/
+  summary: Revised five Phillips curve lectures (The Credibility Problem, Escaping Nash Inflation, Optimal Misspecified Beliefs, and others) and fixed an equation reference in Eliminating Cross Products.
+  changes:
+  - title: '[phillips_escaping_nash, phillips_misspecified, phillips_self_confirming, phillips_priors, phillips_learning] Information-geometry follow-ups'
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1147
+  - title: Repair the eq:Kalman102 reference in cross_product_trick
+    url: https://github.com/QuantEcon/lecture-python.myst/pull/1141
